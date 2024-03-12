@@ -1,0 +1,3 @@
+[submodule "gitee_api_fetch_ts"]
+	path = gitee_api_fetch_ts
+	url = http://giteaz:3000/msic/node-typescript-boilerplate.git
