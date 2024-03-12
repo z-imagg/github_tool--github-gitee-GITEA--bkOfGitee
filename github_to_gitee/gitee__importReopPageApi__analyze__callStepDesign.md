@@ -35,7 +35,7 @@
 3. 步骤2 中 导入给定url接口 请求记录
      续航符是手工加的，方便阅读
 
-http://giteaz:3000/wiki/wiki/src/branch/main/gitee_import_github_repo/curl_template.sh
+http://giteaz:3000/wiki/wiki/src/branch/main/github_tool/github_to_gitee/curl_template.sh
 
 
  **确认步骤**:
