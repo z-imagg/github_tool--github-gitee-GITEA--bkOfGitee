@@ -3,14 +3,19 @@
 
 import typing
 
+from PathUtil import getScriptDir
+
+#获取当前py脚本所在目录，非当前工作目录
+_sD=getScriptDir(__file__)
+
 # 请求体 输出目录，不用修改
-outHomeDir:str="./output/"
+outHomeDir:str=f"{_sD}/output/"
 
 #目标gitee组织
 goal_rpOrg:str="mirrr"
 
 # 目标github仓库们
-goal_rpUrl_ls:typing.List[str]=[
+from_rpUrl_ls:typing.List[str]=[
 "https://github.com/facebookincubator/gloo.git",
 "https://github.com/pybind/pybind11.git",
 "https://github.com/nanopb/nanopb.git",
