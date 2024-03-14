@@ -1,4 +1,6 @@
 
 gitee_api_fetch/node_modules/
+gitee_api_fetch/reqTemplate/*.json
+
 
 nohup.out
