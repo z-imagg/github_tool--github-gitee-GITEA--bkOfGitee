@@ -152,7 +152,7 @@ submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/gitee/imagg/pytor
 
 ----
 
-确定要完整递归整个torch仓库的任意子模块
+##### 确定要完整递归整个torch仓库的任意子模块
 
 ```shell
 find /fridaAnlzAp/pytorch -name .gitmodules
@@ -204,19 +204,49 @@ submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/pytorch/third_par
 gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/pytorch/third_party/pybind11/  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9 | bash -x 
 submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/pytorch/third_party/pybind11/.   --mirror_base_ur https://gitee.com  --mirror_org_name imagg
 
+```
+
+
+##### 编译pytorch-v1.3.1
+python版本>=3.8会收到报错 ```error: cannot convert ‘std::nullptr_t’ to ‘Py_ssize_t’ {aka ‘long int’} in initialization```,
+
+参见: https://github.com/pytorch/pytorch/issues/28060
+
+简单办法是用python3.7
+
+
+```shell
+wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py37_4.12.0-Linux-x86_64.sh
+bash  Miniconda3-py37_4.12.0-Linux-x86_64.sh
+#安装到目录 /app/Miniconda3-py37_4.12.0/
+
+source /app/Miniconda3-py37_4.12.0/bin/activate 
+python --version #Python 3.7.13
+which python #/app/Miniconda3-py37_4.12.0/bin/python
+
+```
+
+
+```shell
 cd /fridaAnlzAp/pytorch/
 git submodule update --init   --progress   --recursive
 
-#以下开始编译pytorch-v1.3.1
 pip install  astunparse numpy ninja pyyaml setuptools cmake cffi typing_extensions future six requests dataclasses
 pip install mkl mkl-include
 # pip install pyyaml
 export USE_CUDA=0
 export USE_ROCM=0
-export DEBUG=1 #奏效,  DEBUG写在setup.py中
+export DEBUG=1
+python setup.py clean
 CMAKE_VERBOSE_MAKEFILE=True python setup.py develop
 #python setup.py install #由于我是在物理机（工作环境机），就不安装了
+
+python --version #Python 3.10.12
+
 ```
+
+
+
 
 ----
 
