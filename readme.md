@@ -251,9 +251,48 @@ export USE_ROCM=0
 export DEBUG=1
 python setup.py clean
 CMAKE_VERBOSE_MAKEFILE=True python setup.py develop
-#python setup.py install #由于我是在物理机（工作环境机），就不安装了
+# copying build/lib.linux-x86_64-3.7/torch/_C.cpython-37m-x86_64-linux-gnu.so -> torch
+# copying build/lib.linux-x86_64-3.7/torch/_dl.cpython-37m-x86_64-linux-gnu.so -> torch
+# copying build/lib.linux-x86_64-3.7/caffe2/python/caffe2_pybind11_state.cpython-37m-x86_64-linux-gnu.so -> caffe2/python
+# Creating /app/Miniconda3-py37_4.12.0/lib/python3.7/site-packages/torch.egg-link (link to .)
+# Adding torch 1.3.0a0+ee77ccb to easy-install.pth file
+# Installing convert-caffe2-to-onnx script to /app/Miniconda3-py37_4.12.0/bin
+# Installing convert-onnx-to-caffe2 script to /app/Miniconda3-py37_4.12.0/bin
 
+# Installed /fridaAnlzAp/pytorch
+# Processing dependencies for torch==1.3.0a0+ee77ccb
+# Finished processing dependencies for torch==1.3.0a0+ee77ccb
 
+#编译成功了
+
+find /fridaAnlzAp/pytorch/ -name *.so
+# /fridaAnlzAp/pytorch/caffe2/python/caffe2_pybind11_state.cpython-37m-x86_64-linux-gnu.so
+# /fridaAnlzAp/pytorch/build/caffe2/python/caffe2_pybind11_state.cpython-37m-x86_64-linux-gnu.so
+# /fridaAnlzAp/pytorch/build/lib/libc10.so
+# /fridaAnlzAp/pytorch/build/lib/libcaffe2_detectron_ops.so
+# /fridaAnlzAp/pytorch/build/lib/libcaffe2_module_test_dynamic.so
+# /fridaAnlzAp/pytorch/build/lib/libcaffe2_observers.so
+# /fridaAnlzAp/pytorch/build/lib/libshm.so
+# /fridaAnlzAp/pytorch/build/lib/libtorch.so
+# /fridaAnlzAp/pytorch/build/lib/libtorch_python.so
+# /fridaAnlzAp/pytorch/build/lib.linux-x86_64-3.7/caffe2/python/caffe2_pybind11_state.cpython-37m-x86_64-linux-gnu.so
+# /fridaAnlzAp/pytorch/build/lib.linux-x86_64-3.7/torch/_C.cpython-37m-x86_64-linux-gnu.so
+# /fridaAnlzAp/pytorch/build/lib.linux-x86_64-3.7/torch/_dl.cpython-37m-x86_64-linux-gnu.so
+# /fridaAnlzAp/pytorch/torch/lib/libc10.so
+# /fridaAnlzAp/pytorch/torch/lib/libcaffe2_detectron_ops.so
+# /fridaAnlzAp/pytorch/torch/lib/libcaffe2_module_test_dynamic.so
+# /fridaAnlzAp/pytorch/torch/lib/libcaffe2_observers.so
+# /fridaAnlzAp/pytorch/torch/lib/libshm.so
+# /fridaAnlzAp/pytorch/torch/lib/libtorch.so
+# /fridaAnlzAp/pytorch/torch/lib/libtorch_python.so
+# /fridaAnlzAp/pytorch/torch/lib/python3.7/site-packages/caffe2/python/caffe2_pybind11_state.cpython-37m-x86_64-linux-gnu.so
+# /fridaAnlzAp/pytorch/torch/_C.cpython-37m-x86_64-linux-gnu.so
+# /fridaAnlzAp/pytorch/torch/_dl.cpython-37m-x86_64-linux-gnu.so
+
+#这里有很多可以直接运行的test
+ls /fridaAnlzAp/pytorch/build/bin/*test*
+
+#python setup.py install #由于我是在物理机（工作环境机），就不安装了 （install 这一步可能是被 上一步'python setup.py develop'包括了）
 ```
 
 
