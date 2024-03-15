@@ -33,7 +33,7 @@ def giteaMigrateApi(repoUrl:str,mirrorBaseUrl,mirrorOrg,giteaBaseUrl:str,giteaTo
     "username": repo_url.orgName,
   }
   newOrg_resp=httpx.post(url=newOrg_url,json=newOrg_reqBodyDct,verify=False)
-  newOrg_ok=newOrg_resp.status_code==422 or newOrg_resp.is_success
+  newOrg_ok=newOrg_resp.status_code==422 or newOrg_resp.is_success #422 gitea 已经存在组织
   if(not newOrg_ok):
     newOrg_msg=f"创建gitea组织失败，【${newOrg_resp.status_code}, ${newOrg_resp.text}】"
     print(newOrg_msg)
@@ -63,7 +63,7 @@ def giteaMigrateApi(repoUrl:str,mirrorBaseUrl,mirrorOrg,giteaBaseUrl:str,giteaTo
   }
   resp=httpx.post(url=migrate_url,json=reqBodyDct,verify=False)
   msg=f"【gitea迁移接口响应】状态码【{resp.status_code}】，响应文本【{resp.text}】"
-  ok= resp.is_success
+  ok= resp.status_code == 409 or resp.is_success #409 gitea 已经存在仓库
   msg=f'{"迁移成功" if ok else "迁移失败" }，{msg}'
   print(msg)
   return ok
