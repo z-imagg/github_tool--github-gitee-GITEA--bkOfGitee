@@ -39,7 +39,22 @@ cd /fridaAnlzAp/gitee/imagg/pytorch--pytorch/
 git checkout v1.3.1
 ```
 
-#### 步2、 导入各子模块（github-->gitee）
+##### 尝试用git命令找子模块（github-->gitee）（比 步2 的 gitSubmoduleImportCmdGen.py 更全？）
+
+```shell
+# echo $((RANDOM % (b - a + 1) + a))
+SleepSecsB=8
+SleepSecsDelta=9
+alias AliasXargsGitConfigGetUrlAwkPrint2Xargs_import_githubRepo_to_gitee_sh_gitee_imagg='xargs -I@ git --no-pager  config --file @  --get-regexp url  | awk "{ print \$2 }" | xargs -I% sh -c "sleep \\$((RANDOM % (SleepSecsDelta + 1) + SleepSecsB)) ; import_githubRepo_to_gitee.sh --from_repo %  --goal_org imagg  --goal_repoPath pytorch--pytorch --goal_repoName pytorch--pytorch  --goal_repoDesc 来源% " '
+```
+
+```shell
+find /fridaAnlzAp/gitee/imagg/ -name .gitmodules -type f | AliasXargsGitConfigGetUrlAwkPrint2Xargs_import_githubRepo_to_gitee_sh_gitee_imagg
+
+```
+
+
+#### 步2、 导入各子模块（github-->gitee）(gitSubmoduleImportCmdGen.py也没找全子模块？)
 
 #####  bash命令提示
 ```shell
