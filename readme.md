@@ -22,10 +22,10 @@
 
 
 
-###  朴素方案（无吸引力）
+###  ~~朴素方案（无吸引力）~~
 
 
-基于python实现的， http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/github_to_gitee
+基于python实现的，  http://giteaz:3000/wiki/github-gitee-gitea/src/commit/8e4c365ae83249ef6928a5c3da306f97f47c2d1d/github_to_gitee
 
 
 大致步骤：
