@@ -9,7 +9,7 @@ import re
 import httpx
 
 
-def giteaMigrateApiCall(from_repo_url:str,goal_gitea_host:str,goal_gitea_token:str):
+def giteaMigrateApi(from_repo_url:str,goal_gitea_host:str,goal_gitea_token:str):
   repoUrl:str=from_repo_url
   giteaHost:str=goal_gitea_host
   giteaToken:str=goal_gitea_token
