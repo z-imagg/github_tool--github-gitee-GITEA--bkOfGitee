@@ -19,7 +19,7 @@ _BgRp:str=sys.argv[1]
 BgRp:git.Repo=git.Repo(path=_BgRp)
 BgRpRmt:git.Remote=BgRp.remote()
 originUrlBgRp:str=BgRpRmt.url
-BgRp_:cmd.Git=BgRp.git
+# BgRp_:cmd.Git=BgRp.git
 
 # BgRp.submodules
 
