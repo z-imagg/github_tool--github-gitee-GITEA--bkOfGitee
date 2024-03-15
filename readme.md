@@ -1,5 +1,15 @@
 ## 使用手册
 
+【本节概要】
+
+以下以pytorch为例子， 演示 ：
+
+- 步1. 将  https://github.com/pytorch/pytorch.git 导入 为 https://gitee.com/imagg/pytorch--pytorch.git 
+- 步2. 将  https://github.com/pytorch/pytorch.git 中的子模块们 导入 为 https://gitee.com/imagg/ORG--REPO.git
+- 步3. 将  https://gitee.com/imagg/*--*.git 载入 本地 gitea服务 中
+
+【详细叙述】
+
 **步0 只做一次， 即可供给多次 步1、步2 使用**
 
 #### 步0、 生成gitee导入仓库请求模板(会启动chrome)
