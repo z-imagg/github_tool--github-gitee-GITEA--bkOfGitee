@@ -58,13 +58,15 @@ find /fridaAnlzAp/gitee/imagg/pytorch--pytorch/ -name .gitmodules -type f | Alia
 
 #####  bash命令提示
 ```shell
-export PATH=/fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/:/fridaAnlzAp/github-gitee-gitea/localGitea_as_github/:$PATH
-source /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/script/bash-complete--gitSubmoduleImportCmdGen.sh
-source /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/script/bash-complete--repoMigrateToGitea.sh
-source /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/script/bash-complete--submoduleMigrateToGitea.sh
-chmod +x /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/gitSubmoduleImportCmdGen.py
-chmod +x /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/repoMigrateToGitea.py
-chmod +x /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/submoduleMigrateToGitea.py
+ImportHome=/fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen
+MigrateHome=/fridaAnlzAp/github-gitee-gitea/localGitea_as_github
+export PATH=$ImportHome/:$MigrateHome:$PATH
+source $ImportHome/script/bash-complete--gitSubmoduleImportCmdGen.sh
+source $MigrateHomescript/bash-complete--repoMigrateToGitea.sh
+source $MigrateHome/script/bash-complete--submoduleMigrateToGitea.sh
+chmod +x $ImportHome/gitSubmoduleImportCmdGen.py
+chmod +x $MigrateHome/repoMigrateToGitea.py
+chmod +x $MigrateHome/submoduleMigrateToGitea.py
 
 bash /fridaAnlzAp/github-gitee-gitea/script/env_prepare.sh
 source /fridaAnlzAp/github-gitee-gitea/.venv/bin/activate
