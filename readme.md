@@ -1,3 +1,36 @@
+## 使用手册
+
+#### 1. 导入父仓库
+
+```shell
+cd /fridaAnlzAp/gitee/orgk/
+
+import_githubRepo_to_gitee.sh --from_repo https://github.com/pytorch/pytorch.git  --goal_org imagg  --goal_repoPath pytorch--pytorch --goal_repoName pytorch--pytorch  --goal_repoDesc 来源https://github.com/pytorch/pytorch.git
+
+#/fridaAnlzAp/gitee/imagg/pytorch--pytorch/.git/
+
+cd /fridaAnlzAp/gitee/imagg/pytorch--pytorch/
+git checkout v1.3.1
+```
+
+#### 2. 导入各子模块
+
+```shell
+#bash命令提示
+export PATH=/fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/:$PATH
+source /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/script/bash-complete--gitSubmoduleImportCmdGen.sh
+chmod +x /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/gitSubmoduleImportCmdGen.py
+```
+
+
+```shell
+bash /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/script/env_prepare.sh
+source /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/.venv/bin/activate
+gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/gitee/imagg/pytorch--pytorch  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9 | bash -x
+deactivate
+```
+
+
 ## 网页(可重执行)请求协议分析方案
 
 **可重执行 即 同一个请求可原样多次执行 即 无签名字段**
