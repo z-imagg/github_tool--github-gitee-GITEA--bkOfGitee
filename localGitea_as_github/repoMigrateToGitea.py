@@ -15,8 +15,8 @@ def giteaMigrateApiCmd():
     description='【迁移给定git仓库url到gitea服务】')
 
     parser.add_argument('-f', '--from_repo_url',required=True,type=str,help="【父仓库url,常为gitee仓库】",metavar='')
-    parser.add_argument('-m', '--mirror_base_url',required=True,type=str,help="【 】",metavar='')
-    parser.add_argument('-n', '--mirror_org_name',required=True,type=str,help="【 】",metavar='')
+    parser.add_argument('-m', '--mirror_base_url',required=True,type=str,help="【 镜像基础url】",metavar='')
+    parser.add_argument('-n', '--mirror_org_name',required=True,type=str,help="【 镜像组织名】",metavar='')
     args=parser.parse_args()
 
 

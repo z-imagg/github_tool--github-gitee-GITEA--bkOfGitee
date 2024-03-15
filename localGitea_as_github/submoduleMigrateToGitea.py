@@ -18,12 +18,12 @@ from gitea_api_cfg import gitea_base_url, gitea_token
 def submoduleLsMigrateToGitea():
 
     parser = argparse.ArgumentParser(
-    prog=f'gitSubmoduleImportCmdGen.py',
-    description='【子模块导入命令生成】')
+    prog=f'submoduleMigrateToGitea.py',
+    description='【迁移本地仓库中的子模块们到gitea服务】')
 
     parser.add_argument('-p', '--from_parent_repo_dir',required=True,type=str,help="【父仓库本地目录,常为gitee仓库】",metavar='')
-    parser.add_argument('-b', '--mirror_base_url',required=True,type=str,help="【 】",metavar='')
-    parser.add_argument('-o', '--mirror_org_name',required=True,type=str,help="【 】",metavar='')
+    parser.add_argument('-b', '--mirror_base_url',required=True,type=str,help="【 镜像基础url】",metavar='')
+    parser.add_argument('-o', '--mirror_org_name',required=True,type=str,help="【 镜像组织名】",metavar='')
     args=parser.parse_args()
 
 
