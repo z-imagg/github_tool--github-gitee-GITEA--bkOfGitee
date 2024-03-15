@@ -21,18 +21,18 @@ def submoduleLsMigrateToGitea():
     prog=f'gitSubmoduleImportCmdGen.py',
     description='【子模块导入命令生成】')
 
-    parser.add_argument('-f', '--parent_repo_dir',required=True,type=str,help="【父仓库本地目录,常为gitee仓库】",metavar='')
+    parser.add_argument('-p', '--from_parent_repo_dir',required=True,type=str,help="【父仓库本地目录,常为gitee仓库】",metavar='')
     parser.add_argument('-m', '--mirror_base_url',required=True,type=str,help="【 】",metavar='')
     parser.add_argument('-m', '--mirror_org_name',required=True,type=str,help="【 】",metavar='')
     args=parser.parse_args()
 
 
     # print(sys.argv)
-    _BgRp:str=args.parent_repo_dir
+    bigRpPath:str=args.from_parent_repo_dir
     mirrorBaseUrl:str=args.mirror_base_url
     mirrorOrg:str=args.mirror_org_name
 
-    BgRp:git.Repo=git.Repo(path=_BgRp)
+    BgRp:git.Repo=git.Repo(path=bigRpPath)
     BgRpRmt:git.Remote=BgRp.remote()
     originUrlBgRp:str=BgRpRmt.url
     # BgRp_:cmd.Git=BgRp.git

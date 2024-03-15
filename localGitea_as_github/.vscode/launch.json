@@ -5,22 +5,40 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "运行submoduleMigrateToGitea.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "submoduleMigrateToGitea.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--from_parent_repo_dir",
+                "/fridaAnlzAp/gitee/imagg/pytorch--pytorch/",
+                "--mirror_base_ur",
+                "https://gitee.com",
+                "--mirror_org_name",
+                "imagg"
+            ],
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}:/fridaAnlzAp/github-gitee-gitea/py_util/"
+            },
+        },
+        {
             "name": "运行repoMigrateToGitea.py",
             "type": "debugpy",
             "request": "launch",
             "program": "repoMigrateToGitea.py",
             "console": "integratedTerminal",
-            "args": ["--from_repo_url","https://github.com/NVlabs/cub.git","--mirror_base_ur","https://gitee.com","--mirror_org_name","imagg"]
-        },
-        {
-            "name": "Python Debugger: Current File",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal",
+            "args": [
+                "--from_repo_url",
+                "https://github.com/NVlabs/cub.git",
+                "--mirror_base_ur",
+                "https://gitee.com",
+                "--mirror_org_name",
+                "imagg"
+            ],
             "env": {
                 "PYTHONPATH": "${workspaceFolder}:/fridaAnlzAp/github-gitee-gitea/py_util/"
             },
-        }
+        } 
     ]
 }
