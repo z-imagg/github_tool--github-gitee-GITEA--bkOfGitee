@@ -11,14 +11,29 @@ import re
 import random
 
 import sys
-# print(sys.argv)
-CurScriptNm:str=sys.argv[0]
-assert sys.argv[1:].__len__() == 3, "断言错误，参数个数必须等于3. 【用法为】python3 me.py 父git仓库路径 导入命令休眠秒数起点 导入命令休眠秒数增量"
-_BgRp:str=sys.argv[1]
-_sleepSeconds:str=int(sys.argv[2])
-_sleepSecEnd:str=int(sys.argv[3])
+import argparse
 
-assert _sleepSeconds >=8 and _sleepSecEnd >= 5
+parser = argparse.ArgumentParser(
+prog=f'submodule_list.py',
+description='【子模块导入命令生成】')
+
+parser.add_argument('-f', '--parent_repo_dir',required=True,type=str,help="【父仓库本地目录,常为gitee仓库】")
+parser.add_argument('-o', '--goal_org',required=True,type=str,help="【目标，gitee的组织】")
+parser.add_argument('-s', '--sleep_seconds',required=True,type=int,help="【 相邻两个子模块导入命令间休眠秒数】")
+parser.add_argument('-t', '--sleep_seconds_delta',required=True,type=int,help="【 相邻两个子模块导入命令间休眠秒数随机增量】")
+args=parser.parse_args()
+
+MINI_sleep_seconds = 8
+MINI_sleep_seconds_delta = 5
+
+# print(sys.argv)
+_BgRp:str=args.parent_repo_dir
+giteeMirrorOrgName=args.goal_org #"imagg"
+_sleepSeconds:str=args.sleep_seconds
+_sleepSecEnd:str=args.sleep_seconds+args.sleep_seconds_delta
+
+errMsg=f"断言失败【 sleep_seconds>={MINI_sleep_seconds} 】且【【 sleep_seconds_delta>={MINI_sleep_seconds_delta} 】】"
+assert _sleepSeconds >= MINI_sleep_seconds and args.sleep_seconds_delta >= MINI_sleep_seconds_delta, errMsg
 
 BgRp:git.Repo=git.Repo(path=_BgRp)
 BgRpRmt:git.Remote=BgRp.remote()
@@ -26,7 +41,6 @@ originUrlBgRp:str=BgRpRmt.url
 # BgRp_:cmd.Git=BgRp.git
 
 repoK:git.Submodule
-giteeMirrorOrgName="imagg"
 #                    //host/org /repo
 urlReExpr=r"http[s]?://(.+)/(.+)/(.+)\.git"
 _GIT=".git"

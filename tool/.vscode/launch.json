@@ -10,7 +10,8 @@
             "request": "launch",
             "program": "submodule_list.py",
             "console": "integratedTerminal",
-            "args": ["/fridaAnlzAp/gitee/imagg/pytorch--pytorch", "8", "9"]
+            "args": [  "--parent_repo_dir", "/fridaAnlzAp/gitee/imagg/pytorch--pytorch", "--goal_org", "imagg", "--sleep_seconds", "8", "--sleep_seconds_delta", "4"]
+            // python /fridaAnlzAp/github-gitee-gitea/tool/submodule_list.py --parent_repo_dir /fridaAnlzAp/gitee/imagg/pytorch--pytorch  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9
         },
         {
             "name": "Python调试【当前py文件携带参数】",
