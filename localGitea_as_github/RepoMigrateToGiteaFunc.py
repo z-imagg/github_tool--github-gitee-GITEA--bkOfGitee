@@ -33,7 +33,12 @@ def giteaMigrateApi(repoUrl:str,mirrorBaseUrl,mirrorOrg,giteaBaseUrl:str,giteaTo
     "username": repo_url.orgName,
   }
   newOrg_resp=httpx.post(url=newOrg_url,json=newOrg_reqBodyDct,verify=False)
-
+  newOrg_ok=newOrg_resp.status_code==422 or newOrg_resp.is_success
+  if(not newOrg_ok):
+    newOrg_msg=f"创建gitea组织失败，【${newOrg_resp.status_code}, ${newOrg_resp.text}】"
+    print(newOrg_msg)
+    return False
+  
 
   """
   curl -k -X 'POST' \
