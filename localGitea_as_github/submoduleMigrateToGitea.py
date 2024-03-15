@@ -22,13 +22,15 @@ def submoduleLsMigrateToGitea():
     description='【子模块导入命令生成】')
 
     parser.add_argument('-f', '--parent_repo_dir',required=True,type=str,help="【父仓库本地目录,常为gitee仓库】",metavar='')
+    parser.add_argument('-m', '--mirror_base_url',required=True,type=str,help="【 】",metavar='')
     parser.add_argument('-m', '--mirror_org_name',required=True,type=str,help="【 】",metavar='')
     args=parser.parse_args()
 
 
     # print(sys.argv)
     _BgRp:str=args.parent_repo_dir
-    mirrorOrgName:str=args.mirror_org_name
+    mirrorBaseUrl:str=args.mirror_base_url
+    mirrorOrg:str=args.mirror_org_name
 
     BgRp:git.Repo=git.Repo(path=_BgRp)
     BgRpRmt:git.Remote=BgRp.remote()
@@ -39,8 +41,8 @@ def submoduleLsMigrateToGitea():
     for k,repoK in enumerate( BgRp.submodules):
         # print(f"{repoK.name}, {repoK.path}, {repoK.url}, {repoK.hexsha}, {repoK.branch_name}, {repoK.branch_path}")
         url_k=gitRepoUrlParseF(repoK.url)
-        newRepoName=f"{url_k.orgName}--{url_k.repoName}"
-        mirror_repo_url=GitRepoUrlC(host="gitee.com", orgName=mirrorOrgName,repoName=newRepoName)
+        newRepo=f"{url_k.orgName}--{url_k.repoName}"
+        mirror_repo_url=GitRepoUrlC(baseUrl=mirrorBaseUrl, orgName=mirrorOrg,repoName=newRepo)
         
         giteaMigrateApi(mirror_repo_url.url_str(), gitea_base_url, gitea_token)
 
