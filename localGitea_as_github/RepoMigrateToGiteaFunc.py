@@ -12,6 +12,7 @@ import sys
 sys.path.append("/fridaAnlzAp/github-gitee-gitea/py_util/")
 
 from GitRepoUrlParser import gitMirrorRepoUrlParseF,gitRepoUrlParseF
+from gitea_api_cfg import gitea_migrate_api_timeout_seconds
 
 def giteaMigrateApi(originRpoUrlTxt:str,mirrorBaseUrl,mirrorOrg,giteaBaseUrl:str,giteaToken:str):
   originRpoUrl=gitRepoUrlParseF(originRpoUrlTxt)
@@ -65,7 +66,7 @@ def giteaMigrateApi(originRpoUrlTxt:str,mirrorBaseUrl,mirrorOrg,giteaBaseUrl:str
   migrate_desc=f"原始仓库【{originRpoUrlTxt}】 ；迁移内容【{originRpoUrlTxt}】--->【{mirrRpoUrlTxt}】"
   migrate_begin_desc=f"正在迁移...，耗时取决于仓库大小; {migrate_desc}"
   print(migrate_begin_desc)
-  resp_migrate=httpx.post(url=apiUrl_migrate,json=reqBdy_migrate,verify=False,timeout=120)
+  resp_migrate=httpx.post(url=apiUrl_migrate,json=reqBdy_migrate,verify=False,timeout=gitea_migrate_api_timeout_seconds)
   resp_migrate_desc=f"【gitea迁移接口响应】状态码【{resp_migrate.status_code}】，响应文本【{resp_migrate.text}】"
   ok_migrate= resp_migrate.status_code == 409 or resp_migrate.is_success #409 gitea 已经存在仓库
   ok_migrate_desc=f'{"迁移成功" if ok_migrate else "迁移失败" }，{msg_migrate}'
