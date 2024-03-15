@@ -11,7 +11,7 @@ class GitRepoUrlC:
         self.repoName:str=repoName
     
     def url_str(self):
-        return f"https://{self.baseUrl}/{self.orgName}/{self.repoName}.git"
+        return f"{self.baseUrl}/{self.orgName}/{self.repoName}.git"
     
     def to_mirror_url(self,mirrorBaseUrl:str,mirrorOrg:str):
         that=GitRepoUrlC(None,None,None)
