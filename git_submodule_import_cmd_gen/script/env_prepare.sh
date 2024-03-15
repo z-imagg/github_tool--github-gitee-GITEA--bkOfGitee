@@ -9,7 +9,7 @@ echo ${D}, ${F}
 
 #####
 cd ${D}
-Hm="${D}/.."
+Hm="${D}/../.." # == /fridaAnlzAp/github-gitee-gitea/
 
 
 VENV_HOME=${Hm}/.venv
