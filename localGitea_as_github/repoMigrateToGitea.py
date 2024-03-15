@@ -5,6 +5,12 @@
 
 import argparse
 
+# import sys
+# #或者 export PYTHONPATH=/fridaAnlzAp/github-gitee-gitea/py_util/
+# sys.path.append("/fridaAnlzAp/github-gitee-gitea/py_util/")
+# from GitRepoUrlParser import gitRepoUrlParseF,gitMirrorRepoUrlParseF,GitRepoUrlC
+
+
 from  RepoMigrateToGiteaFunc import giteaMigrateApi
 from gitea_api_cfg import gitea_base_url, gitea_token
 
