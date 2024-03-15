@@ -4,6 +4,8 @@
 # 【文件作用】 工具类 解析形如 https://github.com/NVlabs/stylegan.git 具有两层路径 的git仓库地址 
 
 
+_GIT=".git"
+
 class GitRepoUrlC:
     def __init__(self,baseUrl:str,orgName:str,repoName:str) -> None:
         self.baseUrl:str=baseUrl #TODO host--> baseUrl
@@ -26,7 +28,6 @@ import re
 GitRepoUrlReExpr=r"(http[s]?://.+)/(.+)/(.+)\.git"
 
 def gitRepoUrlParseF(repoUrl:str) -> GitRepoUrlC:
-    _GIT=".git"
     # print(f"{repoK.name}, {repoK.path}, {repoK.url}, {repoK.hexsha}, {repoK.branch_name}, {repoK.branch_path}")
     repoUrl=repoUrl if repoUrl.endswith(_GIT) else f"{repoUrl}{_GIT}"
     urlMatch=re.match(pattern=GitRepoUrlReExpr,string=repoUrl)
@@ -50,7 +51,6 @@ class GitMirrorRepoUrlC:
 #                                 //host/mrrOrg/org--repo
 GitMirrorRepoUrlReExpr=r"(http[s]?://.+)/(.+)/(.+)--(.+)\.git"
 def gitMirrorRepoUrlParseF(repoUrl:str)->GitMirrorRepoUrlC:
-  _GIT=".git"
   repoUrl=repoUrl if repoUrl.endswith(_GIT) else f"{repoUrl}{_GIT}"
   urlMatch=re.match(pattern=GitMirrorRepoUrlReExpr,string=repoUrl)
   assert urlMatch is not None,f"断言失败，【{repoUrl}】不匹配正则表达式【{GitMirrorRepoUrlReExpr}】【忽略末尾.git】"

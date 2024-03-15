@@ -11,8 +11,8 @@ import httpx
 import sys
 sys.path.append("/fridaAnlzAp/github-gitee-gitea/py_util/")
 
-from GitRepoUrlParser import gitMirrorRepoUrlParseF,gitRepoUrlParseF
-from gitea_api_cfg import gitea_migrate_api_timeout_seconds
+from GitRepoUrlParser import gitMirrorRepoUrlParseF,gitRepoUrlParseF,_GIT
+from gitea_api_cfg import gitea_base_url,gitea_migrate_api_timeout_seconds
 
 def giteaMigrateApi(originRpoUrlTxt:str,mirrorBaseUrl,mirrorOrg,giteaBaseUrl:str,giteaToken:str):
   originRpoUrl=gitRepoUrlParseF(originRpoUrlTxt)
@@ -35,7 +35,7 @@ def giteaMigrateApi(originRpoUrlTxt:str,mirrorBaseUrl,mirrorOrg,giteaBaseUrl:str
   }
   resp_newOrg=httpx.post(url=apiUrl_newOrg,json=reqBdy_newOrg,verify=False)
   ok_newOrg=resp_newOrg.status_code==422 or resp_newOrg.is_success #422 gitea 已经存在组织
-  msg_newOrg=f'{"创建gitea组织成功" if resp_newOrg else "创建gitea组织失败" }，【${resp_newOrg.status_code}, ${resp_newOrg.text}】'
+  msg_newOrg=f'{"创建gitea组织成功" if resp_newOrg else "创建gitea组织失败" }，【{resp_newOrg.status_code}, {resp_newOrg.text}】'
   print(msg_newOrg)
   if(not ok_newOrg):
     return False
@@ -63,7 +63,8 @@ def giteaMigrateApi(originRpoUrlTxt:str,mirrorBaseUrl,mirrorOrg,giteaBaseUrl:str
     "repo_owner": originRpoUrl.orgName,
     "repo_name": originRpoUrl.repoName
   }
-  migrate_desc=f"原始仓库【{originRpoUrlTxt}】 ；迁移内容【{originRpoUrlTxt}】--->【{mirrRpoUrlTxt}】"
+  resultRpoUrlTxt=f"{gitea_base_url}/{originRpoUrl.orgName}/{originRpoUrl.repoName}{_GIT}"
+  migrate_desc=f"原始仓库【{originRpoUrlTxt}】 ；迁移内容【{mirrRpoUrlTxt}】--->【{resultRpoUrlTxt}】"
   migrate_begin_desc=f"正在迁移...，耗时取决于仓库大小; {migrate_desc}"
   print(migrate_begin_desc)
   resp_migrate=httpx.post(url=apiUrl_migrate,json=reqBdy_migrate,verify=False,timeout=gitea_migrate_api_timeout_seconds)
