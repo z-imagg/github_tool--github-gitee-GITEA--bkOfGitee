@@ -143,12 +143,20 @@ git clone https://github.com/pytorch/pytorch.git
 # 接收对象中: 100% (1114420/1114420), 996.62 MiB | 48.22 MiB/s, 完成.
 # 处理 delta 中: 100% (891946/891946), 完成.
 # 正在更新文件: 100% (18471/18471), 完成.
-
-cd /fridaAnlzAp/pytorch/
-git submodule update --init --recursive
-#再去更新 /fridaAnlzAp/pytorch 中的 子模块们， 也 将一样是 正常从 "假github" 克隆到的
-#当让 如果有 lazygit 去更新子模块也一样的
 ```
+
+```shell
+cd /fridaAnlzAp/pytorch/
+git checkout v1.3.1
+```
+
+```shell
+#更新 /fridaAnlzAp/pytorch 中的 子模块们， 也 将一样是 正常从 "假github" 克隆到的
+#当让 如果有 lazygit 去更新子模块也一样的
+git submodule update --init   --progress #--recursive
+```
+更新子模块的输出日志, [pytorch_submodule_update_init_progress-out.log.txt](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/localGitea_as_github/doc/pytorch_submodule_update_init_progress-out.log.txt)
+
 
 ## 网页(可重执行)请求协议分析方案
 
