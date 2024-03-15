@@ -13,18 +13,19 @@ import random
 import sys
 import argparse
 
+MINI_sleep_seconds = 8
+MINI_sleep_seconds_delta = 5
+
 parser = argparse.ArgumentParser(
 prog=f'gitSubmoduleImportCmdGen.py',
 description='【子模块导入命令生成】')
 
 parser.add_argument('-f', '--parent_repo_dir',required=True,type=str,help="【父仓库本地目录,常为gitee仓库】",metavar='')
 parser.add_argument('-o', '--goal_org',required=True,type=str,help="【目标，gitee的组织】",metavar='')
-parser.add_argument('-s', '--sleep_seconds',required=True,type=int,help="【 相邻两个子模块导入命令间休眠秒数】",metavar='')
-parser.add_argument('-t', '--sleep_seconds_delta',required=True,type=int,help="【 相邻两个子模块导入命令间休眠秒数随机增量】",metavar='')
+parser.add_argument('-s', '--sleep_seconds',required=True,type=int,help=f"【 相邻两个子模块导入命令间休眠秒数】最小【{MINI_sleep_seconds}秒】",metavar='')
+parser.add_argument('-t', '--sleep_seconds_delta',required=True,type=int,help=f"【 相邻两个子模块导入命令间休眠秒数随机增量】最小【{MINI_sleep_seconds_delta}秒】",metavar='')
 args=parser.parse_args()
 
-MINI_sleep_seconds = 8
-MINI_sleep_seconds_delta = 5
 
 # print(sys.argv)
 _BgRp:str=args.parent_repo_dir
