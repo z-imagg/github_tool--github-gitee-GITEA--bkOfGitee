@@ -54,15 +54,15 @@ def giteaMigrateApi(repoUrl:str,mirrorBaseUrl,mirrorOrg,giteaBaseUrl:str,giteaTo
   """
 
   mirrorRepoUrl=repo_url.to_mirror_url(mirrorBaseUrl,mirrorOrg)
-  #https://github.local/api/v1/repos/migrate?token=b1d490eaf6b88a6c37bd482d8e05e3a0061f066c
+  mirrRepo_url:str = mirrorRepoUrl.url_str()
   migrate_url=f'{giteaBaseUrl}/api/v1/repos/migrate?token={giteaToken}'
   reqBodyDct={
-      "clone_addr": mirrorRepoUrl.url_str(),
+      "clone_addr": mirrRepo_url,
     "repo_owner": repo_url.orgName,
     "repo_name": repo_url.repoName
   }
   resp=httpx.post(url=migrate_url,json=reqBodyDct,verify=False)
-  msg=f"【gitea迁移接口响应】状态码【{resp.status_code}】，响应文本【{resp.text}】"
+  msg=f"【gitea迁移接口响应】状态码【{resp.status_code}】，响应文本【{resp.text}】\n 【迁移仓库】【{repoUrl}】--->【{mirrRepo_url}】"
   ok= resp.status_code == 409 or resp.is_success #409 gitea 已经存在仓库
   msg=f'{"迁移成功" if ok else "迁移失败" }，{msg}'
   print(msg)
