@@ -134,16 +134,9 @@ submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/gitee/imagg/pytor
 cd /fridaAnlzAp/
 git clone https://github.com/pytorch/pytorch.git
 #/fridaAnlzAp/pytorch/.git/config
-
-# 正克隆到 'pytorch'...
-# remote: Enumerating objects: 1114420, done.
-# remote: Counting objects: 100% (1114420/1114420), done.
-# remote: Compressing objects: 100% (216628/216628), done.
-# remote: Total 1114420 (delta 891946), reused 1114420 (delta 891946), pack-reused 0
-# 接收对象中: 100% (1114420/1114420), 996.62 MiB | 48.22 MiB/s, 完成.
-# 处理 delta 中: 100% (891946/891946), 完成.
-# 正在更新文件: 100% (18471/18471), 完成.
 ```
+pytorch克隆日志, [pytorch_clone-out.log.txt](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/localGitea_as_github/doc/pytorch_clone-out.log.txt)
+
 
 ```shell
 cd /fridaAnlzAp/pytorch/
@@ -155,7 +148,7 @@ git checkout v1.3.1
 #当让 如果有 lazygit 去更新子模块也一样的
 git submodule update --init   --progress #--recursive
 ```
-更新子模块的输出日志, [pytorch_submodule_update_init_progress-out.log.txt](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/localGitea_as_github/doc/pytorch_submodule_update_init_progress-out.log.txt)
+pytorch更新子模块的输出日志, [pytorch_submodule_update_init_progress-out.log.txt](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/localGitea_as_github/doc/pytorch_submodule_update_init_progress-out.log.txt)
 
 
 ## 网页(可重执行)请求协议分析方案
