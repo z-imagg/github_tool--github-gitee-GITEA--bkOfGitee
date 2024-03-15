@@ -6,3 +6,4 @@ gitee_api_fetch/reqTemplate/*.json
 nohup.out
 
 **/.venv/
+**/__pycache__
