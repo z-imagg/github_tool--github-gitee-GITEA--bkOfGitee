@@ -11,25 +11,13 @@ import httpx
 import sys
 sys.path.append("/fridaAnlzAp/github-gitee-gitea/py_util/")
 
-from GitRepoUrlParser import gitRepoUrlParseF
+from GitRepoUrlParser import gitMirrorRepoUrlParseF
 
 def giteaMigrateApi(from_repo_url:str,goal_gitea_base_url:str,goal_gitea_token:str):
   repoUrl:str=from_repo_url
   giteaBaseUrl:str=goal_gitea_base_url
   giteaToken:str=goal_gitea_token
-
-  #                    //host/mrrOrg/org--repo
-  urlReExpr=r"http[s]?://(.+)/(.+)/(.+)--(.+)\.git"
-  _GIT=".git"
-  repoUrl=repoUrl if repoUrl.endswith(_GIT) else f"{repoUrl}{_GIT}"
-  urlMatch=re.match(pattern=urlReExpr,string=repoUrl)
-  assert urlMatch is not None,f"断言失败，【{repoUrl}】不匹配正则表达式【{urlReExpr}】【忽略末尾.git】"
-  urlFieldLs=urlMatch.groups()
-  assert urlFieldLs is not None and len(urlFieldLs) == 4 ,f"断言失败，【{repoUrl}】不匹配正则表达式【{urlReExpr}】【忽略末尾.git】，字段个数不为4，实际字段个数【{len(urlFieldLs)}】"
-  giteaHost=urlFieldLs[0]
-  _mirrorOrgName=urlFieldLs[1]
-  orgName=urlFieldLs[2]
-  repoName=urlFieldLs[3]
+  repo_url=gitMirrorRepoUrlParseF(repoUrl)
 
 
   """
@@ -49,8 +37,8 @@ def giteaMigrateApi(from_repo_url:str,goal_gitea_base_url:str,goal_gitea_token:s
   migrate_url=f'{giteaBaseUrl}/api/v1/repos/migrate?token={giteaToken}'
   reqBodyDct={
       "clone_addr": repoUrl,
-    "repo_owner": orgName,
-    "repo_name": repoName
+    "repo_owner": repo_url.orgName,
+    "repo_name": repo_url.repoName
   }
   resp=httpx.post(url=migrate_url,json=reqBodyDct)
   msg=f"【gitea迁移接口响应】状态码【{resp.status_code}】，响应文本【{resp.text}】"
