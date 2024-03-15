@@ -16,6 +16,24 @@ from GitRepoUrlParser import gitMirrorRepoUrlParseF,gitRepoUrlParseF
 def giteaMigrateApi(repoUrl:str,mirrorBaseUrl,mirrorOrg,giteaBaseUrl:str,giteaToken:str):
   repo_url=gitRepoUrlParseF(repoUrl)
 
+  """
+  curl -X 'POST' \
+  'https://github.local/api/v1/orgs?token=ab2a90dc37210a4f9aee91ab959bfa3fc1f6ba6a' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "username": "NVlabs",
+  "repo_admin_change_team_access": true,
+  "visibility": "public"
+}'
+"""
+
+  newOrg_url=f'{giteaBaseUrl}/api/v1/orgs?token={giteaToken}'
+  newOrg_reqBodyDct={
+    "username": repo_url.orgName,
+  }
+  newOrg_resp=httpx.post(url=newOrg_url,json=newOrg_reqBodyDct,verify=False)
+
 
   """
   curl -k -X 'POST' \
