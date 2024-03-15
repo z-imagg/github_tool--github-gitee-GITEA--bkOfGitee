@@ -157,6 +157,66 @@ submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/gitee/imagg/pytor
 没捕捉到从无到有导入子仓库们的日志，这是重新执行的日志了 , http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/localGitea_as_github/doc/example_out_ReExec_submoduleMigrateToGitea__pytorch_v1.3.1.log.txt
 
 
+----
+
+确定要完整递归整个torch仓库的任意子模块
+
+```shell
+find /fridaAnlzAp/pytorch -name .gitmodules
+# /fridaAnlzAp/pytorch/.gitmodules
+# /fridaAnlzAp/pytorch/third_party/fbgemm/.gitmodules
+# /fridaAnlzAp/pytorch/third_party/gloo/.gitmodules
+# /fridaAnlzAp/pytorch/third_party/ideep/.gitmodules
+# /fridaAnlzAp/pytorch/third_party/onnx/.gitmodules
+# /fridaAnlzAp/pytorch/third_party/onnx/third_party/pybind11/.gitmodules
+# /fridaAnlzAp/pytorch/third_party/onnx-tensorrt/.gitmodules
+# /fridaAnlzAp/pytorch/third_party/onnx-tensorrt/third_party/onnx/.gitmodules
+# /fridaAnlzAp/pytorch/third_party/onnx-tensorrt/third_party/onnx/third_party/pybind11/.gitmodules
+# /fridaAnlzAp/pytorch/third_party/protobuf/.gitmodules
+# /fridaAnlzAp/pytorch/third_party/pybind11/.gitmodules
+
+
+#用上面找到的.gitmodules文件的目录，执行 以下命令 导入、迁移
+
+gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/gitee/imagg/pytorch--pytorch/third_party/fbgemm/  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9 | bash -x 
+submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/gitee/imagg/pytorch--pytorch/third_party/fbgemm/   --mirror_base_ur https://gitee.com  --mirror_org_name imagg
+#迁移到本地gitea，可能会返回好了，但实际上很久都导入不完，这种情况要检查。（比如 拿到迁移响应后、再查询该仓库是否真的ok了）
+
+
+gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/pytorch/third_party/gloo/  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9 | bash -x 
+submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/pytorch/third_party/gloo/   --mirror_base_ur https://gitee.com  --mirror_org_name imagg
+
+
+gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/pytorch/third_party/ideep/  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9 | bash -x 
+submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/pytorch/third_party/ideep/   --mirror_base_ur https://gitee.com  --mirror_org_name imagg
+
+gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/pytorch/third_party/onnx/  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9 | bash -x 
+submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/pytorch/third_party/onnx/   --mirror_base_ur https://gitee.com  --mirror_org_name imagg
+
+gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/pytorch/third_party/onnx/third_party/pybind11/  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9 | bash -x 
+submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/pytorch/third_party/onnx/third_party/pybind11/   --mirror_base_ur https://gitee.com  --mirror_org_name imagg
+
+gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/pytorch/third_party/onnx-tensorrt/  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9 | bash -x 
+submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/pytorch/third_party/onnx-tensorrt/   --mirror_base_ur https://gitee.com  --mirror_org_name imagg
+
+gitSubmoduleImportCmdGen.py --parent_repo_dir  /fridaAnlzAp/pytorch/third_party/onnx-tensorrt/third_party/onnx/  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9 | bash -x 
+submoduleMigrateToGitea.py --from_parent_repo_dir  /fridaAnlzAp/pytorch/third_party/onnx-tensorrt/third_party/onnx/   --mirror_base_ur https://gitee.com  --mirror_org_name imagg
+
+gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/pytorch/third_party/onnx-tensorrt/third_party/onnx/third_party/pybind11/  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9 | bash -x 
+submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/pytorch/third_party/onnx-tensorrt/third_party/onnx/third_party/pybind11/   --mirror_base_ur https://gitee.com  --mirror_org_name imagg
+
+gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/pytorch/third_party/protobuf/  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9 | bash -x 
+submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/pytorch/third_party/protobuf/   --mirror_base_ur https://gitee.com  --mirror_org_name imagg
+
+gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/pytorch/third_party/pybind11/  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9 | bash -x 
+submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/pytorch/third_party/pybind11/.   --mirror_base_ur https://gitee.com  --mirror_org_name imagg
+
+```
+
+----
+
+
+
 #### 步5、 从 "假github"(本地gitea服务) 正常克隆仓库、及其子模块们
 
 由于 , [use-local-gitea-as-github](http://giteaz:3000/wiki/github-gitee-gitea#use-local-gitea-as-github)
