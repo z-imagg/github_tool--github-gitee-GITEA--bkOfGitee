@@ -4,6 +4,9 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
+        ///////////////导入用到的运行配置//////////////
+
         {
             "name": "Python调试【submodule_list.py】【固定参数】",
             "type": "debugpy",
@@ -20,6 +23,46 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "args": "${command:pickArgs}"
+        },
+
+
+        ///////////////迁移用到的运行配置//////////////
+
+        {
+            "name": "运行submoduleMigrateToGitea.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "submoduleMigrateToGitea.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--from_parent_repo_dir",
+                "/fridaAnlzAp/gitee/imagg/pytorch--pytorch/",
+                "--mirror_base_ur",
+                "https://gitee.com",
+                "--mirror_org_name",
+                "imagg"
+            ],
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}:/fridaAnlzAp/github-gitee-gitea/py_util/"
+            },
+        },
+        {
+            "name": "运行repoMigrateToGitea.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "repoMigrateToGitea.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--from_repo_url",
+                "https://github.com/NVlabs/cub.git",
+                "--mirror_base_ur",
+                "https://gitee.com",
+                "--mirror_org_name",
+                "imagg"
+            ],
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}:/fridaAnlzAp/github-gitee-gitea/py_util/"
+            },
         }
     ]
 }
