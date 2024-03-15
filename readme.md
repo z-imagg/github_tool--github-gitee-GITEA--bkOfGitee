@@ -108,7 +108,16 @@ repoMigrateToGitea.py --from_repo_url https://github.com/pytorch/pytorch.git  --
 submoduleMigrateToGitea.py有丢失子模块, 改用git命令列出子模块后再迁移仓库
 
 ```shell
-git --no-pager  config --file .gitmodules --get-regexp url | awk '{ print $2 }' | xargs -I% repoMigrateToGitea.py --from_repo_url % --mirror_base_ur https://gitee.com  --mirror_org_name imagg
+alias AliasXargsGitConfigGetUrlAwkPrint2Xargs_RepoMigrateToGitea_py_gitee_imagg='xargs -I@ git --no-pager  config --file @  --get-regexp url  | awk "{ print \$2 }" | xargs -I% repoMigrateToGitea.py --from_repo_url % --mirror_base_ur https://gitee.com  --mirror_org_name imagg'
+```
+
+```shell
+#此时只迁移直接子模块，不迁移子子模块。因为子模块内容没更新，所以看不到子模块的子模块
+echo "/fridaAnlzAp/gitee/imagg/pytorch--pytorch/.gitmodules"  | AliasXargsGitConfigGetUrlAwkPrint2Xargs_RepoMigrateToGitea_py_gitee_imagg
+#即使写成下面的find，也只找到直接目录下的一个.gitmodules文件，所以此时下面的find和上面的echo效果一致
+# find /fridaAnlzAp/gitee/imagg/pytorch--pytorch/ -name .gitmodules -type f  | AliasXargsGitConfigGetUrlAwkPrint2Xargs_RepoMigrateToGitea_py_gitee_imagg
+
+#注意时候， 现在没有  "假github" 供给你更新子模块，  "假github"(即本地gitea服务) 在 步5 才有。
 ```
 
 #### ~~步4、 迁移各子模块（gitee-->本地gitea）~~(submoduleMigrateToGitea.py有丢失子模块)
@@ -145,7 +154,7 @@ cd /fridaAnlzAp/pytorch/
 git checkout v1.3.1
 ```
 
-##### submodule 
+##### 更新直接子模块 
 ```shell
 #更新 /fridaAnlzAp/pytorch 中的 子模块们， 也 将一样是 正常从 "假github" 克隆到的
 #当让 如果有 lazygit 去更新子模块也一样的
@@ -153,6 +162,11 @@ git submodule update --init   --progress #--recursive
 ```
 pytorch更新子模块的输出日志, [pytorch_submodule_update_init_progress-out.log.txt](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/localGitea_as_github/doc/pytorch_submodule_update_init_progress-out.log.txt)
 
+##### 迁移子子模块
+```shell
+#下面的find会找到多个.gitmodules文件
+find /fridaAnlzAp/pytorch/ -name .gitmodules -type f  | AliasXargsGitConfigGetUrlAwkPrint2Xargs_RepoMigrateToGitea_py_gitee_imagg
+```
 
 ## 网页(可重执行)请求协议分析方案
 
