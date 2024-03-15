@@ -38,6 +38,12 @@ deactivate
 ```
 
 
+torch的[2770e3addd9f05101705f0fef85a163e0034b8a5](https://github.com/pytorch/pytorch/tree/2770e3addd9f05101705f0fef85a163e0034b8a5)  的  [子模块导入日志](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/git_submodule_import_cmd_gen/doc/example_submodule_import--2770e3addd9f05101705f0fef85a163e0034b8a5.log.txt)
+
+troch版本[v1.3.1](https://github.com/pytorch/pytorch/commits/refs/tags/v1.3.1/) 【 [ee77ccbb6da4e2efd83673e798acf7081bc03564](https://github.com/pytorch/pytorch/commit/ee77ccbb6da4e2efd83673e798acf7081bc03564) 】
+的[子模块导入日志](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/git_submodule_import_cmd_gen/doc/example_torch-v1.3.1_submodule_import--v_1.3.1--ee77ccbb6da4e2efd83673e798acf7081bc03564.log.txt)
+
+
 ## 网页(可重执行)请求协议分析方案
 
 **可重执行 即 同一个请求可原样多次执行 即 无签名字段**
