@@ -158,7 +158,8 @@ git checkout v1.3.1
 ```shell
 #更新 /fridaAnlzAp/pytorch 中的 子模块们， 也 将一样是 正常从 "假github" 克隆到的
 #当让 如果有 lazygit 去更新子模块也一样的
-git submodule update --init   --progress #--recursive
+git submodule update --init   --progress 
+#不要加选项 --recursive 、 --depth N ，（N是1、2、3...）， 理由是 一个源码仓库torch-v1.3.1要正常编译 是会依赖子模块，但通常其子模块对子子模块？？？暂时不考虑 ，等编译时遇到问题再说。
 ```
 pytorch更新子模块的输出日志, [pytorch_submodule_update_init_progress-out.log.txt](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/localGitea_as_github/doc/pytorch_submodule_update_init_progress-out.log.txt)
 
