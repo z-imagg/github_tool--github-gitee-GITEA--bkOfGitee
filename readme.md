@@ -1,3 +1,23 @@
+## 使用手册
+
+#### 1. 导入父仓库
+
+```shell
+cd /fridaAnlzAp/gitee/orgk/
+
+import_githubRepo_to_gitee.sh --from_repo https://github.com/pytorch/pytorch.git  --goal_org imagg  --goal_repoPath pytorch--pytorch --goal_repoName pytorch--pytorch  --goal_repoDesc 来源https://github.com/pytorch/pytorch.git
+
+#/fridaAnlzAp/gitee/orgk/pytorch/.git/
+```
+
+#### 2. 导入各子模块
+
+```shell
+source /fridaAnlzAp/github-gitee-gitea/tool/env_prepare.sh
+python /fridaAnlzAp/github-gitee-gitea/tool/submodule_list.py  /fridaAnlzAp/gitee/orgk/pytorch/  8
+```
+
+
 ## 网页(可重执行)请求协议分析方案
 
 **可重执行 即 同一个请求可原样多次执行 即 无签名字段**
