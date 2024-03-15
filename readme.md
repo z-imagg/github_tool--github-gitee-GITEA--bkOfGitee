@@ -103,7 +103,15 @@ source /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/.venv/bin/activate
 repoMigrateToGitea.py --from_repo_url https://github.com/pytorch/pytorch.git  --mirror_base_ur https://gitee.com  --mirror_org_name imagg
 ```
 
-#### 步4、 迁移各子模块（gitee-->本地gitea）
+#### 步4、迁移各子模块（gitee-->本地gitea）
+
+submoduleMigrateToGitea.py有丢失子模块, 改用git命令列出子模块后再迁移仓库
+
+```shell
+git --no-pager  config --file .gitmodules --get-regexp url | awk '{ print $2 }' | xargs -I% repoMigrateToGitea.py --from_repo_url % --mirror_base_ur https://gitee.com  --mirror_org_name imagg
+```
+
+#### ~~步4、 迁移各子模块（gitee-->本地gitea）~~(submoduleMigrateToGitea.py有丢失子模块)
 
 
 ##### 执行命令

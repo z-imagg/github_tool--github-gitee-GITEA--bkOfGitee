@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: <encoding name> -*-
 
+# TODO 对于pytorch.git v1.3.1 submoduleMigrateToGitea.py有丢失子模块, 请你查找原因并改正。 暂时 改用git命令列出子模块后再迁移仓库。 
 # 【文件作用】 遍历给定git仓库中的子模块列表， 将子模块url替换为镜像模块url，迁移该镜像url到gitea
 
 # from pathlib import Path
