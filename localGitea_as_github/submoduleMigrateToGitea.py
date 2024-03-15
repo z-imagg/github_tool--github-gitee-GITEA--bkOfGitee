@@ -40,12 +40,13 @@ def submoduleLsMigrateToGitea():
     repoK:git.Submodule
     for k,repoK in enumerate( BgRp.submodules):
         # print(f"{repoK.name}, {repoK.path}, {repoK.url}, {repoK.hexsha}, {repoK.branch_name}, {repoK.branch_path}")
-        url_k=gitRepoUrlParseF(repoK.url)
-        newRepo=f"{url_k.orgName}--{url_k.repoName}"
-        mrrRepoUrl=GitRepoUrlC(baseUrl=mirrorBaseUrl, orgName=mirrorOrg,repoName=newRepo)
-        mrrRepoUrlTxt=mrrRepoUrl.url_str()
+        originUrl=gitRepoUrlParseF(repoK.url)
+        originUrlTxt=originUrl.url_str()
+        # newRepo=f"{originUrl.orgName}--{originUrl.repoName}"
+        # mrrRepoUrl=GitRepoUrlC(baseUrl=mirrorBaseUrl, orgName=mirrorOrg,repoName=newRepo)
+        # mrrRepoUrlTxt=mrrRepoUrl.url_str()
         
-        giteaMigrateApi(mrrRepoUrlTxt, gitea_base_url, gitea_token)
+        giteaMigrateApi(originUrlTxt, args.mirror_base_url, args.mirror_org_name, gitea_base_url, gitea_token)
 
 if __name__=="__main__":
     submoduleLsMigrateToGitea()
