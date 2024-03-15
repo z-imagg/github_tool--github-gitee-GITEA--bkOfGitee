@@ -14,7 +14,7 @@ import sys
 import argparse
 
 parser = argparse.ArgumentParser(
-prog=f'submodule_list.py',
+prog=f'gitSubmoduleImportCmdGen.py',
 description='【子模块导入命令生成】')
 
 parser.add_argument('-f', '--parent_repo_dir',required=True,type=str,help="【父仓库本地目录,常为gitee仓库】")
