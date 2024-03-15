@@ -34,10 +34,11 @@ def giteaMigrateApi(originRpoUrlTxt:str,mirrorBaseUrl,mirrorOrg,giteaBaseUrl:str
   }
   resp_newOrg=httpx.post(url=apiUrl_newOrg,json=reqBdy_newOrg,verify=False)
   ok_newOrg=resp_newOrg.status_code==422 or resp_newOrg.is_success #422 gitea 已经存在组织
+  msg_newOrg=f'{"创建gitea组织成功" if resp_newOrg else "创建gitea组织失败" }，【${resp_newOrg.status_code}, ${resp_newOrg.text}】'
+  print(msg_newOrg)
   if(not ok_newOrg):
-    msg_newOrg=f"创建gitea组织失败，【${resp_newOrg.status_code}, ${resp_newOrg.text}】"
-    print(msg_newOrg)
     return False
+  
   
 
   """
@@ -61,9 +62,13 @@ def giteaMigrateApi(originRpoUrlTxt:str,mirrorBaseUrl,mirrorOrg,giteaBaseUrl:str
     "repo_owner": originRpoUrl.orgName,
     "repo_name": originRpoUrl.repoName
   }
+  migrate_desc=f"原始仓库【{originRpoUrlTxt}】 ；迁移内容【{originRpoUrlTxt}】--->【{mirrRpoUrlTxt}】"
+  migrate_begin_desc=f"正在迁移...，耗时取决于仓库大小; {migrate_desc}"
+  print(migrate_begin_desc)
   resp_migrate=httpx.post(url=apiUrl_migrate,json=reqBdy_migrate,verify=False,timeout=120)
-  msg_migrate=f"【gitea迁移接口响应】状态码【{resp_migrate.status_code}】，响应文本【{resp_migrate.text}】\n 【迁移仓库】【{originRpoUrlTxt}】--->【{mirrRpoUrlTxt}】"
+  resp_migrate_desc=f"【gitea迁移接口响应】状态码【{resp_migrate.status_code}】，响应文本【{resp_migrate.text}】"
   ok_migrate= resp_migrate.status_code == 409 or resp_migrate.is_success #409 gitea 已经存在仓库
-  msg_migrate=f'{"迁移成功" if ok_migrate else "迁移失败" }，{msg_migrate}'
+  ok_migrate_desc=f'{"迁移成功" if ok_migrate else "迁移失败" }，{msg_migrate}'
+  msg_migrate=f'{ok_migrate_desc}; {migrate_desc}; \n {resp_migrate_desc}'
   print(msg_migrate)
   return ok_migrate
