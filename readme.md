@@ -123,6 +123,12 @@ repoMigrateToGitea.py --from_repo_url https://github.com/pytorch/pytorch.git  --
 submoduleMigrateToGitea.py有丢失子模块, 改用git命令列出子模块后再迁移仓库
 
 ```shell
+find /fridaAnlzAp/pytorch  -name .gitmodules -type f | xargs -I@ git --no-pager  config --file @  --get-regexp url  | awk "{ print \$2 }"  |wc 
+#     45      45    1747
+#子模块个数，可能还有没更新到的子模块
+```
+
+```shell
 alias AliasXargsGitConfigGetUrlAwkPrint2Xargs_RepoMigrateToGitea_py_gitee_imagg='xargs -I@ git --no-pager  config --file @  --get-regexp url  | awk "{ print \$2 }" | xargs -I% repoMigrateToGitea.py --from_repo_url % --mirror_base_ur https://gitee.com  --mirror_org_name imagg'
 ```
 
