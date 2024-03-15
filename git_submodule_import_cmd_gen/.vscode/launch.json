@@ -11,7 +11,7 @@
             "program": "submodule_list.py",
             "console": "integratedTerminal",
             "args": [  "--parent_repo_dir", "/fridaAnlzAp/gitee/imagg/pytorch--pytorch", "--goal_org", "imagg", "--sleep_seconds", "8", "--sleep_seconds_delta", "4"]
-            // python /fridaAnlzAp/github-gitee-gitea/tool/submodule_list.py --parent_repo_dir /fridaAnlzAp/gitee/imagg/pytorch--pytorch  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9
+            // python /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/gitee/imagg/pytorch--pytorch  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9
         },
         {
             "name": "Python调试【当前py文件携带参数】",
