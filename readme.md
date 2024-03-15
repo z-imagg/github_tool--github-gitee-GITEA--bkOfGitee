@@ -9,8 +9,16 @@
 
 #### 步1、 导入父仓库
 
+#####  bash命令提示
 ```shell
-cd /fridaAnlzAp/gitee/orgk/
+export PATH=/fridaAnlzAp/github-gitee-gitea/gitee_api_fetch_ts/script:$PATH
+source /fridaAnlzAp/github-gitee-gitea/gitee_api_fetch_tsscript/bash-complete--import_githubRepo_to_gitee.sh
+chmod +x /fridaAnlzAp/github-gitee-gitea/gitee_api_fetch_tsscript/import_githubRepo_to_gitee.sh
+```
+
+##### 执行命令
+```shell
+cd /fridaAnlzAp/gitee/imagg/
 
 import_githubRepo_to_gitee.sh --from_repo https://github.com/pytorch/pytorch.git  --goal_org imagg  --goal_repoPath pytorch--pytorch --goal_repoName pytorch--pytorch  --goal_repoDesc 来源https://github.com/pytorch/pytorch.git
 
@@ -22,14 +30,15 @@ git checkout v1.3.1
 
 #### 步2、 导入各子模块
 
+#####  bash命令提示
 ```shell
-#bash命令提示
 export PATH=/fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/:$PATH
 source /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/script/bash-complete--gitSubmoduleImportCmdGen.sh
 chmod +x /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/gitSubmoduleImportCmdGen.py
 ```
 
 
+##### 执行命令
 ```shell
 bash /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/script/env_prepare.sh
 source /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/.venv/bin/activate
