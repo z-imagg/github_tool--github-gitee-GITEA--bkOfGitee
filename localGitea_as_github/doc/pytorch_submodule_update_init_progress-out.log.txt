@@ -1,0 +1,273 @@
+(.venv) z@mchr:/fridaAnlzAp/pytorch$ git checkout v1.3.1
+正在更新文件: 100% (18507/18507), 完成.
+HEAD 目前位于 ee77ccbb6da Enabling inplace relu
+(.venv) z@mchr:/fridaAnlzAp/pytorch$ git submodule update --init   --progress
+子模组 'android/libs/fbjni'（https://github.com/IvanKobzarev/fbjni.git）已对路径 'android/libs/fbjni' 注册
+子模组 'third_party/NNPACK_deps/FP16'（https://github.com/Maratyszcza/FP16.git）已对路径 'third_party/FP16' 注册
+子模组 'third_party/NNPACK_deps/FXdiv'（https://github.com/Maratyszcza/FXdiv.git）已对路径 'third_party/FXdiv' 注册
+子模组 'third_party/NNPACK'（https://github.com/Maratyszcza/NNPACK.git）已对路径 'third_party/NNPACK' 注册
+子模组 'third_party/QNNPACK'（https://github.com/pytorch/QNNPACK）已对路径 'third_party/QNNPACK' 注册
+子模组 'third_party/benchmark'（https://github.com/google/benchmark.git）已对路径 'third_party/benchmark' 注册
+子模组 'third-party/cpuinfo'（https://github.com/pytorch/cpuinfo.git）已对路径 'third_party/cpuinfo' 注册
+子模组 'third_party/cub'（https://github.com/NVlabs/cub.git）已对路径 'third_party/cub' 注册
+子模组 'third_party/eigen'（https://github.com/eigenteam/eigen-git-mirror.git）已对路径 'third_party/eigen' 注册
+子模组 'third_party/fbgemm'（https://github.com/pytorch/fbgemm）已对路径 'third_party/fbgemm' 注册
+子模组 'third_party/foxi'（https://github.com/houseroad/foxi.git）已对路径 'third_party/foxi' 注册
+子模组 'third_party/gemmlowp/gemmlowp'（https://github.com/google/gemmlowp.git）已对路径 'third_party/gemmlowp/gemmlowp' 注册
+子模组 'third_party/gloo'（https://github.com/facebookincubator/gloo）已对路径 'third_party/gloo' 注册
+子模组 'third_party/googletest'（https://github.com/google/googletest.git）已对路径 'third_party/googletest' 注册
+子模组 'third_party/ideep'（https://github.com/intel/ideep）已对路径 'third_party/ideep' 注册
+子模组 'third_party/ios-cmake'（https://github.com/Yangqing/ios-cmake.git）已对路径 'third_party/ios-cmake' 注册
+子模组 'third_party/nccl/nccl'（https://github.com/NVIDIA/nccl）已对路径 'third_party/nccl/nccl' 注册
+子模组 'third_party/neon2sse'（https://github.com/intel/ARM_NEON_2_x86_SSE.git）已对路径 'third_party/neon2sse' 注册
+子模组 'third_party/onnx'（https://github.com/onnx/onnx.git）已对路径 'third_party/onnx' 注册
+子模组 'third_party/onnx-tensorrt'（https://github.com/onnx/onnx-tensorrt）已对路径 'third_party/onnx-tensorrt' 注册
+子模组 'third_party/protobuf'（https://github.com/protocolbuffers/protobuf.git）已对路径 'third_party/protobuf' 注册
+子模组 'third_party/NNPACK_deps/psimd'（https://github.com/Maratyszcza/psimd.git）已对路径 'third_party/psimd' 注册
+子模组 'third_party/NNPACK_deps/pthreadpool'（https://github.com/Maratyszcza/pthreadpool.git）已对路径 'third_party/pthreadpool' 注册
+子模组 'third_party/pybind11'（https://github.com/pybind/pybind11.git）已对路径 'third_party/pybind11' 注册
+子模组 'third_party/python-enum'（https://github.com/PeachPy/enum34.git）已对路径 'third_party/python-enum' 注册
+子模组 'third_party/python-peachpy'（https://github.com/Maratyszcza/PeachPy.git）已对路径 'third_party/python-peachpy' 注册
+子模组 'third_party/python-six'（https://github.com/benjaminp/six.git）已对路径 'third_party/python-six' 注册
+子模组 'third_party/sleef'（https://github.com/shibatch/sleef）已对路径 'third_party/sleef' 注册
+子模组 'third_party/tbb'（https://github.com/01org/tbb）已对路径 'third_party/tbb' 注册
+子模组 'third_party/zstd'（https://github.com/facebook/zstd.git）已对路径 'third_party/zstd' 注册
+正克隆到 '/fridaAnlzAp/pytorch/android/libs/fbjni'...
+remote: Enumerating objects: 78, done.        
+remote: Counting objects: 100% (78/78), done.        
+remote: Compressing objects: 100% (68/68), done.        
+remote: Total 78 (delta 5), reused 78 (delta 5), pack-reused 0        
+接收对象中: 100% (78/78), 76.31 KiB | 15.26 MiB/s, 完成.
+处理 delta 中: 100% (5/5), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/FP16'...
+remote: Enumerating objects: 293, done.        
+remote: Counting objects: 100% (293/293), done.        
+remote: Compressing objects: 100% (128/128), done.        
+remote: Total 293 (delta 161), reused 293 (delta 161), pack-reused 0        
+接收对象中: 100% (293/293), 108.77 KiB | 15.54 MiB/s, 完成.
+处理 delta 中: 100% (161/161), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/FXdiv'...
+remote: Enumerating objects: 275, done.        
+remote: Counting objects: 100% (275/275), done.        
+remote: Compressing objects: 100% (117/117), done.        
+remote: Total 275 (delta 132), reused 275 (delta 132), pack-reused 0        
+接收对象中: 100% (275/275), 44.31 KiB | 8.86 MiB/s, 完成.
+处理 delta 中: 100% (132/132), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/NNPACK'...
+remote: Enumerating objects: 2952, done.        
+remote: Counting objects: 100% (2952/2952), done.        
+remote: Compressing objects: 100% (937/937), done.        
+remote: Total 2952 (delta 1985), reused 2952 (delta 1985), pack-reused 0        
+接收对象中: 100% (2952/2952), 1.10 MiB | 30.45 MiB/s, 完成.
+处理 delta 中: 100% (1985/1985), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/QNNPACK'...
+remote: Enumerating objects: 1482, done.        
+remote: Counting objects: 100% (1482/1482), done.        
+remote: Compressing objects: 100% (382/382), done.        
+remote: Total 1482 (delta 1076), reused 1482 (delta 1076), pack-reused 0        
+接收对象中: 100% (1482/1482), 540.35 KiB | 27.02 MiB/s, 完成.
+处理 delta 中: 100% (1076/1076), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/benchmark'...
+remote: Enumerating objects: 8522, done.        
+remote: Counting objects: 100% (8522/8522), done.        
+remote: Compressing objects: 100% (2372/2372), done.        
+remote: Total 8522 (delta 5688), reused 8522 (delta 5688), pack-reused 0        
+接收对象中: 100% (8522/8522), 2.76 MiB | 36.66 MiB/s, 完成.
+处理 delta 中: 100% (5688/5688), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/cpuinfo'...
+remote: Enumerating objects: 6560, done.        
+remote: Counting objects: 100% (6560/6560), done.        
+remote: Compressing objects: 100% (1499/1499), done.        
+remote: Total 6560 (delta 4941), reused 6560 (delta 4941), pack-reused 0        
+接收对象中: 100% (6560/6560), 5.13 MiB | 38.03 MiB/s, 完成.
+处理 delta 中: 100% (4941/4941), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/cub'...
+remote: Enumerating objects: 39497, done.        
+remote: Counting objects: 100% (39497/39497), done.        
+remote: Compressing objects: 100% (4758/4758), done.        
+remote: Total 39497 (delta 34073), reused 39497 (delta 34073), pack-reused 0        
+接收对象中: 100% (39497/39497), 20.73 MiB | 49.59 MiB/s, 完成.
+处理 delta 中: 100% (34073/34073), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/eigen'...
+remote: Enumerating objects: 103968, done.        
+remote: Counting objects: 100% (103968/103968), done.        
+remote: Compressing objects: 100% (17517/17517), done.        
+remote: Total 103968 (delta 86184), reused 103968 (delta 86184), pack-reused 0        
+接收对象中: 100% (103968/103968), 95.41 MiB | 48.61 MiB/s, 完成.
+处理 delta 中: 100% (86184/86184), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/fbgemm'...
+remote: Enumerating objects: 24561, done.        
+remote: Counting objects: 100% (24561/24561), done.        
+remote: Compressing objects: 100% (4626/4626), done.        
+remote: Total 24561 (delta 19189), reused 24561 (delta 19189), pack-reused 0        
+接收对象中: 100% (24561/24561), 14.26 MiB | 46.96 MiB/s, 完成.
+处理 delta 中: 100% (19189/19189), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/foxi'...
+remote: Enumerating objects: 122, done.        
+remote: Counting objects: 100% (122/122), done.        
+remote: Compressing objects: 100% (48/48), done.        
+remote: Total 122 (delta 73), reused 122 (delta 73), pack-reused 0        
+接收对象中: 100% (122/122), 58.58 KiB | 19.53 MiB/s, 完成.
+处理 delta 中: 100% (73/73), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/gemmlowp/gemmlowp'...
+remote: Enumerating objects: 3557, done.        
+remote: Counting objects: 100% (3557/3557), done.        
+remote: Compressing objects: 100% (1096/1096), done.        
+remote: Total 3557 (delta 2441), reused 3557 (delta 2441), pack-reused 0        
+接收对象中: 100% (3557/3557), 3.58 MiB | 33.33 MiB/s, 完成.
+处理 delta 中: 100% (2441/2441), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/gloo'...
+remote: Enumerating objects: 4358, done.        
+remote: Counting objects: 100% (4358/4358), done.        
+remote: Compressing objects: 100% (1015/1015), done.        
+remote: Total 4358 (delta 3310), reused 4358 (delta 3310), pack-reused 0        
+接收对象中: 100% (4358/4358), 1.40 MiB | 33.22 MiB/s, 完成.
+处理 delta 中: 100% (3310/3310), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/googletest'...
+remote: Enumerating objects: 27308, done.        
+remote: Counting objects: 100% (27308/27308), done.        
+remote: Compressing objects: 100% (5499/5499), done.        
+remote: Total 27308 (delta 20240), reused 27308 (delta 20240), pack-reused 0        
+接收对象中: 100% (27308/27308), 12.86 MiB | 48.07 MiB/s, 完成.
+处理 delta 中: 100% (20240/20240), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/ideep'...
+remote: Enumerating objects: 6779, done.        
+remote: Counting objects: 100% (6779/6779), done.        
+remote: Compressing objects: 100% (2313/2313), done.        
+remote: Total 6779 (delta 4421), reused 6779 (delta 4421), pack-reused 0        
+接收对象中: 100% (6779/6779), 2.01 MiB | 34.33 MiB/s, 完成.
+处理 delta 中: 100% (4421/4421), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/ios-cmake'...
+remote: Enumerating objects: 230, done.        
+remote: Counting objects: 100% (230/230), done.        
+remote: Compressing objects: 100% (120/120), done.        
+remote: Total 230 (delta 80), reused 230 (delta 80), pack-reused 0        
+接收对象中: 100% (230/230), 53.25 KiB | 10.65 MiB/s, 完成.
+处理 delta 中: 100% (80/80), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/nccl/nccl'...
+remote: Enumerating objects: 3401, done.        
+remote: Counting objects: 100% (3401/3401), done.        
+remote: Compressing objects: 100% (973/973), done.        
+remote: Total 3401 (delta 2388), reused 3401 (delta 2388), pack-reused 0        
+接收对象中: 100% (3401/3401), 3.18 MiB | 45.87 MiB/s, 完成.
+处理 delta 中: 100% (2388/2388), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/neon2sse'...
+remote: Enumerating objects: 183, done.        
+remote: Counting objects: 100% (183/183), done.        
+remote: Compressing objects: 100% (80/80), done.        
+remote: Total 183 (delta 102), reused 183 (delta 102), pack-reused 0        
+接收对象中: 100% (183/183), 467.26 KiB | 31.15 MiB/s, 完成.
+处理 delta 中: 100% (102/102), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/onnx'...
+remote: Enumerating objects: 48540, done.        
+remote: Counting objects: 100% (48540/48540), done.        
+remote: Compressing objects: 100% (17421/17421), done.        
+remote: Total 48540 (delta 29133), reused 48540 (delta 29133), pack-reused 0        
+接收对象中: 100% (48540/48540), 32.47 MiB | 50.92 MiB/s, 完成.
+处理 delta 中: 100% (29133/29133), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/onnx-tensorrt'...
+remote: Enumerating objects: 1774, done.        
+remote: Counting objects: 100% (1774/1774), done.        
+remote: Compressing objects: 100% (524/524), done.        
+remote: Total 1774 (delta 1231), reused 1774 (delta 1231), pack-reused 0        
+接收对象中: 100% (1774/1774), 2.38 MiB | 34.27 MiB/s, 完成.
+处理 delta 中: 100% (1231/1231), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/protobuf'...
+remote: Enumerating objects: 180195, done.        
+remote: Counting objects: 100% (180195/180195), done.        
+remote: Compressing objects: 100% (36063/36063), done.        
+remote: Total 180195 (delta 129821), reused 180195 (delta 129821), pack-reused 0        
+接收对象中: 100% (180195/180195), 148.98 MiB | 48.03 MiB/s, 完成.
+处理 delta 中: 100% (129821/129821), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/psimd'...
+remote: Enumerating objects: 152, done.        
+remote: Counting objects: 100% (152/152), done.        
+remote: Compressing objects: 100% (49/49), done.        
+remote: Total 152 (delta 71), reused 152 (delta 71), pack-reused 0        
+接收对象中: 100% (152/152), 26.65 KiB | 6.66 MiB/s, 完成.
+处理 delta 中: 100% (71/71), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/pthreadpool'...
+remote: Enumerating objects: 769, done.        
+remote: Counting objects: 100% (769/769), done.        
+remote: Compressing objects: 100% (243/243), done.        
+remote: Total 769 (delta 477), reused 769 (delta 477), pack-reused 0        
+接收对象中: 100% (769/769), 230.20 KiB | 17.71 MiB/s, 完成.
+处理 delta 中: 100% (477/477), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/pybind11'...
+remote: Enumerating objects: 27577, done.        
+remote: Counting objects: 100% (27577/27577), done.        
+remote: Compressing objects: 100% (5904/5904), done.        
+remote: Total 27577 (delta 19375), reused 27577 (delta 19375), pack-reused 0        
+接收对象中: 100% (27577/27577), 10.61 MiB | 46.22 MiB/s, 完成.
+处理 delta 中: 100% (19375/19375), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/python-enum'...
+remote: Enumerating objects: 19, done.        
+remote: Counting objects: 100% (19/19), done.        
+remote: Compressing objects: 100% (17/17), done.        
+remote: Total 19 (delta 0), reused 19 (delta 0), pack-reused 0        
+接收对象中: 100% (19/19), 42.08 KiB | 21.04 MiB/s, 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/python-peachpy'...
+remote: Enumerating objects: 2158, done.        
+remote: Counting objects: 100% (2158/2158), done.        
+remote: Compressing objects: 100% (632/632), done.        
+remote: Total 2158 (delta 1499), reused 2158 (delta 1499), pack-reused 0        
+接收对象中: 100% (2158/2158), 1.12 MiB | 22.89 MiB/s, 完成.
+处理 delta 中: 100% (1499/1499), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/python-six'...
+remote: Enumerating objects: 1915, done.        
+remote: Counting objects: 100% (1915/1915), done.        
+remote: Compressing objects: 100% (771/771), done.        
+remote: Total 1915 (delta 1140), reused 1915 (delta 1140), pack-reused 0        
+接收对象中: 100% (1915/1915), 1.72 MiB | 37.50 MiB/s, 完成.
+处理 delta 中: 100% (1140/1140), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/sleef'...
+remote: Enumerating objects: 5229, done.        
+remote: Counting objects: 100% (5229/5229), done.        
+remote: Compressing objects: 100% (1113/1113), done.        
+remote: Total 5229 (delta 4080), reused 5229 (delta 4080), pack-reused 0        
+接收对象中: 100% (5229/5229), 4.89 MiB | 43.19 MiB/s, 完成.
+处理 delta 中: 100% (4080/4080), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/tbb'...
+remote: Enumerating objects: 26097, done.        
+remote: Counting objects: 100% (26097/26097), done.        
+remote: Compressing objects: 100% (7187/7187), done.        
+remote: Total 26097 (delta 18504), reused 26097 (delta 18504), pack-reused 0        
+接收对象中: 100% (26097/26097), 47.97 MiB | 57.05 MiB/s, 完成.
+处理 delta 中: 100% (18504/18504), 完成.
+正克隆到 '/fridaAnlzAp/pytorch/third_party/zstd'...
+remote: Enumerating objects: 60265, done.        
+remote: Counting objects: 100% (60265/60265), done.        
+remote: Compressing objects: 100% (14573/14573), done.        
+remote: Total 60265 (delta 44988), reused 60265 (delta 44988), pack-reused 0        
+接收对象中: 100% (60265/60265), 37.71 MiB | 47.80 MiB/s, 完成.
+处理 delta 中: 100% (44988/44988), 完成.
+子模组路径 'android/libs/fbjni'：检出 'dc916917e1500527f83bc24b1767a123d6549ca0'
+子模组路径 'third_party/FP16'：检出 'febbb1c163726b5db24bed55cc9dc42529068997'
+子模组路径 'third_party/FXdiv'：检出 'b742d1143724d646cd0f914646f1240eacf5bd73'
+子模组路径 'third_party/NNPACK'：检出 'c039579abe21f5756e0f0e45e8e767adccc11852'
+子模组路径 'third_party/QNNPACK'：检出 '7d2a4e9931a82adc3814275b6219a03e24e36b4c'
+子模组路径 'third_party/benchmark'：检出 '505be96ab23056580a3a2315abba048f4428b04e'
+子模组路径 'third_party/cpuinfo'：检出 '89fe1695edf9ee14c22f815f24bac45577a4f135'
+子模组路径 'third_party/cub'：检出 '285aeebaa34b0e8a7670867a2e66c1a52d998d6a'
+子模组路径 'third_party/eigen'：检出 'd41dc4dd74acce21fb210e7625d5d135751fa9e5'
+子模组路径 'third_party/fbgemm'：检出 '7dfeddb5ba976f47471275b2468909dfd9b577e1'
+子模组路径 'third_party/foxi'：检出 '8f74bc4df3a4cfc69b1a3eadf62aa29d9961c72d'
+子模组路径 'third_party/gemmlowp/gemmlowp'：检出 '3fb5c176c17c765a3492cd2f0321b0dab712f350'
+子模组路径 'third_party/gloo'：检出 'ca528e32fea9ca8f2b16053cff17160290fc84ce'
+子模组路径 'third_party/googletest'：检出 '2fe3bd994b3189899d93f1d5a881e725e046fdc2'
+子模组路径 'third_party/ideep'：检出 '78eafa5d231924e3d525d4dc46de880015257618'
+子模组路径 'third_party/ios-cmake'：检出 '8abaed637d56f1337d6e1d2c4026e25c1eade724'
+子模组路径 'third_party/nccl/nccl'：检出 '7c72dee660e4d055b81721dd6b03e4e1c0a983cf'
+子模组路径 'third_party/neon2sse'：检出 '97a126f08ce318023be604d03f88bf0820a9464a'
+子模组路径 'third_party/onnx'：检出 '034921bd574cc84906b7996c07873454b7dd4135'
+子模组路径 'third_party/onnx-tensorrt'：检出 'cb3d8066f20e6bca306454934d09d6abd826264a'
+子模组路径 'third_party/protobuf'：检出 '48cb18e5c419ddd23d9badcfe4e9df7bde1979b2'
+子模组路径 'third_party/psimd'：检出 '90a938f30ba414ada2f4b00674ee9631d7d85e19'
+子模组路径 'third_party/pthreadpool'：检出 '13da0b4c21d17f94150713366420baaf1b5a46f4'
+子模组路径 'third_party/pybind11'：检出 '25abf7efba0b2990f5a6dfb0a31bc65c0f2f4d17'
+子模组路径 'third_party/python-enum'：检出 '4cfedc426c4e2fc52e3f5c2b4297e15ed8d6b8c7'
+子模组路径 'third_party/python-peachpy'：检出 '07d8fde8ac45d7705129475c0f94ed8925b93473'
+子模组路径 'third_party/python-six'：检出 '15e31431af97e5e64b80af0a3f598d382bcdd49a'
+子模组路径 'third_party/sleef'：检出 '7f523de651585fe25cade462efccca647dcc8d02'
+子模组路径 'third_party/tbb'：检出 'a51a90bc609bb73db8ea13841b5cf7aa4344d4a9'
+子模组路径 'third_party/zstd'：检出 'aec56a52fbab207fc639a1937d1e708a282edca8'

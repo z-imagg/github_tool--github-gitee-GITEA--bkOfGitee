@@ -1,3 +1,5 @@
+https://github.com/pytorch/pytorch/commit/2770e3addd9f05101705f0fef85a163e0034b8a5
+
 (.venv) z@mchr:~$ python /fridaAnlzAp/github-gitee-gitea/tool/submodule_list.py  /fridaAnlzAp/gitee/imagg/pytorch--pytorch/  8  | bash -x 
 + import_githubRepo_to_gitee.sh --from_repo https://github.com/pybind/pybind11.git --goal_org imagg --goal_repoPath pybind--pybind11 --goal_repoName pybind--pybind11 --goal_repoDesc 【镜像】https://github.com/pybind/pybind11.git
 【命令行参数打印】[object Object],https://github.com/pybind/pybind11.git, imagg, pybind--pybind11, pybind--pybind11, 【镜像】https://github.com/pybind/pybind11.git

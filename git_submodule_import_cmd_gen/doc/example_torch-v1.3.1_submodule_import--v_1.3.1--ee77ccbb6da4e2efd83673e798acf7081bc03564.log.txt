@@ -1,0 +1,322 @@
+https://github.com/pytorch/pytorch/commits/refs/tags/v1.3.1/
+https://github.com/pytorch/pytorch/commit/ee77ccbb6da4e2efd83673e798acf7081bc03564
+
+
+
+z@mchr:~$ source /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/.venv/bin/activate
+(.venv) z@mchr:~$ gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/gitee/imagg/pytorch--pytorch  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9 | bash -x
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/pybind/pybind11.git --goal_org imagg --goal_repoPath pybind--pybind11 --goal_repoName pybind--pybind11 --goal_repoDesc 【镜像】https://github.com/pybind/pybind11.git
+【命令行参数打印】[object Object],https://github.com/pybind/pybind11.git, imagg, pybind--pybind11, pybind--pybind11, 【镜像】https://github.com/pybind/pybind11.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2Fpybind%2Fpybind11.git&user_sync_code=&password_sync_code=&project%5Bname%5D=pybind--pybind11&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=pybind--pybind11&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2Fpybind%2Fpybind11.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/pybind/pybind11.git  --->   https://gitee.com/imaggpybind--pybind11.git】
++ sleep 14
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/NVlabs/cub.git --goal_org imagg --goal_repoPath NVlabs--cub --goal_repoName NVlabs--cub --goal_repoDesc 【镜像】https://github.com/NVlabs/cub.git
+【命令行参数打印】[object Object],https://github.com/NVlabs/cub.git, imagg, NVlabs--cub, NVlabs--cub, 【镜像】https://github.com/NVlabs/cub.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2FNVlabs%2Fcub.git&user_sync_code=&password_sync_code=&project%5Bname%5D=NVlabs--cub&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=NVlabs--cub&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2FNVlabs%2Fcub.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/NVlabs/cub.git  --->   https://gitee.com/imaggNVlabs--cub.git】
++ sleep 10
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/eigenteam/eigen-git-mirror.git --goal_org imagg --goal_repoPath eigenteam--eigen-git-mirror --goal_repoName eigenteam--eigen-git-mirror --goal_repoDesc 【镜像】https://github.com/eigenteam/eigen-git-mirror.git
+【命令行参数打印】[object Object],https://github.com/eigenteam/eigen-git-mirror.git, imagg, eigenteam--eigen-git-mirror, eigenteam--eigen-git-mirror, 【镜像】https://github.com/eigenteam/eigen-git-mirror.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2Feigenteam%2Feigen-git-mirror.git&user_sync_code=&password_sync_code=&project%5Bname%5D=eigenteam--eigen-git-mirror&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=eigenteam--eigen-git-mirror&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2Feigenteam%2Feigen-git-mirror.git&project%5Bpublic%5D=1&language=0】
+location.href = "/imagg/eigenteam--eigen-git-mirror";
+
+
+执行gitee导入仓库成功【https://github.com/eigenteam/eigen-git-mirror.git  --->   https://gitee.com/imaggeigenteam--eigen-git-mirror.git】
++ sleep 8
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/google/googletest.git --goal_org imagg --goal_repoPath google--googletest --goal_repoName google--googletest --goal_repoDesc 【镜像】https://github.com/google/googletest.git
+【命令行参数打印】[object Object],https://github.com/google/googletest.git, imagg, google--googletest, google--googletest, 【镜像】https://github.com/google/googletest.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2Fgoogle%2Fgoogletest.git&user_sync_code=&password_sync_code=&project%5Bname%5D=google--googletest&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=google--googletest&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2Fgoogle%2Fgoogletest.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/google/googletest.git  --->   https://gitee.com/imagggoogle--googletest.git】
++ sleep 9
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/google/benchmark.git --goal_org imagg --goal_repoPath google--benchmark --goal_repoName google--benchmark --goal_repoDesc 【镜像】https://github.com/google/benchmark.git
+【命令行参数打印】[object Object],https://github.com/google/benchmark.git, imagg, google--benchmark, google--benchmark, 【镜像】https://github.com/google/benchmark.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2Fgoogle%2Fbenchmark.git&user_sync_code=&password_sync_code=&project%5Bname%5D=google--benchmark&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=google--benchmark&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2Fgoogle%2Fbenchmark.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/google/benchmark.git  --->   https://gitee.com/imagggoogle--benchmark.git】
++ sleep 15
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/protocolbuffers/protobuf.git --goal_org imagg --goal_repoPath protocolbuffers--protobuf --goal_repoName protocolbuffers--protobuf --goal_repoDesc 【镜像】https://github.com/protocolbuffers/protobuf.git
+【命令行参数打印】[object Object],https://github.com/protocolbuffers/protobuf.git, imagg, protocolbuffers--protobuf, protocolbuffers--protobuf, 【镜像】https://github.com/protocolbuffers/protobuf.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2Fprotocolbuffers%2Fprotobuf.git&user_sync_code=&password_sync_code=&project%5Bname%5D=protocolbuffers--protobuf&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=protocolbuffers--protobuf&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2Fprotocolbuffers%2Fprotobuf.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/protocolbuffers/protobuf.git  --->   https://gitee.com/imaggprotocolbuffers--protobuf.git】
++ sleep 15
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/Yangqing/ios-cmake.git --goal_org imagg --goal_repoPath Yangqing--ios-cmake --goal_repoName Yangqing--ios-cmake --goal_repoDesc 【镜像】https://github.com/Yangqing/ios-cmake.git
+【命令行参数打印】[object Object],https://github.com/Yangqing/ios-cmake.git, imagg, Yangqing--ios-cmake, Yangqing--ios-cmake, 【镜像】https://github.com/Yangqing/ios-cmake.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2FYangqing%2Fios-cmake.git&user_sync_code=&password_sync_code=&project%5Bname%5D=Yangqing--ios-cmake&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=Yangqing--ios-cmake&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2FYangqing%2Fios-cmake.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/Yangqing/ios-cmake.git  --->   https://gitee.com/imaggYangqing--ios-cmake.git】
++ sleep 17
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/Maratyszcza/NNPACK.git --goal_org imagg --goal_repoPath Maratyszcza--NNPACK --goal_repoName Maratyszcza--NNPACK --goal_repoDesc 【镜像】https://github.com/Maratyszcza/NNPACK.git
+【命令行参数打印】[object Object],https://github.com/Maratyszcza/NNPACK.git, imagg, Maratyszcza--NNPACK, Maratyszcza--NNPACK, 【镜像】https://github.com/Maratyszcza/NNPACK.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2FMaratyszcza%2FNNPACK.git&user_sync_code=&password_sync_code=&project%5Bname%5D=Maratyszcza--NNPACK&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=Maratyszcza--NNPACK&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2FMaratyszcza%2FNNPACK.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/Maratyszcza/NNPACK.git  --->   https://gitee.com/imaggMaratyszcza--NNPACK.git】
++ sleep 10
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/facebookincubator/gloo.git --goal_org imagg --goal_repoPath facebookincubator--gloo --goal_repoName facebookincubator--gloo --goal_repoDesc 【镜像】https://github.com/facebookincubator/gloo.git
+【命令行参数打印】[object Object],https://github.com/facebookincubator/gloo.git, imagg, facebookincubator--gloo, facebookincubator--gloo, 【镜像】https://github.com/facebookincubator/gloo.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2Ffacebookincubator%2Fgloo.git&user_sync_code=&password_sync_code=&project%5Bname%5D=facebookincubator--gloo&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=facebookincubator--gloo&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2Ffacebookincubator%2Fgloo.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/facebookincubator/gloo.git  --->   https://gitee.com/imaggfacebookincubator--gloo.git】
++ sleep 17
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/Maratyszcza/pthreadpool.git --goal_org imagg --goal_repoPath Maratyszcza--pthreadpool --goal_repoName Maratyszcza--pthreadpool --goal_repoDesc 【镜像】https://github.com/Maratyszcza/pthreadpool.git
+【命令行参数打印】[object Object],https://github.com/Maratyszcza/pthreadpool.git, imagg, Maratyszcza--pthreadpool, Maratyszcza--pthreadpool, 【镜像】https://github.com/Maratyszcza/pthreadpool.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2FMaratyszcza%2Fpthreadpool.git&user_sync_code=&password_sync_code=&project%5Bname%5D=Maratyszcza--pthreadpool&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=Maratyszcza--pthreadpool&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2FMaratyszcza%2Fpthreadpool.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/Maratyszcza/pthreadpool.git  --->   https://gitee.com/imaggMaratyszcza--pthreadpool.git】
++ sleep 11
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/Maratyszcza/FXdiv.git --goal_org imagg --goal_repoPath Maratyszcza--FXdiv --goal_repoName Maratyszcza--FXdiv --goal_repoDesc 【镜像】https://github.com/Maratyszcza/FXdiv.git
+【命令行参数打印】[object Object],https://github.com/Maratyszcza/FXdiv.git, imagg, Maratyszcza--FXdiv, Maratyszcza--FXdiv, 【镜像】https://github.com/Maratyszcza/FXdiv.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2FMaratyszcza%2FFXdiv.git&user_sync_code=&password_sync_code=&project%5Bname%5D=Maratyszcza--FXdiv&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=Maratyszcza--FXdiv&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2FMaratyszcza%2FFXdiv.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/Maratyszcza/FXdiv.git  --->   https://gitee.com/imaggMaratyszcza--FXdiv.git】
++ sleep 11
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/Maratyszcza/FP16.git --goal_org imagg --goal_repoPath Maratyszcza--FP16 --goal_repoName Maratyszcza--FP16 --goal_repoDesc 【镜像】https://github.com/Maratyszcza/FP16.git
+【命令行参数打印】[object Object],https://github.com/Maratyszcza/FP16.git, imagg, Maratyszcza--FP16, Maratyszcza--FP16, 【镜像】https://github.com/Maratyszcza/FP16.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2FMaratyszcza%2FFP16.git&user_sync_code=&password_sync_code=&project%5Bname%5D=Maratyszcza--FP16&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=Maratyszcza--FP16&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2FMaratyszcza%2FFP16.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/Maratyszcza/FP16.git  --->   https://gitee.com/imaggMaratyszcza--FP16.git】
++ sleep 12
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/Maratyszcza/psimd.git --goal_org imagg --goal_repoPath Maratyszcza--psimd --goal_repoName Maratyszcza--psimd --goal_repoDesc 【镜像】https://github.com/Maratyszcza/psimd.git
+【命令行参数打印】[object Object],https://github.com/Maratyszcza/psimd.git, imagg, Maratyszcza--psimd, Maratyszcza--psimd, 【镜像】https://github.com/Maratyszcza/psimd.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2FMaratyszcza%2Fpsimd.git&user_sync_code=&password_sync_code=&project%5Bname%5D=Maratyszcza--psimd&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=Maratyszcza--psimd&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2FMaratyszcza%2Fpsimd.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/Maratyszcza/psimd.git  --->   https://gitee.com/imaggMaratyszcza--psimd.git】
++ sleep 17
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/facebook/zstd.git --goal_org imagg --goal_repoPath facebook--zstd --goal_repoName facebook--zstd --goal_repoDesc 【镜像】https://github.com/facebook/zstd.git
+【命令行参数打印】[object Object],https://github.com/facebook/zstd.git, imagg, facebook--zstd, facebook--zstd, 【镜像】https://github.com/facebook/zstd.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2Ffacebook%2Fzstd.git&user_sync_code=&password_sync_code=&project%5Bname%5D=facebook--zstd&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=facebook--zstd&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2Ffacebook%2Fzstd.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/facebook/zstd.git  --->   https://gitee.com/imaggfacebook--zstd.git】
++ sleep 17
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/pytorch/cpuinfo.git --goal_org imagg --goal_repoPath pytorch--cpuinfo --goal_repoName pytorch--cpuinfo --goal_repoDesc 【镜像】https://github.com/pytorch/cpuinfo.git
+【命令行参数打印】[object Object],https://github.com/pytorch/cpuinfo.git, imagg, pytorch--cpuinfo, pytorch--cpuinfo, 【镜像】https://github.com/pytorch/cpuinfo.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2Fpytorch%2Fcpuinfo.git&user_sync_code=&password_sync_code=&project%5Bname%5D=pytorch--cpuinfo&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=pytorch--cpuinfo&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2Fpytorch%2Fcpuinfo.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/pytorch/cpuinfo.git  --->   https://gitee.com/imaggpytorch--cpuinfo.git】
++ sleep 15
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/PeachPy/enum34.git --goal_org imagg --goal_repoPath PeachPy--enum34 --goal_repoName PeachPy--enum34 --goal_repoDesc 【镜像】https://github.com/PeachPy/enum34.git
+【命令行参数打印】[object Object],https://github.com/PeachPy/enum34.git, imagg, PeachPy--enum34, PeachPy--enum34, 【镜像】https://github.com/PeachPy/enum34.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2FPeachPy%2Fenum34.git&user_sync_code=&password_sync_code=&project%5Bname%5D=PeachPy--enum34&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=PeachPy--enum34&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2FPeachPy%2Fenum34.git&project%5Bpublic%5D=1&language=0】
+location.href = "/imagg/PeachPy--enum34";
+
+
+执行gitee导入仓库成功【https://github.com/PeachPy/enum34.git  --->   https://gitee.com/imaggPeachPy--enum34.git】
++ sleep 16
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/Maratyszcza/PeachPy.git --goal_org imagg --goal_repoPath Maratyszcza--PeachPy --goal_repoName Maratyszcza--PeachPy --goal_repoDesc 【镜像】https://github.com/Maratyszcza/PeachPy.git
+【命令行参数打印】[object Object],https://github.com/Maratyszcza/PeachPy.git, imagg, Maratyszcza--PeachPy, Maratyszcza--PeachPy, 【镜像】https://github.com/Maratyszcza/PeachPy.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2FMaratyszcza%2FPeachPy.git&user_sync_code=&password_sync_code=&project%5Bname%5D=Maratyszcza--PeachPy&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=Maratyszcza--PeachPy&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2FMaratyszcza%2FPeachPy.git&project%5Bpublic%5D=1&language=0】
+location.href = "/imagg/Maratyszcza--PeachPy";
+
+
+执行gitee导入仓库成功【https://github.com/Maratyszcza/PeachPy.git  --->   https://gitee.com/imaggMaratyszcza--PeachPy.git】
++ sleep 11
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/benjaminp/six.git --goal_org imagg --goal_repoPath benjaminp--six --goal_repoName benjaminp--six --goal_repoDesc 【镜像】https://github.com/benjaminp/six.git
+【命令行参数打印】[object Object],https://github.com/benjaminp/six.git, imagg, benjaminp--six, benjaminp--six, 【镜像】https://github.com/benjaminp/six.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2Fbenjaminp%2Fsix.git&user_sync_code=&password_sync_code=&project%5Bname%5D=benjaminp--six&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=benjaminp--six&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2Fbenjaminp%2Fsix.git&project%5Bpublic%5D=1&language=0】
+location.href = "/imagg/benjaminp--six";
+
+
+执行gitee导入仓库成功【https://github.com/benjaminp/six.git  --->   https://gitee.com/imaggbenjaminp--six.git】
++ sleep 11
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/onnx/onnx.git --goal_org imagg --goal_repoPath onnx--onnx --goal_repoName onnx--onnx --goal_repoDesc 【镜像】https://github.com/onnx/onnx.git
+【命令行参数打印】[object Object],https://github.com/onnx/onnx.git, imagg, onnx--onnx, onnx--onnx, 【镜像】https://github.com/onnx/onnx.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2Fonnx%2Fonnx.git&user_sync_code=&password_sync_code=&project%5Bname%5D=onnx--onnx&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=onnx--onnx&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2Fonnx%2Fonnx.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/onnx/onnx.git  --->   https://gitee.com/imaggonnx--onnx.git】
++ sleep 15
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/onnx/onnx-tensorrt.git --goal_org imagg --goal_repoPath onnx--onnx-tensorrt --goal_repoName onnx--onnx-tensorrt --goal_repoDesc 【镜像】https://github.com/onnx/onnx-tensorrt.git
+【命令行参数打印】[object Object],https://github.com/onnx/onnx-tensorrt.git, imagg, onnx--onnx-tensorrt, onnx--onnx-tensorrt, 【镜像】https://github.com/onnx/onnx-tensorrt.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2Fonnx%2Fonnx-tensorrt.git&user_sync_code=&password_sync_code=&project%5Bname%5D=onnx--onnx-tensorrt&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=onnx--onnx-tensorrt&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2Fonnx%2Fonnx-tensorrt.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/onnx/onnx-tensorrt.git  --->   https://gitee.com/imaggonnx--onnx-tensorrt.git】
++ sleep 16
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/shibatch/sleef.git --goal_org imagg --goal_repoPath shibatch--sleef --goal_repoName shibatch--sleef --goal_repoDesc 【镜像】https://github.com/shibatch/sleef.git
+【命令行参数打印】[object Object],https://github.com/shibatch/sleef.git, imagg, shibatch--sleef, shibatch--sleef, 【镜像】https://github.com/shibatch/sleef.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2Fshibatch%2Fsleef.git&user_sync_code=&password_sync_code=&project%5Bname%5D=shibatch--sleef&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=shibatch--sleef&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2Fshibatch%2Fsleef.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/shibatch/sleef.git  --->   https://gitee.com/imaggshibatch--sleef.git】
++ sleep 9
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/intel/ideep.git --goal_org imagg --goal_repoPath intel--ideep --goal_repoName intel--ideep --goal_repoDesc 【镜像】https://github.com/intel/ideep.git
+【命令行参数打印】[object Object],https://github.com/intel/ideep.git, imagg, intel--ideep, intel--ideep, 【镜像】https://github.com/intel/ideep.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2Fintel%2Fideep.git&user_sync_code=&password_sync_code=&project%5Bname%5D=intel--ideep&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=intel--ideep&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2Fintel%2Fideep.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/intel/ideep.git  --->   https://gitee.com/imaggintel--ideep.git】
++ sleep 16
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/NVIDIA/nccl.git --goal_org imagg --goal_repoPath NVIDIA--nccl --goal_repoName NVIDIA--nccl --goal_repoDesc 【镜像】https://github.com/NVIDIA/nccl.git
+【命令行参数打印】[object Object],https://github.com/NVIDIA/nccl.git, imagg, NVIDIA--nccl, NVIDIA--nccl, 【镜像】https://github.com/NVIDIA/nccl.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2FNVIDIA%2Fnccl.git&user_sync_code=&password_sync_code=&project%5Bname%5D=NVIDIA--nccl&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=NVIDIA--nccl&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2FNVIDIA%2Fnccl.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/NVIDIA/nccl.git  --->   https://gitee.com/imaggNVIDIA--nccl.git】
++ sleep 16
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/google/gemmlowp.git --goal_org imagg --goal_repoPath google--gemmlowp --goal_repoName google--gemmlowp --goal_repoDesc 【镜像】https://github.com/google/gemmlowp.git
+【命令行参数打印】[object Object],https://github.com/google/gemmlowp.git, imagg, google--gemmlowp, google--gemmlowp, 【镜像】https://github.com/google/gemmlowp.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2Fgoogle%2Fgemmlowp.git&user_sync_code=&password_sync_code=&project%5Bname%5D=google--gemmlowp&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=google--gemmlowp&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2Fgoogle%2Fgemmlowp.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/google/gemmlowp.git  --->   https://gitee.com/imagggoogle--gemmlowp.git】
++ sleep 17
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/pytorch/QNNPACK.git --goal_org imagg --goal_repoPath pytorch--QNNPACK --goal_repoName pytorch--QNNPACK --goal_repoDesc 【镜像】https://github.com/pytorch/QNNPACK.git
+【命令行参数打印】[object Object],https://github.com/pytorch/QNNPACK.git, imagg, pytorch--QNNPACK, pytorch--QNNPACK, 【镜像】https://github.com/pytorch/QNNPACK.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2Fpytorch%2FQNNPACK.git&user_sync_code=&password_sync_code=&project%5Bname%5D=pytorch--QNNPACK&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=pytorch--QNNPACK&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2Fpytorch%2FQNNPACK.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/pytorch/QNNPACK.git  --->   https://gitee.com/imaggpytorch--QNNPACK.git】
++ sleep 9
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/intel/ARM_NEON_2_x86_SSE.git --goal_org imagg --goal_repoPath intel--ARM_NEON_2_x86_SSE --goal_repoName intel--ARM_NEON_2_x86_SSE --goal_repoDesc 【镜像】https://github.com/intel/ARM_NEON_2_x86_SSE.git
+【命令行参数打印】[object Object],https://github.com/intel/ARM_NEON_2_x86_SSE.git, imagg, intel--ARM_NEON_2_x86_SSE, intel--ARM_NEON_2_x86_SSE, 【镜像】https://github.com/intel/ARM_NEON_2_x86_SSE.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2Fintel%2FARM_NEON_2_x86_SSE.git&user_sync_code=&password_sync_code=&project%5Bname%5D=intel--ARM_NEON_2_x86_SSE&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=intel--ARM_NEON_2_x86_SSE&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2Fintel%2FARM_NEON_2_x86_SSE.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/intel/ARM_NEON_2_x86_SSE.git  --->   https://gitee.com/imaggintel--ARM_NEON_2_x86_SSE.git】
++ sleep 14
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/pytorch/fbgemm.git --goal_org imagg --goal_repoPath pytorch--fbgemm --goal_repoName pytorch--fbgemm --goal_repoDesc 【镜像】https://github.com/pytorch/fbgemm.git
+【命令行参数打印】[object Object],https://github.com/pytorch/fbgemm.git, imagg, pytorch--fbgemm, pytorch--fbgemm, 【镜像】https://github.com/pytorch/fbgemm.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2Fpytorch%2Ffbgemm.git&user_sync_code=&password_sync_code=&project%5Bname%5D=pytorch--fbgemm&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=pytorch--fbgemm&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2Fpytorch%2Ffbgemm.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/pytorch/fbgemm.git  --->   https://gitee.com/imaggpytorch--fbgemm.git】
++ sleep 14
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/houseroad/foxi.git --goal_org imagg --goal_repoPath houseroad--foxi --goal_repoName houseroad--foxi --goal_repoDesc 【镜像】https://github.com/houseroad/foxi.git
+【命令行参数打印】[object Object],https://github.com/houseroad/foxi.git, imagg, houseroad--foxi, houseroad--foxi, 【镜像】https://github.com/houseroad/foxi.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2Fhouseroad%2Ffoxi.git&user_sync_code=&password_sync_code=&project%5Bname%5D=houseroad--foxi&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=houseroad--foxi&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2Fhouseroad%2Ffoxi.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/houseroad/foxi.git  --->   https://gitee.com/imagghouseroad--foxi.git】
++ sleep 17
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/01org/tbb.git --goal_org imagg --goal_repoPath 01org--tbb --goal_repoName 01org--tbb --goal_repoDesc 【镜像】https://github.com/01org/tbb.git
+【命令行参数打印】[object Object],https://github.com/01org/tbb.git, imagg, 01org--tbb, 01org--tbb, 【镜像】https://github.com/01org/tbb.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2F01org%2Ftbb.git&user_sync_code=&password_sync_code=&project%5Bname%5D=01org--tbb&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=01org--tbb&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2F01org%2Ftbb.git&project%5Bpublic%5D=1&language=0】
+Flash.show("已存在同地址仓库（忽略大小写）", 'error', 1 * 3000, true)
+$('#save-project-loader').addClass('hide');
+$('#submit-pro').removeClass('disabled');
+$('#submit-project-new').removeClass('disabled').next('.loader').addClass('hide');
+
+
+执行gitee导入仓库成功【https://github.com/01org/tbb.git  --->   https://gitee.com/imagg01org--tbb.git】
++ sleep 14
++ import_githubRepo_to_gitee.sh --from_repo https://github.com/IvanKobzarev/fbjni.git --goal_org imagg --goal_repoPath IvanKobzarev--fbjni --goal_repoName IvanKobzarev--fbjni --goal_repoDesc 【镜像】https://github.com/IvanKobzarev/fbjni.git
+【命令行参数打印】[object Object],https://github.com/IvanKobzarev/fbjni.git, imagg, IvanKobzarev--fbjni, IvanKobzarev--fbjni, 【镜像】https://github.com/IvanKobzarev/fbjni.git
+rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2FIvanKobzarev%2Ffbjni.git&user_sync_code=&password_sync_code=&project%5Bname%5D=IvanKobzarev--fbjni&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=IvanKobzarev--fbjni&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2FIvanKobzarev%2Ffbjni.git&project%5Bpublic%5D=1&language=0】
+location.href = "/imagg/IvanKobzarev--fbjni";
+
+
+执行gitee导入仓库成功【https://github.com/IvanKobzarev/fbjni.git  --->   https://gitee.com/imaggIvanKobzarev--fbjni.git】
++ sleep 15

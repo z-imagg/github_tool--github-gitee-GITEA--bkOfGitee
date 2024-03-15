@@ -1,0 +1,184 @@
+没捕捉到从无到有导入子仓库们的日志，这是重新执行一次的日志了
+
+
+(.venv) z@mchr:~$ submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/gitee/imagg/pytorch--pytorch/  --mirror_base_url https://gitee.com  --mirror_org_name imagg
+创建gitea组织成功，【422, {"message":"user already exists [name: pybind]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/pybind/pybind11.git】 ；迁移内容【https://gitee.com/imagg/pybind--pybind11.git】--->【https://github.local/pybind/pybind11.git】
+迁移成功; 原始仓库【https://github.com/pybind/pybind11.git】 ；迁移内容【https://gitee.com/imagg/pybind--pybind11.git】--->【https://github.local/pybind/pybind11.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: NVlabs]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/NVlabs/cub.git】 ；迁移内容【https://gitee.com/imagg/NVlabs--cub.git】--->【https://github.local/NVlabs/cub.git】
+迁移成功; 原始仓库【https://github.com/NVlabs/cub.git】 ；迁移内容【https://gitee.com/imagg/NVlabs--cub.git】--->【https://github.local/NVlabs/cub.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: eigenteam]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/eigenteam/eigen-git-mirror.git】 ；迁移内容【https://gitee.com/imagg/eigenteam--eigen-git-mirror.git】--->【https://github.local/eigenteam/eigen-git-mirror.git】
+迁移成功; 原始仓库【https://github.com/eigenteam/eigen-git-mirror.git】 ；迁移内容【https://gitee.com/imagg/eigenteam--eigen-git-mirror.git】--->【https://github.local/eigenteam/eigen-git-mirror.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: google]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/google/googletest.git】 ；迁移内容【https://gitee.com/imagg/google--googletest.git】--->【https://github.local/google/googletest.git】
+迁移成功; 原始仓库【https://github.com/google/googletest.git】 ；迁移内容【https://gitee.com/imagg/google--googletest.git】--->【https://github.local/google/googletest.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: google]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/google/benchmark.git】 ；迁移内容【https://gitee.com/imagg/google--benchmark.git】--->【https://github.local/google/benchmark.git】
+迁移成功; 原始仓库【https://github.com/google/benchmark.git】 ；迁移内容【https://gitee.com/imagg/google--benchmark.git】--->【https://github.local/google/benchmark.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: protocolbuffers]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/protocolbuffers/protobuf.git】 ；迁移内容【https://gitee.com/imagg/protocolbuffers--protobuf.git】--->【https://github.local/protocolbuffers/protobuf.git】
+迁移成功; 原始仓库【https://github.com/protocolbuffers/protobuf.git】 ；迁移内容【https://gitee.com/imagg/protocolbuffers--protobuf.git】--->【https://github.local/protocolbuffers/protobuf.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: Yangqing]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/Yangqing/ios-cmake.git】 ；迁移内容【https://gitee.com/imagg/Yangqing--ios-cmake.git】--->【https://github.local/Yangqing/ios-cmake.git】
+迁移成功; 原始仓库【https://github.com/Yangqing/ios-cmake.git】 ；迁移内容【https://gitee.com/imagg/Yangqing--ios-cmake.git】--->【https://github.local/Yangqing/ios-cmake.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: Maratyszcza]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/Maratyszcza/NNPACK.git】 ；迁移内容【https://gitee.com/imagg/Maratyszcza--NNPACK.git】--->【https://github.local/Maratyszcza/NNPACK.git】
+迁移成功; 原始仓库【https://github.com/Maratyszcza/NNPACK.git】 ；迁移内容【https://gitee.com/imagg/Maratyszcza--NNPACK.git】--->【https://github.local/Maratyszcza/NNPACK.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: facebookincubator]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/facebookincubator/gloo.git】 ；迁移内容【https://gitee.com/imagg/facebookincubator--gloo.git】--->【https://github.local/facebookincubator/gloo.git】
+迁移成功; 原始仓库【https://github.com/facebookincubator/gloo.git】 ；迁移内容【https://gitee.com/imagg/facebookincubator--gloo.git】--->【https://github.local/facebookincubator/gloo.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: Maratyszcza]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/Maratyszcza/pthreadpool.git】 ；迁移内容【https://gitee.com/imagg/Maratyszcza--pthreadpool.git】--->【https://github.local/Maratyszcza/pthreadpool.git】
+迁移成功; 原始仓库【https://github.com/Maratyszcza/pthreadpool.git】 ；迁移内容【https://gitee.com/imagg/Maratyszcza--pthreadpool.git】--->【https://github.local/Maratyszcza/pthreadpool.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: Maratyszcza]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/Maratyszcza/FXdiv.git】 ；迁移内容【https://gitee.com/imagg/Maratyszcza--FXdiv.git】--->【https://github.local/Maratyszcza/FXdiv.git】
+迁移成功; 原始仓库【https://github.com/Maratyszcza/FXdiv.git】 ；迁移内容【https://gitee.com/imagg/Maratyszcza--FXdiv.git】--->【https://github.local/Maratyszcza/FXdiv.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: Maratyszcza]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/Maratyszcza/FP16.git】 ；迁移内容【https://gitee.com/imagg/Maratyszcza--FP16.git】--->【https://github.local/Maratyszcza/FP16.git】
+迁移成功; 原始仓库【https://github.com/Maratyszcza/FP16.git】 ；迁移内容【https://gitee.com/imagg/Maratyszcza--FP16.git】--->【https://github.local/Maratyszcza/FP16.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: Maratyszcza]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/Maratyszcza/psimd.git】 ；迁移内容【https://gitee.com/imagg/Maratyszcza--psimd.git】--->【https://github.local/Maratyszcza/psimd.git】
+迁移成功; 原始仓库【https://github.com/Maratyszcza/psimd.git】 ；迁移内容【https://gitee.com/imagg/Maratyszcza--psimd.git】--->【https://github.local/Maratyszcza/psimd.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: facebook]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/facebook/zstd.git】 ；迁移内容【https://gitee.com/imagg/facebook--zstd.git】--->【https://github.local/facebook/zstd.git】
+迁移成功; 原始仓库【https://github.com/facebook/zstd.git】 ；迁移内容【https://gitee.com/imagg/facebook--zstd.git】--->【https://github.local/facebook/zstd.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: pytorch]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/pytorch/cpuinfo.git】 ；迁移内容【https://gitee.com/imagg/pytorch--cpuinfo.git】--->【https://github.local/pytorch/cpuinfo.git】
+迁移成功; 原始仓库【https://github.com/pytorch/cpuinfo.git】 ；迁移内容【https://gitee.com/imagg/pytorch--cpuinfo.git】--->【https://github.local/pytorch/cpuinfo.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: PeachPy]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/PeachPy/enum34.git】 ；迁移内容【https://gitee.com/imagg/PeachPy--enum34.git】--->【https://github.local/PeachPy/enum34.git】
+迁移成功; 原始仓库【https://github.com/PeachPy/enum34.git】 ；迁移内容【https://gitee.com/imagg/PeachPy--enum34.git】--->【https://github.local/PeachPy/enum34.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: Maratyszcza]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/Maratyszcza/PeachPy.git】 ；迁移内容【https://gitee.com/imagg/Maratyszcza--PeachPy.git】--->【https://github.local/Maratyszcza/PeachPy.git】
+迁移成功; 原始仓库【https://github.com/Maratyszcza/PeachPy.git】 ；迁移内容【https://gitee.com/imagg/Maratyszcza--PeachPy.git】--->【https://github.local/Maratyszcza/PeachPy.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: benjaminp]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/benjaminp/six.git】 ；迁移内容【https://gitee.com/imagg/benjaminp--six.git】--->【https://github.local/benjaminp/six.git】
+迁移成功; 原始仓库【https://github.com/benjaminp/six.git】 ；迁移内容【https://gitee.com/imagg/benjaminp--six.git】--->【https://github.local/benjaminp/six.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: onnx]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/onnx/onnx.git】 ；迁移内容【https://gitee.com/imagg/onnx--onnx.git】--->【https://github.local/onnx/onnx.git】
+迁移成功; 原始仓库【https://github.com/onnx/onnx.git】 ；迁移内容【https://gitee.com/imagg/onnx--onnx.git】--->【https://github.local/onnx/onnx.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: onnx]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/onnx/onnx-tensorrt.git】 ；迁移内容【https://gitee.com/imagg/onnx--onnx-tensorrt.git】--->【https://github.local/onnx/onnx-tensorrt.git】
+迁移成功; 原始仓库【https://github.com/onnx/onnx-tensorrt.git】 ；迁移内容【https://gitee.com/imagg/onnx--onnx-tensorrt.git】--->【https://github.local/onnx/onnx-tensorrt.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: shibatch]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/shibatch/sleef.git】 ；迁移内容【https://gitee.com/imagg/shibatch--sleef.git】--->【https://github.local/shibatch/sleef.git】
+迁移成功; 原始仓库【https://github.com/shibatch/sleef.git】 ；迁移内容【https://gitee.com/imagg/shibatch--sleef.git】--->【https://github.local/shibatch/sleef.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: intel]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/intel/ideep.git】 ；迁移内容【https://gitee.com/imagg/intel--ideep.git】--->【https://github.local/intel/ideep.git】
+迁移成功; 原始仓库【https://github.com/intel/ideep.git】 ；迁移内容【https://gitee.com/imagg/intel--ideep.git】--->【https://github.local/intel/ideep.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: NVIDIA]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/NVIDIA/nccl.git】 ；迁移内容【https://gitee.com/imagg/NVIDIA--nccl.git】--->【https://github.local/NVIDIA/nccl.git】
+迁移成功; 原始仓库【https://github.com/NVIDIA/nccl.git】 ；迁移内容【https://gitee.com/imagg/NVIDIA--nccl.git】--->【https://github.local/NVIDIA/nccl.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: google]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/google/gemmlowp.git】 ；迁移内容【https://gitee.com/imagg/google--gemmlowp.git】--->【https://github.local/google/gemmlowp.git】
+迁移成功; 原始仓库【https://github.com/google/gemmlowp.git】 ；迁移内容【https://gitee.com/imagg/google--gemmlowp.git】--->【https://github.local/google/gemmlowp.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: pytorch]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/pytorch/QNNPACK.git】 ；迁移内容【https://gitee.com/imagg/pytorch--QNNPACK.git】--->【https://github.local/pytorch/QNNPACK.git】
+迁移成功; 原始仓库【https://github.com/pytorch/QNNPACK.git】 ；迁移内容【https://gitee.com/imagg/pytorch--QNNPACK.git】--->【https://github.local/pytorch/QNNPACK.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: intel]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/intel/ARM_NEON_2_x86_SSE.git】 ；迁移内容【https://gitee.com/imagg/intel--ARM_NEON_2_x86_SSE.git】--->【https://github.local/intel/ARM_NEON_2_x86_SSE.git】
+迁移成功; 原始仓库【https://github.com/intel/ARM_NEON_2_x86_SSE.git】 ；迁移内容【https://gitee.com/imagg/intel--ARM_NEON_2_x86_SSE.git】--->【https://github.local/intel/ARM_NEON_2_x86_SSE.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: pytorch]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/pytorch/fbgemm.git】 ；迁移内容【https://gitee.com/imagg/pytorch--fbgemm.git】--->【https://github.local/pytorch/fbgemm.git】
+迁移成功; 原始仓库【https://github.com/pytorch/fbgemm.git】 ；迁移内容【https://gitee.com/imagg/pytorch--fbgemm.git】--->【https://github.local/pytorch/fbgemm.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: houseroad]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/houseroad/foxi.git】 ；迁移内容【https://gitee.com/imagg/houseroad--foxi.git】--->【https://github.local/houseroad/foxi.git】
+迁移成功; 原始仓库【https://github.com/houseroad/foxi.git】 ；迁移内容【https://gitee.com/imagg/houseroad--foxi.git】--->【https://github.local/houseroad/foxi.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: 01org]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/01org/tbb.git】 ；迁移内容【https://gitee.com/imagg/01org--tbb.git】--->【https://github.local/01org/tbb.git】
+迁移成功; 原始仓库【https://github.com/01org/tbb.git】 ；迁移内容【https://gitee.com/imagg/01org--tbb.git】--->【https://github.local/01org/tbb.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
+创建gitea组织成功，【422, {"message":"user already exists [name: IvanKobzarev]","url":"https://github.local/api/swagger"}
+】
+正在迁移...，耗时取决于仓库大小; 原始仓库【https://github.com/IvanKobzarev/fbjni.git】 ；迁移内容【https://gitee.com/imagg/IvanKobzarev--fbjni.git】--->【https://github.local/IvanKobzarev/fbjni.git】
+迁移成功; 原始仓库【https://github.com/IvanKobzarev/fbjni.git】 ；迁移内容【https://gitee.com/imagg/IvanKobzarev--fbjni.git】--->【https://github.local/IvanKobzarev/fbjni.git】; 
+ 【gitea迁移接口响应】状态码【409】，响应文本【{"message":"The repository with the same name already exists.","url":"https://github.local/api/swagger"}
+】
