@@ -11,10 +11,10 @@ import httpx
 import sys
 sys.path.append("/fridaAnlzAp/github-gitee-gitea/py_util/")
 
-from GitRepoUrlParser import gitMirrorRepoUrlParseF
+from GitRepoUrlParser import gitMirrorRepoUrlParseF,gitRepoUrlParseF
 
-def giteaMigrateApi(repoUrl:str,giteaBaseUrl:str,giteaToken:str):
-  repo_url=gitMirrorRepoUrlParseF(repoUrl)
+def giteaMigrateApi(repoUrl:str,mirrorBaseUrl,mirrorOrg,giteaBaseUrl:str,giteaToken:str):
+  repo_url=gitRepoUrlParseF(repoUrl)
 
 
   """
@@ -30,10 +30,11 @@ def giteaMigrateApi(repoUrl:str,giteaBaseUrl:str,giteaToken:str):
 
   """
 
+  mirrorRepoUrl=repo_url.to_mirror_url(mirrorBaseUrl,mirrorOrg)
   #https://github.local/api/v1/repos/migrate?token=b1d490eaf6b88a6c37bd482d8e05e3a0061f066c
   migrate_url=f'{giteaBaseUrl}/api/v1/repos/migrate?token={giteaToken}'
   reqBodyDct={
-      "clone_addr": repoUrl,
+      "clone_addr": mirrorRepoUrl.url_str(),
     "repo_owner": repo_url.orgName,
     "repo_name": repo_url.repoName
   }

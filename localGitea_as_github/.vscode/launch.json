@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "repoMigrateToGitea.py",
             "console": "integratedTerminal",
-            "args": ["--from_repo_url","https://github.com/NVlabs/cub.git"]
+            "args": ["--from_repo_url","https://github.com/NVlabs/cub.git","--mirror_base_ur","https://gitee.com","--mirror_org_name","imagg"]
         },
         {
             "name": "Python Debugger: Current File",
