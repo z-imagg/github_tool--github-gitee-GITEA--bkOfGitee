@@ -127,7 +127,19 @@ cd /fridaAnlzAp/
 git clone https://github.com/pytorch/pytorch.git
 #/fridaAnlzAp/pytorch/.git/config
 
-#再用lazygit去更新 /fridaAnlzAp/pytorch 中的 子模块们， 也 将一样是 正常从 "假github" 克隆到的
+# 正克隆到 'pytorch'...
+# remote: Enumerating objects: 1114420, done.
+# remote: Counting objects: 100% (1114420/1114420), done.
+# remote: Compressing objects: 100% (216628/216628), done.
+# remote: Total 1114420 (delta 891946), reused 1114420 (delta 891946), pack-reused 0
+# 接收对象中: 100% (1114420/1114420), 996.62 MiB | 48.22 MiB/s, 完成.
+# 处理 delta 中: 100% (891946/891946), 完成.
+# 正在更新文件: 100% (18471/18471), 完成.
+
+cd /fridaAnlzAp/pytorch/
+git submodule update --init --recursive
+#再去更新 /fridaAnlzAp/pytorch 中的 子模块们， 也 将一样是 正常从 "假github" 克隆到的
+#当让 如果有 lazygit 去更新子模块也一样的
 ```
 
 ## 网页(可重执行)请求协议分析方案
