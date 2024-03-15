@@ -69,6 +69,9 @@ chmod +x /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/gitSubmodu
 bash /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/script/env_prepare.sh
 source /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/.venv/bin/activate
 gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/gitee/imagg/pytorch--pytorch  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9 | bash -x
+# gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/pytorch  --goal_org imagg  --sleep_seconds 1 --sleep_seconds_delta 2 | wc -l 
+#30， 这里gitpython只找到30个子模块，但是下面 步4 git找到了 45个子模块
+
 deactivate
 ```
 
@@ -123,8 +126,8 @@ repoMigrateToGitea.py --from_repo_url https://github.com/pytorch/pytorch.git  --
 submoduleMigrateToGitea.py有丢失子模块, 改用git命令列出子模块后再迁移仓库
 
 ```shell
-find /fridaAnlzAp/pytorch  -name .gitmodules -type f | xargs -I@ git --no-pager  config --file @  --get-regexp url  | awk "{ print \$2 }"  |wc 
-#     45      45    1747
+find /fridaAnlzAp/pytorch  -name .gitmodules -type f | xargs -I@ git --no-pager  config --file @  --get-regexp url  | awk "{ print \$2 }"  |wc -l
+#     45      
 #子模块个数，可能还有没更新到的子模块
 ```
 
