@@ -6,6 +6,7 @@ from pathlib import Path
 import git
 from git import cmd
 import shutil
+import re
 
 import sys
 # print(sys.argv)
@@ -24,7 +25,15 @@ BgRp_:cmd.Git=BgRp.git
 
 sbmKBg:git.Submodule
 
+
 for k,sbmKBg in enumerate( BgRp.submodules):
+    #import_githubRepo_to_gitee.sh --from_repo https://github.com/pytorch/pytorch.git  --goal_org imagg  --goal_repoPath pytorch--pytorch --goal_repoName pytorch--pytorch  --goal_repoDesc 来源https://github.com/pytorch/pytorch.git
+    x=f"import_githubRepo_to_gitee.sh --from_repo {sbmKBg.url}  --goal_org imagg  --goal_repoPath pytorch--pytorch --goal_repoName pytorch--pytorch  --goal_repoDesc 来源https://github.com/pytorch/pytorch.git"
+    urlMatch=re.match(pattern=r"http[s]?://(.+)/(.+)/(.+)\.git",string=sbmKBg.url)
+    if urlMatch is not None:
+        host=urlMatch.group(1)
+        path=urlMatch.group(2)
+        repoName=urlMatch.group(3)
     print(f"{sbmKBg.name}, {sbmKBg.path}, {sbmKBg.url}, {sbmKBg.hexsha}, {sbmKBg.branch_name}, {sbmKBg.branch_path}")
 
 _end=True
