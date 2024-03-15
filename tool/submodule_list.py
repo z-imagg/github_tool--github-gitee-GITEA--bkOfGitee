@@ -25,6 +25,7 @@ BgRp_:cmd.Git=BgRp.git
 
 sbmKBg:git.Submodule
 giteeMirrorOrgName="imagg"
+#                    //host/org /repo
 urlReExpr=r"http[s]?://(.+)/(.+)/(.+)\.git"
 for k,sbmKBg in enumerate( BgRp.submodules):
     #import_githubRepo_to_gitee.sh --from_repo https://github.com/pytorch/pytorch.git  --goal_org imagg  --goal_repoPath pytorch--pytorch --goal_repoName pytorch--pytorch  --goal_repoDesc 来源https://github.com/pytorch/pytorch.git
@@ -33,9 +34,10 @@ for k,sbmKBg in enumerate( BgRp.submodules):
     urlFieldLs=urlMatch.groups()
     assert urlFieldLs is not None and len(urlFieldLs) == 3 ,f"断言失败，【{sbmKBg.url}】不匹配正则表达式【${urlReExpr}】，字段个数不为3，实际字段个数【${len(urlFieldLs)}】"
     host=urlFieldLs[0]
-    path=urlFieldLs[1]
+    orgName=urlFieldLs[1]
     repoName=urlFieldLs[2]
-    x=f"import_githubRepo_to_gitee.sh --from_repo {sbmKBg.url}  --goal_org ${giteeMirrorOrgName}  --goal_repoPath pytorch--pytorch --goal_repoName pytorch--pytorch  --goal_repoDesc 来源https://github.com/pytorch/pytorch.git"
+    newRepoName=f"{orgName}--{repoName}"
+    x=f"import_githubRepo_to_gitee.sh --from_repo {sbmKBg.url}  --goal_org ${giteeMirrorOrgName}  --goal_repoPath ${newRepoName} --goal_repoName ${newRepoName}  --goal_repoDesc 【镜像】{sbmKBg.url}"
     print(f"{sbmKBg.name}, {sbmKBg.path}, {sbmKBg.url}, {sbmKBg.hexsha}, {sbmKBg.branch_name}, {sbmKBg.branch_path}")
 
 _end=True
