@@ -61,7 +61,7 @@ def giteaMigrateApi(originRpoUrlTxt:str,mirrorBaseUrl,mirrorOrg,giteaBaseUrl:str
     "repo_owner": originRpoUrl.orgName,
     "repo_name": originRpoUrl.repoName
   }
-  resp_migrate=httpx.post(url=apiUrl_migrate,json=reqBdy_migrate,verify=False)
+  resp_migrate=httpx.post(url=apiUrl_migrate,json=reqBdy_migrate,verify=False,timeout=120)
   msg_migrate=f"【gitea迁移接口响应】状态码【{resp_migrate.status_code}】，响应文本【{resp_migrate.text}】\n 【迁移仓库】【{originRpoUrlTxt}】--->【{mirrRpoUrlTxt}】"
   ok_migrate= resp_migrate.status_code == 409 or resp_migrate.is_success #409 gitea 已经存在仓库
   msg_migrate=f'{"迁移成功" if ok_migrate else "迁移失败" }，{msg_migrate}'
