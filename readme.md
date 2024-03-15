@@ -23,8 +23,8 @@
 #####  bash命令提示
 ```shell
 export PATH=/fridaAnlzAp/github-gitee-gitea/gitee_api_fetch_ts/script:$PATH
-source /fridaAnlzAp/github-gitee-gitea/gitee_api_fetch_tsscript/bash-complete--import_githubRepo_to_gitee.sh
-chmod +x /fridaAnlzAp/github-gitee-gitea/gitee_api_fetch_tsscript/import_githubRepo_to_gitee.sh
+source /fridaAnlzAp/github-gitee-gitea/gitee_api_fetch_ts/script/bash-complete--import_githubRepo_to_gitee.sh
+chmod +x /fridaAnlzAp/github-gitee-gitea/gitee_api_fetch_ts/script/import_githubRepo_to_gitee.sh
 ```
 
 ##### 执行命令
