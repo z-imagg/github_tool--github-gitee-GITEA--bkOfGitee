@@ -5,18 +5,18 @@
 
 
 class GitRepoUrlC:
-    def __init__(self,host:str,orgName:str,repoName:str) -> None:
-        self.host:str=host #TODO host--> baseUrl
+    def __init__(self,baseUrl:str,orgName:str,repoName:str) -> None:
+        self.baseUrl:str=baseUrl #TODO host--> baseUrl
         self.orgName:str=orgName
         self.repoName:str=repoName
     
     def url_str(self):
-        return f"https://{self.host}/{self.orgName}/{self.repoName}.git"
+        return f"https://{self.baseUrl}/{self.orgName}/{self.repoName}.git"
 
 
 import re
 #                           //host/org /repo
-GitRepoUrlReExpr=r"http[s]?://(.+)/(.+)/(.+)\.git"
+GitRepoUrlReExpr=r"(http[s]?://.+)/(.+)/(.+)\.git"
 
 def gitRepoUrlParseF(repoUrl:str) -> GitRepoUrlC:
     _GIT=".git"
@@ -26,22 +26,22 @@ def gitRepoUrlParseF(repoUrl:str) -> GitRepoUrlC:
     assert urlMatch is not None,f"断言失败，【{repoUrl}】不匹配正则表达式【{GitRepoUrlReExpr}】【忽略末尾.git】"
     urlFieldLs=urlMatch.groups()
     assert urlFieldLs is not None and len(urlFieldLs) == 3 ,f"断言失败，【{repoUrl}】不匹配正则表达式【{GitRepoUrlReExpr}】【忽略末尾.git】，字段个数不为3，实际字段个数【{len(urlFieldLs)}】"
-    host=urlFieldLs[0]
-    orgName=urlFieldLs[1]
-    repoName=urlFieldLs[2]
-    return GitRepoUrlC(host,orgName,repoName)
+    baseUrl=urlFieldLs[0]
+    org=urlFieldLs[1]
+    repo=urlFieldLs[2]
+    return GitRepoUrlC(baseUrl,org,repo)
 
 
 class GitMirrorRepoUrlC:
     def __init__(self,host:str,mirrorOrgName:str,orgName:str,repoName:str) -> None:
-        self.host:str=host
+        self.baseUrl:str=host
         self.mirrorOrgName:str=mirrorOrgName
         self.orgName:str=orgName
         self.repoName:str=repoName
 
 
 #                                 //host/mrrOrg/org--repo
-GitMirrorRepoUrlReExpr=r"http[s]?://(.+)/(.+)/(.+)--(.+)\.git"
+GitMirrorRepoUrlReExpr=r"(http[s]?://.+)/(.+)/(.+)--(.+)\.git"
 def gitMirrorRepoUrlParseF(repoUrl:str)->GitMirrorRepoUrlC:
   _GIT=".git"
   repoUrl=repoUrl if repoUrl.endswith(_GIT) else f"{repoUrl}{_GIT}"
@@ -49,8 +49,8 @@ def gitMirrorRepoUrlParseF(repoUrl:str)->GitMirrorRepoUrlC:
   assert urlMatch is not None,f"断言失败，【{repoUrl}】不匹配正则表达式【{GitMirrorRepoUrlReExpr}】【忽略末尾.git】"
   urlFieldLs=urlMatch.groups()
   assert urlFieldLs is not None and len(urlFieldLs) == 4 ,f"断言失败，【{repoUrl}】不匹配正则表达式【{GitMirrorRepoUrlReExpr}】【忽略末尾.git】，字段个数不为4，实际字段个数【{len(urlFieldLs)}】"
-  giteaHost=urlFieldLs[0]
-  _mirrorOrgName=urlFieldLs[1]
-  orgName=urlFieldLs[2]
-  repoName=urlFieldLs[3]
-  return GitMirrorRepoUrlC(giteaHost,_mirrorOrgName,orgName,repoName)
+  baseUrl=urlFieldLs[0]
+  _mirrorOrg=urlFieldLs[1]
+  org=urlFieldLs[2]
+  repo=urlFieldLs[3]
+  return GitMirrorRepoUrlC(baseUrl,_mirrorOrg,org,repo)

@@ -13,10 +13,7 @@ sys.path.append("/fridaAnlzAp/github-gitee-gitea/py_util/")
 
 from GitRepoUrlParser import gitMirrorRepoUrlParseF
 
-def giteaMigrateApi(from_repo_url:str,gitea_base_url:str,gitea_token:str):
-  repoUrl:str=from_repo_url
-  giteaBaseUrl:str=gitea_base_url
-  giteaToken:str=gitea_token
+def giteaMigrateApi(repoUrl:str,giteaBaseUrl:str,giteaToken:str):
   repo_url=gitMirrorRepoUrlParseF(repoUrl)
 
 
