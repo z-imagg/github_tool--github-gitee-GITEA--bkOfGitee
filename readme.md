@@ -207,6 +207,15 @@ submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/pytorch/third_par
 cd /fridaAnlzAp/pytorch/
 git submodule update --init   --progress   --recursive
 
+#以下开始编译pytorch-v1.3.1
+pip install  astunparse numpy ninja pyyaml setuptools cmake cffi typing_extensions future six requests dataclasses
+pip install mkl mkl-include
+# pip install pyyaml
+export USE_CUDA=0
+export USE_ROCM=0
+export DEBUG=1 #奏效,  DEBUG写在setup.py中
+CMAKE_VERBOSE_MAKEFILE=True python setup.py develop
+#python setup.py install #由于我是在物理机（工作环境机），就不安装了
 ```
 
 ----
