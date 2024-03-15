@@ -98,6 +98,8 @@ source /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/.venv/bin/activate
 submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/gitee/imagg/pytorch--pytorch/  --mirror_base_ur https://gitee.com  --mirror_org_name imagg
 ```
 
+没捕捉到从无到有导入子仓库们的日志，这是重新执行的日志了 , http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/localGitea_as_github/doc/example_out_ReExec_submoduleMigrateToGitea__pytorch_v1.3.1.log.txt
+
 ## 网页(可重执行)请求协议分析方案
 
 
