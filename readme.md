@@ -211,6 +211,9 @@ submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/pytorch/third_par
 gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/pytorch/third_party/pybind11/  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9 | bash -x 
 submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/pytorch/third_party/pybind11/.   --mirror_base_ur https://gitee.com  --mirror_org_name imagg
 
+cd /fridaAnlzAp/pytorch/
+git submodule update --init   --progress   --recursive
+
 ```
 
 ----
