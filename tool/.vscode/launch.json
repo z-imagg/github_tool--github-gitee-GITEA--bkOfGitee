@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "submodule_list.py",
             "console": "integratedTerminal",
-            "args": ["/fridaAnlzAp/gitee/imagg/pytorch--pytorch"]
+            "args": ["/fridaAnlzAp/gitee/imagg/pytorch--pytorch", "8"]
         },
         {
             "name": "Python调试【当前py文件携带参数】",
