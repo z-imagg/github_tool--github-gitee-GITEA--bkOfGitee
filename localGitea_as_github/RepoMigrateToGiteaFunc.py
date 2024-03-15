@@ -13,8 +13,8 @@ sys.path.append("/fridaAnlzAp/github-gitee-gitea/py_util/")
 
 from GitRepoUrlParser import gitMirrorRepoUrlParseF,gitRepoUrlParseF
 
-def giteaMigrateApi(repoUrl:str,mirrorBaseUrl,mirrorOrg,giteaBaseUrl:str,giteaToken:str):
-  repo_url=gitRepoUrlParseF(repoUrl)
+def giteaMigrateApi(originRpoUrlTxt:str,mirrorBaseUrl,mirrorOrg,giteaBaseUrl:str,giteaToken:str):
+  originRpoUrl=gitRepoUrlParseF(originRpoUrlTxt)
 
   """
   curl -X 'POST' \
@@ -28,15 +28,15 @@ def giteaMigrateApi(repoUrl:str,mirrorBaseUrl,mirrorOrg,giteaBaseUrl:str,giteaTo
 }'
 """
 
-  newOrg_url=f'{giteaBaseUrl}/api/v1/orgs?token={giteaToken}'
-  newOrg_reqBodyDct={
-    "username": repo_url.orgName,
+  apiUrl_newOrg=f'{giteaBaseUrl}/api/v1/orgs?token={giteaToken}'
+  reqBdy_newOrg={
+    "username": originRpoUrl.orgName,
   }
-  newOrg_resp=httpx.post(url=newOrg_url,json=newOrg_reqBodyDct,verify=False)
-  newOrg_ok=newOrg_resp.status_code==422 or newOrg_resp.is_success #422 gitea 已经存在组织
-  if(not newOrg_ok):
-    newOrg_msg=f"创建gitea组织失败，【${newOrg_resp.status_code}, ${newOrg_resp.text}】"
-    print(newOrg_msg)
+  resp_newOrg=httpx.post(url=apiUrl_newOrg,json=reqBdy_newOrg,verify=False)
+  ok_newOrg=resp_newOrg.status_code==422 or resp_newOrg.is_success #422 gitea 已经存在组织
+  if(not ok_newOrg):
+    msg_newOrg=f"创建gitea组织失败，【${resp_newOrg.status_code}, ${resp_newOrg.text}】"
+    print(msg_newOrg)
     return False
   
 
@@ -53,17 +53,17 @@ def giteaMigrateApi(repoUrl:str,mirrorBaseUrl,mirrorOrg,giteaBaseUrl:str,giteaTo
 
   """
 
-  mirrorRepoUrl=repo_url.to_mirror_url(mirrorBaseUrl,mirrorOrg)
-  mirrRepo_url:str = mirrorRepoUrl.url_str()
-  migrate_url=f'{giteaBaseUrl}/api/v1/repos/migrate?token={giteaToken}'
-  reqBodyDct={
-      "clone_addr": mirrRepo_url,
-    "repo_owner": repo_url.orgName,
-    "repo_name": repo_url.repoName
+  mirrRepoUrl=originRpoUrl.to_mirror_url(mirrorBaseUrl,mirrorOrg)
+  mirrRpoUrlTxt:str = mirrRepoUrl.url_str()
+  apiUrl_migrate=f'{giteaBaseUrl}/api/v1/repos/migrate?token={giteaToken}'
+  reqBdy_migrate={
+      "clone_addr": mirrRpoUrlTxt,
+    "repo_owner": originRpoUrl.orgName,
+    "repo_name": originRpoUrl.repoName
   }
-  resp=httpx.post(url=migrate_url,json=reqBodyDct,verify=False)
-  msg=f"【gitea迁移接口响应】状态码【{resp.status_code}】，响应文本【{resp.text}】\n 【迁移仓库】【{repoUrl}】--->【{mirrRepo_url}】"
-  ok= resp.status_code == 409 or resp.is_success #409 gitea 已经存在仓库
-  msg=f'{"迁移成功" if ok else "迁移失败" }，{msg}'
-  print(msg)
-  return ok
+  resp_migrate=httpx.post(url=apiUrl_migrate,json=reqBdy_migrate,verify=False)
+  msg_migrate=f"【gitea迁移接口响应】状态码【{resp_migrate.status_code}】，响应文本【{resp_migrate.text}】\n 【迁移仓库】【{originRpoUrlTxt}】--->【{mirrRpoUrlTxt}】"
+  ok_migrate= resp_migrate.status_code == 409 or resp_migrate.is_success #409 gitea 已经存在仓库
+  msg_migrate=f'{"迁移成功" if ok_migrate else "迁移失败" }，{msg_migrate}'
+  print(msg_migrate)
+  return ok_migrate
