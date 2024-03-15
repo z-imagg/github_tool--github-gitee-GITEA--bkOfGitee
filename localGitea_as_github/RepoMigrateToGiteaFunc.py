@@ -9,9 +9,9 @@ import re
 import httpx
 
 
-def giteaMigrateApi(from_repo_url:str,goal_gitea_host:str,goal_gitea_token:str):
+def giteaMigrateApi(from_repo_url:str,goal_gitea_base_url:str,goal_gitea_token:str):
   repoUrl:str=from_repo_url
-  giteaHost:str=goal_gitea_host
+  giteaBaseUrl:str=goal_gitea_base_url
   giteaToken:str=goal_gitea_token
 
   #                    //host/mrrOrg/org--repo
@@ -42,7 +42,7 @@ def giteaMigrateApi(from_repo_url:str,goal_gitea_host:str,goal_gitea_token:str):
   """
 
   #https://github.local/api/v1/repos/migrate?token=b1d490eaf6b88a6c37bd482d8e05e3a0061f066c
-  migrate_url=f'https://{giteaHost}/api/v1/repos/migrate?token={giteaToken}'
+  migrate_url=f'{giteaBaseUrl}/api/v1/repos/migrate?token={giteaToken}'
   reqBodyDct={
       "clone_addr": repoUrl,
     "repo_owner": orgName,
