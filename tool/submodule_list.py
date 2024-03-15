@@ -8,6 +8,7 @@ import git
 from git import cmd
 import shutil
 import re
+import random
 
 import sys
 # print(sys.argv)
@@ -15,6 +16,7 @@ CurScriptNm:str=sys.argv[0]
 assert sys.argv[1:].__len__() == 2, "断言错误，参数个数必须等于2. 【用法为】python3 me.py 父git仓库路径 导入命令休眠间隔秒数"
 _BgRp:str=sys.argv[1]
 _sleepSeconds:str=int(sys.argv[2])
+_sleepSecEnd=_sleepSeconds+9
 
 
 BgRp:git.Repo=git.Repo(path=_BgRp)
@@ -40,7 +42,7 @@ for k,repoK in enumerate( BgRp.submodules):
     repoName=urlFieldLs[2]
     newRepoName=f"{orgName}--{repoName}"
     #import_githubRepo_to_gitee.sh --from_repo https://github.com/pytorch/pytorch.git  --goal_org imagg  --goal_repoPath pytorch--pytorch --goal_repoName pytorch--pytorch  --goal_repoDesc 来源https://github.com/pytorch/pytorch.git
-    cmd_import2gitee=f"import_githubRepo_to_gitee.sh --from_repo {urlK}  --goal_org {giteeMirrorOrgName}  --goal_repoPath {newRepoName} --goal_repoName {newRepoName}  --goal_repoDesc 【镜像】{urlK}; sleep {_sleepSeconds}"
+    cmd_import2gitee=f"import_githubRepo_to_gitee.sh --from_repo {urlK}  --goal_org {giteeMirrorOrgName}  --goal_repoPath {newRepoName} --goal_repoName {newRepoName}  --goal_repoDesc 【镜像】{urlK}; sleep {random.randint(_sleepSeconds,_sleepSecEnd)}"
     print(cmd_import2gitee)
 
 _end=True
