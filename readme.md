@@ -13,8 +13,10 @@ import_githubRepo_to_gitee.sh --from_repo https://github.com/pytorch/pytorch.git
 #### 2. 导入各子模块
 
 ```shell
-source /fridaAnlzAp/github-gitee-gitea/tool/env_prepare.sh
-python /fridaAnlzAp/github-gitee-gitea/tool/submodule_list.py  /fridaAnlzAp/gitee/orgk/pytorch/  8
+bash /fridaAnlzAp/github-gitee-gitea/tool/env_prepare.sh
+source /fridaAnlzAp/github-gitee-gitea/tool/.venv/bin/activate
+python /fridaAnlzAp/github-gitee-gitea/tool/submodule_list.py  /fridaAnlzAp/gitee/imagg/pytorch--pytorch/  8
+deactivate
 ```
 
 
