@@ -17,7 +17,7 @@
 
 ```bash -x /fridaAnlzAp/github-gitee-gitea/gitee_api_fetch_ts/script/gen_gitee_import_repo_req_template.sh```
 
-#### 步1、 导入父仓库
+#### 步1、 导入父仓库（github-->gitee）
 
 #####  bash命令提示
 ```shell
@@ -38,7 +38,7 @@ cd /fridaAnlzAp/gitee/imagg/pytorch--pytorch/
 git checkout v1.3.1
 ```
 
-#### 步2、 导入各子模块
+#### 步2、 导入各子模块（github-->gitee）
 
 #####  bash命令提示
 ```shell
@@ -65,15 +65,35 @@ troch版本[v1.3.1](https://github.com/pytorch/pytorch/commits/refs/tags/v1.3.1/
 ----
 
 
-#### 步3、 迁移父仓库
+#### 步3和步4、 公共内容
+
+#####  搭建本地gitea服务
+
+[gitea_as_github.md](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/localGitea_as_github/gitea_as_github.md)
+
+
+##### use-local-gitea-as-github
+
+将 搭建好的gitea服务 当作 假"github" 
+```shell
+echo """
+10.0.4.23 github.local
+10.0.4.23 github.com
+""" | sudo tee -a /etc/hosts
+```
 
 #####  bash命令提示
 ```shell
 export PATH=/fridaAnlzAp/github-gitee-gitea/localGitea_as_github/:$PATH
 source /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/script/bash-complete--repoMigrateToGitea.sh
 chmod +x /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/repoMigrateToGitea.py
+
+source /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/script/bash-complete--submoduleMigrateToGitea.sh
+chmod +x /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/submoduleMigrateToGitea.py
 ```
 
+
+#### 步3、 迁移父仓库（gitee-->本地gitea）
 
 ##### 执行命令
 ```shell
@@ -82,14 +102,8 @@ source /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/.venv/bin/activate
 repoMigrateToGitea.py --from_repo_url https://github.com/pytorch/pytorch.git  --mirror_base_ur https://gitee.com  --mirror_org_name imagg
 ```
 
-#### 步4、 迁移各子模块
+#### 步4、 迁移各子模块（gitee-->本地gitea）
 
-#####  bash命令提示
-```shell
-export PATH=/fridaAnlzAp/github-gitee-gitea/localGitea_as_github/:$PATH
-source /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/script/bash-complete--submoduleMigrateToGitea.sh
-chmod +x /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/submoduleMigrateToGitea.py
-```
 
 ##### 执行命令
 ```shell
@@ -99,6 +113,10 @@ submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/gitee/imagg/pytor
 ```
 
 没捕捉到从无到有导入子仓库们的日志，这是重新执行的日志了 , http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/localGitea_as_github/doc/example_out_ReExec_submoduleMigrateToGitea__pytorch_v1.3.1.log.txt
+
+
+#### 步5
+
 
 ## 网页(可重执行)请求协议分析方案
 
