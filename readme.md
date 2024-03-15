@@ -6,8 +6,8 @@
 
 - 步1. 将  https://github.com/pytorch/pytorch.git 导入 为 https://gitee.com/imagg/pytorch--pytorch.git 
 - 步2. 将  https://github.com/pytorch/pytorch.git 中的子模块们 导入 为 https://gitee.com/imagg/ORG--REPO.git
-- 步3. 将  https://gitee.com/imagg/*--*.git 载入 本地 gitea服务 中
-
+- 步3. 将  https://github.com/pytorch/pytorch.git 对应的gitee镜像 迁移到 本地 gitea服务 中
+- 步4. 将  本地镜像仓库/fridaAnlzAp/gitee/imagg/pytorch--pytorch/下的子模块们 迁移到 本地 gitea服务 中
 【详细叙述】
 
 **步0 只做一次， 即可供给多次 步1、步2 使用**
@@ -62,6 +62,41 @@ torch的[2770e3addd9f05101705f0fef85a163e0034b8a5](https://github.com/pytorch/py
 troch版本[v1.3.1](https://github.com/pytorch/pytorch/commits/refs/tags/v1.3.1/) 【 [ee77ccbb6da4e2efd83673e798acf7081bc03564](https://github.com/pytorch/pytorch/commit/ee77ccbb6da4e2efd83673e798acf7081bc03564) 】
 的[子模块导入日志](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/git_submodule_import_cmd_gen/doc/example_torch-v1.3.1_submodule_import--v_1.3.1--ee77ccbb6da4e2efd83673e798acf7081bc03564.log.txt)
 
+----
+
+
+#### 步3、 迁移父仓库
+
+#####  bash命令提示
+```shell
+export PATH=/fridaAnlzAp/github-gitee-gitea/localGitea_as_github/:$PATH
+source /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/script/bash-complete--repoMigrateToGitea.sh
+chmod +x /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/repoMigrateToGitea.py
+```
+
+
+##### 执行命令
+```shell
+bash /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/script/env_prepare.sh
+source /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/.venv/bin/activate
+repoMigrateToGitea.py --from_repo_url https://github.com/pytorch/pytorch.git  --mirror_base_ur https://gitee.com  --mirror_org_name imagg
+```
+
+#### 步4、 迁移各子模块
+
+#####  bash命令提示
+```shell
+export PATH=/fridaAnlzAp/github-gitee-gitea/localGitea_as_github/:$PATH
+source /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/script/bash-complete--submoduleMigrateToGitea.sh
+chmod +x /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/submoduleMigrateToGitea.py
+```
+
+##### 执行命令
+```shell
+bash /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/script/env_prepare.sh
+source /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/.venv/bin/activate
+submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/gitee/imagg/pytorch--pytorch/  --mirror_base_ur https://gitee.com  --mirror_org_name imagg
+```
 
 ## 网页(可重执行)请求协议分析方案
 
