@@ -49,7 +49,7 @@ alias AliasXargsGitConfigGetUrlAwkPrint2Xargs_import_githubRepo_to_gitee_sh_gite
 ```
 
 ```shell
-find /fridaAnlzAp/gitee/imagg/ -name .gitmodules -type f | AliasXargsGitConfigGetUrlAwkPrint2Xargs_import_githubRepo_to_gitee_sh_gitee_imagg
+find /fridaAnlzAp/gitee/imagg/pytorch--pytorch/ -name .gitmodules -type f | AliasXargsGitConfigGetUrlAwkPrint2Xargs_import_githubRepo_to_gitee_sh_gitee_imagg
 
 ```
 
