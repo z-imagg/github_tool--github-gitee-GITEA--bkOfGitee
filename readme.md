@@ -9,6 +9,7 @@
 - 步3. 将  https://github.com/pytorch/pytorch.git 对应的gitee镜像 迁移到 本地 gitea服务 中
 - 步4. 将  本地镜像仓库/fridaAnlzAp/gitee/imagg/pytorch--pytorch/下的子模块们 迁移到 本地 gitea服务 中
 【详细叙述】
+- 步5、 从 "假github"(本地gitea服务) 正常克隆仓库、及其子模块们
 
 **步0 只做一次， 即可供给多次 步1、步2 使用**
 
@@ -115,8 +116,19 @@ submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/gitee/imagg/pytor
 没捕捉到从无到有导入子仓库们的日志，这是重新执行的日志了 , http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/localGitea_as_github/doc/example_out_ReExec_submoduleMigrateToGitea__pytorch_v1.3.1.log.txt
 
 
-#### 步5
+#### 步5、 从 "假github"(本地gitea服务) 正常克隆仓库、及其子模块们
 
+由于 , [use-local-gitea-as-github](http://giteaz:3000/wiki/github-gitee-gitea#use-local-gitea-as-github)
+
+因此 可以 正常从 "假github" 克隆 pytorch仓库了,
+
+```shell
+cd /fridaAnlzAp/
+git clone https://github.com/pytorch/pytorch.git
+#/fridaAnlzAp/pytorch/.git/config
+
+#再用lazygit去更新 /fridaAnlzAp/pytorch 中的 子模块们， 也 将一样是 正常从 "假github" 克隆到的
+```
 
 ## 网页(可重执行)请求协议分析方案
 
