@@ -9,12 +9,16 @@ echo ${D}, ${F}
 
 #####
 cd ${D}
-Hm="${D}/../.." # == /fridaAnlzAp/github-gitee-gitea/
+Hm="${D}/" # == /fridaAnlzAp/github-gitee-gitea
 
 
 VENV_HOME=${Hm}/.venv
 ActivVenv=$VENV_HOME/bin/activate
 test -f $ActivVenv || python3 -m venv $VENV_HOME
+
+
+source $ActivVenv
+pip install -r ${Hm}/requirements.txt
 
 
 source $ActivVenv
