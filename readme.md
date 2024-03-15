@@ -130,6 +130,7 @@ submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/gitee/imagg/pytor
 
 因此 可以 正常从 "假github" 克隆 pytorch仓库了,
 
+#####  clone
 ```shell
 cd /fridaAnlzAp/
 git clone https://github.com/pytorch/pytorch.git
@@ -138,11 +139,13 @@ git clone https://github.com/pytorch/pytorch.git
 pytorch克隆日志, [pytorch_clone-out.log.txt](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/localGitea_as_github/doc/pytorch_clone-out.log.txt)
 
 
+##### checkout v1.3.1
 ```shell
 cd /fridaAnlzAp/pytorch/
 git checkout v1.3.1
 ```
 
+##### submodule 
 ```shell
 #更新 /fridaAnlzAp/pytorch 中的 子模块们， 也 将一样是 正常从 "假github" 克隆到的
 #当让 如果有 lazygit 去更新子模块也一样的
