@@ -1,6 +1,13 @@
 ## 使用手册
 
-#### 1. 导入父仓库
+**步0 只做一次， 即可供给多次 步1、步2 使用**
+
+#### 步0、 生成gitee导入仓库请求模板(会启动chrome)
+
+
+```bash -x /fridaAnlzAp/github-gitee-gitea/gitee_api_fetch_ts/script/gen_gitee_import_repo_req_template.sh```
+
+#### 步1、 导入父仓库
 
 ```shell
 cd /fridaAnlzAp/gitee/orgk/
@@ -13,7 +20,7 @@ cd /fridaAnlzAp/gitee/imagg/pytorch--pytorch/
 git checkout v1.3.1
 ```
 
-#### 2. 导入各子模块
+#### 步2、 导入各子模块
 
 ```shell
 #bash命令提示
