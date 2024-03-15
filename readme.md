@@ -8,6 +8,9 @@ cd /fridaAnlzAp/gitee/orgk/
 import_githubRepo_to_gitee.sh --from_repo https://github.com/pytorch/pytorch.git  --goal_org imagg  --goal_repoPath pytorch--pytorch --goal_repoName pytorch--pytorch  --goal_repoDesc 来源https://github.com/pytorch/pytorch.git
 
 #/fridaAnlzAp/gitee/imagg/pytorch--pytorch/.git/
+
+cd /fridaAnlzAp/gitee/imagg/pytorch--pytorch/
+git checkout v1.3.1
 ```
 
 #### 2. 导入各子模块
