@@ -8,6 +8,10 @@ import re
 
 import httpx
 
+import sys
+sys.path.append("/fridaAnlzAp/github-gitee-gitea/py_util/")
+
+from GitRepoUrlParser import gitRepoUrlParseF
 
 def giteaMigrateApi(from_repo_url:str,goal_gitea_base_url:str,goal_gitea_token:str):
   repoUrl:str=from_repo_url
