@@ -253,7 +253,6 @@ python setup.py clean
 CMAKE_VERBOSE_MAKEFILE=True python setup.py develop
 #python setup.py install #由于我是在物理机（工作环境机），就不安装了
 
-python --version #Python 3.10.12
 
 ```
 
