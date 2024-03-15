@@ -38,9 +38,9 @@ def giteaMigrateApi(repoUrl:str,mirrorBaseUrl,mirrorOrg,giteaBaseUrl:str,giteaTo
     "repo_owner": repo_url.orgName,
     "repo_name": repo_url.repoName
   }
-  resp=httpx.post(url=migrate_url,json=reqBodyDct)
+  resp=httpx.post(url=migrate_url,json=reqBodyDct,verify=False)
   msg=f"【gitea迁移接口响应】状态码【{resp.status_code}】，响应文本【{resp.text}】"
-  ok= resp.is_success()
+  ok= resp.is_success
   msg=f'{"迁移成功" if ok else "迁移失败" }，{msg}'
   print(msg)
   return ok
