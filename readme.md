@@ -18,7 +18,7 @@ git checkout v1.3.1
 ```shell
 bash /fridaAnlzAp/github-gitee-gitea/tool/env_prepare.sh
 source /fridaAnlzAp/github-gitee-gitea/tool/.venv/bin/activate
-python /fridaAnlzAp/github-gitee-gitea/tool/submodule_list.py  /fridaAnlzAp/gitee/imagg/pytorch--pytorch/  8 | bash -x
+python /fridaAnlzAp/github-gitee-gitea/tool/submodule_list.py  /fridaAnlzAp/gitee/imagg/pytorch--pytorch/  8 9 | bash -x
 deactivate
 ```
 
