@@ -13,11 +13,12 @@ import random
 import sys
 # print(sys.argv)
 CurScriptNm:str=sys.argv[0]
-assert sys.argv[1:].__len__() == 2, "断言错误，参数个数必须等于2. 【用法为】python3 me.py 父git仓库路径 导入命令休眠间隔秒数"
+assert sys.argv[1:].__len__() == 3, "断言错误，参数个数必须等于3. 【用法为】python3 me.py 父git仓库路径 导入命令休眠秒数起点 导入命令休眠秒数增量"
 _BgRp:str=sys.argv[1]
 _sleepSeconds:str=int(sys.argv[2])
-_sleepSecEnd=_sleepSeconds+9
+_sleepSecEnd:str=int(sys.argv[3])
 
+assert _sleepSeconds >=8 and _sleepSecEnd >= 5
 
 BgRp:git.Repo=git.Repo(path=_BgRp)
 BgRpRmt:git.Remote=BgRp.remote()
