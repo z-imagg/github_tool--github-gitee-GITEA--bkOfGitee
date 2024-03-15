@@ -58,16 +58,21 @@ find /fridaAnlzAp/gitee/imagg/pytorch--pytorch/ -name .gitmodules -type f | Alia
 
 #####  bash命令提示
 ```shell
-export PATH=/fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/:$PATH
+export PATH=/fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/:/fridaAnlzAp/github-gitee-gitea/localGitea_as_github/:$PATH
 source /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/script/bash-complete--gitSubmoduleImportCmdGen.sh
+source /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/script/bash-complete--repoMigrateToGitea.sh
+source /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/script/bash-complete--submoduleMigrateToGitea.sh
 chmod +x /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/gitSubmoduleImportCmdGen.py
+chmod +x /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/repoMigrateToGitea.py
+chmod +x /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/submoduleMigrateToGitea.py
+
+bash /fridaAnlzAp/github-gitee-gitea/script/env_prepare.sh
+source /fridaAnlzAp/github-gitee-gitea/.venv/bin/activate
 ```
 
 
 ##### 执行命令
 ```shell
-bash /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/script/env_prepare.sh
-source /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/.venv/bin/activate
 gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/gitee/imagg/pytorch--pytorch  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9 | bash -x
 # gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/pytorch  --goal_org imagg  --sleep_seconds 1 --sleep_seconds_delta 2 | wc -l 
 #30， 这里gitpython只找到30个子模块，但是下面 步4 git找到了 45个子模块
@@ -101,23 +106,11 @@ echo """
 """ | sudo tee -a /etc/hosts
 ```
 
-#####  bash命令提示
-```shell
-export PATH=/fridaAnlzAp/github-gitee-gitea/localGitea_as_github/:$PATH
-source /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/script/bash-complete--repoMigrateToGitea.sh
-chmod +x /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/repoMigrateToGitea.py
-
-source /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/script/bash-complete--submoduleMigrateToGitea.sh
-chmod +x /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/submoduleMigrateToGitea.py
-```
-
 
 #### 步3、 迁移父仓库（gitee-->本地gitea）
 
 ##### 执行命令
 ```shell
-bash /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/script/env_prepare.sh
-source /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/.venv/bin/activate
 repoMigrateToGitea.py --from_repo_url https://github.com/pytorch/pytorch.git  --mirror_base_ur https://gitee.com  --mirror_org_name imagg
 ```
 
@@ -149,8 +142,6 @@ echo "/fridaAnlzAp/gitee/imagg/pytorch--pytorch/.gitmodules"  | AliasXargsGitCon
 
 ##### 执行命令
 ```shell
-bash /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/script/env_prepare.sh
-source /fridaAnlzAp/github-gitee-gitea/localGitea_as_github/.venv/bin/activate
 submoduleMigrateToGitea.py --from_parent_repo_dir /fridaAnlzAp/gitee/imagg/pytorch--pytorch/  --mirror_base_ur https://gitee.com  --mirror_org_name imagg
 ```
 
