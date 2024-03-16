@@ -41,7 +41,7 @@ def importGithubRepo2GiteeRecurse(from_repo_url:str,giteeMirrOrg:str,sleep_secon
 
     newRepoName=f"{repoUrlO.orgName}--{repoUrlO.repoName}"
     simpleRespI:SimpleRespI=gitee_import_repo_wrap_F(fromRepoUrl=from_repo_url,mirrOrg=giteeMirrOrg,newRepoName=newRepoName)
-    time.sleep(sleep_seconds); print("调用gitee的接口后休眠2秒")
+    time.sleep(sleep_seconds); print(f"调用gitee的接口后休眠2秒,【{simpleRespI.goal_repoUrl}】---> 【{simpleRespI.url}】")
     mirrRepoUrl:str=simpleRespI.goal_repoUrl
 
     #以 循环克隆仓库 等待 gitee导入仓库任务 完毕

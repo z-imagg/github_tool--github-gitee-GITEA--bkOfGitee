@@ -11,6 +11,14 @@ from IdUtil import basicUqIdF
 
 
 class SimpleRespI:
+    url:str
+    reqBody:str
+    reqHeaders:str
+    respStatus:int
+    respBody:str
+    respHeaders:str
+    goal_repoUrl:str
+
     # def __init__(self,url:str,reqBody:str,reqHeaders:str,respStatus:int,respBody:str,respHeaders:str,goal_repoUrl:str) -> None:
     def __init__(self ) -> None:
         pass
