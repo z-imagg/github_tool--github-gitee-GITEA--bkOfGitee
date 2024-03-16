@@ -13,6 +13,7 @@ import time
 
 import sys
 import argparse
+sys.path.append("/fridaAnlzAp/github-gitee-gitea/py_util/")
 from GitPyCloneProgress import GitPyCloneProgressC
 from gitee_import_repo_wrap import gitee_import_repo_wrap_F,SimpleRespI
 from GitRepoUrlParser import gitRepoUrlParseF,GitRepoUrlC
