@@ -15,6 +15,7 @@ def loop_clone_wait_F(repoUrl:str)->git.Repo:
                 print(".",end="")#等待中
                 continue
             else:
+                #正常克隆仓库
                 return repo
         except git.GitCommandError as e:#克隆仓库报错
             time.sleep( randSecs(5) )

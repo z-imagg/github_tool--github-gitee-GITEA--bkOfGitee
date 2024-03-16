@@ -28,14 +28,15 @@ def main_cmd():
     description='【子模块导入命令生成】')
 
     parser.add_argument('-f', '--from_repo_url',required=True,type=str,help="【父仓库url,常为gitee仓库】",metavar='')
+    parser.add_argument('-c', '--from_commit_id',required=True,type=str,help="【看父仓库的commitId】",metavar='')
     parser.add_argument('-o', '--goal_org',required=True,type=str,help="【目标，gitee的组织】",metavar='')
     parser.add_argument('-s', '--sleep_seconds',required=True,type=int,help=f"【 相邻两个子模块导入命令间休眠秒数】 ",metavar='')
     args=parser.parse_args()
 
 
-    importGithubRepo2GiteeRecurse(from_repo_url=args.from_repo_url,giteeMirrOrg=args.goal_org,sleep_seconds=args.sleep_seconds)
+    importGithubRepo2GiteeRecurse(from_repo_url=args.from_repo_url,from_commit_id=args.from_commit_id,giteeMirrOrg=args.goal_org,sleep_seconds=args.sleep_seconds)
 
-def importGithubRepo2GiteeRecurse(from_repo_url:str,giteeMirrOrg:str,sleep_seconds:int=2):
+def importGithubRepo2GiteeRecurse(from_repo_url:str,from_commit_id:str,giteeMirrOrg:str,sleep_seconds:int=2):
     assert from_repo_url.startswith("https://github.com"), "断言失败，只允许github.com的仓库导入到gitee"
     repoUrlO:GitRepoUrlC=gitRepoUrlParseF(repoUrl=from_repo_url)
 
@@ -46,11 +47,14 @@ def importGithubRepo2GiteeRecurse(from_repo_url:str,giteeMirrOrg:str,sleep_secon
 
     #以 循环克隆仓库 等待 gitee导入仓库任务 完毕
     repo:git.Repo=loop_clone_wait_F(repoUrl=mirrRepoUrl)
-
+    #重置到给定commitId
+    repo.git.checkout(from_commit_id)
+    print(f"{from_repo_url} 此提交{from_commit_id}上的消息{repo.commit(from_commit_id).message}")
+    
     #递归子仓库
     for k,sonRepoK in enumerate( repo.submodules):
         # print(f"{repoK.name}, {repoK.path}, {repoK.url}, {repoK.hexsha}, {repoK.branch_name}, {repoK.branch_path}")
-        importGithubRepo2GiteeRecurse(sonRepoK.url,giteeMirrOrg, randSecs(sleep_seconds))
+        importGithubRepo2GiteeRecurse(sonRepoK.url, sonRepoK.hexsha, giteeMirrOrg, randSecs(sleep_seconds))
 
 if __name__=="__main__":
     main_cmd()
