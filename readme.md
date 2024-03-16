@@ -4,8 +4,7 @@
 
 以下以pytorch为例子， 演示 ：
 
-- 步1. 将  https://github.com/pytorch/pytorch.git 导入 为 https://gitee.com/imagg/pytorch--pytorch.git 
-- 步2. 将  https://github.com/pytorch/pytorch.git 中的子模块们 导入 为 https://gitee.com/imagg/ORG--REPO.git
+- 步1. 【正常 递归gitee导入接口】从一github仓库pytorch的url、其中某commitId为起点  递归地做：调用gitee导入接口、循环等且克隆仓库、递归其子模块列表
 - 步3. 将  https://github.com/pytorch/pytorch.git 对应的gitee镜像 迁移到 本地 gitea服务 中
 - 步4. 将  本地镜像仓库/fridaAnlzAp/gitee/imagg/pytorch--pytorch/下的子模块们 迁移到 本地 gitea服务 中
 【详细叙述】
@@ -18,43 +17,7 @@
 
 ```bash -x /fridaAnlzAp/github-gitee-gitea/gitee_api_fetch_ts/script/gen_gitee_import_repo_req_template.sh```
 
-#### 步1、 导入父仓库（github-->gitee）
-
-#####  bash命令提示
-```shell
-export PATH=/fridaAnlzAp/github-gitee-gitea/gitee_api_fetch_ts/script:$PATH
-source /fridaAnlzAp/github-gitee-gitea/gitee_api_fetch_ts/script/bash-complete--import_githubRepo_to_gitee.sh
-chmod +x /fridaAnlzAp/github-gitee-gitea/gitee_api_fetch_ts/script/import_githubRepo_to_gitee.sh
-```
-
-##### 执行命令
-```shell
-cd /fridaAnlzAp/gitee/imagg/
-
-import_githubRepo_to_gitee.sh --from_repo https://github.com/pytorch/pytorch.git  --goal_org imagg  --goal_repoPath pytorch--pytorch --goal_repoName pytorch--pytorch  --goal_repoDesc 来源https://github.com/pytorch/pytorch.git
-
-#/fridaAnlzAp/gitee/imagg/pytorch--pytorch/.git/
-
-cd /fridaAnlzAp/gitee/imagg/pytorch--pytorch/
-git checkout v1.3.1
-```
-
-##### 尝试用git命令找子模块（github-->gitee）（比 步2 的 gitSubmoduleImportCmdGen.py 更全？）
-
-```shell
-# echo $((RANDOM % (b - a + 1) + a))
-SleepSecsB=8
-SleepSecsDelta=9
-alias AliasXargsGitConfigGetUrlAwkPrint2Xargs_import_githubRepo_to_gitee_sh_gitee_imagg='xargs -I@ git --no-pager  config --file @  --get-regexp url  | awk "{ print \$2 }" | xargs -I% sh -c "sleep \\$((RANDOM % (SleepSecsDelta + 1) + SleepSecsB)) ; import_githubRepo_to_gitee.sh --from_repo %  --goal_org imagg  --goal_repoPath pytorch--pytorch --goal_repoName pytorch--pytorch  --goal_repoDesc 来源% " '
-```
-
-```shell
-find /fridaAnlzAp/gitee/imagg/pytorch--pytorch/ -name .gitmodules -type f | AliasXargsGitConfigGetUrlAwkPrint2Xargs_import_githubRepo_to_gitee_sh_gitee_imagg
-
-```
-
-
-#### 步2、 导入各子模块（github-->gitee）(gitSubmoduleImportCmdGen.py也没找全子模块？)
+#### 步1、 递归gitee导入接口（github-->gitee）
 
 #####  bash命令提示
 ```shell
@@ -75,18 +38,12 @@ source /fridaAnlzAp/github-gitee-gitea/.venv/bin/activate
 
 ##### 执行命令
 ```shell
-gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/gitee/imagg/pytorch--pytorch  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9 | bash -x
-# gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/pytorch  --goal_org imagg  --sleep_seconds 1 --sleep_seconds_delta 2 | wc -l 
-#30， 这里gitpython只找到30个子模块，但是下面 步4 git找到了 45个子模块
+cd /fridaAnlzAp/github-gitee-gitea/
 
-deactivate
+./git_submodule_import_cmd_gen/RepoRecurseImport.py  --from_repo_url https://github.com/pytorch/pytorch.git --from_commit_id ee77ccbb6da4e2efd83673e798acf7081bc03564 --goal_org ruut --sleep_seconds 2 
+    
 ```
 
-
-torch的[2770e3addd9f05101705f0fef85a163e0034b8a5](https://github.com/pytorch/pytorch/tree/2770e3addd9f05101705f0fef85a163e0034b8a5)  的  [子模块导入日志](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/git_submodule_import_cmd_gen/doc/example_submodule_import--2770e3addd9f05101705f0fef85a163e0034b8a5.log.txt)
-
-troch版本[v1.3.1](https://github.com/pytorch/pytorch/commits/refs/tags/v1.3.1/) 【 [ee77ccbb6da4e2efd83673e798acf7081bc03564](https://github.com/pytorch/pytorch/commit/ee77ccbb6da4e2efd83673e798acf7081bc03564) 】
-的[子模块导入日志](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/git_submodule_import_cmd_gen/doc/example_torch-v1.3.1_submodule_import--v_1.3.1--ee77ccbb6da4e2efd83673e798acf7081bc03564.log.txt)
 
 ----
 
