@@ -58,7 +58,7 @@ for k,repoK in enumerate( BgRp.submodules):
     repoName=urlFieldLs[2]
     newRepoName=f"{orgName}--{repoName}"
     #import_githubRepo_to_gitee.sh --from_repo https://github.com/pytorch/pytorch.git  --goal_org imagg  --goal_repoPath pytorch--pytorch --goal_repoName pytorch--pytorch  --goal_repoDesc 来源https://github.com/pytorch/pytorch.git
-    cmd_import2gitee=f"import_githubRepo_to_gitee.sh --from_repo {urlK}  --goal_org {giteeMirrorOrgName}  --goal_repoPath {newRepoName} --goal_repoName {newRepoName}  --goal_repoDesc 【镜像】{urlK}; sleep {random.randint(_sleepSeconds,_sleepSecEnd)}"
+    cmd_import2gitee=f"import_githubRepo_to_gitee.sh --from_repo {urlK}  --goal_org {giteeMirrorOrgName}  --goal_repoPath {newRepoName} --goal_repoName {newRepoName}  --goal_repoDesc 【镜像】{urlK}; #sleep {random.randint(_sleepSeconds,_sleepSecEnd)}"
     print(cmd_import2gitee)
 
 _end=True
