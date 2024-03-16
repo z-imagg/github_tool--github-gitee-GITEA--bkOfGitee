@@ -8,13 +8,16 @@
         ///////////////导入用到的运行配置//////////////
 
         {
-            "name": "Python调试【submodule_list.py】【固定参数】",
+            "name": "RepoRecurseImport.py【固定参数】",
             "type": "debugpy",
             "request": "launch",
-            "program": "submodule_list.py",
+            "program": "git_submodule_import_cmd_gen/RepoRecurseImport.py",
             "console": "integratedTerminal",
-            "args": [  "--parent_repo_dir", "/fridaAnlzAp/gitee/imagg/pytorch--pytorch", "--goal_org", "imagg", "--sleep_seconds", "8", "--sleep_seconds_delta", "4"]
+            "args": [  "--from_repo_url", "https://github.com/NVlabs/cub.git", "--goal_org", "ruut", "--sleep_seconds", "2" ],
             // python /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/gitee/imagg/pytorch--pytorch  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}:/fridaAnlzAp/github-gitee-gitea/py_util/"
+            },
         },
         {
             "name": "Python调试【当前py文件携带参数】",
