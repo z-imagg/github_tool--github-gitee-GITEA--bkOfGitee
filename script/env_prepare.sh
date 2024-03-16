@@ -9,7 +9,7 @@ echo ${D}, ${F}
 
 #####
 cd ${D}
-Hm="${D}/" # == /fridaAnlzAp/github-gitee-gitea
+Hm="${D}/../" # == /fridaAnlzAp/github-gitee-gitea
 
 
 VENV_HOME=${Hm}/.venv
@@ -18,8 +18,8 @@ test -f $ActivVenv || python3 -m venv $VENV_HOME
 
 
 source $ActivVenv
-pip install -r ${Hm}/requirements.txt
+pip install -r ${Hm}/git_submodule_import_cmd_gen/requirements.txt
 
 
 source $ActivVenv
-pip install -r ${Hm}/requirements.txt
+pip install -r ${Hm}/localGitea_as_github/requirements.txt
