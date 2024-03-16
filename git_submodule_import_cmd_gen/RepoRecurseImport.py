@@ -19,6 +19,7 @@ from gitee_import_repo_wrap import gitee_import_repo_wrap_F,SimpleRespI
 from GitRepoUrlParser import gitRepoUrlParseF,GitRepoUrlC
 from LoopCloneWait import loop_clone_wait_F
 from RandomUtil import randSecs
+from SleepUtil import sleepVerbose
 
 MINI_sleep_seconds = 8
 
@@ -42,7 +43,7 @@ def importGithubRepo2GiteeRecurse(from_repo_url:str,from_commit_id:str,giteeMirr
 
     newRepoName=f"{repoUrlO.orgName}--{repoUrlO.repoName}"
     simpleRespI:SimpleRespI=gitee_import_repo_wrap_F(fromRepoUrl=from_repo_url,mirrOrg=giteeMirrOrg,newRepoName=newRepoName)
-    time.sleep(sleep_seconds); print(f"调用gitee的接口后休眠2秒,【{simpleRespI.goal_repoUrl}】---> 【{simpleRespI.url}】")
+    sleepVerbose(sleep_seconds); print(f"调用gitee的接口后休眠2秒,【{simpleRespI.goal_repoUrl}】---> 【{simpleRespI.url}】")
     mirrRepoUrl:str=simpleRespI.goal_repoUrl
 
     #以 循环克隆仓库 等待 gitee导入仓库任务 完毕
