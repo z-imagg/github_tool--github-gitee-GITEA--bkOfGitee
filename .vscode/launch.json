@@ -13,7 +13,7 @@
             "request": "launch",
             "program": "git_submodule_import_cmd_gen/RepoRecurseImport.py",
             "console": "integratedTerminal",
-            "args": [  "--from_repo_url", "https://github.com/pytorch/pytorch.git", "--goal_org", "ruut", "--sleep_seconds", "2" ],
+            "args": [  "--from_repo_url", "https://github.com/onnx/onnx.git", "--goal_org", "ruut", "--sleep_seconds", "2" ],
             // python /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/gitee/imagg/pytorch--pytorch  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9
             "env": {
                 "PYTHONPATH": "${workspaceFolder}:/fridaAnlzAp/github-gitee-gitea/py_util/"
