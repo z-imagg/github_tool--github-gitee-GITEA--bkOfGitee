@@ -51,7 +51,9 @@ def importGithubRepo2GiteeRecurse(from_repo_url:str,from_commit_id:str,giteeMirr
     repo:git.Repo=loop_clone_wait_F(repoUrl=mirrRepoUrl)
     #重置到给定commitId
     repo.git.checkout(from_commit_id)
-    print(f"{from_repo_url} 此提交{from_commit_id}上的消息{repo.commit(from_commit_id).message}")
+
+    _msg=f"有子仓库{len(repo.submodules)}个" if len(repo.submodules)>0 else "无子仓库"
+    print(f"{from_repo_url} {_msg} 提交{from_commit_id}上的消息{repo.commit(from_commit_id).message}")
     
     #递归子仓库
     for k,sonRepoK in enumerate( repo.submodules):
