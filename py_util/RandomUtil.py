@@ -1,3 +1,3 @@
 import random
 def randSecs(beginSeconds:int):
-    return random.randint(beginSeconds,beginSeconds*(3/2))
+    return random.randint(beginSeconds,int(beginSeconds*(3/2)))
