@@ -18,9 +18,9 @@ from GitPyCloneProgress import GitPyCloneProgressC
 from gitee_import_repo_wrap import gitee_import_repo_wrap_F,SimpleRespI
 from GitRepoUrlParser import gitRepoUrlParseF,GitRepoUrlC
 from LoopCloneWait import loop_clone_wait_F
+from RandomUtil import randSecs
 
 MINI_sleep_seconds = 8
-MINI_sleep_seconds_delta = 5
 
 def main_cmd():
     parser = argparse.ArgumentParser(
@@ -50,7 +50,7 @@ def importGithubRepo2GiteeRecurse(from_repo_url:str,giteeMirrOrg:str,sleep_secon
     #递归子仓库
     for k,sonRepoK in enumerate( repo.submodules):
         # print(f"{repoK.name}, {repoK.path}, {repoK.url}, {repoK.hexsha}, {repoK.branch_name}, {repoK.branch_path}")
-        importGithubRepo2GiteeRecurse(sonRepoK.url)
+        importGithubRepo2GiteeRecurse(sonRepoK.url,giteeMirrOrg, randSecs(sleep_seconds))
 
 if __name__=="__main__":
     main_cmd()
