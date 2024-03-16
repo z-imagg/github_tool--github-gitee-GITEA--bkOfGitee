@@ -20,6 +20,7 @@ from GitRepoUrlParser import gitRepoUrlParseF,GitRepoUrlC
 from LoopCloneWait import loop_clone_wait_F
 from RandomUtil import randSecs
 from SleepUtil import sleepVerbose
+from MiscUtil import fullUrl
 
 MINI_sleep_seconds = 8
 
@@ -43,7 +44,7 @@ def importGithubRepo2GiteeRecurse(from_repo_url:str,from_commit_id:str,giteeMirr
 
     newRepoName=f"{repoUrlO.orgName}--{repoUrlO.repoName}"
     simpleRespI:SimpleRespI=gitee_import_repo_wrap_F(fromRepoUrl=from_repo_url,mirrOrg=giteeMirrOrg,newRepoName=newRepoName)
-    sleepVerbose(sleep_seconds); print(f"调用gitee的接口后休眠2秒,【{simpleRespI.goal_repoUrl}】---> 【{simpleRespI.url}】")
+    sleepVerbose(sleep_seconds); print(f"调用gitee导入接口【{from_repo_url}】---> 【{simpleRespI.goal_repoUrl}】")
     mirrRepoUrl:str=simpleRespI.goal_repoUrl
 
     #以 循环克隆仓库 等待 gitee导入仓库任务 完毕
@@ -54,8 +55,9 @@ def importGithubRepo2GiteeRecurse(from_repo_url:str,from_commit_id:str,giteeMirr
     
     #递归子仓库
     for k,sonRepoK in enumerate( repo.submodules):
+        sonUrl:str=fullUrl(from_repo_url,sonRepoK.url)
         # print(f"{repoK.name}, {repoK.path}, {repoK.url}, {repoK.hexsha}, {repoK.branch_name}, {repoK.branch_path}")
-        importGithubRepo2GiteeRecurse(sonRepoK.url, sonRepoK.hexsha, giteeMirrOrg, randSecs(sleep_seconds))
+        importGithubRepo2GiteeRecurse(sonUrl, sonRepoK.hexsha, giteeMirrOrg, randSecs(sleep_seconds))
 
 if __name__=="__main__":
     main_cmd()
