@@ -42,12 +42,14 @@ def importGithubRepo2GiteeRecurse(from_repo_url:str,from_commit_id:str,giteeMirr
     assert from_repo_url.startswith("https://github.com"), "断言失败，只允许github.com的仓库导入到gitee"
     repoUrlO:GitRepoUrlC=gitRepoUrlParseF(repoUrl=from_repo_url)
 
+    #1. 调用gitee导入接口
     newRepoName=f"{repoUrlO.orgName}--{repoUrlO.repoName}"
     simpleRespI:SimpleRespI=gitee_import_repo_wrap_F(fromRepoUrl=from_repo_url,mirrOrg=giteeMirrOrg,newRepoName=newRepoName)
     sleepVerbose(sleep_seconds,"#"); print(f"调用gitee导入接口【{from_repo_url}】---> 【{simpleRespI.goal_repoUrl}】")
     mirrRepoUrl:str=simpleRespI.goal_repoUrl
 
-    #以 循环克隆仓库 等待 gitee导入仓库任务 完毕
+    #2. 克隆仓库
+    #   以 循环克隆仓库 等待 gitee导入仓库任务 完毕
     repo:git.Repo=loop_clone_wait_F(repoUrl=mirrRepoUrl)
     #重置到给定commitId
     repo.git.checkout(from_commit_id)
@@ -56,7 +58,7 @@ def importGithubRepo2GiteeRecurse(from_repo_url:str,from_commit_id:str,giteeMirr
     _msg=f"有子仓库{len(repo.submodules)}个=【{subNmLs}】" if len(repo.submodules)>0 else "无子仓库"
     print(f"{from_repo_url} {_msg} 提交{from_commit_id}上的消息{repo.commit(from_commit_id).message}")
     
-    #递归子仓库
+    #3. 递归子仓库
     for k,sonRepoK in enumerate( repo.submodules):
         sonUrl:str=fullUrl(from_repo_url,sonRepoK.url)
         # print(f"{repoK.name}, {repoK.path}, {repoK.url}, {repoK.hexsha}, {repoK.branch_name}, {repoK.branch_path}")
