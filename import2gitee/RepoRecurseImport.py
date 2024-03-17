@@ -51,7 +51,7 @@ def main_cmd():
     prjHmDir:str=f"{scriptDir.parent.absolute()}"
     #prjHmDir==/fridaAnlzAp/github-gitee-GITEA/
 
-    importGithubRepo2GiteeRecurse(prjHmDir, from_repo_url=args.from_repo_url,from_commit_id=args.from_commit_id,giteeMirrOrg=args.goal_org,sleep_seconds=args.sleep_seconds)
+    importGithubRepo2GiteeRecurse(prjHmDir=prjHmDir, from_repo_url=args.from_repo_url,from_commit_id=args.from_commit_id,giteeMirrOrg=args.goal_org,sleep_seconds=args.sleep_seconds)
 
 def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id:str,giteeMirrOrg:str,sleep_seconds:int=2):
     assert urlIsPrivIpAddr(from_repo_url), f"断言失败，导入步不要使用 【'假'github即本地GITEA服务】,应保持真github,  from_repo_url中的域名不应该解析到局域网ip【{from_repo_url}】"
