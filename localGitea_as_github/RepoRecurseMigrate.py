@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: <encoding name> -*-
 
-# 【文件作用】 遍历给定git仓库中的子模块列表， 并打印对应命令import_githubRepo_to_gitee.sh
-
+# 【文件作用】  
+# 【术语】CmtId == CommitId == 提交Id  == git的某次提交的数字签名 , localRUrl == localRepoUrl == 本地GITEE仓库Url
 from pathlib import Path
 import git
 from git import cmd
@@ -28,7 +28,6 @@ from  RepoMigrateToGiteaFunc import giteaMigrateApi
 from gitea_api_cfg import api_base_url, api_token
 
 cntr:Counter=Counter()
-MINI_sleep_seconds = 8
 
 def main_cmd():
     parser = argparse.ArgumentParser(
