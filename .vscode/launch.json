@@ -11,7 +11,7 @@
             "name": "递归Import固定参数】",
             "type": "debugpy",
             "request": "launch",
-            "program": "git_submodule_import_cmd_gen/RepoRecurseImport.py",
+            "program": "import2gitee/RepoRecurseImport.py",
             "console": "integratedTerminal",
             "args": [  
 "--from_repo_url", "https://github.com/pytorch/pytorch.git",
@@ -21,7 +21,7 @@
 ],
             // https://github.com/onnx/onnx.git  034921bd574cc84906b7996c07873454b7dd4135
             // https://github.com/pytorch/pytorch.git  ee77ccbb6da4e2efd83673e798acf7081bc03564 v1.3.1
-            // python /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/gitee/imagg/pytorch--pytorch  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9
+            // python /fridaAnlzAp/github-gitee-gitea/import2gitee/gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/gitee/imagg/pytorch--pytorch  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9
             "env": {
                 "PYTHONPATH": "${workspaceFolder}:/fridaAnlzAp/github-gitee-gitea/py_util/"
             },

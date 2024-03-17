@@ -3,7 +3,7 @@ https://github.com/pytorch/pytorch/commit/ee77ccbb6da4e2efd83673e798acf7081bc035
 
 
 
-z@mchr:~$ source /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/.venv/bin/activate
+z@mchr:~$ source /fridaAnlzAp/github-gitee-gitea/import2gitee/.venv/bin/activate
 (.venv) z@mchr:~$ gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/gitee/imagg/pytorch--pytorch  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9 | bash -x
 + import_githubRepo_to_gitee.sh --from_repo https://github.com/pybind/pybind11.git --goal_org imagg --goal_repoPath pybind--pybind11 --goal_repoName pybind--pybind11 --goal_repoDesc 【镜像】https://github.com/pybind/pybind11.git
 【命令行参数打印】[object Object],https://github.com/pybind/pybind11.git, imagg, pybind--pybind11, pybind--pybind11, 【镜像】https://github.com/pybind/pybind11.git

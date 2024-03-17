@@ -23,7 +23,7 @@
 
 #####  bash命令提示
 ```shell
-ImportHome=/fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen
+ImportHome=/fridaAnlzAp/github-gitee-gitea/import2gitee
 MigrateHome=/fridaAnlzAp/github-gitee-gitea/localGitea_as_github
 export PATH=$ImportHome/:$MigrateHome:$PATH
 source $ImportHome/script/bash-complete--gitSubmoduleImportCmdGen.sh
@@ -42,7 +42,7 @@ source /fridaAnlzAp/github-gitee-gitea/.venv/bin/activate
 ```shell
 cd /fridaAnlzAp/github-gitee-gitea/
 
-./git_submodule_import_cmd_gen/RepoRecurseImport.py  --from_repo_url https://github.com/pytorch/pytorch.git --from_commit_id ee77ccbb6da4e2efd83673e798acf7081bc03564 --goal_org ruut --sleep_seconds 2 
+./import2gitee/RepoRecurseImport.py  --from_repo_url https://github.com/pytorch/pytorch.git --from_commit_id ee77ccbb6da4e2efd83673e798acf7081bc03564 --goal_org ruut --sleep_seconds 2 
     
 ```
 
