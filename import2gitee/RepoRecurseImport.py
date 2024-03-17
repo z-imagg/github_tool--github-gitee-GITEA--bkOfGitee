@@ -3,6 +3,7 @@
 
 # 【文件作用】 遍历给定git仓库中的子模块列表， 并打印对应命令import_githubRepo_to_gitee.sh
 
+import sys
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 
 from pathlib import Path
@@ -13,7 +14,6 @@ import re
 import random
 import time
 
-import sys
 import argparse
 
 from HostUtil import hasLocalDomain
@@ -27,7 +27,6 @@ from SleepUtil import sleepVerbose
 from MiscUtil import fullUrl
 from CntUtil import Counter
 from DirUtil import setScriptDirAsCwd
-from IpUtil import urlIsPrivIpAddr
 
 cntr:Counter=Counter()
 MINI_sleep_seconds = 8

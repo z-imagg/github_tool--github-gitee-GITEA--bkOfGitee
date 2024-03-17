@@ -4,6 +4,7 @@
 # 【文件作用】  
 # 【术语】CmtId == CommitId == 提交Id  == git的某次提交的数字签名 , localRUrl == localRepoUrl == 本地GITEE仓库Url
 
+import sys
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 
 from pathlib import Path
@@ -14,7 +15,6 @@ import re
 import random
 import time
 
-import sys
 import argparse
 
 from HostUtil import hasLocalDomain
