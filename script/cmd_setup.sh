@@ -15,7 +15,7 @@ source $MigrateHm/script/bash-complete--RepoRecurseMigrate.sh
 chmod +x $ImportHm/RepoRecurseImport.py
 chmod +x $MigrateHm/RepoRecurseMigrate.py
 
-bash $hm/script/env_prepare.sh
+bash $hm/script/env_prepare.sh >/dev/null
 source $hm/.venv/bin/activate
 
 #正常可用：RepoRecurseImport.py --help 及其 bash自动完成
