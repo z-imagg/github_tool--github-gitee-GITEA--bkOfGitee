@@ -20,8 +20,9 @@ def tagNameLsByCmtId(repo:git.Repo,cmtId:str )->typing.Tuple[str,typing.List[git
 #  检查gitee镜像仓库是否能正常克隆
 def checkRepoByClone(repoUrl:str,title:str)->git.Repo:
     try:
+        progressTitle=f"{title}:{repoUrl}"
         dir=f"/tmp/{title}_{basicUqIdF()}"
-        repo:git.Repo=git.Repo.clone_from(url=repoUrl,to_path=dir,  progress=GitPyCloneProgressC())
+        repo:git.Repo=git.Repo.clone_from(url=repoUrl,to_path=dir,  progress=GitPyCloneProgressC(progressTitle))
         assert not dirIsEmptyExcludeHidden(dir) , f"断言失败，克隆到的不应该是空仓库. repoUrl=【{repoUrl}】,dir=【{dir}】"
         return repo
     except git.GitCommandError as e:
