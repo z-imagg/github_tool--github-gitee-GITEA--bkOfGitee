@@ -12,7 +12,7 @@ import argparse
 
 
 from  RepoMigrateToGiteaFunc import giteaMigrateApi
-from gitea_api_cfg import gitea_base_url, gitea_token
+from gitea_api_cfg import api_base_url, api_token
 
 
 def giteaMigrateApiCmd():
@@ -26,7 +26,7 @@ def giteaMigrateApiCmd():
     args=parser.parse_args()
 
 
-    giteaMigrateApi(args.from_repo_url, args.mirror_base_url, args.mirror_org_name, gitea_base_url, gitea_token)
+    giteaMigrateApi(args.from_repo_url, args.mirror_base_url, args.mirror_org_name)
 
 
 if __name__=="__main__":

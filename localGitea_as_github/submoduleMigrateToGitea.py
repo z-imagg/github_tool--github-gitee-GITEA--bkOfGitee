@@ -17,7 +17,7 @@ from GitRepoUrlParser import gitRepoUrlParseF,gitMirrorRepoUrlParseF,GitRepoUrlC
 
 from RepoMigrateToGiteaFunc import giteaMigrateApi
 
-from gitea_api_cfg import gitea_base_url, gitea_token
+from gitea_api_cfg import api_base_url, api_token
 
 def submoduleLsMigrateToGitea():
 
@@ -50,7 +50,7 @@ def submoduleLsMigrateToGitea():
         # mrrRepoUrl=GitRepoUrlC(baseUrl=mirrorBaseUrl, orgName=mirrorOrg,repoName=newRepo)
         # mrrRepoUrlTxt=mrrRepoUrl.url_str()
         
-        giteaMigrateApi(originUrlTxt, args.mirror_base_url, args.mirror_org_name, gitea_base_url, gitea_token)
+        giteaMigrateApi(originUrlTxt, args.mirror_base_url, args.mirror_org_name, api_base_url, api_token)
 
 if __name__=="__main__":
     submoduleLsMigrateToGitea()
