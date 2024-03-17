@@ -14,8 +14,8 @@
             "program": "import2gitee/RepoRecurseImport.py",
             "console": "integratedTerminal",
             "args": [  
-"--from_repo_url", "https://github.com/pytorch/pytorch.git",
-"--from_commit_id","ee77ccbb6da4e2efd83673e798acf7081bc03564", 
+"--from_repo_url", "https://github.com/onnx/onnx.git",
+"--from_commit_id","b86cc54efce19530fb953e4b21f57e6b3888534c", 
 "--goal_org", "ruut", 
 "--sleep_seconds", "2" 
 ],
