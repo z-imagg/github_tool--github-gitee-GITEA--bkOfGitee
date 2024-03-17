@@ -8,12 +8,17 @@
         ///////////////导入用到的运行配置//////////////
 
         {
-            "name": "RepoRecurseImport.py【固定参数】",
+            "name": "递归Import固定参数】",
             "type": "debugpy",
             "request": "launch",
             "program": "git_submodule_import_cmd_gen/RepoRecurseImport.py",
             "console": "integratedTerminal",
-            "args": [  "--from_repo_url", "https://github.com/pytorch/pytorch.git","--from_commit_id","ee77ccbb6da4e2efd83673e798acf7081bc03564", "--goal_org", "ruut", "--sleep_seconds", "2" ],
+            "args": [  
+"--from_repo_url", "https://github.com/pytorch/pytorch.git",
+"--from_commit_id","ee77ccbb6da4e2efd83673e798acf7081bc03564", 
+"--goal_org", "ruut", 
+"--sleep_seconds", "2" 
+],
             // https://github.com/onnx/onnx.git  034921bd574cc84906b7996c07873454b7dd4135
             // https://github.com/pytorch/pytorch.git  ee77ccbb6da4e2efd83673e798acf7081bc03564 v1.3.1
             // python /fridaAnlzAp/github-gitee-gitea/git_submodule_import_cmd_gen/gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/gitee/imagg/pytorch--pytorch  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9
@@ -34,36 +39,17 @@
         ///////////////迁移用到的运行配置//////////////
 
         {
-            "name": "运行submoduleMigrateToGitea.py",
+            "name": "递归Migrate【固定参数】",
             "type": "debugpy",
             "request": "launch",
-            "program": "submoduleMigrateToGitea.py",
+            "program": "localGitea_as_github/RepoRecurseMigrate.py",
             "console": "integratedTerminal",
             "args": [
-                "--from_parent_repo_dir",
-                "/fridaAnlzAp/gitee/imagg/pytorch--pytorch/",
-                "--mirror_base_ur",
-                "https://gitee.com",
-                "--mirror_org_name",
-                "imagg"
-            ],
-            "env": {
-                "PYTHONPATH": "${workspaceFolder}:/fridaAnlzAp/github-gitee-gitea/py_util/"
-            },
-        },
-        {
-            "name": "运行repoMigrateToGitea.py",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "repoMigrateToGitea.py",
-            "console": "integratedTerminal",
-            "args": [
-                "--from_repo_url",
-                "https://github.com/NVlabs/cub.git",
-                "--mirror_base_ur",
-                "https://gitee.com",
-                "--mirror_org_name",
-                "imagg"
+"--from_repo_url", "https://github.com/pytorch/pytorch.git",
+"--from_commit_id","ee77ccbb6da4e2efd83673e798acf7081bc03564", 
+"--mirror_base_ur",  "https://gitee.com",
+"--mirror_org_name", "imagg",
+"--sleep_seconds", "2" 
             ],
             "env": {
                 "PYTHONPATH": "${workspaceFolder}:/fridaAnlzAp/github-gitee-gitea/py_util/"
