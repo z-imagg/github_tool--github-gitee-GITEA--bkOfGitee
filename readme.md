@@ -24,7 +24,7 @@
 #####  bash命令提示
 ```shell
 ImportHome=/fridaAnlzAp/github-gitee-gitea/import2gitee
-MigrateHome=/fridaAnlzAp/github-gitee-gitea/localGitea_as_github
+MigrateHome=/fridaAnlzAp/github-gitee-gitea/migrate2GITEA
 export PATH=$ImportHome/:$MigrateHome:$PATH
 source $ImportHome/script/bash-complete--gitSubmoduleImportCmdGen.sh
 source $MigrateHomescript/bash-complete--repoMigrateToGitea.sh
@@ -54,7 +54,7 @@ cd /fridaAnlzAp/github-gitee-gitea/
 
 #####  搭建本地gitea服务
 
-[gitea_as_github.md](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/localGitea_as_github/gitea_as_github.md)
+[gitea_as_github.md](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/migrate2GITEA/gitea_as_github.md)
 
 
 ##### use-local-gitea-as-github
@@ -89,7 +89,7 @@ cd /fridaAnlzAp/
 git clone https://github.com/pytorch/pytorch.git
 #/fridaAnlzAp/pytorch/.git/config
 ```
-pytorch克隆日志, [pytorch_clone-out.log.txt](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/localGitea_as_github/doc/pytorch_clone-out.log.txt)
+pytorch克隆日志, [pytorch_clone-out.log.txt](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/migrate2GITEA/doc/pytorch_clone-out.log.txt)
 
 
 ##### checkout v1.3.1
@@ -104,7 +104,7 @@ git checkout v1.3.1
 #当让 如果有 lazygit 去更新子模块也一样的
 git submodule update --init   --progress 
 ```
-pytorch更新子模块的输出日志, [pytorch_submodule_update_init_progress-out.log.txt](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/localGitea_as_github/doc/pytorch_submodule_update_init_progress-out.log.txt)
+pytorch更新子模块的输出日志, [pytorch_submodule_update_init_progress-out.log.txt](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/migrate2GITEA/doc/pytorch_submodule_update_init_progress-out.log.txt)
 
 
 

@@ -42,7 +42,7 @@
             "name": "递归Migrate【固定参数】",
             "type": "debugpy",
             "request": "launch",
-            "program": "localGitea_as_github/RepoRecurseMigrate.py",
+            "program": "migrate2GITEA/RepoRecurseMigrate.py",
             "console": "integratedTerminal",
             "args": [
 "--from_repo_url", "https://github.com/pytorch/pytorch.git",

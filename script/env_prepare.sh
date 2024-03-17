@@ -22,4 +22,4 @@ pip install -r ${Hm}/import2gitee/requirements.txt
 
 
 source $ActivVenv
-pip install -r ${Hm}/localGitea_as_github/requirements.txt
+pip install -r ${Hm}/migrate2GITEA/requirements.txt
