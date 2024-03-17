@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-
-f=$0 ; { [[ "$f" == /* ]] || f="$(pwd)/$f" ;} ; d=$(dirname $f)
+#source me.sh 或 bash me.sh 均能获取当前脚本完整路径的写法
+declare -r f=$(readlink -f ${BASH_SOURCE[0]})
+d=$(dirname $f)
 #d==/fridaAnlzAp/github-gitee-gitea/script/
 
 hm=$(realpath -s ${d}/../)
