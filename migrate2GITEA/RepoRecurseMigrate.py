@@ -70,7 +70,7 @@ def migrateRecurse(ornRUrl:str, ornCmtId:str, frmBaseUrl:str, frmOrgNm:str, slpS
     for k,sonRpo in enumerate( repo.submodules):
         sonUrl:str=fullUrl(ornRUrl,sonRpo.url)
         # print(f"{repoK.name}, {repoK.path}, {repoK.url}, {repoK.hexsha}, {repoK.branch_name}, {repoK.branch_path}")
-        migrateRecurse(sonUrl, sonRpo.hexsha, frmBaseUrl, randSecs(slpSecs))
+        migrateRecurse(sonUrl, sonRpo.hexsha, frmBaseUrl, frmOrgNm, randSecs(slpSecs))
 
 if __name__=="__main__":
     main_cmd()
