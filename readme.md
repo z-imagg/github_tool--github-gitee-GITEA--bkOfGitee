@@ -32,7 +32,7 @@ http://giteaz:3000/wiki/github-gitee-GITEA/src/branch/main/script/cmd_setup.sh
 
 ##### 执行命令
 ```shell
-RepoRecurseImport.py  --from_repo_url https://github.com/pytorch/pytorch.git --from_commit_id ee77ccbb6da4e2efd83673e798acf7081bc03564 --goal_org ruut --sleep_seconds 2 
+RepoRecurseImport.py  --from_repo_url https://github.com/pytorch/pytorch.git --from_commit_id ee77ccbb6da4e2efd83673e798acf7081bc03564 --goal_org imagg --sleep_seconds 2 
     
 ```
 
