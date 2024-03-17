@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #source me.sh 或 bash me.sh 均能获取当前脚本完整路径的写法
-declare -r f=$(readlink -f ${BASH_SOURCE[0]})
+declare -r f=$(readlink -f ${BASH_SOURCE[0]}) 2>/dev/null
 d=$(dirname $f)
 #d==/fridaAnlzAp/github-gitee-gitea/script/
 
