@@ -16,7 +16,7 @@ import time
 
 import argparse
 
-from HostUtil import hasLocalDomain
+from HostUtil import hasLocalGithubDomain
 
 from GitPyCloneProgress import GitPyCloneProgressC
 from gitee_import_repo_wrap import gitee_import_repo_wrap_F,SimpleRespI
@@ -56,7 +56,7 @@ def main_cmd():
     importGithubRepo2GiteeRecurse(prjHmDir=prjHmDir, from_repo_url=args.from_repo_url,from_commit_id=args.from_commit_id,giteeMirrOrg=args.goal_org,sleep_seconds=args.sleep_seconds)
 
 def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id:str,giteeMirrOrg:str,sleep_seconds:int=2):
-    assert not hasLocalDomain(), f"断言失败，导入步不要将github.com解析到局域网ip"
+    assert not hasLocalGithubDomain(), f"断言失败，导入步不要在本地解析域名github.com，请将文件【/etc/hosts】中的github.com解析行删除或注释掉"
     assert from_repo_url.startswith("https://github.com"), f"断言失败，只允许github.com的仓库导入到gitee. from_repo_url=【{from_repo_url}】"
     repoUrlO:GitRepoUrlC=gitRepoUrlParseF(repoUrl=from_repo_url)
 
