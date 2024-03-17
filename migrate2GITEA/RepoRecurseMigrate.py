@@ -46,7 +46,7 @@ def main_cmd():
     migrateRecurse(ornRUrl=args.from_repo_url, ornCmtId=args.from_commit_id, frmBaseUrl=args.mirror_base_url, frmOrgNm=args.mirror_org_name, slpSecs=args.sleep_seconds)
 
 def migrateRecurse(ornRUrl:str, ornCmtId:str, frmBaseUrl:str, frmOrgNm:str, slpSecs:int=2):
-    assert hasLocalGithubDomain(), f"断言失败，迁移步必须将github.com解析到局域网ip"
+    assert hasLocalGithubDomain(), f"断言失败，迁移步要在本地解析域名github.com，请在文件【/etc/hosts】中添加一行将github.com解析到本地GITEA服务IP"
     assert ornRUrl.startswith("https://github.com") and frmBaseUrl.startswith("https://gitee.com") , "断言失败，只允许github.com、gitee.com做迁移到本地gitea服务"
     repoUrlO:GitRepoUrlC=gitRepoUrlParseF(repoUrl=ornRUrl)
 
