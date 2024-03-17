@@ -3,10 +3,10 @@
 #source me.sh 或 bash me.sh 均能获取当前脚本完整路径的写法
 declare -r f=$(readlink -f ${BASH_SOURCE[0]}) 2>/dev/null
 d=$(dirname $f)
-#d==/fridaAnlzAp/github-gitee-gitea/script/
+#d==/fridaAnlzAp/github-gitee-GITEA/script/
 
 hm=$(realpath -s ${d}/../)
-#hm=/fridaAnlzAp/github-gitee-gitea/
+#hm=/fridaAnlzAp/github-gitee-GITEA/
 ImportHm=$hm/import2gitee
 MigrateHm=$hm/migrate2GITEA
 export PATH=$ImportHm/:$MigrateHm:$PATH

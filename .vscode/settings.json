@@ -1,8 +1,8 @@
 {
     "python.analysis.extraPaths": [
-        "/fridaAnlzAp/github-gitee-gitea/py_util/"
+        "/fridaAnlzAp/github-gitee-GITEA/py_util/"
     ],
     "terminal.integrated.env.windows": {
-        "PYTHONPATH": "${env:PYTHONPATH};${workspaceFolder};/fridaAnlzAp/github-gitee-gitea/py_util/",
+        "PYTHONPATH": "${env:PYTHONPATH};${workspaceFolder};/fridaAnlzAp/github-gitee-GITEA/py_util/",
     }
 }

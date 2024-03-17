@@ -17,18 +17,18 @@
 #### 步0、 生成gitee导入仓库请求模板(会启动chrome)
 
 
-```bash -x /fridaAnlzAp/github-gitee-gitea/gitee_api_fetch_ts/script/gen_gitee_import_repo_req_template.sh```
+```bash -x /fridaAnlzAp/github-gitee-GITEA/gitee_api_fetch_ts/script/gen_gitee_import_repo_req_template.sh```
 
 #### 步1、 递归gitee导入接口（github-->gitee）
 
 #####  bash命令提示
 ```shell
-source /fridaAnlzAp/github-gitee-gitea/script/cmd_setup.sh
+source /fridaAnlzAp/github-gitee-GITEA/script/cmd_setup.sh
 #正常可用：RepoRecurseImport.py --help 及其 bash自动完成
 #正常可用：RepoRecurseMigrate.py --help 及其 bash自动完成
 ```
 
-http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/script/cmd_setup.sh
+http://giteaz:3000/wiki/github-gitee-GITEA/src/branch/main/script/cmd_setup.sh
 
 ##### 执行命令
 ```shell
@@ -44,7 +44,7 @@ RepoRecurseImport.py  --from_repo_url https://github.com/pytorch/pytorch.git --f
 
 #####  搭建本地gitea服务
 
-[gitea_as_github.md](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/migrate2GITEA/gitea_as_github.md)
+[gitea_as_github.md](http://giteaz:3000/wiki/github-gitee-GITEA/src/branch/main/migrate2GITEA/gitea_as_github.md)
 
 
 ##### use-local-gitea-as-github
@@ -69,7 +69,7 @@ RepoRecurseMigrate.py --from_repo_url https://github.com/pytorch/pytorch.git --f
 
 #### 步3、 从 "假github"(本地gitea服务) 正常克隆仓库、及其子模块们
 
-由于 , [use-local-gitea-as-github](http://giteaz:3000/wiki/github-gitee-gitea#use-local-gitea-as-github)
+由于 , [use-local-gitea-as-github](http://giteaz:3000/wiki/github-gitee-GITEA#use-local-gitea-as-github)
 
 因此 可以 正常从 "假github" 克隆 pytorch仓库了,
 
@@ -79,7 +79,7 @@ cd /fridaAnlzAp/
 git clone https://github.com/pytorch/pytorch.git
 #/fridaAnlzAp/pytorch/.git/config
 ```
-pytorch克隆日志, [pytorch_clone-out.log.txt](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/migrate2GITEA/doc/pytorch_clone-out.log.txt)
+pytorch克隆日志, [pytorch_clone-out.log.txt](http://giteaz:3000/wiki/github-gitee-GITEA/src/branch/main/migrate2GITEA/doc/pytorch_clone-out.log.txt)
 
 
 ##### checkout v1.3.1
@@ -94,7 +94,7 @@ git checkout v1.3.1
 #当让 如果有 lazygit 去更新子模块也一样的
 git submodule update --init   --progress 
 ```
-pytorch更新子模块的输出日志, [pytorch_submodule_update_init_progress-out.log.txt](http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/migrate2GITEA/doc/pytorch_submodule_update_init_progress-out.log.txt)
+pytorch更新子模块的输出日志, [pytorch_submodule_update_init_progress-out.log.txt](http://giteaz:3000/wiki/github-gitee-GITEA/src/branch/main/migrate2GITEA/doc/pytorch_submodule_update_init_progress-out.log.txt)
 
 
 
@@ -193,4 +193,4 @@ ls /fridaAnlzAp/pytorch/build/bin/*test*
 
 ## 网页(可重执行)请求协议分析方案
 
- http://giteaz:3000/wiki/github-gitee-gitea/src/branch/main/markupReq.md
+ http://giteaz:3000/wiki/github-gitee-GITEA/src/branch/main/markupReq.md

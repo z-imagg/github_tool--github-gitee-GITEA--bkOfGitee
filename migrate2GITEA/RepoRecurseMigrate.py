@@ -15,7 +15,7 @@ import sys
 import argparse
 
 from import2gitee.RepoRecurseImport import printFrmRepoMsg
-sys.path.append("/fridaAnlzAp/github-gitee-gitea/py_util/")
+sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 from GitRepoUrlParser import gitRepoUrlParseF,GitRepoUrlC
 from LoopCloneWait import loop_clone_wait_F
 from RandomUtil import randSecs

@@ -16,7 +16,7 @@ import typing
 import sys
 
 from httpx_util import httpx_post_json
-sys.path.append("/fridaAnlzAp/github-gitee-gitea/py_util/")
+sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 
 from GitRepoUrlParser import GitRepoUrlC, gitMirrorRepoUrlParseF,gitRepoUrlParseF,_GIT
 from gitea_api_cfg import api_base_url,gitea_migrate_api_timeout_seconds
