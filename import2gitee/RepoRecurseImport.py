@@ -78,7 +78,7 @@ def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id
     for k,sonRepoK in enumerate( repo.submodules):
         sonUrl:str=fullUrl(from_repo_url,sonRepoK.url)
         # print(f"{repoK.name}, {repoK.path}, {repoK.url}, {repoK.hexsha}, {repoK.branch_name}, {repoK.branch_path}")
-        importGithubRepo2GiteeRecurse(sonUrl, sonRepoK.hexsha, giteeMirrOrg, randSecs(sleep_seconds))
+        importGithubRepo2GiteeRecurse(prjHmDir, sonUrl, sonRepoK.hexsha, giteeMirrOrg, randSecs(sleep_seconds))
 
 if __name__=="__main__":
     main_cmd()
