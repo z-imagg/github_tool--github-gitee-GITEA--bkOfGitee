@@ -1,6 +1,6 @@
 https://github.com/pytorch/pytorch/commit/2770e3addd9f05101705f0fef85a163e0034b8a5
 
-(.venv) z@mchr:~$ python /fridaAnlzAp/github-gitee-gitea/tool/submodule_list.py  /fridaAnlzAp/gitee/imagg/pytorch--pytorch/  8  | bash -x 
+(.venv) z@mchr:~$ python /fridaAnlzAp/github-gitee-GITEA/tool/submodule_list.py  /fridaAnlzAp/gitee/imagg/pytorch--pytorch/  8  | bash -x 
 + import_githubRepo_to_gitee.sh --from_repo https://github.com/pybind/pybind11.git --goal_org imagg --goal_repoPath pybind--pybind11 --goal_repoName pybind--pybind11 --goal_repoDesc 【镜像】https://github.com/pybind/pybind11.git
 【命令行参数打印】[object Object],https://github.com/pybind/pybind11.git, imagg, pybind--pybind11, pybind--pybind11, 【镜像】https://github.com/pybind/pybind11.git
 rqTpl.req.postData【utf8=%E2%9C%93&authenticity_token=h97573mbRYdn2kVduyW1VpAdEzNcQTKifDdH963N%2BISfkZBUjmJSqwOiZ5Y9fmZL%2F9vwlwHTyGyyQN1gzP1e5Q%3D%3D&project%5Bimport_url%5D=https%3A%2F%2Fgithub.com%2Fpybind%2Fpybind11.git&user_sync_code=&password_sync_code=&project%5Bname%5D=pybind--pybind11&project%5Bnamespace_path%5D=imagg&project%5Bpath%5D=pybind--pybind11&project%5Bdescription%5D=%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91https%3A%2F%2Fgithub.com%2Fpybind%2Fpybind11.git&project%5Bpublic%5D=1&language=0】

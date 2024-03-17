@@ -3,6 +3,11 @@
 
 # 【文件作用】  
 # 【术语】CmtId == CommitId == 提交Id  == git的某次提交的数字签名 , localRUrl == localRepoUrl == 本地GITEE仓库Url
+
+import sys
+sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
+sys.path.append("/fridaAnlzAp/github-gitee-GITEA/import2gitee/")
+
 from pathlib import Path
 import git
 from git import cmd
@@ -11,11 +16,10 @@ import re
 import random
 import time
 
-import sys
 import argparse
 
-from git_submodule_import_cmd_gen.RepoRecurseImport import printFrmRepoMsg
-sys.path.append("/fridaAnlzAp/github-gitee-gitea/py_util/")
+from HostUtil import hasLocalGithubDomain
+from RepoRecurseImport import printFrmRepoMsg
 from GitRepoUrlParser import gitRepoUrlParseF,GitRepoUrlC
 from LoopCloneWait import loop_clone_wait_F
 from RandomUtil import randSecs
@@ -42,13 +46,14 @@ def main_cmd():
     migrateRecurse(ornRUrl=args.from_repo_url, ornCmtId=args.from_commit_id, frmBaseUrl=args.mirror_base_url, frmOrgNm=args.mirror_org_name, slpSecs=args.sleep_seconds)
 
 def migrateRecurse(ornRUrl:str, ornCmtId:str, frmBaseUrl:str, frmOrgNm:str, slpSecs:int=2):
+    assert hasLocalGithubDomain(), f"断言失败，迁移步要在本地解析域名github.com，请在文件【/etc/hosts】中添加一行将github.com解析到本地GITEA服务IP"
     assert ornRUrl.startswith("https://github.com") and frmBaseUrl.startswith("https://gitee.com") , "断言失败，只允许github.com、gitee.com做迁移到本地gitea服务"
     repoUrlO:GitRepoUrlC=gitRepoUrlParseF(repoUrl=ornRUrl)
 
     #1. 调用本地GITEA服务的迁移接口
     frmRUrlO:GitRepoUrlC
     ok_mgr,frmRUrlO,localRUrl=giteaMigrateApi(ornRUrl, frmBaseUrl, frmOrgNm)
-    assert ok_mgr==True and frmRUrlO is not None,"断言4"
+    assert ok_mgr==True and frmRUrlO is not None,f"断言失败，GITEA迁移接口失败， ornRUrl=【{ornRUrl}】, frmBaseUrl=【{frmBaseUrl}】, frmOrgNm=【{frmOrgNm}】"
     mrrRpoUrl:str=frmRUrlO.url_str()
     sleepVerbose(slpSecs,"#"); print(f"调用本地GITEA服务的迁移接口 【{mrrRpoUrl}】---> 本地GITEA服务的 【{localRUrl}】")
 
@@ -65,7 +70,7 @@ def migrateRecurse(ornRUrl:str, ornCmtId:str, frmBaseUrl:str, frmOrgNm:str, slpS
     for k,sonRpo in enumerate( repo.submodules):
         sonUrl:str=fullUrl(ornRUrl,sonRpo.url)
         # print(f"{repoK.name}, {repoK.path}, {repoK.url}, {repoK.hexsha}, {repoK.branch_name}, {repoK.branch_path}")
-        migrateRecurse(sonUrl, sonRpo.hexsha, frmBaseUrl, randSecs(slpSecs))
+        migrateRecurse(sonUrl, sonRpo.hexsha, frmBaseUrl, frmOrgNm, randSecs(slpSecs))
 
 if __name__=="__main__":
     main_cmd()
