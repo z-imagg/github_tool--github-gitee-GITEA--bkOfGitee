@@ -36,7 +36,9 @@ MINI_sleep_seconds = 8
 def printFrmRepoMsg(from_repo_url:str, from_commit_id:str, repo:git.Repo,cntr:Counter)->str:
     subNmLs=", ".join([son.url for son in repo.submodules])
     subRpLsTxt=f"有子仓库{len(repo.submodules)}个=【{subNmLs}】" if len(repo.submodules)>0 else "无子仓库"
-    print(f"第{cntr.inc()}个仓库 ，【{from_repo_url} {subRpLsTxt}】 ，提交【{from_commit_id}】，tag们【{tagNameLsByCmtId(repo,from_commit_id)}】，消息【{repo.commit(from_commit_id).message}】")
+    tagNmLsTxt,tagLnLs=tagNameLsByCmtId(repo,from_commit_id)
+    tagTxt:str=f"tag们【{tagNmLsTxt}】" if len(tagLnLs)>0 else "无tag"
+    print(f"第{cntr.inc()}个仓库 ，【{from_repo_url} {subRpLsTxt}】 ，提交【{from_commit_id}】，{tagTxt}，消息【{repo.commit(from_commit_id).message}】")
     
 
 def main_cmd():
