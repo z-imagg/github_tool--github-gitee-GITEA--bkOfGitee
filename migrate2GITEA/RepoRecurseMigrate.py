@@ -6,6 +6,7 @@
 
 import sys
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
+sys.path.append("/fridaAnlzAp/github-gitee-GITEA/import2gitee/")
 
 from pathlib import Path
 import git
@@ -18,7 +19,7 @@ import time
 import argparse
 
 from HostUtil import hasLocalGithubDomain
-from import2gitee.RepoRecurseImport import printFrmRepoMsg
+from RepoRecurseImport import printFrmRepoMsg
 from GitRepoUrlParser import gitRepoUrlParseF,GitRepoUrlC
 from LoopCloneWait import loop_clone_wait_F
 from RandomUtil import randSecs
