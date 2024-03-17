@@ -11,6 +11,7 @@ import traceback
 
 import requests
 from requests.auth import HTTPBasicAuth
+from urllib.parse import urlparse
 
 #gitpython获取给定commitId上的tag们（对所有tag进行过滤）
 def tagNameLsByCmtId(repo:git.Repo,cmtId:str )->typing.Tuple[str,typing.List[git.Tag]]:
@@ -21,12 +22,16 @@ def tagNameLsByCmtId(repo:git.Repo,cmtId:str )->typing.Tuple[str,typing.List[git
 
 #问题，当gitee某url仓库不存在时，若克隆其，则要求输入用户名密码，此时程序被卡住了。
 #  解决办法是 在url上 添加 站位用户名、站位密码， 当仓库不存在时，直接报错，不会卡住。
-# 利用requests给仓库url 添加 站位用户名、站位密码
+# 利用urlparse给仓库url 添加 站位用户名、站位密码
 def repoUrlAddUserPass(repoUrl:str)->str:
-    #用requests构造请求，并未执行该请求
+    uo=urlparse(url=repoUrl)
+    uo._userinfo[0]='pub'#urllib 解析结果对象的字段 _userinfo  username password 都是 @property， 不能赋值
+    uo._userinfo[1]='123'
+    uo.username='pub'
+    uo.password='123'
     req=requests.Request(method="get", url=repoUrl,auth=('pub','123'))
     reqPrepare=req.prepare();reqPrepare.url
-    return reqPrepare.url#返回根本没有 站位用户名、站位密码
+    return repoUrl
 
 #  检查gitee镜像仓库是否能正常克隆
 def checkRepoByClone(_repoUrl:str,title:str)->git.Repo:
