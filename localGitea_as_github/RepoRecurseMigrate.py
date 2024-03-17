@@ -33,7 +33,7 @@ MINI_sleep_seconds = 8
 def main_cmd():
     parser = argparse.ArgumentParser(
     prog=f'gitSubmoduleImportCmdGen.py',
-    description='【子模块导入命令生成】')
+    description='【递归迁移仓库】【镜像gitee--->本地GITEA】')
 
     parser.add_argument('-f', '--from_repo_url',required=True,type=str,help="【父仓库url,常为gitee仓库】",metavar='')
     parser.add_argument('-c', '--from_commit_id',required=True,type=str,help="【看父仓库的commitId】",metavar='')
