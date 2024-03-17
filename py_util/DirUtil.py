@@ -11,11 +11,10 @@ def rmDirRecurse(dir:str):
 
 
 from pathlib import Path
-#设置此脚本所在目录 为 工作目录
-def setScriptDirAsCwd()->Path:
+#获取此入口py脚本所在目录 
+def getScriptDir()->Path:
     import sys
     import os
     scriptF=sys.argv[0]
     scriptDir:Path=Path(scriptF).parent
-    os.chdir(path=scriptDir)
     return scriptDir

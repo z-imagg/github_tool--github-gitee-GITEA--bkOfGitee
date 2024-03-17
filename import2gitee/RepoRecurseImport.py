@@ -27,7 +27,7 @@ from RandomUtil import randSecs
 from SleepUtil import sleepVerbose
 from MiscUtil import fullUrl
 from CntUtil import Counter
-from DirUtil import setScriptDirAsCwd
+from DirUtil import getScriptDir
 from GitPyUtil import tagNameLsByCmtId
 
 cntr:Counter=Counter()
@@ -50,7 +50,7 @@ def main_cmd():
     parser.add_argument('-s', '--sleep_seconds',required=True,type=int,help=f"【 相邻两个子模块导入命令间休眠秒数】 ",metavar='')
     args=parser.parse_args()
 
-    scriptDir:Path=setScriptDirAsCwd()
+    scriptDir:Path=getScriptDir()
     #scriptDir==/fridaAnlzAp/github-gitee-GITEA/import2gitee/
     prjHmDir:str=f"{scriptDir.parent.absolute()}"
     #prjHmDir==/fridaAnlzAp/github-gitee-GITEA/
