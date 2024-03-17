@@ -24,9 +24,9 @@ def tagNameLsByCmtId(repo:git.Repo,cmtId:str )->typing.Tuple[str,typing.List[git
 # 利用requests给仓库url 添加 站位用户名、站位密码
 def repoUrlAddUserPass(repoUrl:str)->str:
     #用requests构造请求，并未执行该请求
-    req=requests.Request(method="get", url=repoUrl,auth=HTTPBasicAuth('pub','123'))
-    reqPrepare=req.prepare()
-    return reqPrepare.url
+    req=requests.Request(method="get", url=repoUrl,auth=('pub','123'))
+    reqPrepare=req.prepare();reqPrepare.url
+    return reqPrepare.url#返回根本没有 站位用户名、站位密码
 
 #  检查gitee镜像仓库是否能正常克隆
 def checkRepoByClone(_repoUrl:str,title:str)->git.Repo:
