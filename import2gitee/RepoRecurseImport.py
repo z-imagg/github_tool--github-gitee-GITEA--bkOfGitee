@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: <encoding name> -*-
+# -*- coding: utf8 -*-
 
 # 【文件作用】 遍历给定git仓库中的子模块列表， 并打印对应命令import_githubRepo_to_gitee.sh
 
@@ -13,6 +13,7 @@ import time
 
 import sys
 import argparse
+
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 from GitPyCloneProgress import GitPyCloneProgressC
 from gitee_import_repo_wrap import gitee_import_repo_wrap_F,SimpleRespI
@@ -23,6 +24,7 @@ from SleepUtil import sleepVerbose
 from MiscUtil import fullUrl
 from CntUtil import Counter
 from DirUtil import setScriptDirAsCwd
+from IpUtil import urlIsPrivIpAddr
 
 cntr:Counter=Counter()
 MINI_sleep_seconds = 8
@@ -52,6 +54,7 @@ def main_cmd():
     importGithubRepo2GiteeRecurse(prjHmDir, from_repo_url=args.from_repo_url,from_commit_id=args.from_commit_id,giteeMirrOrg=args.goal_org,sleep_seconds=args.sleep_seconds)
 
 def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id:str,giteeMirrOrg:str,sleep_seconds:int=2):
+    assert urlIsPrivIpAddr(from_repo_url), f"断言失败，导入步不要使用 【'假'github即本地GITEA服务】,应保持真github,  from_repo_url中的域名不应该解析到局域网ip【{from_repo_url}】"
     assert from_repo_url.startswith("https://github.com"), f"断言失败，只允许github.com的仓库导入到gitee. from_repo_url=【{from_repo_url}】"
     repoUrlO:GitRepoUrlC=gitRepoUrlParseF(repoUrl=from_repo_url)
 
