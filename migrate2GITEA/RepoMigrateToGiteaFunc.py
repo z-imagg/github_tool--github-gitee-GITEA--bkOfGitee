@@ -6,23 +6,31 @@
 # 【大背景】 github仓库  ----import导入--->  镜像gitee仓库  ----migrate迁移---> 本地GITEA仓库 
 # 【术语】在迁移语境下：  orn源头 指的是 github仓库 , frm来自 值的是 镜像gitee仓库,  目标 指的是 本地GITEA仓库
 
+import sys
+sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 from pathlib import Path
 import re
 
+from GitPyUtil import checkRepoByClone
 from gitea_api_cfg import api_base_url, api_token
 import httpx
 import typing
 
-import sys
 
 from httpx_util import httpx_post_json
-sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 
 from GitRepoUrlParser import GitRepoUrlC, gitMirrorRepoUrlParseF,gitRepoUrlParseF,_GIT
 from gitea_api_cfg import api_base_url,gitea_migrate_api_timeout_seconds
 
 def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str)->typing.Tuple[bool,GitRepoUrlC,str]:
   ornRUrlO=gitRepoUrlParseF(ornRUrl)
+
+  #将 原始仓库url(==github仓库url) 通过 镜像信息(==frm*) 转为 镜像仓库url。 镜像==gitee
+  frmRUrlO=ornRUrlO.to_mirror_url(frmBaseUrl,frmOrg)
+  frmRUrl:str = frmRUrlO.url_str()
+  
+  #迁移之前检查 检查gitee镜像仓库是否能正常克隆
+  checkRepoByClone(frmRUrl,"test_repo_befone_migrate")
 
   """ #本地GITEA创建组织接口 例子
   curl -X 'POST' \
@@ -65,9 +73,6 @@ def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str)->typing.Tuple[bool,Gi
 
   """
 
-  #将 原始仓库url(==github仓库url) 通过 镜像信息(==frm*) 转为 镜像仓库url。 镜像==gitee
-  frmRUrlO=ornRUrlO.to_mirror_url(frmBaseUrl,frmOrg)
-  frmRUrl:str = frmRUrlO.url_str()
   #构造 本地GITEA迁移仓库接口 请求
   apiUrl_migrate=f'{api_base_url}/api/v1/repos/migrate?token={api_token}'
   reqBdy_migrate={
