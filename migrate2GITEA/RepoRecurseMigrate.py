@@ -8,6 +8,10 @@ import sys
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/import2gitee/")
 
+#解决tqdm和print的冲突， 用tqdm.write替代print
+from tqdm import tqdm
+print = tqdm.write
+
 from pathlib import Path
 import git
 from git import cmd
