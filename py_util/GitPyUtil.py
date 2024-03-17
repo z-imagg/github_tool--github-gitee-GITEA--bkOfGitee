@@ -9,6 +9,9 @@ from IdUtil import basicUqIdF
 from DirUtil import dirIsEmptyExcludeHidden
 import traceback
 
+import requests
+from requests.auth import HTTPBasicAuth
+
 #gitpython获取给定commitId上的tag们（对所有tag进行过滤）
 def tagNameLsByCmtId(repo:git.Repo,cmtId:str )->typing.Tuple[str,typing.List[git.Tag]]:
     tagLs:typing.List[git.Tag]=list(filter(lambda tag:tag.commit.hexsha == cmtId,repo.tags))
@@ -16,9 +19,19 @@ def tagNameLsByCmtId(repo:git.Repo,cmtId:str )->typing.Tuple[str,typing.List[git
     tagNmLsTxt:str= ",".join(tagNmLs)
     return (tagNmLsTxt,tagLs)
 
+#问题，当gitee某url仓库不存在时，若克隆其，则要求输入用户名密码，此时程序被卡住了。
+#  解决办法是 在url上 添加 站位用户名、站位密码， 当仓库不存在时，直接报错，不会卡住。
+# 利用requests给仓库url 添加 站位用户名、站位密码
+def repoUrlAddUserPass(repoUrl:str)->str:
+    #用requests构造请求，并未执行该请求
+    req=requests.Request(method="get", url=repoUrl,auth=HTTPBasicAuth('pub','123'))
+    reqPrepare=req.prepare()
+    return reqPrepare.url
 
 #  检查gitee镜像仓库是否能正常克隆
-def checkRepoByClone(repoUrl:str,title:str)->git.Repo:
+def checkRepoByClone(_repoUrl:str,title:str)->git.Repo:
+    #给仓库url添加 站位用户名、站位密码，防止当仓库不存在时本程序被gitpython要求输入用户名密码而卡住
+    repoUrl=repoUrlAddUserPass(_repoUrl)
     try:
         progressTitle=f"{title}:{repoUrl}"
         dir=f"/tmp/{title}_{basicUqIdF()}"
