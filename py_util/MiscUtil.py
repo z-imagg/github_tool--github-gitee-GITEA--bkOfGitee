@@ -13,3 +13,11 @@ def fullUrl(beginUrl:str, url:str):
         fullUrl_=url
 
     return fullUrl_
+
+#长文本截断，方便显示给人类观看
+def longTxtTruncate(txt:str)->str:
+    LIMIT=128
+    if txt is None or len(txt) <= LIMIT:
+        return txt
+    
+    return f"{txt[:LIMIT]}..."
