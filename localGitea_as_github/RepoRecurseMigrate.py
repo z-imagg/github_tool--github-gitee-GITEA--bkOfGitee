@@ -16,8 +16,6 @@ import argparse
 
 from git_submodule_import_cmd_gen.RepoRecurseImport import printFrmRepoMsg
 sys.path.append("/fridaAnlzAp/github-gitee-gitea/py_util/")
-from GitPyCloneProgress import GitPyCloneProgressC
-from gitee_import_repo_wrap import gitee_import_repo_wrap_F,SimpleRespI
 from GitRepoUrlParser import gitRepoUrlParseF,GitRepoUrlC
 from LoopCloneWait import loop_clone_wait_F
 from RandomUtil import randSecs
@@ -25,7 +23,6 @@ from SleepUtil import sleepVerbose
 from MiscUtil import fullUrl
 from CntUtil import Counter
 from  RepoMigrateToGiteaFunc import giteaMigrateApi
-from gitea_api_cfg import api_base_url, api_token
 
 cntr:Counter=Counter()
 
