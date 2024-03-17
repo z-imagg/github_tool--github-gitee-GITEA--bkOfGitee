@@ -43,17 +43,17 @@ def main_cmd():
     args=parser.parse_args()
 
 
-    migrateRecurse(ornRUrl=args.from_repo_url, ornCmtId=args.from_commit_id, mrrBaseUrl=args.mirror_base_url, mrrOrgNm=args.mirror_org_name, slpSecs=args.sleep_seconds)
+    migrateRecurse(ornRUrl=args.from_repo_url, ornCmtId=args.from_commit_id, frmBaseUrl=args.mirror_base_url, frmOrgNm=args.mirror_org_name, slpSecs=args.sleep_seconds)
 
-def migrateRecurse(ornRUrl:str, ornCmtId:str, mrrBaseUrl:str, mrrOrgNm:str, slpSecs:int=2):
-    assert ornRUrl.startswith("https://github.com") and mrrBaseUrl.startswith("https://gitee.com") , "断言失败，只允许github.com、gitee.com做迁移到本地gitea服务"
+def migrateRecurse(ornRUrl:str, ornCmtId:str, frmBaseUrl:str, frmOrgNm:str, slpSecs:int=2):
+    assert ornRUrl.startswith("https://github.com") and frmBaseUrl.startswith("https://gitee.com") , "断言失败，只允许github.com、gitee.com做迁移到本地gitea服务"
     repoUrlO:GitRepoUrlC=gitRepoUrlParseF(repoUrl=ornRUrl)
 
     #1. 调用本地GITEA服务的迁移接口
-    mrrRUrlO:GitRepoUrlC
-    ok_mgr,mrrRUrlO,localRUrl=giteaMigrateApi(ornRUrl, mrrBaseUrl, mrrOrgNm)
-    assert ok_mgr==True and mrrRUrlO is not None,"断言4"
-    mrrRpoUrl:str=mrrRUrlO.url_str()
+    frmRUrlO:GitRepoUrlC
+    ok_mgr,frmRUrlO,localRUrl=giteaMigrateApi(ornRUrl, frmBaseUrl, frmOrgNm)
+    assert ok_mgr==True and frmRUrlO is not None,"断言4"
+    mrrRpoUrl:str=frmRUrlO.url_str()
     sleepVerbose(slpSecs,"#"); print(f"调用本地GITEA服务的迁移接口 【{mrrRpoUrl}】---> 本地GITEA服务的 【{localRUrl}】")
 
     #2. 克隆仓库
@@ -69,7 +69,7 @@ def migrateRecurse(ornRUrl:str, ornCmtId:str, mrrBaseUrl:str, mrrOrgNm:str, slpS
     for k,sonRpo in enumerate( repo.submodules):
         sonUrl:str=fullUrl(ornRUrl,sonRpo.url)
         # print(f"{repoK.name}, {repoK.path}, {repoK.url}, {repoK.hexsha}, {repoK.branch_name}, {repoK.branch_path}")
-        migrateRecurse(sonUrl, sonRpo.hexsha, mrrBaseUrl, randSecs(slpSecs))
+        migrateRecurse(sonUrl, sonRpo.hexsha, frmBaseUrl, randSecs(slpSecs))
 
 if __name__=="__main__":
     main_cmd()
