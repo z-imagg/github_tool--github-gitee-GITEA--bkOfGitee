@@ -4,6 +4,7 @@
 # 【文件作用】 遍历给定git仓库中的子模块列表， 并打印对应命令import_githubRepo_to_gitee.sh
 
 import sys
+
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 
 from pathlib import Path
@@ -27,14 +28,15 @@ from SleepUtil import sleepVerbose
 from MiscUtil import fullUrl
 from CntUtil import Counter
 from DirUtil import setScriptDirAsCwd
+from GitPyUtil import tagNameLsByCmtId
 
 cntr:Counter=Counter()
 MINI_sleep_seconds = 8
 
 def printFrmRepoMsg(from_repo_url:str, from_commit_id:str, repo:git.Repo,cntr:Counter)->str:
     subNmLs=", ".join([son.url for son in repo.submodules])
-    _msg=f"有子仓库{len(repo.submodules)}个=【{subNmLs}】" if len(repo.submodules)>0 else "无子仓库"
-    print(f"第{cntr.inc()}个仓库 {from_repo_url} {_msg} 提交{from_commit_id}上的消息{repo.commit(from_commit_id).message}")
+    subRpLsTxt=f"有子仓库{len(repo.submodules)}个=【{subNmLs}】" if len(repo.submodules)>0 else "无子仓库"
+    print(f"第{cntr.inc()}个仓库 ，【{from_repo_url} {subRpLsTxt}】 ，提交【{from_commit_id}】，tag们【{tagNameLsByCmtId(repo,from_commit_id)}】，消息【{repo.commit(from_commit_id).message}】")
     
 
 def main_cmd():
