@@ -20,6 +20,4 @@ test -f $ActivVenv || python3 -m venv $VENV_HOME
 source $ActivVenv
 pip install -r ${Hm}/import2gitee/requirements.txt
 
-
-source $ActivVenv
 pip install -r ${Hm}/migrate2GITEA/requirements.txt
