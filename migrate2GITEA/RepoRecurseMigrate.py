@@ -3,6 +3,9 @@
 
 # 【文件作用】  
 # 【术语】CmtId == CommitId == 提交Id  == git的某次提交的数字签名 , localRUrl == localRepoUrl == 本地GITEE仓库Url
+
+sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
+
 from pathlib import Path
 import git
 from git import cmd
@@ -14,8 +17,8 @@ import time
 import sys
 import argparse
 
+from HostUtil import hasLocalDomain
 from import2gitee.RepoRecurseImport import printFrmRepoMsg
-sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 from GitRepoUrlParser import gitRepoUrlParseF,GitRepoUrlC
 from LoopCloneWait import loop_clone_wait_F
 from RandomUtil import randSecs
@@ -42,6 +45,7 @@ def main_cmd():
     migrateRecurse(ornRUrl=args.from_repo_url, ornCmtId=args.from_commit_id, frmBaseUrl=args.mirror_base_url, frmOrgNm=args.mirror_org_name, slpSecs=args.sleep_seconds)
 
 def migrateRecurse(ornRUrl:str, ornCmtId:str, frmBaseUrl:str, frmOrgNm:str, slpSecs:int=2):
+    assert hasLocalDomain(), f"断言失败，迁移步必须将github.com解析到局域网ip"
     assert ornRUrl.startswith("https://github.com") and frmBaseUrl.startswith("https://gitee.com") , "断言失败，只允许github.com、gitee.com做迁移到本地gitea服务"
     repoUrlO:GitRepoUrlC=gitRepoUrlParseF(repoUrl=ornRUrl)
 
