@@ -9,8 +9,6 @@ from IdUtil import basicUqIdF
 from DirUtil import dirIsEmptyExcludeHidden
 import traceback
 
-import requests
-from requests.auth import HTTPBasicAuth
 from urllib.parse import urlparse
 
 #gitpython获取给定commitId上的tag们（对所有tag进行过滤）
@@ -24,14 +22,11 @@ def tagNameLsByCmtId(repo:git.Repo,cmtId:str )->typing.Tuple[str,typing.List[git
 #  解决办法是 在url上 添加 站位用户名、站位密码， 当仓库不存在时，直接报错，不会卡住。
 # 利用urlparse给仓库url 添加 站位用户名、站位密码
 def repoUrlAddUserPass(repoUrl:str)->str:
+    usr="usr"
+    pwd="123"
     uo=urlparse(url=repoUrl)
-    uo._userinfo[0]='pub'#urllib 解析结果对象的字段 _userinfo  username password 都是 @property， 不能赋值
-    uo._userinfo[1]='123'
-    uo.username='pub'
-    uo.password='123'
-    req=requests.Request(method="get", url=repoUrl,auth=('pub','123'))
-    reqPrepare=req.prepare();reqPrepare.url
-    return repoUrl
+    newUrl=f"{uo.scheme}://{usr}:{pwd}@{uo.netloc}{uo.path}"
+    return newUrl
 
 #  检查gitee镜像仓库是否能正常克隆
 def checkRepoByClone(_repoUrl:str,title:str)->git.Repo:
@@ -44,6 +39,6 @@ def checkRepoByClone(_repoUrl:str,title:str)->git.Repo:
         assert not dirIsEmptyExcludeHidden(dir) , f"断言失败，克隆到的不应该是空仓库. repoUrl=【{repoUrl}】,dir=【{dir}】"
         return repo
     except git.GitCommandError as e:
-        print(f"克隆仓库报错. repoUrl=【{repoUrl}】,dir=【{dir}】")
+        print(f"克隆仓库报错,请检查该仓库是否存在. repoUrl=【{repoUrl}】,dir=【{dir}】")
         traceback.print_exception(e)
         raise e
