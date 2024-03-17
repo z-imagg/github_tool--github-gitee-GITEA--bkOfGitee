@@ -31,10 +31,20 @@ source /fridaAnlzAp/github-gitee-GITEA/script/cmd_setup.sh
 http://giteaz:3000/wiki/github-gitee-GITEA/src/branch/main/script/cmd_setup.sh
 
 ##### 执行命令
+
+
+
+######  pytorch main
+
 ```shell
 RepoRecurseImport.py  --from_repo_url https://github.com/pytorch/pytorch.git --from_commit_id ee77ccbb6da4e2efd83673e798acf7081bc03564 --goal_org imagg --sleep_seconds 2 
     
 ```
+
+
+######  pytorch v0.3.0
+
+TODO
 
 
 ----
@@ -60,11 +70,21 @@ echo """
 
 ##### 执行命令
 
+######  pytorch main
+
 ```shell
 RepoRecurseMigrate.py --from_repo_url https://github.com/pytorch/pytorch.git --from_commit_id ee77ccbb6da4e2efd83673e798acf7081bc03564 --mirror_base_ur https://gitee.com --mirror_org_name imagg --sleep_seconds 2 
 ```
 
+######  pytorch v0.3.0
 
+```shell
+RepoRecurseMigrate.py --from_repo_url https://github.com/pytorch/pytorch.git --from_commit_id af3964a8725236c78ce969b827fdeee1c5c54110 --mirror_base_ur https://gitee.com --mirror_org_name imagg --sleep_seconds 2 
+```
+
+https://gitee.com/imagg/pytorch--pytorch/tree/v0.3.0
+
+https://gitee.com/imagg/pytorch--pytorch/commit/af3964a8725236c78ce969b827fdeee1c5c54110
 
 
 #### 步3、 从 "假github"(本地gitea服务) 正常克隆仓库、及其子模块们
