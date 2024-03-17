@@ -25,7 +25,7 @@ from GitRepoUrlParser import gitRepoUrlParseF,GitRepoUrlC
 from LoopCloneWait import loop_clone_wait_F
 from RandomUtil import randSecs
 from SleepUtil import sleepVerbose
-from MiscUtil import fullUrl, longTxtTruncate
+from MiscUtil import fullUrl, isEmptyStr, longTxtTruncate
 from CntUtil import Counter
 from DirUtil import getScriptDir
 from GitPyUtil import tagNameLsByCmtId
@@ -56,7 +56,7 @@ def main_cmd():
     description='【子模块导入命令生成】')
 
     parser.add_argument('-f', '--from_repo_url',required=True,type=str,help="【父仓库url,常为gitee仓库】",metavar='')
-    parser.add_argument('-c', '--from_commit_id',required=True,type=str,help="【看父仓库的commitId】",metavar='')
+    parser.add_argument('-c', '--from_commit_id',required=False,type=str,help="【父仓库的commitId】『可选』",metavar='')
     parser.add_argument('-o', '--goal_org',required=True,type=str,help="【目标，gitee的组织】",metavar='')
     parser.add_argument('-s', '--sleep_seconds',required=True,type=int,help=f"【 相邻两个子模块导入命令间休眠秒数】 ",metavar='')
     args=parser.parse_args()
@@ -82,8 +82,14 @@ def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id
     #2. 克隆仓库
     #   以 循环克隆仓库 等待 gitee导入仓库任务 完毕
     repo:git.Repo=loop_clone_wait_F(repoUrl=mirrRepoUrl)
-    #重置到给定commitId
-    repo.git.checkout(from_commit_id)
+    
+    # 若指定了cmtId, 则 重置到给定commitId
+    if not isEmptyStr (from_commit_id):
+        repo.git.checkout(from_commit_id)
+    else:
+    # 否则，用头的cmtId
+        from_commit_id = repo.head.commit.hexsha
+    
     # 打印该仓库消息
     printFrmRepoMsg(from_repo_url,from_commit_id,repo,cntr)
     

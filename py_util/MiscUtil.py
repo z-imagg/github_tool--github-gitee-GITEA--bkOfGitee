@@ -21,3 +21,7 @@ def longTxtTruncate(txt:str)->str:
         return txt
     
     return f"{txt[:LIMIT]}..."
+
+
+def isEmptyStr(txt:str)->bool:
+    return txt is None or len(txt) <= 0 
