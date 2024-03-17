@@ -21,8 +21,16 @@ from LoopCloneWait import loop_clone_wait_F
 from RandomUtil import randSecs
 from SleepUtil import sleepVerbose
 from MiscUtil import fullUrl
+from CntUtil import Counter
 
+cntr:Counter=Counter()
 MINI_sleep_seconds = 8
+
+def printFrmRepoMsg(from_repo_url:str, from_commit_id:str, repo:git.Repo,cntr:Counter)->str:
+    subNmLs=", ".join([son.url for son in repo.submodules])
+    _msg=f"有子仓库{len(repo.submodules)}个=【{subNmLs}】" if len(repo.submodules)>0 else "无子仓库"
+    print(f"第{cntr.inc()}个仓库 {from_repo_url} {_msg} 提交{from_commit_id}上的消息{repo.commit(from_commit_id).message}")
+    
 
 def main_cmd():
     parser = argparse.ArgumentParser(
@@ -53,10 +61,8 @@ def importGithubRepo2GiteeRecurse(from_repo_url:str,from_commit_id:str,giteeMirr
     repo:git.Repo=loop_clone_wait_F(repoUrl=mirrRepoUrl)
     #重置到给定commitId
     repo.git.checkout(from_commit_id)
-
-    subNmLs=", ".join([son.url for son in repo.submodules])
-    _msg=f"有子仓库{len(repo.submodules)}个=【{subNmLs}】" if len(repo.submodules)>0 else "无子仓库"
-    print(f"{from_repo_url} {_msg} 提交{from_commit_id}上的消息{repo.commit(from_commit_id).message}")
+    # 打印该仓库消息
+    printFrmRepoMsg(from_repo_url,from_commit_id,repo,cntr)
     
     #3. 递归子仓库
     for k,sonRepoK in enumerate( repo.submodules):
