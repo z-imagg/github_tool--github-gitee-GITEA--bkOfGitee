@@ -14,6 +14,8 @@ import httpx
 import typing
 
 import sys
+
+from httpx_util import httpx_post_json
 sys.path.append("/fridaAnlzAp/github-gitee-gitea/py_util/")
 
 from GitRepoUrlParser import GitRepoUrlC, gitMirrorRepoUrlParseF,gitRepoUrlParseF,_GIT
@@ -39,7 +41,7 @@ def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str)->typing.Tuple[bool,Gi
     "username": ornRUrlO.orgName,
   }
   #调用本地GITEA服务的创建组织接口
-  resp_newOrg=httpx.post(url=apiUrl_newOrg,json=reqBdy_newOrg,verify=False)
+  resp_newOrg=httpx_post_json(apiUrl=apiUrl_newOrg,reqBodyDct=reqBdy_newOrg )
   #判定接口执行结果
   ok_newOrg=resp_newOrg.status_code==422 or resp_newOrg.is_success #422 gitea 已经存在组织
   #打印提示消息
@@ -80,7 +82,7 @@ def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str)->typing.Tuple[bool,Gi
   mgr_desc=f"原始仓库【{ornRUrl}】 ；迁移内容【{frmRUrl}】--->【{localRUrl}】"    ;  mgr_msg=f"正在迁移...，耗时取决于仓库大小; {mgr_desc}"  ;  print(mgr_msg)
 
   #调用本地GITEA服务的迁移接口
-  resp_mgr=httpx.post(url=apiUrl_migrate,json=reqBdy_migrate,verify=False,timeout=gitea_migrate_api_timeout_seconds)
+  resp_mgr=httpx_post_json(apiUrl=apiUrl_migrate,reqBodyDct=reqBdy_migrate,timeoutSecs=gitea_migrate_api_timeout_seconds)
   #判定接口执行结果
   ok_mgr= resp_mgr.status_code == 409 or resp_mgr.is_success #409 gitea 已经存在仓库
   #打印提示消息
