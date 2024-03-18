@@ -1,3 +1,6 @@
 [submodule "gitee_api_fetch_ts"]
 	path = gitee_api_fetch_ts
 	url = http://giteaz:3000/misc/node-typescript-boilerplate.git
+[submodule "cpp-home/torch-cpp"]
+	path = cpp-home/torch-cpp
+	url = https://prgrmz00:0d532c1d75e08f3216bcaf334c12b203@gitee.com/frida_analyze_app_src/torch-cpp.git
