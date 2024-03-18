@@ -1,4 +1,4 @@
-#### 步4、  编译pytorch-v1.3.1
+####   编译pytorch-v1.3.1
 
 python版本>=3.8会收到报错 ```error: cannot convert ‘std::nullptr_t’ to ‘Py_ssize_t’ {aka ‘long int’} in initialization```,
 

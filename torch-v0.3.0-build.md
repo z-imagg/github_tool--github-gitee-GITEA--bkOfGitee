@@ -1,4 +1,4 @@
-#### 步5、  编译pytorch-v0.3.0
+####  编译pytorch-v0.3.0
 
 应该用 ```pip install pyyaml==5.1```, 否则```python setup.py build```时 收到以下报错：
 ```txt
