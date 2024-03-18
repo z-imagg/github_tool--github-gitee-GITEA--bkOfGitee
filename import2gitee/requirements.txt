@@ -2,3 +2,7 @@
 gitpython==3.1.42
 shell==1.0.1
 rich==13.7.1
+
+#https://github.com/verigak/progress.git
+#  https://pypi.org/project/progress/
+progress==1.6
