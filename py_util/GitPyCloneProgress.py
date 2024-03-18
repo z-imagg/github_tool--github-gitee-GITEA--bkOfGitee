@@ -14,15 +14,17 @@ class GitPyCloneProgressC(RemoteProgress):
         self.prgrsNm:str=f"{prgrsNm},GPCPC,"
         self.task_id=None
         self.cur_gitOpCode:int=None
-        self.gitOpCodeLs:typing.Set[int]=set()
+        self.gitOpCodeLs:typing.List[int]=[]
         print(">")
 
     def update(self, gitOpCode:int, cur_count:typing.Union[str, float], max_count:typing.Union[str, float, None]=None, message:str=''):
         # print(".",end="")
         richPrgrs=getGlbVarInst().richPrgrs
         
-        #保存有史以来的所有git操作码
-        self.gitOpCodeLs.add(gitOpCode)
+        #保存有史以来的所有git操作码， gitOpCode按照来的时刻保持顺序
+        if gitOpCode not in self.gitOpCodeLs:
+            self.gitOpCodeLs.append(gitOpCode)
+        
         opCodeLsTxt:str="、".join([f"{k}" for k in self.gitOpCodeLs])
         
         #若 来了第一个git操作码 或 git操作码 变化了

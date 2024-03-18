@@ -54,6 +54,8 @@ def checkRepoByClone(_repoUrl:str,title:str)->git.Repo:
 
 
 def printFrmRepoMsg(from_repo_url:str, from_commit_id:str, repo:git.Repo,cntr:Counter)->str:
+    richPrgrs=getGlbVarInst().richPrgrs
+    
     idxMsg=f"第{cntr.inc()}个仓库 "
 
     cmtIdMsg=f"提交id【{from_commit_id}】"
@@ -67,5 +69,5 @@ def printFrmRepoMsg(from_repo_url:str, from_commit_id:str, repo:git.Repo,cntr:Co
     cmtMsg=firstLine(repo.commit(from_commit_id).message)
     cmtMsgDisplay=f"提交消息【{cmtMsg}】"
     
-    print(f"{idxMsg}【{from_repo_url}】，{cmtIdMsg}，  {tagTxt}，  {subRpLsTxt}  ，{cmtMsgDisplay}")
+    richPrgrs.console.log(f"{idxMsg}【{from_repo_url}】，{cmtIdMsg}，  {tagTxt}，  {subRpLsTxt}  ，{cmtMsgDisplay}")
     
