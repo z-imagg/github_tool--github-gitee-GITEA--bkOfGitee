@@ -7,7 +7,6 @@
 import sys
 
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
-sys.path.append("/fridaAnlzAp/github-gitee-GITEA/import2gitee/")
 
 from global_var import GlbVar
 from rich import print
@@ -23,7 +22,6 @@ import time
 import argparse
 
 from HostUtil import hasLocalGithubDomain
-from RepoRecurseImport import printFrmRepoMsg
 from GitRepoUrlParser import gitRepoUrlParseF,GitRepoUrlC
 from LoopCloneWait import loop_clone_wait_F
 from RandomUtil import randSecs
@@ -32,6 +30,7 @@ from MiscUtil import fullUrl,isEmptyStr
 from CntUtil import Counter
 from  RepoMigrateToGiteaFunc import giteaMigrateApi
 from rich.progress import Progress
+from GitPyUtil import printFrmRepoMsg
 
 cntr:Counter=Counter()
 

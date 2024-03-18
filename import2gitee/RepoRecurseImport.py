@@ -31,28 +31,12 @@ from SleepUtil import sleepVerbose
 from MiscUtil import fullUrl, isEmptyStr, firstLine
 from CntUtil import Counter
 from DirUtil import getScriptDir
-from GitPyUtil import tagNameLsByCmtId
+from GitPyUtil import tagNameLsByCmtId,printFrmRepoMsg
 from rich.progress import Progress
 
 cntr:Counter=Counter()
 MINI_sleep_seconds = 8
 
-def printFrmRepoMsg(from_repo_url:str, from_commit_id:str, repo:git.Repo,cntr:Counter)->str:
-    idxMsg=f"第{cntr.inc()}个仓库 "
-
-    cmtIdMsg=f"提交id【{from_commit_id}】"
-
-    subNmLs=", ".join([son.url for son in repo.submodules])
-    subRpLsTxt=f"有子仓库{len(repo.submodules)}个=【{subNmLs}】" if len(repo.submodules)>0 else "无子仓库"
-    
-    tagNmLsTxt,tagLnLs=tagNameLsByCmtId(repo,from_commit_id)
-    tagTxt:str=f"tag们【{tagNmLsTxt}】" if len(tagLnLs)>0 else "无tag"
-
-    cmtMsg=firstLine(repo.commit(from_commit_id).message)
-    cmtMsgDisplay=f"提交消息【{cmtMsg}】"
-    
-    print(f"{idxMsg}【{from_repo_url}】，{cmtIdMsg}，  {tagTxt}，  {subRpLsTxt}  ，{cmtMsgDisplay}")
-    
 
 def main_cmd():
     parser = argparse.ArgumentParser(

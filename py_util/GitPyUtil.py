@@ -5,6 +5,7 @@ from rich import print
 
 import typing
 import git
+from CntUtil import Counter
 from GitPyCloneProgress import GitPyCloneProgressC
 from IdUtil import basicUqIdF
 from DirUtil import dirIsEmptyExcludeHidden
@@ -13,6 +14,7 @@ import traceback
 from urllib.parse import urlparse
 from rich.progress import Progress
 
+from MiscUtil import firstLine
 from global_var import GlbVar,getGlbVarInst
 
 #gitpython获取给定commitId上的tag们（对所有tag进行过滤）
@@ -47,3 +49,23 @@ def checkRepoByClone(_repoUrl:str,title:str)->git.Repo:
         print(f"{title},克隆仓库报错,请检查该仓库是否存在. repoUrl=【{repoUrl}】,dir=【{dir}】")
         traceback.print_exception(e)
         raise e
+
+
+
+
+def printFrmRepoMsg(from_repo_url:str, from_commit_id:str, repo:git.Repo,cntr:Counter)->str:
+    idxMsg=f"第{cntr.inc()}个仓库 "
+
+    cmtIdMsg=f"提交id【{from_commit_id}】"
+
+    subNmLs=", ".join([son.url for son in repo.submodules])
+    subRpLsTxt=f"有子仓库{len(repo.submodules)}个=【{subNmLs}】" if len(repo.submodules)>0 else "无子仓库"
+    
+    tagNmLsTxt,tagLnLs=tagNameLsByCmtId(repo,from_commit_id)
+    tagTxt:str=f"tag们【{tagNmLsTxt}】" if len(tagLnLs)>0 else "无tag"
+
+    cmtMsg=firstLine(repo.commit(from_commit_id).message)
+    cmtMsgDisplay=f"提交消息【{cmtMsg}】"
+    
+    print(f"{idxMsg}【{from_repo_url}】，{cmtIdMsg}，  {tagTxt}，  {subRpLsTxt}  ，{cmtMsgDisplay}")
+    
