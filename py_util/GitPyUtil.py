@@ -12,7 +12,7 @@ import traceback
 from urllib.parse import urlparse
 from rich.progress import Progress
 
-from global_var import GlbVar
+from global_var import GlbVar,getGlbVarInst
 
 #gitpython获取给定commitId上的tag们（对所有tag进行过滤）
 def tagNameLsByCmtId(repo:git.Repo,cmtId:str )->typing.Tuple[str,typing.List[git.Tag]]:
@@ -39,7 +39,7 @@ def checkRepoByClone(_repoUrl:str,title:str)->git.Repo:
     try:
         progressTitle=f"{title}:{repoUrl}"
         dir=f"/tmp/{title}_{basicUqIdF()}"
-        repo:git.Repo=git.Repo.clone_from(url=repoUrl,to_path=dir,  progress=GitPyCloneProgressC(progressTitle,GlbVar.getInst().richPrgrs))
+        repo:git.Repo=git.Repo.clone_from(url=repoUrl,to_path=dir,  progress=GitPyCloneProgressC(progressTitle,getGlbVarInst().richPrgrs))
         assert not dirIsEmptyExcludeHidden(dir) , f"断言失败，克隆到的不应该是空仓库. repoUrl=【{repoUrl}】,dir=【{dir}】"
         return repo
     except git.GitCommandError as e:
