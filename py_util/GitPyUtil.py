@@ -12,6 +12,8 @@ import traceback
 from urllib.parse import urlparse
 from rich.progress import Progress
 
+from global_var import GlbVar
+
 #gitpython获取给定commitId上的tag们（对所有tag进行过滤）
 def tagNameLsByCmtId(repo:git.Repo,cmtId:str )->typing.Tuple[str,typing.List[git.Tag]]:
     tagLs:typing.List[git.Tag]=list(filter(lambda tag:tag.commit.hexsha == cmtId,repo.tags))
@@ -30,13 +32,14 @@ def repoUrlAddUserPass(repoUrl:str)->str:
     return newUrl
 
 #  检查gitee镜像仓库是否能正常克隆
-def checkRepoByClone(_repoUrl:str,title:str,richPrgrs:Progress)->git.Repo:
+def checkRepoByClone(_repoUrl:str,title:str)->git.Repo:
     #给仓库url添加 站位用户名、站位密码，防止当仓库不存在时本程序被gitpython要求输入用户名密码而卡住
     repoUrl=repoUrlAddUserPass(_repoUrl)
+    
     try:
         progressTitle=f"{title}:{repoUrl}"
         dir=f"/tmp/{title}_{basicUqIdF()}"
-        repo:git.Repo=git.Repo.clone_from(url=repoUrl,to_path=dir,  progress=GitPyCloneProgressC(progressTitle,richPrgrs))
+        repo:git.Repo=git.Repo.clone_from(url=repoUrl,to_path=dir,  progress=GitPyCloneProgressC(progressTitle,GlbVar.getInst().richPrgrs))
         assert not dirIsEmptyExcludeHidden(dir) , f"断言失败，克隆到的不应该是空仓库. repoUrl=【{repoUrl}】,dir=【{dir}】"
         return repo
     except git.GitCommandError as e:

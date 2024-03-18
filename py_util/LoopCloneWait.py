@@ -6,12 +6,14 @@ from DirUtil import dirIsEmptyExcludeHidden,rmDirRecurse
 from RandomUtil import randSecs
 from SleepUtil import sleepVerbose
 from rich.progress import Progress
-def loop_clone_wait_F(repoUrl:str,richPrgrs:Progress)->git.Repo:
+
+from global_var import GlbVar
+def loop_clone_wait_F(repoUrl:str)->git.Repo:
     while True:
         try:
             progressTitle=f"【loop_clone_wait_F,{repoUrl}】"
             dir=f"/tmp/loop_clone_wait_F_{basicUqIdF()}"
-            repo:git.Repo=git.Repo.clone_from(url=repoUrl,to_path=dir,  progress=GitPyCloneProgressC(progressTitle,richPrgrs))
+            repo:git.Repo=git.Repo.clone_from(url=repoUrl,to_path=dir,  progress=GitPyCloneProgressC(progressTitle,GlbVar.getInst().richPrgrs))
             if dirIsEmptyExcludeHidden(dir): #克隆到的是空仓库。 gitee 导入仓库逻辑， 收到请求后 立即创建一个空仓库，然后跑任务慢慢塞
                 sleepVerbose( randSecs(5) ,"@")
                 rmDirRecurse(dir)

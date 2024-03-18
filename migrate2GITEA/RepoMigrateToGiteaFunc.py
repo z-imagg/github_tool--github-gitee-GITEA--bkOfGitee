@@ -23,7 +23,7 @@ from GitRepoUrlParser import GitRepoUrlC, gitMirrorRepoUrlParseF,gitRepoUrlParse
 from gitea_api_cfg import api_base_url,gitea_migrate_api_timeout_seconds
 from rich.progress import Progress
 
-def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str, richPrgrs:Progress)->typing.Tuple[bool,GitRepoUrlC,str]:
+def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str)->typing.Tuple[bool,GitRepoUrlC,str]:
   ornRUrlO=gitRepoUrlParseF(ornRUrl)
 
   #将 原始仓库url(==github仓库url) 通过 镜像信息(==frm*) 转为 镜像仓库url。 镜像==gitee
@@ -31,7 +31,7 @@ def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str, richPrgrs:Progress)->
   frmRUrl:str = frmRUrlO.url_str()
   
   #迁移之前检查 检查gitee镜像仓库是否能正常克隆
-  checkRepoByClone(frmRUrl,"test_repo_befone_migrate",richPrgrs)
+  checkRepoByClone(frmRUrl,"test_repo_befone_migrate")
 
   """ #本地GITEA创建组织接口 例子
   curl -X 'POST' \

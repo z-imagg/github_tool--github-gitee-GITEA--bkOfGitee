@@ -1,13 +1,15 @@
 #!/usr/bin/env python
-# -*- coding: <encoding name> -*-
+# -*- coding: utf8 -*-
 
 # 【文件作用】  
 # 【术语】CmtId == CommitId == 提交Id  == git的某次提交的数字签名 , localRUrl == localRepoUrl == 本地GITEE仓库Url
 
 import sys
+
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/import2gitee/")
 
+from global_var import GlbVar
 from rich import print
 from pathlib import Path
 import git
@@ -32,7 +34,7 @@ from rich.progress import Progress
 
 cntr:Counter=Counter()
 
-def main_cmd(richPrgrs:Progress):
+def main_cmd():
     parser = argparse.ArgumentParser(
     prog=f'gitSubmoduleImportCmdGen.py',
     description='【递归迁移仓库】【镜像gitee--->本地GITEA】')
@@ -43,7 +45,7 @@ def main_cmd(richPrgrs:Progress):
     parser.add_argument('-n', '--mirror_org_name',required=True,type=str,help="【 镜像组织名】",metavar='')
     parser.add_argument('-s', '--sleep_seconds',required=True,type=int,help=f"【 相邻两个子模块导入命令间休眠秒数】 ",metavar='')
     args=parser.parse_args()
-
+    
 
     migrateRecurse(ornRUrl=args.from_repo_url, ornCmtId=args.from_commit_id, frmBaseUrl=args.mirror_base_url, frmOrgNm=args.mirror_org_name, slpSecs=args.sleep_seconds)
 
@@ -54,14 +56,14 @@ def migrateRecurse(ornRUrl:str, ornCmtId:str, frmBaseUrl:str, frmOrgNm:str, slpS
 
     #1. 调用本地GITEA服务的迁移接口
     frmRUrlO:GitRepoUrlC
-    ok_mgr,frmRUrlO,localRUrl=giteaMigrateApi(ornRUrl, frmBaseUrl, frmOrgNm, richPrgrs)
+    ok_mgr,frmRUrlO,localRUrl=giteaMigrateApi(ornRUrl, frmBaseUrl, frmOrgNm)
     assert ok_mgr==True and frmRUrlO is not None,f"断言失败，GITEA迁移接口失败， ornRUrl=【{ornRUrl}】, frmBaseUrl=【{frmBaseUrl}】, frmOrgNm=【{frmOrgNm}】"
     mrrRpoUrl:str=frmRUrlO.url_str()
     sleepVerbose(slpSecs,"#"); print(f"调用本地GITEA服务的迁移接口 【{mrrRpoUrl}】---> 本地GITEA服务的 【{localRUrl}】")
 
     #2. 克隆仓库
     #   以 循环克隆仓库 等待 GITEA迁移仓库 完毕
-    repo:git.Repo=loop_clone_wait_F(repoUrl=localRUrl,richPrgrs=richPrgrs)
+    repo:git.Repo=loop_clone_wait_F(repoUrl=localRUrl)
     # 若指定了cmtId, 则 重置到给定commitId
     if not isEmptyStr (ornCmtId):
         repo.git.checkout(ornCmtId)
@@ -80,4 +82,5 @@ def migrateRecurse(ornRUrl:str, ornCmtId:str, frmBaseUrl:str, frmOrgNm:str, slpS
 
 if __name__=="__main__":
     with Progress() as richPrgrs:
-        main_cmd(richPrgrs)
+        GlbVar(richPrgrs=richPrgrs)
+        main_cmd( )

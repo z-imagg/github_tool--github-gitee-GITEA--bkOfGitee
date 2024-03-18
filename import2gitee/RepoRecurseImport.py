@@ -5,8 +5,10 @@
 
 import sys
 
+
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 
+from global_var import GlbVar
 from rich import print
 from pathlib import Path
 import git
@@ -52,7 +54,7 @@ def printFrmRepoMsg(from_repo_url:str, from_commit_id:str, repo:git.Repo,cntr:Co
     print(f"{idxMsg}【{from_repo_url}】，{cmtIdMsg}，  {tagTxt}，  {subRpLsTxt}  ，{cmtMsgDisplay}")
     
 
-def main_cmd(richPrgrs:Progress):
+def main_cmd():
     parser = argparse.ArgumentParser(
     prog=f'gitSubmoduleImportCmdGen.py',
     description='【子模块导入命令生成】')
@@ -83,7 +85,7 @@ def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id
 
     #2. 克隆仓库
     #   以 循环克隆仓库 等待 gitee导入仓库任务 完毕
-    repo:git.Repo=loop_clone_wait_F(repoUrl=mirrRepoUrl,richPrgrs=richPrgrs)
+    repo:git.Repo=loop_clone_wait_F(repoUrl=mirrRepoUrl)
     
     # 若指定了cmtId, 则 重置到给定commitId
     if not isEmptyStr (from_commit_id):
@@ -103,4 +105,5 @@ def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id
 
 if __name__=="__main__":
     with Progress() as richPrgrs:
-        main_cmd(richPrgrs)
+        GlbVar(richPrgrs)
+        main_cmd()
