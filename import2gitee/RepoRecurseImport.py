@@ -89,6 +89,4 @@ def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id
         importGithubRepo2GiteeRecurse(prjHmDir, sonUrl, sonRepoK.hexsha, giteeMirrOrg, randSecs(sleep_seconds))
 
 if __name__=="__main__":
-    with Progress() as richPrgrs:
-        GlbVar(richPrgrs)
-        main_cmd()
+    main_cmd()
