@@ -65,6 +65,8 @@ def main_cmd():
     parser.add_argument('-s', '--sleep_seconds',required=True,type=int,help=f"【 相邻两个子模块导入命令间休眠秒数】 ",metavar='')
     args=parser.parse_args()
 
+    print(":")
+    
     scriptDir:Path=getScriptDir()
     #scriptDir==/fridaAnlzAp/github-gitee-GITEA/import2gitee/
     prjHmDir:str=f"{scriptDir.parent.absolute()}"
