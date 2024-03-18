@@ -6,10 +6,8 @@
 import sys
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 
-from rich import print
 
 from global_var import GlbVar
-from rich import print
 from pathlib import Path
 import git
 from git import cmd
@@ -32,7 +30,6 @@ from MiscUtil import fullUrl, isEmptyStr, firstLine
 from CntUtil import Counter
 from DirUtil import getScriptDir
 from GitPyUtil import tagNameLsByCmtId,printFrmRepoMsg
-from rich.progress import Progress
 
 cntr:Counter=Counter()
 MINI_sleep_seconds = 8

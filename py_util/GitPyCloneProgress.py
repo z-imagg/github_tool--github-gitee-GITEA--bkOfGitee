@@ -1,6 +1,4 @@
 import git
-from rich import print
-from rich.progress import Progress,TaskID
 import threading
 
 from global_var import getGlbVarInst

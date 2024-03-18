@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf8 -*-
 
-from rich import print
 
 import typing
 import git
@@ -12,7 +11,6 @@ from DirUtil import dirIsEmptyExcludeHidden
 import traceback
 
 from urllib.parse import urlparse
-from rich.progress import Progress
 
 from MiscUtil import firstLine
 from global_var import GlbVar,getGlbVarInst

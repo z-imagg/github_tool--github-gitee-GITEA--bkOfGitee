@@ -1,6 +1,5 @@
 
 
-from rich import print
 
 #转换仓库的相对url， 比如  https://github.com/pybind/pybind11.git/../../wjakob/clang-cindex-python3
 def fullUrl(beginUrl:str, url:str):

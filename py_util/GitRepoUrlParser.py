@@ -3,7 +3,6 @@
 
 # 【文件作用】 工具类 解析形如 https://github.com/NVlabs/stylegan.git 具有两层路径 的git仓库地址 
 
-from rich import print
 
 _GIT=".git"
 

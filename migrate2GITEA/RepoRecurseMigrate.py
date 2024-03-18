@@ -9,7 +9,6 @@ import sys
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 
 from global_var import GlbVar
-from rich import print
 
 from pathlib import Path
 import git
@@ -29,7 +28,6 @@ from SleepUtil import sleepVerbose
 from MiscUtil import fullUrl,isEmptyStr
 from CntUtil import Counter
 from  RepoMigrateToGiteaFunc import giteaMigrateApi
-from rich.progress import Progress
 from GitPyUtil import printFrmRepoMsg
 
 cntr:Counter=Counter()

@@ -9,7 +9,6 @@
 import sys
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 
-from rich import print
 from rich_style import rchGrn
 from pathlib import Path
 import re
@@ -24,7 +23,6 @@ from httpx_util import httpx_post_json
 
 from GitRepoUrlParser import GitRepoUrlC, gitMirrorRepoUrlParseF,gitRepoUrlParseF,_GIT
 from gitea_api_cfg import api_base_url,gitea_migrate_api_timeout_seconds
-from rich.progress import Progress
 
 def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str)->typing.Tuple[bool,GitRepoUrlC,str]:
   ornRUrlO=gitRepoUrlParseF(ornRUrl)

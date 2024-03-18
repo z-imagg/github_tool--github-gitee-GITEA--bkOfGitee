@@ -2,7 +2,6 @@
 # -*- coding: <encoding name> -*-
 
 from singleton_annt import funcSngltAnnt
-from rich.progress import Progress
 
 @funcSngltAnnt
 class GlbVar:
