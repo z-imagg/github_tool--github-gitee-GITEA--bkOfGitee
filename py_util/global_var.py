@@ -13,3 +13,10 @@ class GlbVar():
     @staticmethod
     def getInst()->'GlbVar':
         return GlbVar()
+    
+
+#测试
+if __name__=="__main__":
+    with Progress() as richPrgrs:
+        GlbVar(richPrgrs=richPrgrs)
+        end=True
