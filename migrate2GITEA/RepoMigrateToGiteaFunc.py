@@ -8,6 +8,8 @@
 
 import sys
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
+
+from rich import print
 from pathlib import Path
 import re
 
@@ -31,7 +33,7 @@ def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str)->typing.Tuple[bool,Gi
   frmRUrl:str = frmRUrlO.url_str()
   
   #迁移之前检查 检查gitee镜像仓库是否能正常克隆
-  checkRepoByClone(frmRUrl,"test_repo_befone_migrate")
+  checkRepoByClone(frmRUrl,"迁移前以克隆检查仓库")
 
   """ #本地GITEA创建组织接口 例子
   curl -X 'POST' \

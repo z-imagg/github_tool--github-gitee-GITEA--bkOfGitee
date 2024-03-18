@@ -40,9 +40,9 @@ def checkRepoByClone(_repoUrl:str,title:str)->git.Repo:
         progressTitle=f"{title}:{repoUrl}"
         dir=f"/tmp/{title}_{basicUqIdF()}"
         repo:git.Repo=git.Repo.clone_from(url=repoUrl,to_path=dir,  progress=GitPyCloneProgressC(progressTitle,getGlbVarInst().richPrgrs))
-        assert not dirIsEmptyExcludeHidden(dir) , f"断言失败，克隆到的不应该是空仓库. repoUrl=【{repoUrl}】,dir=【{dir}】"
+        assert not dirIsEmptyExcludeHidden(dir) , f"{title},断言失败，克隆到的不应该是空仓库. repoUrl=【{repoUrl}】,dir=【{dir}】"
         return repo
     except git.GitCommandError as e:
-        print(f"克隆仓库报错,请检查该仓库是否存在. repoUrl=【{repoUrl}】,dir=【{dir}】")
+        print(f"{title},克隆仓库报错,请检查该仓库是否存在. repoUrl=【{repoUrl}】,dir=【{dir}】")
         traceback.print_exception(e)
         raise e
