@@ -4,9 +4,12 @@
 # 【文件作用】 遍历给定git仓库中的子模块列表， 并打印对应命令import_githubRepo_to_gitee.sh
 
 import sys
-
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 
+from rich import print
+
+from global_var import GlbVar
+from rich import print
 from pathlib import Path
 import git
 from git import cmd
@@ -25,30 +28,15 @@ from GitRepoUrlParser import gitRepoUrlParseF,GitRepoUrlC
 from LoopCloneWait import loop_clone_wait_F
 from RandomUtil import randSecs
 from SleepUtil import sleepVerbose
-from MiscUtil import fullUrl, isEmptyStr, longTxtTruncate
+from MiscUtil import fullUrl, isEmptyStr, firstLine
 from CntUtil import Counter
 from DirUtil import getScriptDir
-from GitPyUtil import tagNameLsByCmtId
+from GitPyUtil import tagNameLsByCmtId,printFrmRepoMsg
+from rich.progress import Progress
 
 cntr:Counter=Counter()
 MINI_sleep_seconds = 8
 
-def printFrmRepoMsg(from_repo_url:str, from_commit_id:str, repo:git.Repo,cntr:Counter)->str:
-    idxMsg=f"第{cntr.inc()}个仓库 "
-
-    cmtIdMsg=f"提交id【{from_commit_id}】"
-
-    subNmLs=", ".join([son.url for son in repo.submodules])
-    subRpLsTxt=f"有子仓库{len(repo.submodules)}个=【{subNmLs}】" if len(repo.submodules)>0 else "无子仓库"
-    
-    tagNmLsTxt,tagLnLs=tagNameLsByCmtId(repo,from_commit_id)
-    tagTxt:str=f"tag们【{tagNmLsTxt}】" if len(tagLnLs)>0 else "无tag"
-
-    cmtMsg=longTxtTruncate(repo.commit(from_commit_id).message)
-    cmtMsgDisplay=f"提交消息【{cmtMsg}】"
-    
-    print(f"{idxMsg}【{from_repo_url}】，{cmtIdMsg}，  {tagTxt}，  {subRpLsTxt}  ，{cmtMsgDisplay}")
-    
 
 def main_cmd():
     parser = argparse.ArgumentParser(
@@ -60,6 +48,8 @@ def main_cmd():
     parser.add_argument('-o', '--goal_org',required=True,type=str,help="【目标，gitee的组织】",metavar='')
     parser.add_argument('-s', '--sleep_seconds',required=True,type=int,help=f"【 相邻两个子模块导入命令间休眠秒数】 ",metavar='')
     args=parser.parse_args()
+
+    print(":")
 
     scriptDir:Path=getScriptDir()
     #scriptDir==/fridaAnlzAp/github-gitee-GITEA/import2gitee/
@@ -76,12 +66,14 @@ def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id
     #1. 调用gitee导入接口
     newRepoName=f"{repoUrlO.orgName}--{repoUrlO.repoName}"
     simpleRespI:SimpleRespI=gitee_import_repo_wrap_F(prjHmDir,fromRepoUrl=from_repo_url,mirrOrg=giteeMirrOrg,newRepoName=newRepoName)
-    sleepVerbose(sleep_seconds,"#"); print(f"调用gitee导入接口【{from_repo_url}】---> 【{simpleRespI.goal_repoUrl}】")
+    sleepVerbose(sleep_seconds,"导入后休眠"); 
+    print(f"已导入【{from_repo_url}】---> 【{simpleRespI.goal_repoUrl}】")
+
     mirrRepoUrl:str=simpleRespI.goal_repoUrl
 
     #2. 克隆仓库
     #   以 循环克隆仓库 等待 gitee导入仓库任务 完毕
-    repo:git.Repo=loop_clone_wait_F(repoUrl=mirrRepoUrl)
+    repo:git.Repo=loop_clone_wait_F(repoUrl=mirrRepoUrl,title="休眠等待导入完成后克隆")
     
     # 若指定了cmtId, 则 重置到给定commitId
     if not isEmptyStr (from_commit_id):
@@ -100,4 +92,6 @@ def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id
         importGithubRepo2GiteeRecurse(prjHmDir, sonUrl, sonRepoK.hexsha, giteeMirrOrg, randSecs(sleep_seconds))
 
 if __name__=="__main__":
-    main_cmd()
+    with Progress() as richPrgrs:
+        GlbVar(richPrgrs)
+        main_cmd()
