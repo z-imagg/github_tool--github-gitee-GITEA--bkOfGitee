@@ -47,6 +47,18 @@ RepoRecurseImport.py  --from_repo_url https://github.com/pytorch/pytorch.git --f
 TODO
 
 
+
+
+######  pytorch v1.0.0
+
+```shell
+RepoRecurseImport.py  --from_repo_url https://github.com/pytorch/pytorch.git --from_commit_id db5d3131d16f57abd4f13d3f4b885d5f67bf6644 --goal_org imagg --sleep_seconds 2 
+    
+
+```
+
+http://giteaz:3000/wiki/github-gitee-GITEA/src/branch/main/import2gitee/doc/import_torch-v1.0.0-db5d3131d16f57abd4f13d3f4b885d5f67bf6644.log.txt
+
 ----
 
 
