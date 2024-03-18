@@ -24,7 +24,7 @@ def SngltAnnt(cls):
     return __single_with_thread_lock
 
 @SngltAnnt
-class __BuszClz000__():
+class __BuszClz000__:
     def __init__(self,age:int):
         #此__init__方法只会进入一次
         self.m_age:int=age
