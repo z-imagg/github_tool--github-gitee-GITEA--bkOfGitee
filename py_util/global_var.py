@@ -5,8 +5,8 @@ from singleton_annt import funcSngltAnnt
 
 @funcSngltAnnt
 class GlbVar:
-    def __init__(self,richPrgrs:Progress):
-        self.richPrgrs:Progress=richPrgrs
+    def __init__(self,global_var1:int):
+        self.global_var1:int=global_var1
 
 
 #使用函数装饰器 的弊端是  无法获取到 真实类对象 ，从而 无法调用static方法。 只能绕开
@@ -18,7 +18,6 @@ def getGlbVarInst()->GlbVar:
 
 #测试
 if __name__=="__main__":
-    with Progress() as richPrgrs:
-        inst=GlbVar(richPrgrs=richPrgrs)
+        inst=GlbVar(global_var1=88)
         inst2=getGlbVarInst()
         end=True
