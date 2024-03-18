@@ -27,7 +27,9 @@ from SleepUtil import sleepVerbose
 from MiscUtil import fullUrl
 from CntUtil import Counter
 from  RepoMigrateToGiteaFunc import giteaMigrateApi
+from rich.progress import Progress
 
+richPrgrs:Progress = Progress()
 cntr:Counter=Counter()
 
 def main_cmd():
@@ -52,14 +54,14 @@ def migrateRecurse(ornRUrl:str, ornCmtId:str, frmBaseUrl:str, frmOrgNm:str, slpS
 
     #1. 调用本地GITEA服务的迁移接口
     frmRUrlO:GitRepoUrlC
-    ok_mgr,frmRUrlO,localRUrl=giteaMigrateApi(ornRUrl, frmBaseUrl, frmOrgNm)
+    ok_mgr,frmRUrlO,localRUrl=giteaMigrateApi(ornRUrl, frmBaseUrl, frmOrgNm, richPrgrs)
     assert ok_mgr==True and frmRUrlO is not None,f"断言失败，GITEA迁移接口失败， ornRUrl=【{ornRUrl}】, frmBaseUrl=【{frmBaseUrl}】, frmOrgNm=【{frmOrgNm}】"
     mrrRpoUrl:str=frmRUrlO.url_str()
     sleepVerbose(slpSecs,"#"); print(f"调用本地GITEA服务的迁移接口 【{mrrRpoUrl}】---> 本地GITEA服务的 【{localRUrl}】")
 
     #2. 克隆仓库
     #   以 循环克隆仓库 等待 GITEA迁移仓库 完毕
-    repo:git.Repo=loop_clone_wait_F(repoUrl=localRUrl)
+    repo:git.Repo=loop_clone_wait_F(repoUrl=localRUrl,richPrgrs=richPrgrs)
     #重置到给定commitId
     repo.git.checkout(ornCmtId)
 
