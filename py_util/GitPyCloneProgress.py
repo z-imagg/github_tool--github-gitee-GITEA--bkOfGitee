@@ -13,9 +13,10 @@ class GitPyCloneProgressC(git.remote.RemoteProgress):
 
     def update(self, op_code, cur_count, max_count=None, message=''):
         # print(".",end="")
+        richPrgrs=getGlbVarInst().richPrgrs
         if self.task_id is None:
-            self.task_id=getGlbVarInst().richPrgrs.add_task(description=self.prgrsNm, total=max_count)
-        getGlbVarInst().richPrgrs.update(task_id=self.task_id, advance=cur_count)
+            self.task_id=richPrgrs.add_task(description=self.prgrsNm, total=max_count)
+        richPrgrs.update(task_id=self.task_id, advance=cur_count)
 
 
           
