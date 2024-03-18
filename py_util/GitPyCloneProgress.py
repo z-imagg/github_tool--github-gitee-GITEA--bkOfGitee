@@ -1,6 +1,7 @@
 import git
 from rich import print
 from rich.progress import Progress,TaskID
+import threading
 
 from global_var import getGlbVarInst
 
@@ -14,8 +15,8 @@ class GitPyCloneProgressC(git.remote.RemoteProgress):
     def update(self, op_code, cur_count, max_count=None, message=''):
         # print(".",end="")
         richPrgrs=getGlbVarInst().richPrgrs
-        if self.task_id is None:
-            self.task_id=richPrgrs.add_task(description=self.prgrsNm, total=max_count)
+        # thrdId=threading.get_ident(); print(f"thrdId@prgs={thrdId}")
+        #gitpython独自拥有多个线程，因为走到这里多了多个线程
         richPrgrs.update(task_id=self.task_id, advance=cur_count)
 
 
