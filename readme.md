@@ -47,6 +47,14 @@ RepoRecurseImport.py  --from_repo_url https://github.com/pytorch/pytorch.git --f
 TODO
 
 
+######  pytorch v1.0.0
+
+```shell
+RepoRecurseImport.py  --from_repo_url https://github.com/pytorch/pytorch.git --from_commit_id db5d3131d16f57abd4f13d3f4b885d5f67bf6644 --goal_org imagg --sleep_seconds 2 
+    
+```
+
+
 ----
 
 
@@ -86,6 +94,11 @@ https://gitee.com/imagg/pytorch--pytorch/tree/v0.3.0
 
 https://gitee.com/imagg/pytorch--pytorch/commit/af3964a8725236c78ce969b827fdeee1c5c54110
 
+######  pytorch v1.0.0
+
+```shell
+RepoRecurseMigrate.py --from_repo_url https://github.com/pytorch/pytorch.git --from_commit_id db5d3131d16f57abd4f13d3f4b885d5f67bf6644 --mirror_base_ur https://gitee.com --mirror_org_name imagg --sleep_seconds 2 
+```
 
 #### 步3、 从 "假github"(本地gitea服务) 正常克隆仓库、及其子模块们
 
