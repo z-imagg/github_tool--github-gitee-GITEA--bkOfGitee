@@ -8,7 +8,6 @@ sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 
 
 from global_var import GlbVar,getGlbVarInst
-from rich import print
 from pathlib import Path
 import git
 from git import cmd
@@ -69,7 +68,7 @@ def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id
     newRepoName=f"{repoUrlO.orgName}--{repoUrlO.repoName}"
     simpleRespI:SimpleRespI=gitee_import_repo_wrap_F(prjHmDir,fromRepoUrl=from_repo_url,mirrOrg=giteeMirrOrg,newRepoName=newRepoName)
     sleepVerbose(sleep_seconds,"接口导入后休眠"); 
-    richPrgrs.console.print(f"已接口导入【{from_repo_url}】---> 【{simpleRespI.goal_repoUrl}】")
+    richPrgrs.console.log(f"已接口导入【{from_repo_url}】---> 【{simpleRespI.goal_repoUrl}】")
 
     mirrRepoUrl:str=simpleRespI.goal_repoUrl
 
@@ -90,7 +89,7 @@ def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id
     #3. 递归子仓库
     for k,sonRepoK in enumerate( repo.submodules):
         sonUrl:str=fullUrl(from_repo_url,sonRepoK.url)
-        # richPrgrs.console.print(f"{repoK.name}, {repoK.path}, {repoK.url}, {repoK.hexsha}, {repoK.branch_name}, {repoK.branch_path}")
+        # richPrgrs.console.log(f"{repoK.name}, {repoK.path}, {repoK.url}, {repoK.hexsha}, {repoK.branch_name}, {repoK.branch_path}")
         importGithubRepo2GiteeRecurse(prjHmDir, sonUrl, sonRepoK.hexsha, giteeMirrOrg, randSecs(sleep_seconds))
 
 if __name__=="__main__":
