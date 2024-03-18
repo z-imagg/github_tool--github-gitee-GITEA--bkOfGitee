@@ -11,7 +11,7 @@ class GitPyCloneProgressC(RemoteProgress):
     def __init__(self,prgrsNm:str):
         super().__init__()
         #进度条标题
-        self.prgrsNm:str=f"{prgrsNm},GPCPC,"
+        self.prgrsNm:str=f"{prgrsNm},ClnProg"
         self.task_id=None
         self.cur_gitOpCode:int=None
         self.gitOpCodeLs:typing.List[int]=[]
@@ -25,7 +25,7 @@ class GitPyCloneProgressC(RemoteProgress):
         if gitOpCode not in self.gitOpCodeLs:
             self.gitOpCodeLs.append(gitOpCode)
         
-        opCodeLsTxt:str="、".join([f"{k}" for k in self.gitOpCodeLs])
+        opCodeLsTxt:str=">".join([f"{k}" for k in self.gitOpCodeLs])
         
         #若 来了第一个git操作码 或 git操作码 变化了
         if self.cur_gitOpCode is None or self.cur_gitOpCode != gitOpCode:
@@ -35,7 +35,7 @@ class GitPyCloneProgressC(RemoteProgress):
             if self.task_id is not None:  richPrgrs.update(task_id=self.task_id,visible=False)
 
             # 新建进度条
-            self.task_id=richPrgrs.add_task(description=f"{self.prgrsNm},{opCodeLsTxt}",total=max_count)
+            self.task_id=richPrgrs.add_task(description=f"{self.prgrsNm},OpCd {opCodeLsTxt}",total=max_count)
 
         # thrdId=threading.get_ident(); print(f"thrdId@prgs={thrdId}")
         #gitpython独自拥有多个线程，因为走到这里多了多个线程
