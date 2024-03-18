@@ -1,3 +1,5 @@
+
+from rich import print
 import git
 from GitPyCloneProgress import GitPyCloneProgressC
 import time
@@ -17,7 +19,7 @@ def loop_clone_wait_F(repoUrl:str,title:str)->git.Repo:
             if dirIsEmptyExcludeHidden(dir): #克隆到的是空仓库。 gitee 导入仓库逻辑， 收到请求后 立即创建一个空仓库，然后跑任务慢慢塞
                 sleepVerbose( randSecs(5) ,title)
                 rmDirRecurse(dir)
-                print(".",end="")#等待中
+                # print(".",end="")#等待中
                 continue
             else:
                 #正常克隆仓库
