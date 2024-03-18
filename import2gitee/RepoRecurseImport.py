@@ -62,9 +62,9 @@ def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id
 
     #1. 调用gitee导入接口
     newRepoName=f"{repoUrlO.orgName}--{repoUrlO.repoName}"
-    simpleRespI:SimpleRespI=gitee_import_repo_wrap_F(prjHmDir,fromRepoUrl=from_repo_url,mirrOrg=giteeMirrOrg,newRepoName=newRepoName)
+    simpleRespI,respFP=gitee_import_repo_wrap_F(prjHmDir,fromRepoUrl=from_repo_url,mirrOrg=giteeMirrOrg,newRepoName=newRepoName)
+    print(f"已接口导入【{from_repo_url}】---> 【{simpleRespI.goal_repoUrl}】; respBodyLen=【{len(simpleRespI.reqBody)}】; respFP=【{respFP}】")
     sleepVerbose(sleep_seconds,"接口导入后休眠"); 
-    print(f"已接口导入【{from_repo_url}】---> 【{simpleRespI.goal_repoUrl}】")
 
     mirrRepoUrl:str=simpleRespI.goal_repoUrl
 
