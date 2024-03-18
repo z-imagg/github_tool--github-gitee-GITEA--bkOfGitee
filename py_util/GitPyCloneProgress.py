@@ -20,11 +20,11 @@ class GitPyCloneProgressC(RemoteProgress):
     def update(self, op_code:int, cur_count:typing.Union[str, float], max_count:typing.Union[str, float, None]=None, message:str=''):
         # print(".",end="")
         self.opCodeLs.add(op_code)
-        opCodeLsTxt:str="、".join(self.opCodeLs)
+        opCodeLsTxt:str="、".join([f"{k}" for k in self.opCodeLs])
         richPrgrs=getGlbVarInst().richPrgrs
         if self.cur_opCode is None or self.cur_opCode != op_code:
             self.cur_opCode = op_code
-            # if self.task_id is not None:  richPrgrs.update(task_id=self.task_id,visible=False)
+            if self.task_id is not None:  richPrgrs.update(task_id=self.task_id,visible=False)
 
             self.task_id=richPrgrs.add_task(description=f"{self.prgrsNm},{opCodeLsTxt}",total=max_count)
 
