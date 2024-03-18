@@ -73,7 +73,7 @@ def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id
 
     #2. 克隆仓库
     #   以 循环克隆仓库 等待 gitee导入仓库任务 完毕
-    repo:git.Repo=loop_clone_wait_F(repoUrl=mirrRepoUrl,title="休眠等待导入完成后克隆")
+    repo:git.Repo=loop_clone_wait_F(repoUrl=mirrRepoUrl,title="等导入后克隆")
     
     # 若指定了cmtId, 则 重置到给定commitId
     if not isEmptyStr (from_commit_id):

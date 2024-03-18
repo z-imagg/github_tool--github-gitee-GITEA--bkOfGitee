@@ -34,7 +34,7 @@ def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str)->typing.Tuple[bool,Gi
   frmRUrl:str = frmRUrlO.url_str()
   
   #迁移之前检查 检查gitee镜像仓库是否能正常克隆
-  checkRepoByClone(frmRUrl,"迁移前以克隆检查仓库")
+  checkRepoByClone(frmRUrl,"检查后即迁移")
 
   """ #本地GITEA创建组织接口 例子
   curl -X 'POST' \
