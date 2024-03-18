@@ -1,7 +1,5 @@
 import git
 from git.remote import RemoteProgress
-from rich import print
-from rich.progress import Progress,TaskID
 import threading
 import typing
 

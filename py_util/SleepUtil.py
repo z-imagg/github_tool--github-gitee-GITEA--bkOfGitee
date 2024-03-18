@@ -1,8 +1,6 @@
 import time
 
-from rich.progress import track
 
-from rich import print
 
 from global_var import GlbVar,getGlbVarInst
 #休眠500毫秒，打印一个字符

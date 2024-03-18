@@ -1,5 +1,4 @@
 
-from rich import print
 import git
 from GitPyCloneProgress import GitPyCloneProgressC
 import time
@@ -7,7 +6,6 @@ from IdUtil import basicUqIdF
 from DirUtil import dirIsEmptyExcludeHidden,rmDirRecurse
 from RandomUtil import randSecs
 from SleepUtil import sleepVerbose
-from rich.progress import Progress
 
 from global_var import GlbVar,getGlbVarInst
 def loop_clone_wait_F(repoUrl:str,title:str)->git.Repo:
