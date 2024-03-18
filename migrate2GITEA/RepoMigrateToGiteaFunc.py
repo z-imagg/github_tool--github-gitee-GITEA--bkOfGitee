@@ -109,9 +109,9 @@ def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str)->typing.Tuple[bool,Gi
     #判定接口执行结果
     ok_mgr= resp_mgr.status_code == 409 or resp_mgr.is_success #409 gitea 已经存在仓库
     ok_mgr_desc=f'{"迁移接口成功" if ok_mgr else "迁移接口失败" }'  ; 
-  except httpcore.ReadTimeout as hprtE:
-    print(f"本地GITEA服务超时，结果未知，正常返回。下一步的loop_clone_wait_F可以应付。")
-    traceback.print_exception(hprtE)
+  except (httpcore.ReadTimeout | httpx.ReadTimeout)as htE:
+    print(f"本地GITEA服务响应超时，结果未知，正常返回。下一步的loop_clone_wait_F可以应付。")
+    traceback.print_exception(htE)
     #返回 迁移结果、镜像仓库url、本地GITEA仓库url
     return (True,frmRUrlO,toLcRUrl)
   #打印提示消息
