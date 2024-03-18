@@ -29,12 +29,9 @@ from CntUtil import Counter
 from  RepoMigrateToGiteaFunc import giteaMigrateApi
 from rich.progress import Progress
 
-richPrgrs:Progress = Progress()
-richPrgrs.__enter__()
-
 cntr:Counter=Counter()
 
-def main_cmd():
+def main_cmd(richPrgrs:Progress):
     parser = argparse.ArgumentParser(
     prog=f'gitSubmoduleImportCmdGen.py',
     description='【递归迁移仓库】【镜像gitee--->本地GITEA】')
@@ -81,5 +78,5 @@ def migrateRecurse(ornRUrl:str, ornCmtId:str, frmBaseUrl:str, frmOrgNm:str, slpS
         migrateRecurse(sonUrl, sonRpo.hexsha, frmBaseUrl, frmOrgNm, randSecs(slpSecs))
 
 if __name__=="__main__":
-    main_cmd()
-    richPrgrs.__exit__()
+    with Progress() as richPrgrs:
+        main_cmd(richPrgrs)

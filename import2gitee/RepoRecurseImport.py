@@ -34,9 +34,6 @@ from rich.progress import Progress
 cntr:Counter=Counter()
 MINI_sleep_seconds = 8
 
-richPrgrs:Progress = Progress()
-richPrgrs.__enter__()
-
 def printFrmRepoMsg(from_repo_url:str, from_commit_id:str, repo:git.Repo,cntr:Counter)->str:
     idxMsg=f"第{cntr.inc()}个仓库 "
 
@@ -54,7 +51,7 @@ def printFrmRepoMsg(from_repo_url:str, from_commit_id:str, repo:git.Repo,cntr:Co
     print(f"{idxMsg}【{from_repo_url}】，{cmtIdMsg}，  {tagTxt}，  {subRpLsTxt}  ，{cmtMsgDisplay}")
     
 
-def main_cmd():
+def main_cmd(richPrgrs:Progress):
     parser = argparse.ArgumentParser(
     prog=f'gitSubmoduleImportCmdGen.py',
     description='【子模块导入命令生成】')
@@ -104,5 +101,5 @@ def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id
         importGithubRepo2GiteeRecurse(prjHmDir, sonUrl, sonRepoK.hexsha, giteeMirrOrg, randSecs(sleep_seconds))
 
 if __name__=="__main__":
-    main_cmd()
-    richPrgrs.__exit__()
+    with Progress() as richPrgrs:
+        main_cmd(richPrgrs)
