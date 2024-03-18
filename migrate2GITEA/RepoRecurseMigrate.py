@@ -59,12 +59,12 @@ def migrateRecurse(ornRUrl:str, ornCmtId:str, frmBaseUrl:str, frmOrgNm:str, slpS
     ok_mgr,frmRUrlO,localRUrl=giteaMigrateApi(ornRUrl, frmBaseUrl, frmOrgNm)
     assert ok_mgr==True and frmRUrlO is not None,f"断言失败，GITEA迁移接口失败， ornRUrl=【{ornRUrl}】, frmBaseUrl=【{frmBaseUrl}】, frmOrgNm=【{frmOrgNm}】"
     mrrRpoUrl:str=frmRUrlO.url_str()
-    sleepVerbose(slpSecs,"迁移后休眠")
+    # sleepVerbose(slpSecs,"迁移后休眠")
     # print(f"已迁移 【{mrrRpoUrl}】---> 本地GITEA 【{localRUrl}】") 
 
     #2. 克隆仓库
     #   以 循环克隆仓库 等待 GITEA迁移仓库 完毕
-    repo:git.Repo=loop_clone_wait_F(repoUrl=localRUrl,title="休眠等待迁移完成后克隆")
+    repo:git.Repo=loop_clone_wait_F(repoUrl=localRUrl,title="等迁移接口真完")
     # 若指定了cmtId, 则 重置到给定commitId
     if not isEmptyStr (ornCmtId):
         repo.git.checkout(ornCmtId)
@@ -85,6 +85,6 @@ if __name__=="__main__":
     import threading
     with Progress() as richPrgrs: 
         #rich在一个独立线程中, 因为走到这里 多了一个线程
-        thrdId=threading.get_ident(); print(f"thrdId@main={thrdId}")
+        # thrdId=threading.get_ident(); print(f"thrdId@main={thrdId}")
         GlbVar(richPrgrs=richPrgrs)
         main_cmd( )
