@@ -6,9 +6,8 @@
 import sys
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 
-from rich import print
 
-from global_var import GlbVar
+from global_var import GlbVar,getGlbVarInst
 from rich import print
 from pathlib import Path
 import git
@@ -59,6 +58,9 @@ def main_cmd():
     importGithubRepo2GiteeRecurse(prjHmDir=prjHmDir, from_repo_url=args.from_repo_url,from_commit_id=args.from_commit_id,giteeMirrOrg=args.goal_org,sleep_seconds=args.sleep_seconds)
 
 def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id:str,giteeMirrOrg:str,sleep_seconds:int=2):
+    
+    richPrgrs=getGlbVarInst().richPrgrs
+
     assert not hasLocalGithubDomain(), f"断言失败，导入步不要在本地解析域名github.com，请将文件【/etc/hosts】中的github.com解析行删除或注释掉"
     assert from_repo_url.startswith("https://github.com"), f"断言失败，只允许github.com的仓库导入到gitee. from_repo_url=【{from_repo_url}】"
     repoUrlO:GitRepoUrlC=gitRepoUrlParseF(repoUrl=from_repo_url)
@@ -67,7 +69,7 @@ def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id
     newRepoName=f"{repoUrlO.orgName}--{repoUrlO.repoName}"
     simpleRespI:SimpleRespI=gitee_import_repo_wrap_F(prjHmDir,fromRepoUrl=from_repo_url,mirrOrg=giteeMirrOrg,newRepoName=newRepoName)
     sleepVerbose(sleep_seconds,"接口导入后休眠"); 
-    print(f"已接口导入【{from_repo_url}】---> 【{simpleRespI.goal_repoUrl}】")
+    richPrgrs.console.print(f"已接口导入【{from_repo_url}】---> 【{simpleRespI.goal_repoUrl}】")
 
     mirrRepoUrl:str=simpleRespI.goal_repoUrl
 
@@ -88,7 +90,7 @@ def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id
     #3. 递归子仓库
     for k,sonRepoK in enumerate( repo.submodules):
         sonUrl:str=fullUrl(from_repo_url,sonRepoK.url)
-        # print(f"{repoK.name}, {repoK.path}, {repoK.url}, {repoK.hexsha}, {repoK.branch_name}, {repoK.branch_path}")
+        # richPrgrs.console.print(f"{repoK.name}, {repoK.path}, {repoK.url}, {repoK.hexsha}, {repoK.branch_name}, {repoK.branch_path}")
         importGithubRepo2GiteeRecurse(prjHmDir, sonUrl, sonRepoK.hexsha, giteeMirrOrg, randSecs(sleep_seconds))
 
 if __name__=="__main__":
