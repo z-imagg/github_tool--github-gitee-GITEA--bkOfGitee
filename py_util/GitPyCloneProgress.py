@@ -3,6 +3,8 @@ from git.remote import RemoteProgress
 import threading
 import typing
 
+from progress.counter import Countdown , Counter
+
 from global_var import getGlbVarInst
 
 class GitPyCloneProgressC(RemoteProgress):
@@ -13,11 +15,22 @@ class GitPyCloneProgressC(RemoteProgress):
         self.cur_gitOpCode:int=None
         self.gitOpCodeLs:typing.List[int]=[]
         print(">")
+        self.countDown:Countdown=None
+        self.counter:Counter=None
 
     def update(self, gitOpCode:int, cur_count:typing.Union[str, float], max_count:typing.Union[str, float, None]=None, message:str=''):
         print("#",end="")
         
+        if  self.countDown is None:
+            self.countDown:Countdown=Countdown("克隆进度倒数", max=max_count)
 
+        # if  self.counter is None:
+        #     self.counter:Counter=Counter(f"克隆进度正数{max_count}", max=max_count)
+        
+        # self.counter.next
+        self.countDown.goto(cur_count)
+        
+        
         #保存有史以来的所有git操作码， gitOpCode按照来的时刻保持顺序
         if gitOpCode not in self.gitOpCodeLs:
             self.gitOpCodeLs.append(gitOpCode)
