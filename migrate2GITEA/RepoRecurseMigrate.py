@@ -30,6 +30,8 @@ from  RepoMigrateToGiteaFunc import giteaMigrateApi
 from rich.progress import Progress
 
 richPrgrs:Progress = Progress()
+richPrgrs.__enter__()
+
 cntr:Counter=Counter()
 
 def main_cmd():
@@ -80,3 +82,4 @@ def migrateRecurse(ornRUrl:str, ornCmtId:str, frmBaseUrl:str, frmOrgNm:str, slpS
 
 if __name__=="__main__":
     main_cmd()
+    richPrgrs.__exit__()

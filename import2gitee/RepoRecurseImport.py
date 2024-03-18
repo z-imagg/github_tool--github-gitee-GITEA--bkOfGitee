@@ -29,12 +29,13 @@ from MiscUtil import fullUrl, isEmptyStr, longTxtTruncate
 from CntUtil import Counter
 from DirUtil import getScriptDir
 from GitPyUtil import tagNameLsByCmtId
+from rich.progress import Progress
 
 cntr:Counter=Counter()
 MINI_sleep_seconds = 8
 
-from rich.progress import Progress
 richPrgrs:Progress = Progress()
+richPrgrs.__enter__()
 
 def printFrmRepoMsg(from_repo_url:str, from_commit_id:str, repo:git.Repo,cntr:Counter)->str:
     idxMsg=f"第{cntr.inc()}个仓库 "
@@ -104,3 +105,4 @@ def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id
 
 if __name__=="__main__":
     main_cmd()
+    richPrgrs.__exit__()
