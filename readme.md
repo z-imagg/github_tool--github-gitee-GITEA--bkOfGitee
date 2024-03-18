@@ -56,7 +56,6 @@ RepoRecurseMigrate.py --from_repo_url https://github.com/pytorch/pytorch.git --f
 http://giteaz:3000/wiki/github-gitee-GITEA/src/branch/main/torch-v0.3.0-build.md
 
 
-
 ###  pytorch v1.0.0
 
 #### 1、 递归gitee导入接口（github-->gitee）
@@ -82,6 +81,12 @@ RepoRecurseMigrate.py --from_repo_url https://github.com/pytorch/pytorch.git --f
 #### 3、 编译 
 
 http://giteaz:3000/wiki/github-gitee-GITEA/src/branch/main/torch-v1.0.0-build.md
+
+#### 4、 c++例子
+
+https://gitee.com/frida_analyze_app_src/torch-cpp/blob/master/v1.0.0/readme.md
+
+
 
 ###  pytorch v1.3.1
 
