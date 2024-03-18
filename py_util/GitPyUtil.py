@@ -65,6 +65,8 @@ def printFrmRepoMsg(from_repo_url:str, from_commit_id:str, repo:git.Repo,cntr:Co
 
     cmtMsg=firstLine(repo.commit(from_commit_id).message)
     cmtMsgDisplay=f"提交消息【{cmtMsg}】"
+
+    repoLocDir=f"仓库目录【{repo.git_dir}】"
     
-    print(f"{idxMsg}【{from_repo_url}】，{cmtIdMsg}，  {tagTxt}，  {subRpLsTxt}  ，{cmtMsgDisplay}")
+    print(f"{idxMsg}【{from_repo_url}】，{cmtIdMsg}，  {tagTxt}，  {subRpLsTxt}  ，{cmtMsgDisplay}，{repoLocDir}")
     
