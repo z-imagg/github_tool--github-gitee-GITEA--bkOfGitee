@@ -1,6 +1,7 @@
 import time
 
 
+from rich import print
 #休眠500毫秒，打印一个字符
 def sleepVerbose(seconds:int, z:str ):
     unit_ms:float=0.5 #500毫秒

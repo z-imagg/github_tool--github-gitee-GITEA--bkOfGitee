@@ -8,6 +8,7 @@ import sys
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/import2gitee/")
 
+from rich import print
 from pathlib import Path
 import git
 from git import cmd

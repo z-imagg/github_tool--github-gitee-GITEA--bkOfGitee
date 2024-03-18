@@ -7,6 +7,7 @@ import sys
 
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 
+from rich import print
 from pathlib import Path
 import git
 from git import cmd
