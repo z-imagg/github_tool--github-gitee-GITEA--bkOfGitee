@@ -88,14 +88,14 @@ def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str)->typing.Tuple[bool,Gi
   #构造本地GITEA仓库url
   localRUrl=f"{api_base_url}/{ornRUrlO.orgName}/{ornRUrlO.repoName}{_GIT}"
 
-  mgr_desc=f"原始仓库【{ornRUrl}】 ；迁移内容【{frmRUrl}】--->【{localRUrl}】"    ;  mgr_msg=f"正在迁移...，耗时取决于仓库大小; {mgr_desc}"  ;  print(mgr_msg)
+  mgr_desc=f"原始仓库【{ornRUrl}】 ；迁移内容【{frmRUrl}】--->【{localRUrl}】"    ;  mgr_msg=f"迁移接口开始... ; {mgr_desc}"  ;  print(mgr_msg)
 
   #调用本地GITEA服务的迁移接口
   resp_mgr=httpx_post_json(apiUrl=apiUrl_migrate,reqBodyDct=reqBdy_migrate,timeoutSecs=gitea_migrate_api_timeout_seconds)
   #判定接口执行结果
   ok_mgr= resp_mgr.status_code == 409 or resp_mgr.is_success #409 gitea 已经存在仓库
   #打印提示消息
-  resp_mgr_desc=f"【gitea迁移接口响应】状态码【{resp_mgr.status_code}】，响应文本【{resp_mgr.text}】"   ; ok_mgr_desc=f'{"迁移成功" if ok_mgr else "迁移失败" }'  ;  msg_mgr=f'{ok_mgr_desc}; {mgr_desc}; \n {resp_mgr_desc}'   ; print(msg_mgr)
+  resp_mgr_desc=f"【gitea迁移接口响应】状态码【{resp_mgr.status_code}】 "   ; ok_mgr_desc=f'{"迁移接口成功" if ok_mgr else "迁移接口失败" }'  ;  msg_mgr=f'{ok_mgr_desc};   {resp_mgr_desc}'   ; print(msg_mgr)
 
   #返回 迁移结果、镜像仓库url、本地GITEA仓库url
   return (ok_mgr,frmRUrlO,localRUrl)
