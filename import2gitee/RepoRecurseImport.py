@@ -28,7 +28,7 @@ from GitRepoUrlParser import gitRepoUrlParseF,GitRepoUrlC
 from LoopCloneWait import loop_clone_wait_F
 from RandomUtil import randSecs
 from SleepUtil import sleepVerbose
-from MiscUtil import fullUrl, isEmptyStr, longTxtTruncate
+from MiscUtil import fullUrl, isEmptyStr, firstLine
 from CntUtil import Counter
 from DirUtil import getScriptDir
 from GitPyUtil import tagNameLsByCmtId
@@ -48,7 +48,7 @@ def printFrmRepoMsg(from_repo_url:str, from_commit_id:str, repo:git.Repo,cntr:Co
     tagNmLsTxt,tagLnLs=tagNameLsByCmtId(repo,from_commit_id)
     tagTxt:str=f"tag们【{tagNmLsTxt}】" if len(tagLnLs)>0 else "无tag"
 
-    cmtMsg=longTxtTruncate(repo.commit(from_commit_id).message)
+    cmtMsg=firstLine(repo.commit(from_commit_id).message)
     cmtMsgDisplay=f"提交消息【{cmtMsg}】"
     
     print(f"{idxMsg}【{from_repo_url}】，{cmtIdMsg}，  {tagTxt}，  {subRpLsTxt}  ，{cmtMsgDisplay}")
@@ -66,7 +66,7 @@ def main_cmd():
     args=parser.parse_args()
 
     print(":")
-    
+
     scriptDir:Path=getScriptDir()
     #scriptDir==/fridaAnlzAp/github-gitee-GITEA/import2gitee/
     prjHmDir:str=f"{scriptDir.parent.absolute()}"
