@@ -33,9 +33,6 @@ class GitPyCloneProgressC(RemoteProgress):
         if self.cur_gitOpCode is None or self.cur_gitOpCode != gitOpCode:
             # 更新 当前git操作码
             self.cur_gitOpCode = gitOpCode
-            # 隐藏上一个进度条
-            if self.bar is not None:  
-                self.bar.finish()
 
             # 新建进度条
             #    参考 https://github.com/verigak/progress/
@@ -47,6 +44,9 @@ class GitPyCloneProgressC(RemoteProgress):
           
         #更新当前进度条
         self.bar.goto(cur_count)
+
+        #数字到达的时候，进度条调用finish方法 以 结束，否则不换行
+        if cur_count == max_count: self.bar.finish()
 
 
 # repo = git.Repo.clone_from(url="git@gitee/xx/xx.git", to_path="xx/xx/xx", progress=GitPyCloneProgressC())
