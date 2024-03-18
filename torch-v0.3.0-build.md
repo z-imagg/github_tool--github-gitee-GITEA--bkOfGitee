@@ -27,8 +27,7 @@ export USE_ROCM=0
 export DEBUG=1
 
 python setup.py clean
-CMAKE_BUILD_TYPE=Release   CMAKE_CXX_FLAGS='-fno-omit-frame-pointer -Wall -O0 -g1'   CMAKE_C_FLAGS='-fno-omit-frame-pointer -Wall -O0 -g1'   CMAKE_VERBOSE_MAKEFILE=True python setup.py build
-# CMAKE_VERBOSE_MAKEFILE=True python setup.py install
+CMAKE_VERBOSE_MAKEFILE=True python setup.py install
 #     install == build+安装； 这里不需要安装 ，因此用build而不用install
 
 #注意 v0.3.0 和 v1.3.0 的编译命令 有差别
