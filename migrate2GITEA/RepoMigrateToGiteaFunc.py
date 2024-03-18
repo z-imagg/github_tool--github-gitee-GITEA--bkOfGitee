@@ -34,7 +34,7 @@ def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str)->typing.Tuple[bool,Gi
   frmRUrl:str = frmRUrlO.url_str()
   
   #迁移之前检查 检查gitee镜像仓库是否能正常克隆
-  checkRepoByClone(frmRUrl,"检查后即迁移")
+  checkRepoByClone(frmRUrl,"检查中")
 
   """ #本地GITEA创建组织接口 例子
   curl -X 'POST' \
@@ -95,7 +95,7 @@ def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str)->typing.Tuple[bool,Gi
   #判定接口执行结果
   ok_mgr= resp_mgr.status_code == 409 or resp_mgr.is_success #409 gitea 已经存在仓库
   #打印提示消息
-  resp_mgr_desc=f"【gitea迁移接口响应】状态码【{resp_mgr.status_code}】 "   ; ok_mgr_desc=f'{"迁移接口成功" if ok_mgr else "迁移接口失败" }'  ;  msg_mgr=f'{ok_mgr_desc};   {resp_mgr_desc}'   ; print(msg_mgr)
+  resp_mgr_desc=f"【GITEA迁移接口响应】状态码【{resp_mgr.status_code}】 "   ; ok_mgr_desc=f'{"迁移接口成功" if ok_mgr else "迁移接口失败" }'  ;  msg_mgr=f'{ok_mgr_desc};   {resp_mgr_desc}'   ; print(msg_mgr)
 
   #返回 迁移结果、镜像仓库url、本地GITEA仓库url
   return (ok_mgr,frmRUrlO,localRUrl)
