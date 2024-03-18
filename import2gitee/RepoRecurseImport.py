@@ -56,7 +56,7 @@ def main_cmd():
     importGithubRepo2GiteeRecurse(prjHmDir=prjHmDir, from_repo_url=args.from_repo_url,from_commit_id=args.from_commit_id,giteeMirrOrg=args.goal_org,sleep_seconds=args.sleep_seconds)
 
 def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id:str,giteeMirrOrg:str,sleep_seconds:int=2):
-    assert not hasLocalGithubDomain(), f"断言失败，导入步不要在本地解析域名github.com，请将文件【/etc/hosts】中的github.com解析行删除或注释掉"
+    assert not hasLocalGithubDomain(), f"断言失败，导入步不要在本地解析域名github.com，请将文件【/etc/hosts】中的github.com解析行删除或注释掉。（本断言的目的是防止混淆，导入步允许 本地解析域名github.com）"
     assert from_repo_url.startswith("https://github.com"), f"断言失败，只允许github.com的仓库导入到gitee. from_repo_url=【{from_repo_url}】"
     repoUrlO:GitRepoUrlC=gitRepoUrlParseF(repoUrl=from_repo_url)
 
