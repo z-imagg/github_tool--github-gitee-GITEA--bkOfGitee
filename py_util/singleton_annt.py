@@ -10,7 +10,7 @@
 #Python 装饰器线程安全单例的实现(使用函数装饰器)
 import threading
 import time
-def SngltAnnt(cls):
+def funcSngltAnnt(cls):
     instance = {}
     lock = threading.Lock()
 
@@ -23,13 +23,19 @@ def SngltAnnt(cls):
         return instance[cls]
     return __single_with_thread_lock
 
-@SngltAnnt
+@funcSngltAnnt
 class __BuszClz000__:
+#以上两行 等价于 funcSngltAnnt(class __BuszClz000__)
+#意思是说 'class __BuszClz000__'的任何访问 都被 funcSngltAnnt 多包裹了一层
     def __init__(self,age:int):
         #此__init__方法只会进入一次
         self.m_age:int=age
         time.sleep(2)
         print(f"self.m_age={self.m_age}")
+    
+    @staticmethod
+    def static_method():
+        pass
 
 def printNewInstance():
     import random
@@ -44,4 +50,8 @@ if __name__=="__main__":
     __BuszClz000__(99)#此行为第一次调用  方法__C000__.__init__ , 会实际进入到 方法__C000__.__init__
     for i in range(20):
         threading.Thread(target=printNewInstance).start()
+    
+    __BuszClz000__.static_method() #此行报错 AttributeError: 'function' object has no attribute 'static_method'
+    #  由于 '@funcSngltAnnt  class __BuszClz000__' == funcSngltAnnt(class __BuszClz000__)
+    # 因此 这种模式之下 实际上已经无法拿到 真实类对象__BuszClz000__了 
     
