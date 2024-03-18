@@ -2,9 +2,17 @@ import git
 from git.remote import RemoteProgress
 import threading
 import typing
+import sys
 
 from global_var import getGlbVarInst
 
+class SimpleProgressC:
+    def __init__(self,prgrsLen:int,symbol:str) -> None:
+        self.curIdx:int=0
+        self.prgrsLen:int=prgrsLen
+        self.symbol:str=symbol
+    def doing():
+        pass
 class GitPyCloneProgressC(RemoteProgress):
     def __init__(self,prgrsNm:str):
         super().__init__()
@@ -18,7 +26,10 @@ class GitPyCloneProgressC(RemoteProgress):
         prgrsCurIdx:int=int(self.prgrsLen*rate)
         if prgrsCurIdx >= self.prgrsCurIdx:
             print("#",end="")
+            sys.stdout.flush()
             self.prgrsCurIdx+=1
+
+            
         # thrdId=threading.get_ident(); print(f"thrdId@prgs={thrdId}")
         #gitpython独自拥有多个线程，因为走到这里多了多个线程
 
