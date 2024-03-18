@@ -35,9 +35,17 @@ richPrgrs:Progress = Progress()
 cntr:Counter=Counter()
 
 def main_cmd():
+    with Progress() as progress:
 
-    for step in track(range(30)):
-        time.sleep(0.1)
+        task1 = progress.add_task("[red]Downloading...", total=200)
+        task2 = progress.add_task("[green]Processing...", total=200)
+        task3 = progress.add_task("[cyan]Cooking...", total=200)
+
+        while not progress.finished:
+            progress.update(task1, advance=0.5)
+            progress.update(task2, advance=0.3)
+            progress.update(task3, advance=0.9)
+            time.sleep(0.02)
 
     parser = argparse.ArgumentParser(
     prog=f'gitSubmoduleImportCmdGen.py',
