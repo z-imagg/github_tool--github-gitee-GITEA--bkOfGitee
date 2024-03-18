@@ -5,7 +5,7 @@
 # 【术语】 orn == origin == 源头,  frm==from , mgr == migrate == 迁移,   RUrl == RepoUrl == git仓库Url
 # 【大背景】 github仓库  ----import导入--->  镜像gitee仓库  ----migrate迁移---> 本地GITEA仓库 
 # 【术语】在迁移语境下：  orn源头 指的是 github仓库 , frm来自 值的是 镜像gitee仓库,  目标 指的是 本地GITEA仓库
-
+# 【术语】 toLcRUrl == toLocalRepoUrl == "目标即本地仓库"的仓库Url
 import sys
 
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
@@ -32,14 +32,14 @@ def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str)->typing.Tuple[bool,Gi
   frmRUrlO=ornRUrlO.to_mirror_url(frmBaseUrl,frmOrg)
   frmRUrl:str = frmRUrlO.url_str()
 
-  mgr_desc=f"原始仓库【{ornRUrl}】 ；迁移内容【{frmRUrl}】--->【{localRUrl}】"    ;  
+  mgr_desc=f"原始仓库【{ornRUrl}】 ；迁移内容【{frmRUrl}】--->【{toLcRUrl}】"    ;  
 
   #构造本地GITEA仓库url
-  localRUrl=f"{api_base_url}/{ornRUrlO.orgName}/{ornRUrlO.repoName}{_GIT}"
-  if checkRepoByClone(localRUrl,"检目的仓") is not None:
+  toLcRUrl=f"{api_base_url}/{ornRUrlO.orgName}/{ornRUrlO.repoName}{_GIT}"
+  if checkRepoByClone(toLcRUrl,"检目的仓") is not None:
     #返回 迁移结果、镜像仓库url、本地GITEA仓库url
     print(f"目的仓已有，无需迁移; {mgr_desc}")
-    return (True,frmRUrlO,localRUrl)
+    return (True,frmRUrlO,toLcRUrl)
   
   #迁移之前检查 检查gitee镜像仓库是否能正常克隆
   checkRepoByClone(frmRUrl,"检查中")
@@ -103,4 +103,4 @@ def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str)->typing.Tuple[bool,Gi
   resp_mgr_desc=f"【GITEA迁移接口响应】状态码【{resp_mgr.status_code}】 "   ; ok_mgr_desc=f'{"迁移接口成功" if ok_mgr else "迁移接口失败" }'  ;  msg_mgr=f'{ok_mgr_desc};   {resp_mgr_desc}'   ; print(msg_mgr)
 
   #返回 迁移结果、镜像仓库url、本地GITEA仓库url
-  return (ok_mgr,frmRUrlO,localRUrl)
+  return (ok_mgr,frmRUrlO,toLcRUrl)
