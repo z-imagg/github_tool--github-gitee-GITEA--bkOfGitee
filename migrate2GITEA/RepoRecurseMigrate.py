@@ -85,6 +85,6 @@ if __name__=="__main__":
     import threading
     with Progress() as richPrgrs: 
         #rich在一个独立线程中, 因为走到这里 多了一个线程
-        thrdId=threading.get_ident(); print(f"thrdId@main={thrdId}")
+        # thrdId=threading.get_ident(); print(f"thrdId@main={thrdId}")
         GlbVar(richPrgrs=richPrgrs)
         main_cmd( )

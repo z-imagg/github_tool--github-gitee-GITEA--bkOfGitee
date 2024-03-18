@@ -61,7 +61,7 @@ def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str)->typing.Tuple[bool,Gi
   #判定接口执行结果
   ok_newOrg=resp_newOrg.status_code==422 or resp_newOrg.is_success #422 gitea 已经存在组织
   #打印提示消息
-  msg_newOrg=f'{rchGrn("创建gitea组织成功") if resp_newOrg else rchGrn("创建gitea组织失败") }，【{resp_newOrg.status_code}, {resp_newOrg.text}】'  ; richPrgrs.console.log(msg_newOrg)
+  msg_newOrg=f'{rchGrn("创建GITEA组织成功") if resp_newOrg else rchGrn("创建GITEA组织失败") }，【{resp_newOrg.status_code}, {resp_newOrg.text}】'  ; richPrgrs.console.log(msg_newOrg)
   #若创建本地GITEA组织失败，只能终止了。
   if(not ok_newOrg):
     #返回 迁移结果、镜像仓库url、本地GITEA仓库url
