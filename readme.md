@@ -81,6 +81,7 @@ RepoRecurseMigrate.py --from_repo_url https://github.com/pytorch/pytorch.git --f
 
 #### 3、 编译 
 
+http://giteaz:3000/wiki/github-gitee-GITEA/src/branch/main/torch-v1.0.0-build.md
 
 ###  pytorch v1.3.1
 
