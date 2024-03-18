@@ -44,7 +44,7 @@ def checkRepoByClone(_repoUrl:str,title:str)->git.Repo:
         assert not dirIsEmptyExcludeHidden(dir) , f"{title},断言失败，克隆到的不应该是空仓库. repoUrl=【{repoUrl}】,dir=【{dir}】"
         return repo
     except git.GitCommandError as e:
-        print(f"{title},克隆仓库报错,请检查该仓库是否存在?忘记执行RepoRecurseImport.py导入了?. repoUrl=【{repoUrl}】,dir=【{dir}】")
+        print(f"{title},克隆仓库报错,请检查该仓库是否存在? repoUrl=【{repoUrl}】,dir=【{dir}】")
         traceback.print_exception(e)
         raise e
 
