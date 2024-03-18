@@ -39,7 +39,7 @@ def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str)->typing.Tuple[bool,Gi
 
   if checkRepoByClone(toLcRUrl,"检目的仓") is not None:
     #返回 迁移结果、镜像仓库url、本地GITEA仓库url
-    print(f"目的仓已有，无需迁移; {mgr_desc}")
+    print(f"目的仓已有，无需迁移; 『 {mgr_desc}』 ")
     return (True,frmRUrlO,toLcRUrl)
   
   #迁移之前检查 检查gitee镜像仓库是否能正常克隆
