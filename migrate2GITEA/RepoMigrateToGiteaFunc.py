@@ -26,12 +26,20 @@ from gitea_api_cfg import api_base_url,gitea_migrate_api_timeout_seconds
 from global_var import getGlbVarInst
 
 def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str)->typing.Tuple[bool,GitRepoUrlC,str]:
-
   ornRUrlO=gitRepoUrlParseF(ornRUrl)
 
   #将 原始仓库url(==github仓库url) 通过 镜像信息(==frm*) 转为 镜像仓库url。 镜像==gitee
   frmRUrlO=ornRUrlO.to_mirror_url(frmBaseUrl,frmOrg)
   frmRUrl:str = frmRUrlO.url_str()
+
+  mgr_desc=f"原始仓库【{ornRUrl}】 ；迁移内容【{frmRUrl}】--->【{localRUrl}】"    ;  
+
+  #构造本地GITEA仓库url
+  localRUrl=f"{api_base_url}/{ornRUrlO.orgName}/{ornRUrlO.repoName}{_GIT}"
+  if checkRepoByClone(localRUrl,"检目的仓") is not None:
+    #返回 迁移结果、镜像仓库url、本地GITEA仓库url
+    print(f"目的仓已有，无需迁移; {mgr_desc}")
+    return (True,frmRUrlO,localRUrl)
   
   #迁移之前检查 检查gitee镜像仓库是否能正常克隆
   checkRepoByClone(frmRUrl,"检查中")
@@ -84,11 +92,8 @@ def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str)->typing.Tuple[bool,Gi
     "repo_owner": ornRUrlO.orgName,
     "repo_name": ornRUrlO.repoName
   }
-  
-  #构造本地GITEA仓库url
-  localRUrl=f"{api_base_url}/{ornRUrlO.orgName}/{ornRUrlO.repoName}{_GIT}"
 
-  mgr_desc=f"原始仓库【{ornRUrl}】 ；迁移内容【{frmRUrl}】--->【{localRUrl}】"    ;  mgr_msg=f"迁移接口开始... ; {mgr_desc}"  ;  print(mgr_msg)
+  mgr_msg=f"迁移接口开始... ; {mgr_desc}"  ;  print(mgr_msg)
 
   #调用本地GITEA服务的迁移接口
   resp_mgr=httpx_post_json(apiUrl=apiUrl_migrate,reqBodyDct=reqBdy_migrate,timeoutSecs=gitea_migrate_api_timeout_seconds)
