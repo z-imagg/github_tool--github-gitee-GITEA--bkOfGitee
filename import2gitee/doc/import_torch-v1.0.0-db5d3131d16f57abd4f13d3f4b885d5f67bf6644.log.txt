@@ -1,0 +1,574 @@
+(.venv) z@mchr:~$ RepoRecurseImport.py  --from_repo_url https://github.com/pytorch/pytorch.git --from_commit_id db5d3131d16f57abd4f13d3f4b885d5f67bf6644 --goal_org imagg --sleep_seconds 2 
+    
+:
+接口导入后休眠【2秒】,slpVbs,0   
+已接口导入【https://github.com/pytorch/pytorch.git】---> 【https://gitee.com/imagg/pytorch--pytorch.git】
+>
+【导入确认中,https://gitee.com/imagg/pytorch--pytorch.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;1114420;1114420】
+【导入确认中,https://gitee.com/imagg/pytorch--pytorch.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;1114420;1114420】
+【导入确认中,https://gitee.com/imagg/pytorch--pytorch.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;215975;215975】
+【导入确认中,https://gitee.com/imagg/pytorch--pytorch.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;215975;215975】
+【导入确认中,https://gitee.com/imagg/pytorch--pytorch.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;1114420;1114420】
+【导入确认中,https://gitee.com/imagg/pytorch--pytorch.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;1114420;1114420】
+【导入确认中,https://gitee.com/imagg/pytorch--pytorch.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;892599;892599】
+【导入确认中,https://gitee.com/imagg/pytorch--pytorch.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;892599;892599】
+###########################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第1个仓库 【https://github.com/pytorch/pytorch.git】，提交id【db5d3131d16f57abd4f13d3f4b885d5f67bf6644】，  tag们【v1.0.0】，  有子仓库28个=【https://github.com/pybind/pybind11.git, https://github.com/NVlabs/cub.git, https://github.com/eigenteam/eigen-git-mirror.git, https://github.com/google/googletest.git, https://github.com/google/benchmark.git, https://github.com/google/protobuf.git, https://github.com/Yangqing/ios-cmake.git, https://github.com/Maratyszcza/NNPACK.git, https://github.com/facebookincubator/gloo, https://github.com/Maratyszcza/pthreadpool.git, https://github.com/Maratyszcza/FXdiv.git, https://github.com/Maratyszcza/FP16.git, https://github.com/Maratyszcza/psimd.git, https://github.com/facebook/zstd.git, https://github.com/Maratyszcza/cpuinfo.git, https://github.com/PeachPy/enum34.git, https://github.com/Maratyszcza/PeachPy.git, https://github.com/benjaminp/six.git, https://github.com/ARM-software/ComputeLibrary.git, https://github.com/onnx/onnx.git, https://github.com/onnx/onnx-tensorrt, https://github.com/shibatch/sleef, https://github.com/intel/ideep, https://github.com/NVIDIA/nccl, https://github.com/google/gemmlowp.git, https://github.com/pytorch/QNNPACK, https://github.com/intel/ARM_NEON_2_x86_SSE.git, https://github.com/pytorch/fbgemm】  ，提交消息【add fix for CUDA 10】
+接口导入后休眠【3秒】,slpVbs,0   
+已接口导入【https://github.com/pybind/pybind11.git】---> 【https://gitee.com/imagg/pybind--pybind11.git】
+>
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;27577;27577】
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;27577;27577】
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;5805;5805】
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;5805;5805】
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;27577;27577】
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;27577;27577】
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;19474;19474】
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;19474;19474】
+#########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第2个仓库 【https://github.com/pybind/pybind11.git】，提交id【5c8746ff135abb390bf95944be593e895a586a50】，  无tag，  有子仓库1个=【https://github.com/wjakob/clang-cindex-python3】  ，提交消息【check for already existing enum value added; added test (#1453)】
+接口导入后休眠【3秒】,slpVbs,0   
+已接口导入【https://github.com/wjakob/clang-cindex-python3】---> 【https://gitee.com/imagg/wjakob--clang-cindex-python3.git】
+>
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;368;368】
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;368;368】
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;212;212】
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;212;212】
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;368;368】
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;368;368】
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;154;154】
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;154;154】
+#######################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第3个仓库 【https://github.com/wjakob/clang-cindex-python3】，提交id【6a00cbc4a9b8e68b71caf7f774b3f9c753ae84d5】，  无tag，  无子仓库  ，提交消息【integrated latest cindex.py changes as of 30.03.2017】
+接口导入后休眠【2秒】,slpVbs,0   
+已接口导入【https://github.com/NVlabs/cub.git】---> 【https://gitee.com/imagg/NVlabs--cub.git】
+>
+【导入确认中,https://gitee.com/imagg/NVlabs--cub.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;39497;39497】
+【导入确认中,https://gitee.com/imagg/NVlabs--cub.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;39497;39497】
+【导入确认中,https://gitee.com/imagg/NVlabs--cub.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;4758;4758】
+【导入确认中,https://gitee.com/imagg/NVlabs--cub.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;4758;4758】
+【导入确认中,https://gitee.com/imagg/NVlabs--cub.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;39497;39497】
+【导入确认中,https://gitee.com/imagg/NVlabs--cub.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;39497;39497】
+【导入确认中,https://gitee.com/imagg/NVlabs--cub.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;34073;34073】
+【导入确认中,https://gitee.com/imagg/NVlabs--cub.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;34073;34073】
+##########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第4个仓库 【https://github.com/NVlabs/cub.git】，提交id【285aeebaa34b0e8a7670867a2e66c1a52d998d6a】，  无tag，  无子仓库  ，提交消息【Update version typo】
+接口导入后休眠【2秒】,slpVbs,0   
+已接口导入【https://github.com/eigenteam/eigen-git-mirror.git】---> 【https://gitee.com/imagg/eigenteam--eigen-git-mirror.git】
+>
+【导入确认中,https://gitee.com/imagg/eigenteam--eigen-git-mirror.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;103968;103968】
+【导入确认中,https://gitee.com/imagg/eigenteam--eigen-git-mirror.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;103968;103968】
+【导入确认中,https://gitee.com/imagg/eigenteam--eigen-git-mirror.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;17564;17564】
+【导入确认中,https://gitee.com/imagg/eigenteam--eigen-git-mirror.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;17564;17564】
+【导入确认中,https://gitee.com/imagg/eigenteam--eigen-git-mirror.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;103968;103968】
+【导入确认中,https://gitee.com/imagg/eigenteam--eigen-git-mirror.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;103968;103968】
+【导入确认中,https://gitee.com/imagg/eigenteam--eigen-git-mirror.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;86137;86137】
+【导入确认中,https://gitee.com/imagg/eigenteam--eigen-git-mirror.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;86137;86137】
+#################################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第5个仓库 【https://github.com/eigenteam/eigen-git-mirror.git】，提交id【f59336cee358f92b959de6a0daf07c4ab2318022】，  无tag，  无子仓库  ，提交消息【Bug 1526 - CUDA compilation fails on CUDA 9.x SDK when arch is set to compute_60 and/or above】
+接口导入后休眠【3秒】,slpVbs,0   
+已接口导入【https://github.com/google/googletest.git】---> 【https://gitee.com/imagg/google--googletest.git】
+>
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;27308;27308】
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;27308;27308】
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;5499;5499】
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;5499;5499】
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;27308;27308】
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;27308;27308】
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;20240;20240】
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;20240;20240】
+##########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第6个仓库 【https://github.com/google/googletest.git】，提交id【2fe3bd994b3189899d93f1d5a881e725e046fdc2】，  tag们【release-1.8.1】，  无子仓库  ，提交消息【Merge pull request #1433 from dsacre/fix-clang-warnings】
+接口导入后休眠【3秒】,slpVbs,0   
+已接口导入【https://github.com/google/benchmark.git】---> 【https://gitee.com/imagg/google--benchmark.git】
+>
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;8522;8522】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;8522;8522】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;2372;2372】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;2372;2372】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;8522;8522】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;8522;8522】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;5688;5688】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;5688;5688】
+#########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第7个仓库 【https://github.com/google/benchmark.git】，提交id【505be96ab23056580a3a2315abba048f4428b04e】，  无tag，  无子仓库  ，提交消息【Avoid using CMake 3.6 feature list(FILTER ...) (#612)】
+接口导入后休眠【3秒】,slpVbs,0   
+已接口导入【https://github.com/google/protobuf.git】---> 【https://gitee.com/imagg/google--protobuf.git】
+>
+【导入确认中,https://gitee.com/imagg/google--protobuf.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;180311;180311】
+【导入确认中,https://gitee.com/imagg/google--protobuf.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;180311;180311】
+【导入确认中,https://gitee.com/imagg/google--protobuf.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;36094;36094】
+【导入确认中,https://gitee.com/imagg/google--protobuf.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;36094;36094】
+【导入确认中,https://gitee.com/imagg/google--protobuf.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;180311;180311】
+【导入确认中,https://gitee.com/imagg/google--protobuf.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;180311;180311】
+【导入确认中,https://gitee.com/imagg/google--protobuf.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;129887;129887】
+【导入确认中,https://gitee.com/imagg/google--protobuf.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;129887;129887】
+#######################################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第8个仓库 【https://github.com/google/protobuf.git】，提交id【2761122b810fe8861004ae785cc3ab39f384d342】，  tag们【v3.5.0】，  有子仓库1个=【https://github.com/google/benchmark.git】  ，提交消息【Merge pull request #3868 from pherl/3.5.x】
+接口导入后休眠【4秒】,slpVbs,0   
+已接口导入【https://github.com/google/benchmark.git】---> 【https://gitee.com/imagg/google--benchmark.git】
+>
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;8522;8522】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;8522;8522】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;2372;2372】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;2372;2372】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;8522;8522】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;8522;8522】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;5688;5688】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;5688;5688】
+#########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第9个仓库 【https://github.com/google/benchmark.git】，提交id【360e66c1c4777c99402cf8cd535aa510fee16573】，  无tag，  无子仓库  ，提交消息【Merge pull request #210 from BillyONeal/travis-init】
+接口导入后休眠【2秒】,slpVbs,0   
+已接口导入【https://github.com/Yangqing/ios-cmake.git】---> 【https://gitee.com/imagg/Yangqing--ios-cmake.git】
+>
+【导入确认中,https://gitee.com/imagg/Yangqing--ios-cmake.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;230;230】
+【导入确认中,https://gitee.com/imagg/Yangqing--ios-cmake.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;230;230】
+【导入确认中,https://gitee.com/imagg/Yangqing--ios-cmake.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;120;120】
+【导入确认中,https://gitee.com/imagg/Yangqing--ios-cmake.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;120;120】
+【导入确认中,https://gitee.com/imagg/Yangqing--ios-cmake.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;230;230】
+【导入确认中,https://gitee.com/imagg/Yangqing--ios-cmake.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;230;230】
+【导入确认中,https://gitee.com/imagg/Yangqing--ios-cmake.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;80;80】
+【导入确认中,https://gitee.com/imagg/Yangqing--ios-cmake.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;80;80】
+##################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第10个仓库 【https://github.com/Yangqing/ios-cmake.git】，提交id【8abaed637d56f1337d6e1d2c4026e25c1eade724】，  无tag，  无子仓库  ，提交消息【Merge pull request #1 from pietern/compiler-cache】
+接口导入后休眠【2秒】,slpVbs,0   
+已接口导入【https://github.com/Maratyszcza/NNPACK.git】---> 【https://gitee.com/imagg/Maratyszcza--NNPACK.git】
+>
+【导入确认中,https://gitee.com/imagg/Maratyszcza--NNPACK.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;2952;2952】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--NNPACK.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;2952;2952】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--NNPACK.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;937;937】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--NNPACK.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;937;937】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--NNPACK.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;2952;2952】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--NNPACK.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;2952;2952】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--NNPACK.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;1985;1985】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--NNPACK.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;1985;1985】
+########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第11个仓库 【https://github.com/Maratyszcza/NNPACK.git】，提交id【1e005b0c2777f39972a4ac15bea03e0e315a3d92】，  无tag，  无子仓库  ，提交消息【Remove invalid restrict attribute in softmax ukernel】
+接口导入后休眠【2秒】,slpVbs,0   
+已接口导入【https://github.com/facebookincubator/gloo】---> 【https://gitee.com/imagg/facebookincubator--gloo.git】
+>
+【导入确认中,https://gitee.com/imagg/facebookincubator--gloo.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;4358;4358】
+【导入确认中,https://gitee.com/imagg/facebookincubator--gloo.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;4358;4358】
+【导入确认中,https://gitee.com/imagg/facebookincubator--gloo.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;1015;1015】
+【导入确认中,https://gitee.com/imagg/facebookincubator--gloo.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;1015;1015】
+【导入确认中,https://gitee.com/imagg/facebookincubator--gloo.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;4358;4358】
+【导入确认中,https://gitee.com/imagg/facebookincubator--gloo.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;4358;4358】
+【导入确认中,https://gitee.com/imagg/facebookincubator--gloo.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;3310;3310】
+【导入确认中,https://gitee.com/imagg/facebookincubator--gloo.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;3310;3310】
+########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第12个仓库 【https://github.com/facebookincubator/gloo】，提交id【cdeb59d5c82e5401445b4c051bb396f6738d4a19】，  无tag，  无子仓库  ，提交消息【Add timeout parameter to algorithm option structs】
+接口导入后休眠【3秒】,slpVbs,0   
+已接口导入【https://github.com/Maratyszcza/pthreadpool.git】---> 【https://gitee.com/imagg/Maratyszcza--pthreadpool.git】
+>
+【导入确认中,https://gitee.com/imagg/Maratyszcza--pthreadpool.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;769;769】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--pthreadpool.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;769;769】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--pthreadpool.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;243;243】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--pthreadpool.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;243;243】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--pthreadpool.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;769;769】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--pthreadpool.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;769;769】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--pthreadpool.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;477;477】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--pthreadpool.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;477;477】
+########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第13个仓库 【https://github.com/Maratyszcza/pthreadpool.git】，提交id【13da0b4c21d17f94150713366420baaf1b5a46f4】，  无tag，  无子仓库  ，提交消息【Support 3D and 4D tiled computation】
+接口导入后休眠【3秒】,slpVbs,0   
+已接口导入【https://github.com/Maratyszcza/FXdiv.git】---> 【https://gitee.com/imagg/Maratyszcza--FXdiv.git】
+>
+【导入确认中,https://gitee.com/imagg/Maratyszcza--FXdiv.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;275;275】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--FXdiv.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;275;275】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--FXdiv.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;117;117】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--FXdiv.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;117;117】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--FXdiv.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;275;275】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--FXdiv.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;275;275】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--FXdiv.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;132;132】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--FXdiv.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;132;132】
+###################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第14个仓库 【https://github.com/Maratyszcza/FXdiv.git】，提交id【b742d1143724d646cd0f914646f1240eacf5bd73】，  无tag，  无子仓库  ，提交消息【Disable inline assembly by default】
+接口导入后休眠【2秒】,slpVbs,0   
+已接口导入【https://github.com/Maratyszcza/FP16.git】---> 【https://gitee.com/imagg/Maratyszcza--FP16.git】
+>
+【导入确认中,https://gitee.com/imagg/Maratyszcza--FP16.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;293;293】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--FP16.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;293;293】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--FP16.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;128;128】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--FP16.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;128;128】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--FP16.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;293;293】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--FP16.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;293;293】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--FP16.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;161;161】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--FP16.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;161;161】
+#######################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第15个仓库 【https://github.com/Maratyszcza/FP16.git】，提交id【34d4bf01bbf7376f2baa71b8fa148b18524d45cf】，  无tag，  无子仓库  ，提交消息【Fix another use of __builtin_clz on Microsoft compiler】
+接口导入后休眠【2秒】,slpVbs,0   
+已接口导入【https://github.com/Maratyszcza/psimd.git】---> 【https://gitee.com/imagg/Maratyszcza--psimd.git】
+>
+【导入确认中,https://gitee.com/imagg/Maratyszcza--psimd.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;152;152】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--psimd.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;152;152】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--psimd.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;49;49】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--psimd.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;49;49】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--psimd.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;152;152】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--psimd.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;152;152】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--psimd.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;71;71】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--psimd.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;71;71】
+######################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第16个仓库 【https://github.com/Maratyszcza/psimd.git】，提交id【90a938f30ba414ada2f4b00674ee9631d7d85e19】，  无tag，  无子仓库  ，提交消息【Include SSE/AVX intrinsics headers】
+接口导入后休眠【2秒】,slpVbs,0   
+已接口导入【https://github.com/facebook/zstd.git】---> 【https://gitee.com/imagg/facebook--zstd.git】
+>
+【导入确认中,https://gitee.com/imagg/facebook--zstd.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;60265;60265】
+【导入确认中,https://gitee.com/imagg/facebook--zstd.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;60265;60265】
+【导入确认中,https://gitee.com/imagg/facebook--zstd.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;14574;14574】
+【导入确认中,https://gitee.com/imagg/facebook--zstd.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;14574;14574】
+【导入确认中,https://gitee.com/imagg/facebook--zstd.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;60265;60265】
+【导入确认中,https://gitee.com/imagg/facebook--zstd.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;60265;60265】
+【导入确认中,https://gitee.com/imagg/facebook--zstd.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;44987;44987】
+【导入确认中,https://gitee.com/imagg/facebook--zstd.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;44987;44987】
+##############################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第17个仓库 【https://github.com/facebook/zstd.git】，提交id【aec56a52fbab207fc639a1937d1e708a282edca8】，  无tag，  无子仓库  ，提交消息【Merge pull request #908 from facebook/ubsan】
+接口导入后休眠【2秒】,slpVbs,0   
+已接口导入【https://github.com/Maratyszcza/cpuinfo.git】---> 【https://gitee.com/imagg/Maratyszcza--cpuinfo.git】
+>
+【导入确认中,https://gitee.com/imagg/Maratyszcza--cpuinfo.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;6154;6154】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--cpuinfo.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;6154;6154】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--cpuinfo.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;1420;1420】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--cpuinfo.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;1420;1420】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--cpuinfo.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;6154;6154】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--cpuinfo.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;6154;6154】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--cpuinfo.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;4620;4620】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--cpuinfo.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;4620;4620】
+#########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第18个仓库 【https://github.com/Maratyszcza/cpuinfo.git】，提交id【c342292afb040c868849bc15e96ab894dceba2bc】，  无tag，  无子仓库  ，提交消息【Update MIDR scoring for Meerkat and Cortex-A76 cores】
+接口导入后休眠【2秒】,slpVbs,0   
+已接口导入【https://github.com/PeachPy/enum34.git】---> 【https://gitee.com/imagg/PeachPy--enum34.git】
+>
+【导入确认中,https://gitee.com/imagg/PeachPy--enum34.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;19;19】
+【导入确认中,https://gitee.com/imagg/PeachPy--enum34.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;19;19】
+【导入确认中,https://gitee.com/imagg/PeachPy--enum34.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;17;17】
+【导入确认中,https://gitee.com/imagg/PeachPy--enum34.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;17;17】
+【导入确认中,https://gitee.com/imagg/PeachPy--enum34.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;19;19】
+【导入确认中,https://gitee.com/imagg/PeachPy--enum34.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;19;19】
+##########################################################progressObj 5>4>6>9>8>10>33>32>34
+第19个仓库 【https://github.com/PeachPy/enum34.git】，提交id【4cfedc426c4e2fc52e3f5c2b4297e15ed8d6b8c7】，  无tag，  无子仓库  ，提交消息【enum34 1.1.6】
+接口导入后休眠【2秒】,slpVbs,0   
+已接口导入【https://github.com/Maratyszcza/PeachPy.git】---> 【https://gitee.com/imagg/Maratyszcza--PeachPy.git】
+>
+【导入确认中,https://gitee.com/imagg/Maratyszcza--PeachPy.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;2158;2158】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--PeachPy.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;2158;2158】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--PeachPy.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;632;632】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--PeachPy.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;632;632】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--PeachPy.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;2158;2158】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--PeachPy.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;2158;2158】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--PeachPy.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;1499;1499】
+【导入确认中,https://gitee.com/imagg/Maratyszcza--PeachPy.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;1499;1499】
+########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第20个仓库 【https://github.com/Maratyszcza/PeachPy.git】，提交id【07d8fde8ac45d7705129475c0f94ed8925b93473】，  无tag，  无子仓库  ，提交消息【Merge branch 'master' of github.com:Maratyszcza/PeachPy into pre-generated】
+接口导入后休眠【3秒】,slpVbs,0   
+已接口导入【https://github.com/benjaminp/six.git】---> 【https://gitee.com/imagg/benjaminp--six.git】
+>
+【导入确认中,https://gitee.com/imagg/benjaminp--six.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;1915;1915】
+【导入确认中,https://gitee.com/imagg/benjaminp--six.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;1915;1915】
+【导入确认中,https://gitee.com/imagg/benjaminp--six.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;771;771】
+【导入确认中,https://gitee.com/imagg/benjaminp--six.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;771;771】
+【导入确认中,https://gitee.com/imagg/benjaminp--six.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;1915;1915】
+【导入确认中,https://gitee.com/imagg/benjaminp--six.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;1915;1915】
+【导入确认中,https://gitee.com/imagg/benjaminp--six.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;1140;1140】
+【导入确认中,https://gitee.com/imagg/benjaminp--six.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;1140;1140】
+########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第21个仓库 【https://github.com/benjaminp/six.git】，提交id【15e31431af97e5e64b80af0a3f598d382bcdd49a】，  tag们【1.11.0】，  无子仓库  ，提交消息【six 1.11.0】
+接口导入后休眠【3秒】,slpVbs,0   
+已接口导入【https://github.com/ARM-software/ComputeLibrary.git】---> 【https://gitee.com/imagg/ARM-software--ComputeLibrary.git】
+>
+【导入确认中,https://gitee.com/imagg/ARM-software--ComputeLibrary.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;391198;391198】
+【导入确认中,https://gitee.com/imagg/ARM-software--ComputeLibrary.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;391198;391198】
+【导入确认中,https://gitee.com/imagg/ARM-software--ComputeLibrary.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;15920;15920】
+【导入确认中,https://gitee.com/imagg/ARM-software--ComputeLibrary.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;15920;15920】
+【导入确认中,https://gitee.com/imagg/ARM-software--ComputeLibrary.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;391198;391198】
+【导入确认中,https://gitee.com/imagg/ARM-software--ComputeLibrary.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;391198;391198】
+【导入确认中,https://gitee.com/imagg/ARM-software--ComputeLibrary.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;361039;361039】
+【导入确认中,https://gitee.com/imagg/ARM-software--ComputeLibrary.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;361039;361039】
+###############################################################################################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第22个仓库 【https://github.com/ARM-software/ComputeLibrary.git】，提交id【292227986edb37b01061afcad6df18ba9d6ccbeb】，  无tag，  无子仓库  ，提交消息【Bugfix for NumPyBinLoader with SubTensor output. (#345)】
+接口导入后休眠【3秒】,slpVbs,0   
+已接口导入【https://github.com/onnx/onnx.git】---> 【https://gitee.com/imagg/onnx--onnx.git】
+>
+【导入确认中,https://gitee.com/imagg/onnx--onnx.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;48540;48540】
+【导入确认中,https://gitee.com/imagg/onnx--onnx.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;48540;48540】
+【导入确认中,https://gitee.com/imagg/onnx--onnx.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;17421;17421】
+【导入确认中,https://gitee.com/imagg/onnx--onnx.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;17421;17421】
+【导入确认中,https://gitee.com/imagg/onnx--onnx.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;48540;48540】
+【导入确认中,https://gitee.com/imagg/onnx--onnx.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;48540;48540】
+【导入确认中,https://gitee.com/imagg/onnx--onnx.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;29133;29133】
+【导入确认中,https://gitee.com/imagg/onnx--onnx.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;29133;29133】
+#############################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第23个仓库 【https://github.com/onnx/onnx.git】，提交id【42804705bdbf179d1a98394008417e1392013547】，  无tag，  有子仓库2个=【https://github.com/pybind/pybind11.git, https://github.com/google/benchmark.git】  ，提交消息【Changes done internally at Facebook (#1668)】
+接口导入后休眠【3秒】,slpVbs,0   
+已接口导入【https://github.com/pybind/pybind11.git】---> 【https://gitee.com/imagg/pybind--pybind11.git】
+>
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;27577;27577】
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;27577;27577】
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;5904;5904】
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;5904;5904】
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;27577;27577】
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;27577;27577】
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;19375;19375】
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;19375;19375】
+###########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第24个仓库 【https://github.com/pybind/pybind11.git】，提交id【a1041190c8b8ff0cd9e2f0752248ad5e3789ea0c】，  无tag，  有子仓库1个=【https://github.com/wjakob/clang-cindex-python3】  ，提交消息【mention PR #1037 in changelog】
+接口导入后休眠【3秒】,slpVbs,0   
+已接口导入【https://github.com/wjakob/clang-cindex-python3】---> 【https://gitee.com/imagg/wjakob--clang-cindex-python3.git】
+>
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;368;368】
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;368;368】
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;212;212】
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;212;212】
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;368;368】
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;368;368】
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;154;154】
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;154;154】
+########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第25个仓库 【https://github.com/wjakob/clang-cindex-python3】，提交id【6a00cbc4a9b8e68b71caf7f774b3f9c753ae84d5】，  无tag，  无子仓库  ，提交消息【integrated latest cindex.py changes as of 30.03.2017】
+接口导入后休眠【3秒】,slpVbs,0   
+已接口导入【https://github.com/google/benchmark.git】---> 【https://gitee.com/imagg/google--benchmark.git】
+>
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;8522;8522】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;8522;8522】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;2372;2372】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;2372;2372】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;8522;8522】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;8522;8522】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;5688;5688】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;5688;5688】
+#########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第26个仓库 【https://github.com/google/benchmark.git】，提交id【e776aa0275e293707b6a0901e0e8d8a8a3679508】，  tag们【v1.4.1】，  无子仓库  ，提交消息【Add benchmark_main target. (#601)】
+接口导入后休眠【2秒】,slpVbs,0   
+已接口导入【https://github.com/onnx/onnx-tensorrt】---> 【https://gitee.com/imagg/onnx--onnx-tensorrt.git】
+>
+【导入确认中,https://gitee.com/imagg/onnx--onnx-tensorrt.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;1774;1774】
+【导入确认中,https://gitee.com/imagg/onnx--onnx-tensorrt.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;1774;1774】
+【导入确认中,https://gitee.com/imagg/onnx--onnx-tensorrt.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;526;526】
+【导入确认中,https://gitee.com/imagg/onnx--onnx-tensorrt.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;526;526】
+【导入确认中,https://gitee.com/imagg/onnx--onnx-tensorrt.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;1774;1774】
+【导入确认中,https://gitee.com/imagg/onnx--onnx-tensorrt.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;1774;1774】
+【导入确认中,https://gitee.com/imagg/onnx--onnx-tensorrt.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;1229;1229】
+【导入确认中,https://gitee.com/imagg/onnx--onnx-tensorrt.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;1229;1229】
+#########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第27个仓库 【https://github.com/onnx/onnx-tensorrt】，提交id【fa0964e8477fc004ee2f49ee77ffce0bf7f711a9】，  无tag，  有子仓库1个=【https://github.com/onnx/onnx.git】  ，提交消息【TensorRT ONNXIFI interface (#14)】
+接口导入后休眠【2秒】,slpVbs,0   
+已接口导入【https://github.com/onnx/onnx.git】---> 【https://gitee.com/imagg/onnx--onnx.git】
+>
+【导入确认中,https://gitee.com/imagg/onnx--onnx.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;48540;48540】
+【导入确认中,https://gitee.com/imagg/onnx--onnx.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;48540;48540】
+【导入确认中,https://gitee.com/imagg/onnx--onnx.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;17421;17421】
+【导入确认中,https://gitee.com/imagg/onnx--onnx.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;17421;17421】
+【导入确认中,https://gitee.com/imagg/onnx--onnx.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;48540;48540】
+【导入确认中,https://gitee.com/imagg/onnx--onnx.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;48540;48540】
+【导入确认中,https://gitee.com/imagg/onnx--onnx.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;29133;29133】
+【导入确认中,https://gitee.com/imagg/onnx--onnx.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;29133;29133】
+###########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第28个仓库 【https://github.com/onnx/onnx.git】，提交id【b4072194c2e6ef90693bcfdea4c6f45cf30bb65e】，  无tag，  有子仓库2个=【https://github.com/pybind/pybind11.git, https://github.com/google/benchmark.git】  ，提交消息【[ONNXIFI] Use event handle in the memory fence structure rather than a pointer to even handle (#1185)】
+接口导入后休眠【2秒】,slpVbs,0   
+已接口导入【https://github.com/pybind/pybind11.git】---> 【https://gitee.com/imagg/pybind--pybind11.git】
+>
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;27577;27577】
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;27577;27577】
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;5904;5904】
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;5904;5904】
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;27577;27577】
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;27577;27577】
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;19375;19375】
+【导入确认中,https://gitee.com/imagg/pybind--pybind11.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;19375;19375】
+##########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第29个仓库 【https://github.com/pybind/pybind11.git】，提交id【a1041190c8b8ff0cd9e2f0752248ad5e3789ea0c】，  无tag，  有子仓库1个=【https://github.com/wjakob/clang-cindex-python3】  ，提交消息【mention PR #1037 in changelog】
+接口导入后休眠【3秒】,slpVbs,0   
+已接口导入【https://github.com/wjakob/clang-cindex-python3】---> 【https://gitee.com/imagg/wjakob--clang-cindex-python3.git】
+>
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;368;368】
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;368;368】
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;212;212】
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;212;212】
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;368;368】
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;368;368】
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;154;154】
+【导入确认中,https://gitee.com/imagg/wjakob--clang-cindex-python3.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;154;154】
+########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第30个仓库 【https://github.com/wjakob/clang-cindex-python3】，提交id【6a00cbc4a9b8e68b71caf7f774b3f9c753ae84d5】，  无tag，  无子仓库  ，提交消息【integrated latest cindex.py changes as of 30.03.2017】
+接口导入后休眠【2秒】,slpVbs,0   
+已接口导入【https://github.com/google/benchmark.git】---> 【https://gitee.com/imagg/google--benchmark.git】
+>
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;8522;8522】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;8522;8522】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;2372;2372】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;2372;2372】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;8522;8522】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;8522;8522】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;5688;5688】
+【导入确认中,https://gitee.com/imagg/google--benchmark.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;5688;5688】
+#########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第31个仓库 【https://github.com/google/benchmark.git】，提交id【e776aa0275e293707b6a0901e0e8d8a8a3679508】，  tag们【v1.4.1】，  无子仓库  ，提交消息【Add benchmark_main target. (#601)】
+接口导入后休眠【3秒】,slpVbs,0   
+已接口导入【https://github.com/shibatch/sleef】---> 【https://gitee.com/imagg/shibatch--sleef.git】
+>
+【导入确认中,https://gitee.com/imagg/shibatch--sleef.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;5229;5229】
+【导入确认中,https://gitee.com/imagg/shibatch--sleef.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;5229;5229】
+【导入确认中,https://gitee.com/imagg/shibatch--sleef.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;1113;1113】
+【导入确认中,https://gitee.com/imagg/shibatch--sleef.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;1113;1113】
+【导入确认中,https://gitee.com/imagg/shibatch--sleef.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;5229;5229】
+【导入确认中,https://gitee.com/imagg/shibatch--sleef.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;5229;5229】
+【导入确认中,https://gitee.com/imagg/shibatch--sleef.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;4080;4080】
+【导入确认中,https://gitee.com/imagg/shibatch--sleef.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;4080;4080】
+#########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第32个仓库 【https://github.com/shibatch/sleef】，提交id【6ff7a135a1e31979d1e1844a2e7171dfbd34f54f】，  无tag，  无子仓库  ，提交消息【Modification for adoption by PyTorch (#190)】
+接口导入后休眠【3秒】,slpVbs,0   
+已接口导入【https://github.com/intel/ideep】---> 【https://gitee.com/imagg/intel--ideep.git】
+>
+【导入确认中,https://gitee.com/imagg/intel--ideep.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;6779;6779】
+【导入确认中,https://gitee.com/imagg/intel--ideep.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;6779;6779】
+【导入确认中,https://gitee.com/imagg/intel--ideep.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;2313;2313】
+【导入确认中,https://gitee.com/imagg/intel--ideep.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;2313;2313】
+【导入确认中,https://gitee.com/imagg/intel--ideep.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;6779;6779】
+【导入确认中,https://gitee.com/imagg/intel--ideep.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;6779;6779】
+【导入确认中,https://gitee.com/imagg/intel--ideep.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;4421;4421】
+【导入确认中,https://gitee.com/imagg/intel--ideep.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;4421;4421】
+#########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第33个仓库 【https://github.com/intel/ideep】，提交id【dedff8fb8193fe3a1ea893d4bc852f8ea395b6b3】，  无tag，  有子仓库3个=【https://github.com/01org/mkl-dnn.git, https://github.com/google/googletest.git, https://github.com/emil-e/rapidcheck.git】  ，提交消息【Export tensor symbols explicitly】
+接口导入后休眠【4秒】,slpVbs,0   
+已接口导入【https://github.com/01org/mkl-dnn.git】---> 【https://gitee.com/imagg/01org--mkl-dnn.git】
+>
+导入确认中【5秒】,slpVbs,0   
+>
+导入确认中【6秒】,slpVbs,0   
+>
+导入确认中【7秒】,slpVbs,0   
+>
+导入确认中【5秒】,slpVbs,0   
+>
+导入确认中【7秒】,slpVbs,0   
+>
+导入确认中【5秒】,slpVbs,0   
+>
+【导入确认中,https://gitee.com/imagg/01org--mkl-dnn.git,6_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;263931;263931】
+【导入确认中,https://gitee.com/imagg/01org--mkl-dnn.git,6_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;263931;263931】
+【导入确认中,https://gitee.com/imagg/01org--mkl-dnn.git,6_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;43179;43179】
+【导入确认中,https://gitee.com/imagg/01org--mkl-dnn.git,6_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;43179;43179】
+【导入确认中,https://gitee.com/imagg/01org--mkl-dnn.git,6_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;263931;263931】
+【导入确认中,https://gitee.com/imagg/01org--mkl-dnn.git,6_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;263931;263931】
+【导入确认中,https://gitee.com/imagg/01org--mkl-dnn.git,6_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;218510;218510】
+【导入确认中,https://gitee.com/imagg/01org--mkl-dnn.git,6_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;218510;218510】
+#########################################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第34个仓库 【https://github.com/01org/mkl-dnn.git】，提交id【c0095ec26c215970b9b94915963b59e76398265e】，  无tag，  无子仓库  ，提交消息【build: link to libdl in case mklml is used (#232)】
+接口导入后休眠【4秒】,slpVbs,0   
+已接口导入【https://github.com/google/googletest.git】---> 【https://gitee.com/imagg/google--googletest.git】
+>
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;27308;27308】
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;27308;27308】
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;5499;5499】
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;5499;5499】
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;27308;27308】
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;27308;27308】
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;20240;20240】
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;20240;20240】
+###########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第35个仓库 【https://github.com/google/googletest.git】，提交id【08d5b1f33af8c18785fb8ca02792b5fac81e248f】，  无tag，  无子仓库  ，提交消息【Merge pull request #1597 from jaeheonlee/master】
+接口导入后休眠【3秒】,slpVbs,0   
+已接口导入【https://github.com/emil-e/rapidcheck.git】---> 【https://gitee.com/imagg/emil-e--rapidcheck.git】
+>
+【导入确认中,https://gitee.com/imagg/emil-e--rapidcheck.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;9235;9235】
+【导入确认中,https://gitee.com/imagg/emil-e--rapidcheck.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;9235;9235】
+【导入确认中,https://gitee.com/imagg/emil-e--rapidcheck.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;2477;2477】
+【导入确认中,https://gitee.com/imagg/emil-e--rapidcheck.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;2477;2477】
+【导入确认中,https://gitee.com/imagg/emil-e--rapidcheck.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;9235;9235】
+【导入确认中,https://gitee.com/imagg/emil-e--rapidcheck.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;9235;9235】
+【导入确认中,https://gitee.com/imagg/emil-e--rapidcheck.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;6603;6603】
+【导入确认中,https://gitee.com/imagg/emil-e--rapidcheck.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;6603;6603】
+########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第36个仓库 【https://github.com/emil-e/rapidcheck.git】，提交id【10fc0cbaa46a765d8134e99995de9c81c048a331】，  无tag，  有子仓库2个=【https://github.com/philsquared/Catch.git, https://github.com/google/googletest】  ，提交消息【Merge pull request #180 from gjasny/vs-15.5-workaround】
+接口导入后休眠【4秒】,slpVbs,0   
+已接口导入【https://github.com/philsquared/Catch.git】---> 【https://gitee.com/imagg/philsquared--Catch.git】
+>
+导入确认中【6秒】,slpVbs,0   
+>
+【导入确认中,https://gitee.com/imagg/philsquared--Catch.git,1_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;39144;39144】
+【导入确认中,https://gitee.com/imagg/philsquared--Catch.git,1_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;39144;39144】
+【导入确认中,https://gitee.com/imagg/philsquared--Catch.git,1_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;10441;10441】
+【导入确认中,https://gitee.com/imagg/philsquared--Catch.git,1_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;10441;10441】
+【导入确认中,https://gitee.com/imagg/philsquared--Catch.git,1_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;39144;39144】
+【导入确认中,https://gitee.com/imagg/philsquared--Catch.git,1_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;39144;39144】
+【导入确认中,https://gitee.com/imagg/philsquared--Catch.git,1_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;28057;28057】
+【导入确认中,https://gitee.com/imagg/philsquared--Catch.git,1_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;28057;28057】
+###########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第37个仓库 【https://github.com/philsquared/Catch.git】，提交id【2ce6c74f8fcbd28c977e70d8c020939123a9ea3c】，  tag们【v1.9.7】，  无子仓库  ，提交消息【v1.9.7】
+接口导入后休眠【4秒】,slpVbs,0   
+已接口导入【https://github.com/google/googletest】---> 【https://gitee.com/imagg/google--googletest.git】
+>
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;27308;27308】
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;27308;27308】
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;5499;5499】
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;5499;5499】
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;27308;27308】
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;27308;27308】
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;20240;20240】
+【导入确认中,https://gitee.com/imagg/google--googletest.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;20240;20240】
+###########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第38个仓库 【https://github.com/google/googletest】，提交id【ecd530865cefdfa7dea58e84f6aa1b548950363d】，  无tag，  无子仓库  ，提交消息【Merge pull request #876 from marco-m/patch-1】
+接口导入后休眠【2秒】,slpVbs,0   
+已接口导入【https://github.com/NVIDIA/nccl】---> 【https://gitee.com/imagg/NVIDIA--nccl.git】
+>
+【导入确认中,https://gitee.com/imagg/NVIDIA--nccl.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;3401;3401】
+【导入确认中,https://gitee.com/imagg/NVIDIA--nccl.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;3401;3401】
+【导入确认中,https://gitee.com/imagg/NVIDIA--nccl.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;973;973】
+【导入确认中,https://gitee.com/imagg/NVIDIA--nccl.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;973;973】
+【导入确认中,https://gitee.com/imagg/NVIDIA--nccl.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;3401;3401】
+【导入确认中,https://gitee.com/imagg/NVIDIA--nccl.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;3401;3401】
+【导入确认中,https://gitee.com/imagg/NVIDIA--nccl.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;2388;2388】
+【导入确认中,https://gitee.com/imagg/NVIDIA--nccl.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;2388;2388】
+#########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第39个仓库 【https://github.com/NVIDIA/nccl】，提交id【3c6e25210bb1b544748937e5db74db0b9679b95e】，  无tag，  无子仓库  ，提交消息【Generate nccl.h in build instead of src】
+接口导入后休眠【3秒】,slpVbs,0   
+已接口导入【https://github.com/google/gemmlowp.git】---> 【https://gitee.com/imagg/google--gemmlowp.git】
+>
+【导入确认中,https://gitee.com/imagg/google--gemmlowp.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;3557;3557】
+【导入确认中,https://gitee.com/imagg/google--gemmlowp.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;3557;3557】
+【导入确认中,https://gitee.com/imagg/google--gemmlowp.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;1096;1096】
+【导入确认中,https://gitee.com/imagg/google--gemmlowp.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;1096;1096】
+【导入确认中,https://gitee.com/imagg/google--gemmlowp.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;3557;3557】
+【导入确认中,https://gitee.com/imagg/google--gemmlowp.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;3557;3557】
+【导入确认中,https://gitee.com/imagg/google--gemmlowp.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;2441;2441】
+【导入确认中,https://gitee.com/imagg/google--gemmlowp.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;2441;2441】
+#########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第40个仓库 【https://github.com/google/gemmlowp.git】，提交id【8416bab644641a5c0a81ecf91a5cda804af0aee1】，  无tag，  无子仓库  ，提交消息【Fix #136 (test_blocking_counter)】
+接口导入后休眠【2秒】,slpVbs,0   
+已接口导入【https://github.com/pytorch/QNNPACK】---> 【https://gitee.com/imagg/pytorch--QNNPACK.git】
+>
+【导入确认中,https://gitee.com/imagg/pytorch--QNNPACK.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;1482;1482】
+【导入确认中,https://gitee.com/imagg/pytorch--QNNPACK.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;1482;1482】
+【导入确认中,https://gitee.com/imagg/pytorch--QNNPACK.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;382;382】
+【导入确认中,https://gitee.com/imagg/pytorch--QNNPACK.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;382;382】
+【导入确认中,https://gitee.com/imagg/pytorch--QNNPACK.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;1482;1482】
+【导入确认中,https://gitee.com/imagg/pytorch--QNNPACK.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;1482;1482】
+【导入确认中,https://gitee.com/imagg/pytorch--QNNPACK.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;1076;1076】
+【导入确认中,https://gitee.com/imagg/pytorch--QNNPACK.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;1076;1076】
+########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第41个仓库 【https://github.com/pytorch/QNNPACK】，提交id【ef05e87cef6b8e719989ce875b5e1c9fdb304c05】，  无tag，  无子仓库  ，提交消息【Fix out-of-bounds memory access in average pooling micro-kernel tests】
+接口导入后休眠【3秒】,slpVbs,0   
+已接口导入【https://github.com/intel/ARM_NEON_2_x86_SSE.git】---> 【https://gitee.com/imagg/intel--ARM_NEON_2_x86_SSE.git】
+>
+【导入确认中,https://gitee.com/imagg/intel--ARM_NEON_2_x86_SSE.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;183;183】
+【导入确认中,https://gitee.com/imagg/intel--ARM_NEON_2_x86_SSE.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;183;183】
+【导入确认中,https://gitee.com/imagg/intel--ARM_NEON_2_x86_SSE.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;80;80】
+【导入确认中,https://gitee.com/imagg/intel--ARM_NEON_2_x86_SSE.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;80;80】
+【导入确认中,https://gitee.com/imagg/intel--ARM_NEON_2_x86_SSE.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;183;183】
+【导入确认中,https://gitee.com/imagg/intel--ARM_NEON_2_x86_SSE.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;183;183】
+【导入确认中,https://gitee.com/imagg/intel--ARM_NEON_2_x86_SSE.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;102;102】
+【导入确认中,https://gitee.com/imagg/intel--ARM_NEON_2_x86_SSE.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;102;102】
+###################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第42个仓库 【https://github.com/intel/ARM_NEON_2_x86_SSE.git】，提交id【97a126f08ce318023be604d03f88bf0820a9464a】，  无tag，  无子仓库  ，提交消息【Update ReadMe.md】
+接口导入后休眠【2秒】,slpVbs,0   
+已接口导入【https://github.com/pytorch/fbgemm】---> 【https://gitee.com/imagg/pytorch--fbgemm.git】
+>
+【导入确认中,https://gitee.com/imagg/pytorch--fbgemm.git,0_clone】,ClnProg,gitOpCd【4】 |################################| 【100％;24561;24561】
+【导入确认中,https://gitee.com/imagg/pytorch--fbgemm.git,0_clone】,ClnProg,gitOpCd【6】 |################################| 【100％;24561;24561】
+【导入确认中,https://gitee.com/imagg/pytorch--fbgemm.git,0_clone】,ClnProg,gitOpCd【8】 |################################| 【100％;4626;4626】
+【导入确认中,https://gitee.com/imagg/pytorch--fbgemm.git,0_clone】,ClnProg,gitOpCd【10】 |################################| 【100％;4626;4626】
+【导入确认中,https://gitee.com/imagg/pytorch--fbgemm.git,0_clone】,ClnProg,gitOpCd【32】 |################################| 【100％;24561;24561】
+【导入确认中,https://gitee.com/imagg/pytorch--fbgemm.git,0_clone】,ClnProg,gitOpCd【34】 |################################| 【100％;24561;24561】
+【导入确认中,https://gitee.com/imagg/pytorch--fbgemm.git,0_clone】,ClnProg,gitOpCd【64】 |################################| 【100％;19189;19189】
+【导入确认中,https://gitee.com/imagg/pytorch--fbgemm.git,0_clone】,ClnProg,gitOpCd【66】 |################################| 【100％;19189;19189】
+##########################################################################################################################################################################################################################################################################################################################################################################################################################progressObj 5>4>6>9>8>10>33>32>34>65>64>66
+第43个仓库 【https://github.com/pytorch/fbgemm】，提交id【0d5a159b944252e70a677236b570f291943e0543】，  无tag，  无子仓库  ，提交消息【Build status in readme on github】
