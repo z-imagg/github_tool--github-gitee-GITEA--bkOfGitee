@@ -47,7 +47,7 @@ class GitPyCloneProgressC(RemoteProgress):
 
         opCodeLsTxt:str=">".join([f"{k}" for k in self.gitOpCodeLs])
 
-        self.countDown.message=f"{self.countDown.message},{opCodeLsTxt}"
+        # self.countDown.message=f"{self.countDown.message},{opCodeLsTxt}"
           
         #更新当前进度条
         #TODO cur_count,max_count
