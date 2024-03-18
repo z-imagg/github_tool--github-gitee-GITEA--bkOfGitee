@@ -12,6 +12,7 @@ sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 
 from pathlib import Path
 import re
+import git
 
 from GitPyUtil import checkRepoByClone
 from gitea_api_cfg import api_base_url, api_token
@@ -37,10 +38,13 @@ def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str)->typing.Tuple[bool,Gi
 
   mgr_desc=f"原始仓库【{ornRUrl}】 ；迁移内容【{frmRUrl}】--->【{toLcRUrl}】"    ;  
 
-  if checkRepoByClone(toLcRUrl,"检目的仓") is not None:
-    #返回 迁移结果、镜像仓库url、本地GITEA仓库url
-    print(f"目的仓已有，无需迁移; 『 {mgr_desc}』 ")
-    return (True,frmRUrlO,toLcRUrl)
+  try:
+    if checkRepoByClone(toLcRUrl,"检目的仓") is not None:
+      #返回 迁移结果、镜像仓库url、本地GITEA仓库url
+      print(f"目的仓已有，无需迁移接口; 『 {mgr_desc}』 ")
+      return (True,frmRUrlO,toLcRUrl)
+  except git.GitCommandError as e:
+    print(f"目的仓尚无， 继续迁移接口")
   
   #迁移之前检查 检查gitee镜像仓库是否能正常克隆
   checkRepoByClone(frmRUrl,"检查中")
