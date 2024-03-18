@@ -59,7 +59,8 @@ def migrateRecurse(ornRUrl:str, ornCmtId:str, frmBaseUrl:str, frmOrgNm:str, slpS
     ok_mgr,frmRUrlO,localRUrl=giteaMigrateApi(ornRUrl, frmBaseUrl, frmOrgNm)
     assert ok_mgr==True and frmRUrlO is not None,f"断言失败，GITEA迁移接口失败， ornRUrl=【{ornRUrl}】, frmBaseUrl=【{frmBaseUrl}】, frmOrgNm=【{frmOrgNm}】"
     mrrRpoUrl:str=frmRUrlO.url_str()
-    sleepVerbose(slpSecs,"#"); print(f"调用本地GITEA服务的迁移接口 【{mrrRpoUrl}】---> 本地GITEA服务的 【{localRUrl}】")
+    sleepVerbose(slpSecs,"迁移后休眠")
+    print(f"已迁移 【{mrrRpoUrl}】---> 本地GITEA 【{localRUrl}】") 
 
     #2. 克隆仓库
     #   以 循环克隆仓库 等待 GITEA迁移仓库 完毕

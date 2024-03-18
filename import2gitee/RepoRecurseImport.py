@@ -4,9 +4,9 @@
 # 【文件作用】 遍历给定git仓库中的子模块列表， 并打印对应命令import_githubRepo_to_gitee.sh
 
 import sys
-
-
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
+
+from rich import print
 
 from global_var import GlbVar
 from rich import print
@@ -80,7 +80,9 @@ def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id
     #1. 调用gitee导入接口
     newRepoName=f"{repoUrlO.orgName}--{repoUrlO.repoName}"
     simpleRespI:SimpleRespI=gitee_import_repo_wrap_F(prjHmDir,fromRepoUrl=from_repo_url,mirrOrg=giteeMirrOrg,newRepoName=newRepoName)
-    sleepVerbose(sleep_seconds,"#"); print(f"调用gitee导入接口【{from_repo_url}】---> 【{simpleRespI.goal_repoUrl}】")
+    sleepVerbose(sleep_seconds,"导入后休眠"); 
+    print(f"已导入【{from_repo_url}】---> 【{simpleRespI.goal_repoUrl}】")
+
     mirrRepoUrl:str=simpleRespI.goal_repoUrl
 
     #2. 克隆仓库
