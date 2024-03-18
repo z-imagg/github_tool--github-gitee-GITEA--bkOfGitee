@@ -6,10 +6,8 @@
 import sys
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 
-from rich import print
 
 from global_var import GlbVar
-from rich import print
 from pathlib import Path
 import git
 from git import cmd
@@ -32,7 +30,6 @@ from MiscUtil import fullUrl, isEmptyStr, firstLine
 from CntUtil import Counter
 from DirUtil import getScriptDir
 from GitPyUtil import tagNameLsByCmtId,printFrmRepoMsg
-from rich.progress import Progress
 
 cntr:Counter=Counter()
 MINI_sleep_seconds = 8
@@ -66,14 +63,14 @@ def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id
     #1. 调用gitee导入接口
     newRepoName=f"{repoUrlO.orgName}--{repoUrlO.repoName}"
     simpleRespI:SimpleRespI=gitee_import_repo_wrap_F(prjHmDir,fromRepoUrl=from_repo_url,mirrOrg=giteeMirrOrg,newRepoName=newRepoName)
-    sleepVerbose(sleep_seconds,"导入后休眠"); 
-    print(f"已导入【{from_repo_url}】---> 【{simpleRespI.goal_repoUrl}】")
+    sleepVerbose(sleep_seconds,"接口导入后休眠"); 
+    print(f"已接口导入【{from_repo_url}】---> 【{simpleRespI.goal_repoUrl}】")
 
     mirrRepoUrl:str=simpleRespI.goal_repoUrl
 
     #2. 克隆仓库
     #   以 循环克隆仓库 等待 gitee导入仓库任务 完毕
-    repo:git.Repo=loop_clone_wait_F(repoUrl=mirrRepoUrl,title="等导入后克隆")
+    repo:git.Repo=loop_clone_wait_F(repoUrl=mirrRepoUrl,title="导入确认中")
     
     # 若指定了cmtId, 则 重置到给定commitId
     if not isEmptyStr (from_commit_id):
@@ -92,6 +89,5 @@ def importGithubRepo2GiteeRecurse(prjHmDir:str, from_repo_url:str,from_commit_id
         importGithubRepo2GiteeRecurse(prjHmDir, sonUrl, sonRepoK.hexsha, giteeMirrOrg, randSecs(sleep_seconds))
 
 if __name__=="__main__":
-    with Progress() as richPrgrs:
-        GlbVar(richPrgrs)
-        main_cmd()
+    GlbVar(66)
+    main_cmd()

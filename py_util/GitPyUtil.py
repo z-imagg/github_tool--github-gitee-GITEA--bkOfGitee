@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf8 -*-
 
-from rich import print
 
 import typing
 import git
@@ -12,7 +11,6 @@ from DirUtil import dirIsEmptyExcludeHidden
 import traceback
 
 from urllib.parse import urlparse
-from rich.progress import Progress
 
 from MiscUtil import firstLine
 from global_var import GlbVar,getGlbVarInst
@@ -46,7 +44,7 @@ def checkRepoByClone(_repoUrl:str,title:str)->git.Repo:
         assert not dirIsEmptyExcludeHidden(dir) , f"{title},断言失败，克隆到的不应该是空仓库. repoUrl=【{repoUrl}】,dir=【{dir}】"
         return repo
     except git.GitCommandError as e:
-        print(f"{title},克隆仓库报错,请检查该仓库是否存在. repoUrl=【{repoUrl}】,dir=【{dir}】")
+        print(f"{title},克隆仓库报错,请检查该仓库是否存在?忘记执行RepoRecurseImport.py导入了?. repoUrl=【{repoUrl}】,dir=【{dir}】")
         traceback.print_exception(e)
         raise e
 
@@ -54,7 +52,6 @@ def checkRepoByClone(_repoUrl:str,title:str)->git.Repo:
 
 
 def printFrmRepoMsg(from_repo_url:str, from_commit_id:str, repo:git.Repo,cntr:Counter)->str:
-    richPrgrs=getGlbVarInst().richPrgrs
     
     idxMsg=f"第{cntr.inc()}个仓库 "
 
@@ -69,5 +66,5 @@ def printFrmRepoMsg(from_repo_url:str, from_commit_id:str, repo:git.Repo,cntr:Co
     cmtMsg=firstLine(repo.commit(from_commit_id).message)
     cmtMsgDisplay=f"提交消息【{cmtMsg}】"
     
-    richPrgrs.console.log(f"{idxMsg}【{from_repo_url}】，{cmtIdMsg}，  {tagTxt}，  {subRpLsTxt}  ，{cmtMsgDisplay}")
+    print(f"{idxMsg}【{from_repo_url}】，{cmtIdMsg}，  {tagTxt}，  {subRpLsTxt}  ，{cmtMsgDisplay}")
     

@@ -1,5 +1,4 @@
 
-from rich import print
 import httpx
 import typing
 import traceback

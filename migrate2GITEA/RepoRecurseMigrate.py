@@ -9,7 +9,6 @@ import sys
 sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
 
 from global_var import GlbVar
-from rich import print
 
 from pathlib import Path
 import git
@@ -29,7 +28,6 @@ from SleepUtil import sleepVerbose
 from MiscUtil import fullUrl,isEmptyStr
 from CntUtil import Counter
 from  RepoMigrateToGiteaFunc import giteaMigrateApi
-from rich.progress import Progress
 from GitPyUtil import printFrmRepoMsg
 
 cntr:Counter=Counter()
@@ -83,8 +81,5 @@ def migrateRecurse(ornRUrl:str, ornCmtId:str, frmBaseUrl:str, frmOrgNm:str, slpS
 
 if __name__=="__main__":
     import threading
-    with Progress() as richPrgrs: 
-        #rich在一个独立线程中, 因为走到这里 多了一个线程
-        # thrdId=threading.get_ident(); print(f"thrdId@main={thrdId}")
-        GlbVar(richPrgrs=richPrgrs)
-        main_cmd( )
+    GlbVar(global_var1=77)
+    main_cmd( )
