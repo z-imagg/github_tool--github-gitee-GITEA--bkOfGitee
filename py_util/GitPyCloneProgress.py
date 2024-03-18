@@ -2,18 +2,20 @@ import git
 
 from rich.progress import Progress,TaskID
 
+from global_var import getGlbVarInst
+
 class GitPyCloneProgressC(git.remote.RemoteProgress):
-    def __init__(self,prgrsNm:str,prgrs:Progress):
+    def __init__(self,prgrsNm:str):
         super().__init__()
         #进度条标题
         self.prgrsNm:str=prgrsNm
         self.task_id:TaskID=None
-        self.prgrs:Progress = prgrs
 
     def update(self, op_code, cur_count, max_count=None, message=''):
+        print(".",end="")
         if self.task_id is None:
-            self.task_id=self.prgrs.add_task(description=self.prgrsNm, total=max_count)
-        self.prgrs.update(self.task_id, advance=cur_count)
+            self.task_id=getGlbVarInst().richPrgrs.add_task(description=self.prgrsNm, total=max_count)
+        getGlbVarInst().richPrgrs.update(self.task_id, advance=cur_count)
 
 
           
