@@ -24,7 +24,7 @@ from GitRepoUrlParser import gitRepoUrlParseF,GitRepoUrlC
 from LoopCloneWait import loop_clone_wait_F
 from RandomUtil import randSecs
 from SleepUtil import sleepVerbose
-from MiscUtil import fullUrl
+from MiscUtil import fullUrl,isEmptyStr
 from CntUtil import Counter
 from  RepoMigrateToGiteaFunc import giteaMigrateApi
 from rich.progress import Progress
@@ -38,7 +38,7 @@ def main_cmd():
     description='【递归迁移仓库】【镜像gitee--->本地GITEA】')
 
     parser.add_argument('-f', '--from_repo_url',required=True,type=str,help="【父仓库url,常为gitee仓库】",metavar='')
-    parser.add_argument('-c', '--from_commit_id',required=True,type=str,help="【看父仓库的commitId】",metavar='')
+    parser.add_argument('-c', '--from_commit_id',required=False,type=str,help="【看父仓库的commitId】",metavar='')
     parser.add_argument('-m', '--mirror_base_url',required=True,type=str,help="【 镜像基础url】",metavar='')
     parser.add_argument('-n', '--mirror_org_name',required=True,type=str,help="【 镜像组织名】",metavar='')
     parser.add_argument('-s', '--sleep_seconds',required=True,type=int,help=f"【 相邻两个子模块导入命令间休眠秒数】 ",metavar='')
@@ -62,8 +62,12 @@ def migrateRecurse(ornRUrl:str, ornCmtId:str, frmBaseUrl:str, frmOrgNm:str, slpS
     #2. 克隆仓库
     #   以 循环克隆仓库 等待 GITEA迁移仓库 完毕
     repo:git.Repo=loop_clone_wait_F(repoUrl=localRUrl,richPrgrs=richPrgrs)
-    #重置到给定commitId
-    repo.git.checkout(ornCmtId)
+    # 若指定了cmtId, 则 重置到给定commitId
+    if not isEmptyStr (ornCmtId):
+        repo.git.checkout(ornCmtId)
+    else:
+    # 否则，用头的cmtId
+        ornCmtId = repo.head.commit.hexsha
 
     # 打印该仓库消息
     printFrmRepoMsg(ornRUrl,ornCmtId,repo,cntr)
