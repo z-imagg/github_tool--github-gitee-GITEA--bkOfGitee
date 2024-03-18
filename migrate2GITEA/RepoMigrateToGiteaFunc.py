@@ -32,10 +32,11 @@ def giteaMigrateApi(ornRUrl:str,frmBaseUrl:str,frmOrg:str)->typing.Tuple[bool,Gi
   frmRUrlO=ornRUrlO.to_mirror_url(frmBaseUrl,frmOrg)
   frmRUrl:str = frmRUrlO.url_str()
 
-  mgr_desc=f"原始仓库【{ornRUrl}】 ；迁移内容【{frmRUrl}】--->【{toLcRUrl}】"    ;  
-
   #构造本地GITEA仓库url
   toLcRUrl=f"{api_base_url}/{ornRUrlO.orgName}/{ornRUrlO.repoName}{_GIT}"
+  
+  mgr_desc=f"原始仓库【{ornRUrl}】 ；迁移内容【{frmRUrl}】--->【{toLcRUrl}】"    ;  
+
   if checkRepoByClone(toLcRUrl,"检目的仓") is not None:
     #返回 迁移结果、镜像仓库url、本地GITEA仓库url
     print(f"目的仓已有，无需迁移; {mgr_desc}")
