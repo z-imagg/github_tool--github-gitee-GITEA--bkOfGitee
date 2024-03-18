@@ -13,17 +13,17 @@ class GitPyCloneProgressC(RemoteProgress):
         #进度条标题
         self.prgrsNm:str=f"{prgrsNm},GPCPC,"
         self.task_id=None
-        self.cur_opCode:int=None
-        self.opCodeLs:typing.Set[int]=set()
+        self.cur_gitOpCode:int=None
+        self.gitOpCodeLs:typing.Set[int]=set()
         print(">")
 
-    def update(self, op_code:int, cur_count:typing.Union[str, float], max_count:typing.Union[str, float, None]=None, message:str=''):
+    def update(self, gitOpCode:int, cur_count:typing.Union[str, float], max_count:typing.Union[str, float, None]=None, message:str=''):
         # print(".",end="")
-        self.opCodeLs.add(op_code)
-        opCodeLsTxt:str="、".join([f"{k}" for k in self.opCodeLs])
+        self.gitOpCodeLs.add(gitOpCode)
+        opCodeLsTxt:str="、".join([f"{k}" for k in self.gitOpCodeLs])
         richPrgrs=getGlbVarInst().richPrgrs
-        if self.cur_opCode is None or self.cur_opCode != op_code:
-            self.cur_opCode = op_code
+        if self.cur_gitOpCode is None or self.cur_gitOpCode != gitOpCode:
+            self.cur_gitOpCode = gitOpCode
             if self.task_id is not None:  richPrgrs.update(task_id=self.task_id,visible=False)
 
             self.task_id=richPrgrs.add_task(description=f"{self.prgrsNm},{opCodeLsTxt}",total=max_count)
