@@ -28,11 +28,17 @@ from MiscUtil import fullUrl,isEmptyStr
 from CntUtil import Counter
 from  RepoMigrateToGiteaFunc import giteaMigrateApi
 from rich.progress import Progress
+from rich.progress import track
+import time
 
 richPrgrs:Progress = Progress()
 cntr:Counter=Counter()
 
 def main_cmd():
+
+    for step in track(range(30)):
+        time.sleep(0.1)
+
     parser = argparse.ArgumentParser(
     prog=f'gitSubmoduleImportCmdGen.py',
     description='【递归迁移仓库】【镜像gitee--->本地GITEA】')
