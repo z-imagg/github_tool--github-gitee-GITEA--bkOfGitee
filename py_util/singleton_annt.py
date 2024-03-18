@@ -14,7 +14,7 @@ def SngltAnnt(cls):
     instance = {}
     lock = threading.Lock()
 
-    def __single_with_thread_lock(*args,**kwargs):
+    def __single_with_thread_lock(*args,**kwargs): # args、kwargs 中放的是 __C000__.__init__的参数们
         # print("lock" + str(lock)) #全都是同一个lock
         if cls not in instance:
             with lock:
