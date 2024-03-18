@@ -64,7 +64,7 @@ def migrateRecurse(ornRUrl:str, ornCmtId:str, frmBaseUrl:str, frmOrgNm:str, slpS
 
     #2. 克隆仓库
     #   以 循环克隆仓库 等待 GITEA迁移仓库 完毕
-    repo:git.Repo=loop_clone_wait_F(repoUrl=localRUrl)
+    repo:git.Repo=loop_clone_wait_F(repoUrl=localRUrl,title="休眠等待迁移完成后克隆")
     # 若指定了cmtId, 则 重置到给定commitId
     if not isEmptyStr (ornCmtId):
         repo.git.checkout(ornCmtId)
