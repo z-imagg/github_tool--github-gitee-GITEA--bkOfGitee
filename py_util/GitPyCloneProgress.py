@@ -39,7 +39,7 @@ class GitPyCloneProgressC(RemoteProgress):
 
             # 新建进度条
             #    参考 https://github.com/verigak/progress/
-            self.bar:Bar=Bar(f"{self.prgrsNm},gitOpCd【{gitOpCode}】", max=max_count,fill="@", suffix="【%(percent)d％;%(index)d;%(max)d】")
+            self.bar:Bar=Bar(f"{self.prgrsNm},gitOpCd【{gitOpCode}】", max=max_count,fill="!", suffix="【%(percent)d％;%(index)d;%(max)d】")
 
         self.opCodeLsTxt:str=">".join([f"{k}" for k in self.gitOpCodeLs])
 
