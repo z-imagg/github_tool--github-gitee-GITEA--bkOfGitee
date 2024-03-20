@@ -17,10 +17,10 @@ git submodule update --init --progress --recursive
 source /fridaAnlzAp/cmd-wrap/script/cmd_setup.sh
 
 #cmake显示编译命令
-# 给每个 CMakeLists.txt 的"CMAKE_POLICY(VERSION 2.6)"下一行 添加 set(CMAKE_VERBOSE_MAKEFILE true)
+# 给每个 CMakeLists.txt 的"CMAKE_POLICY(VERSION 2.6)"下一行 添加 set(CMAKE_VERBOSE_MAKEFILE on)
 cat << 'EOF' > /tmp/awk_script
 /CMAKE_POLICY\(VERSION 2.6\)/ {
-    print; print "set(CMAKE_VERBOSE_MAKEFILE true)"; 
+    print; print "set(CMAKE_VERBOSE_MAKEFILE on)"; 
     next
 }
 { 
