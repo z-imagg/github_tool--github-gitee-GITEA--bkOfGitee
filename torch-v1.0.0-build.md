@@ -44,12 +44,14 @@ python setup.py clean
 CMAKE_VERBOSE_MAKEFILE=True python setup.py build
 ```
 
+##### 4. 编译产物
+
 不加c++编译器拦截器时 编译出的 libcaffe2.so 尺寸是 611MB，  用c++编译器拦截器将-g改为-g1、将-O2改为-O1 编译出的 libcaffe2.so 尺寸是 226M
 
 具体如下：
 
 
-若 不使用 "2. 编译器的拦截器（可选）"，
+###### 若 不使用 "2. 编译器的拦截器（可选）"，
 即 不加c++编译器拦截器时 编译出的 libcaffe2.so 尺寸是 611MB 
 
 编译结果, ```   find   .   -name *.so* -type f    -exec ls -lh {} \;  | sort -k 5hr  ``` 
@@ -103,7 +105,7 @@ CMAKE_VERBOSE_MAKEFILE=True python setup.py build
 -rwxrwxr-x 1 z z 20K  3月 19 00:23 ./build/lib/libonnxifi_dummy.so
 ```
 
-若 使用了 "2. 编译器的拦截器（可选）"，
+######  若 使用了 "2. 编译器的拦截器（可选）"，
 即 用c++编译器拦截器将-g改为-g1、将-O2改为-O1 编译出的 libcaffe2.so 尺寸是 226M
 
 编译结果, ```   find   .   -name *.so* -type f    -exec ls -lh {} \;  | sort -k 5hr  ``` 
