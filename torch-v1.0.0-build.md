@@ -11,7 +11,7 @@ git submodule update --init --progress --recursive
 
 ##### 2. 编译器的拦截器（可选）
 
-基于拦截器版本， http://giteaz:3000/bal/cmd-wrap/commit/cf81995f30b3af77dd381e811882eea73956e115
+基于拦截器版本， http://giteaz:3000/bal/cmd-wrap/src/commit/cf81995f30b3af77dd381e811882eea73956e115
 
 ```shell
 source /fridaAnlzAp/cmd-wrap/script/cmd_setup.sh
