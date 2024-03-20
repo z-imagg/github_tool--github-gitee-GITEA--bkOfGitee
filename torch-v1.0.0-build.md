@@ -65,7 +65,7 @@ export USE_ROCM=0
 export DEBUG=1
 
 python setup.py clean
-CMAKE_VERBOSE_MAKEFILE=True python setup.py build
+CMAKE_VERBOSE_MAKEFILE=True python setup.py build  #CMAKE_VERBOSE_MAKEFILE=True  对ninjia无效
 ```
 
 ##### 4. 编译产物
