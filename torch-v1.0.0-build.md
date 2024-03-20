@@ -13,6 +13,9 @@ git submodule update --init --progress --recursive
 python --version #Python 3.10.12
 
 # pip install ***  #这里不是很确定要安转哪些依赖，要不 看看v0.3.0 或 v1.3.1 的 编译步骤？
+pip install  astunparse numpy ninja pyyaml setuptools cmake cffi typing_extensions future six requests dataclasses
+pip install mkl mkl-include
+
 pip install pyyaml==5.1
 
 export USE_CUDA=0
