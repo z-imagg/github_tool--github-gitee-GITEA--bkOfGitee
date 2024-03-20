@@ -11,6 +11,7 @@ git submodule update --init --progress --recursive
 
 ##### 2. 编译器的拦截器（可选）
 
+###### 拦截器
 基于拦截器版本， http://giteaz:3000/bal/cmd-wrap/src/commit/4ae2e6b8e1a4e0828ec32306e4e95c2929ad55a8
 
 ```shell
@@ -25,6 +26,29 @@ which python #/fridaAnlzAp/cmd-wrap/.venv/bin/python
 python --version #Python 3.10.12
 
 ```
+
+######  修改ninja的py包裹脚本，使得显示编译命令
+对于ninja，即使添加了```DCMAKE_VERBOSE_MAKEFILE=True``` ， ninjia一样不显示编译命令， 所以只好硬改ninjia
+
+
+```shell
+
+
+/fridaAnlzAp/cmd-wrap/.venv/lib/python3.10/site-packages/ninja/data/bin/ninja --help
+# -v, --verbose  show all command lines while building
+
+
+```
+
+
+
+```python
+#/fridaAnlzAp/cmd-wrap/.venv/bin/ninja
+if __name__ == '__main__':
+    if len(sys.argv)>=1: sys.argv.insert(1,"--verbose") #增加此行, 即可使得ninja在编译时显示所用编译命令
+    #...
+```
+
 
 #####  3. 编译正文
 ```shell
