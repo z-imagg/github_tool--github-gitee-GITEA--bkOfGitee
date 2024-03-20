@@ -16,6 +16,20 @@ git submodule update --init --progress --recursive
 ```shell
 source /fridaAnlzAp/cmd-wrap/script/cmd_setup.sh
 
+CMAKE_POLICY(VERSION 2.6)\n
+
+cat << 'EOF' > /tmp/awk_script
+/CMAKE_POLICY\(VERSION 2.6\)/ {
+    print; print "set(CMAKE_VERBOSE_MAKEFILE true)"; 
+    next
+}
+{ 
+    print
+}
+EOF
+
+find . -name CMakeLists.txt -type f  | xargs -I% awk  --include=inplace --file /tmp/awk_script %
+
 which c++ #/usr/bin/c++
 
 readlink -f $(which c++) #/fridaAnlzAp/cmd-wrap/bin/interceptor_cxx.py
