@@ -18,7 +18,7 @@ source /fridaAnlzAp/cmd-wrap/script/cmd_setup.sh
 
 which c++ #/usr/bin/c++
 
-readlink $(which c++)  #/fridaAnlzAp/cmd-wrap/bin/interceptor_cxx.py
+readlink -f $(which c++) #/fridaAnlzAp/cmd-wrap/bin/interceptor_cxx.py
 
 which python #/fridaAnlzAp/cmd-wrap/.venv/bin/python
 
