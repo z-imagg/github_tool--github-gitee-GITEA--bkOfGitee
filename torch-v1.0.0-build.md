@@ -16,20 +16,6 @@ git submodule update --init --progress --recursive
 ```shell
 source /fridaAnlzAp/cmd-wrap/script/cmd_setup.sh
 
-#cmake显示编译命令
-# 给每个 CMakeLists.txt 的"CMAKE_POLICY(VERSION 2.6)"下一行 添加 set(CMAKE_VERBOSE_MAKEFILE on)
-cat << 'EOF' > /tmp/awk_script
-/CMAKE_POLICY\(VERSION 2.6\)/ {
-    print; print "set(CMAKE_VERBOSE_MAKEFILE on)"; 
-    next
-}
-{ 
-    print
-}
-EOF
-
-find . -name CMakeLists.txt -type f  | xargs -I% awk  --include=inplace --file /tmp/awk_script %
-
 which c++ #/usr/bin/c++
 
 readlink -f $(which c++) #/fridaAnlzAp/cmd-wrap/bin/interceptor_cxx.py
