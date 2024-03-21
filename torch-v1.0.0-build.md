@@ -25,6 +25,7 @@ which python #/fridaAnlzAp/cmd-wrap/.venv/bin/python
 
 python --version #Python 3.10.12
 
+rm -frv /tmp/gcc* /tmp/g++* /tmp/c++* /tmp/clang* /tmp/clang++* /tmp/cmake* /tmp/make* ; ls /tmp/
 ```
 
 ######  修改ninja的py包裹脚本，使得显示编译命令
