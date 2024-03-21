@@ -1,4 +1,4 @@
-#### 步5、  编译pytorch-v0.3.0
+####  编译pytorch-v0.3.0
 
 应该用 ```pip install pyyaml==5.1```, 否则```python setup.py build```时 收到以下报错：
 ```txt
@@ -27,7 +27,7 @@ export USE_ROCM=0
 export DEBUG=1
 
 python setup.py clean
-CMAKE_VERBOSE_MAKEFILE=True python setup.py install
+CMAKE_VERBOSE_MAKEFILE=True python setup.py build
 #     install == build+安装； 这里不需要安装 ，因此用build而不用install
 
 #注意 v0.3.0 和 v1.3.0 的编译命令 有差别
