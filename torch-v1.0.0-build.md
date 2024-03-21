@@ -67,6 +67,8 @@ export DEBUG=1
 
 python setup.py clean
 CMAKE_VERBOSE_MAKEFILE=True python setup.py build  #CMAKE_VERBOSE_MAKEFILE=True  对ninjia无效
+
+#bash /fridaAnlzAp/cmd-wrap/script/remove_interceptor.sh #如果使用了拦截器，此时可以移除拦截器了
 ```
 
 ##### 4. 编译产物
