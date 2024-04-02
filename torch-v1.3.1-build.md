@@ -32,6 +32,7 @@ ninja --version #1.11.1.git.kitware.jobserver-1
 ```
 
 ```shell
+#目前实际pytorch仓库目录为 /home/z/torch-repo/pytorch/， 原因是 /fridaAnlzAp分区空间不足
 cd /fridaAnlzAp/pytorch/
 git submodule update --init   --progress   --recursive
 #切换到 git标签 v1.3.1
