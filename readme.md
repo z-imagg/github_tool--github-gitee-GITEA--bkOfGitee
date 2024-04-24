@@ -22,8 +22,11 @@ cd /app/github-gitee-GITEA/gitee_api_fetch_ts/ && npm install
 
 1. 生成gitee导入仓库请求模板， 参考 [gen-gitee_importRepo-ReqTemplate](http://giteaz:3000/misc/gitee_api_fetch_ts/src/branch/main/README.md#gen-gitee_importrepo-reqtemplate)的1到4, 第5步不需要
 
-2. 此时 可以 以命令方式使用gitee导入仓库接口，  [gitee_importRepo](http://giteaz:3000/misc/gitee_api_fetch_ts/src/branch/main/README.md#gitee_importrepo)
+2. 此时 可以 以命令方式使用gitee导入仓库接口，  [gitee_importRepo:use_example.sh](http://giteaz:3000/misc/gitee_api_fetch_ts/src/branch/main/README.md#gitee_importrepo)
 
+    ```shell
+        bash  /app/github-gitee-GITEA/gitee_api_fetch_ts/script/use_example.sh
+    ```
 ####  2. 搭建本地gitea服务
 
 [gitea_as_github.md](http://giteaz:3000/wiki/github-gitee-GITEA/src/branch/main/migrate2GITEA/gitea_as_github.md)
