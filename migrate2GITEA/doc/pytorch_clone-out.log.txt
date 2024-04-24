@@ -1,4 +1,4 @@
-z@mchr:/fridaAnlzAp$ git clone https://github.com/pytorch/pytorch.git
+z@mchr:/app$ git clone https://github.com/pytorch/pytorch.git
 正克隆到 'pytorch'...
 remote: Enumerating objects: 1114420, done.
 remote: Counting objects: 100% (1114420/1114420), done.

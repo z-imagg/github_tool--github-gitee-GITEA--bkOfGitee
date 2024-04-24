@@ -21,9 +21,9 @@
 ],
             // https://github.com/onnx/onnx.git  034921bd574cc84906b7996c07873454b7dd4135
             // https://github.com/pytorch/pytorch.git  ee77ccbb6da4e2efd83673e798acf7081bc03564 v1.3.1
-            // python /fridaAnlzAp/github-gitee-GITEA/import2gitee/gitSubmoduleImportCmdGen.py --parent_repo_dir /fridaAnlzAp/gitee/imagg/pytorch--pytorch  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9
+            // python /app/github-gitee-GITEA/import2gitee/gitSubmoduleImportCmdGen.py --parent_repo_dir /app/gitee/imagg/pytorch--pytorch  --goal_org imagg  --sleep_seconds 8 --sleep_seconds_delta 9
             "env": {
-                "PYTHONPATH": "${workspaceFolder}:/fridaAnlzAp/github-gitee-GITEA/py_util/"
+                "PYTHONPATH": "${workspaceFolder}:/app/github-gitee-GITEA/py_util/"
             },
         },
         {
@@ -51,7 +51,7 @@
 "--sleep_seconds", "2" 
             ],
             "env": {
-                "PYTHONPATH": "${workspaceFolder}:/fridaAnlzAp/github-gitee-GITEA/py_util/"
+                "PYTHONPATH": "${workspaceFolder}:/app/github-gitee-GITEA/py_util/"
             },
         }
     ]

@@ -6,7 +6,7 @@
 
 import sys
 
-sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
+sys.path.append("/app/github-gitee-GITEA/py_util/")
 
 from global_var import GlbVar
 

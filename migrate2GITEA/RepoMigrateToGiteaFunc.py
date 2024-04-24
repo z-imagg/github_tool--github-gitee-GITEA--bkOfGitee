@@ -8,7 +8,7 @@
 # 【术语】 toLcRUrl == toLocalRepoUrl == "目标即本地仓库"的仓库Url
 import sys
 
-sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
+sys.path.append("/app/github-gitee-GITEA/py_util/")
 
 from pathlib import Path
 import re

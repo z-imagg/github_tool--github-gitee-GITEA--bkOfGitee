@@ -9,9 +9,9 @@
 
 ### 环境安装、依赖安装(只做一次)
 ```shell
-bash /fridaAnlzAp/github-gitee-GITEA/script/env_prepare.sh 
+bash /app/github-gitee-GITEA/script/env_prepare.sh 
 
-cd /fridaAnlzAp/github-gitee-GITEA/gitee_api_fetch_ts/ && npm install
+cd /app/github-gitee-GITEA/gitee_api_fetch_ts/ && npm install
 
 ```
 

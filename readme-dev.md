@@ -24,13 +24,13 @@
 #### 步0、 生成gitee导入仓库请求模板(会启动chrome)
 
 
-```bash -x /fridaAnlzAp/github-gitee-GITEA/gitee_api_fetch_ts/script/gen_gitee_import_repo_req_template.sh```
+```bash -x /app/github-gitee-GITEA/gitee_api_fetch_ts/script/gen_gitee_import_repo_req_template.sh```
 
 #### 步1、 递归gitee导入接口（github-->gitee）
 
 #####  bash命令提示
 ```shell
-source /fridaAnlzAp/github-gitee-GITEA/script/cmd_setup.sh
+source /app/github-gitee-GITEA/script/cmd_setup.sh
 #正常可用：RepoRecurseImport.py --help 及其 bash自动完成
 #正常可用：RepoRecurseMigrate.py --help 及其 bash自动完成
 ```
@@ -120,22 +120,22 @@ RepoRecurseMigrate.py --from_repo_url https://github.com/pytorch/pytorch.git --f
 
 #####  clone
 ```shell
-cd /fridaAnlzAp/
+cd /app/
 git clone https://github.com/pytorch/pytorch.git
-#/fridaAnlzAp/pytorch/.git/config
+#/app/pytorch/.git/config
 ```
 pytorch克隆日志, [pytorch_clone-out.log.txt](http://giteaz:3000/wiki/github-gitee-GITEA/src/branch/main/migrate2GITEA/doc/pytorch_clone-out.log.txt)
 
 
 ##### checkout v1.3.1
 ```shell
-cd /fridaAnlzAp/pytorch/
+cd /app/pytorch/
 git checkout v1.3.1
 ```
 
 ##### 更新直接子模块 
 ```shell
-#更新 /fridaAnlzAp/pytorch 中的 子模块们， 也 将一样是 正常从 "假github" 克隆到的
+#更新 /app/pytorch 中的 子模块们， 也 将一样是 正常从 "假github" 克隆到的
 #当让 如果有 lazygit 去更新子模块也一样的
 git submodule update --init   --progress 
 ```

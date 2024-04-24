@@ -4,7 +4,7 @@
 # 【文件作用】 遍历给定git仓库中的子模块列表， 并打印对应命令import_githubRepo_to_gitee.sh
 
 import sys
-sys.path.append("/fridaAnlzAp/github-gitee-GITEA/py_util/")
+sys.path.append("/app/github-gitee-GITEA/py_util/")
 
 
 from global_var import GlbVar
@@ -49,9 +49,9 @@ def main_cmd():
     print(":")
 
     scriptDir:Path=getScriptDir()
-    #scriptDir==/fridaAnlzAp/github-gitee-GITEA/import2gitee/
+    #scriptDir==/app/github-gitee-GITEA/import2gitee/
     prjHmDir:str=f"{scriptDir.parent.absolute()}"
-    #prjHmDir==/fridaAnlzAp/github-gitee-GITEA/
+    #prjHmDir==/app/github-gitee-GITEA/
 
     importGithubRepo2GiteeRecurse(prjHmDir=prjHmDir, from_repo_url=args.from_repo_url,from_commit_id=args.from_commit_id,giteeMirrOrg=args.goal_org,sleep_seconds=args.sleep_seconds)
 
