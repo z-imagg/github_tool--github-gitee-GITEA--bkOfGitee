@@ -7,7 +7,13 @@
 
 **本文是 客户方简易使用文档**
 
+### install dependency(只做一次)
+```shell
+bash /fridaAnlzAp/github-gitee-GITEA/script/env_prepare.sh 
 
+cd /fridaAnlzAp/github-gitee-GITEA/gitee_api_fetch_ts/ && npm install
+
+```
 
 ### 前置准备(只做一次)
 
