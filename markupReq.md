@@ -9,7 +9,7 @@
 ### 半通用、半自动 方案（有吸引力）
 
 
-基于nodejs实现的，  http://giteaz:3000/msic/node-typescript-boilerplate.git
+基于nodejs实现的，  http://giteaz:3000/msic/gitee_api_fetch_ts.git
 
 大致步骤：
 
