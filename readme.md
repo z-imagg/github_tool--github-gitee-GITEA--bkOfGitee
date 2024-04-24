@@ -7,7 +7,7 @@
 
 **本文是 客户方简易使用文档**
 
-### install dependency(只做一次)
+### 环境安装、依赖安装(只做一次)
 ```shell
 bash /fridaAnlzAp/github-gitee-GITEA/script/env_prepare.sh 
 
@@ -19,7 +19,11 @@ cd /fridaAnlzAp/github-gitee-GITEA/gitee_api_fetch_ts/ && npm install
 
 ####  1. 生成gitee导入仓库请求模板(会启动chrome) 
 
+##### 1.1 准备gitee.com帐号
 
+复制[gitee_account.json.template](http://giteaz:3000/misc/node-typescript-boilerplate/src/branch/main/gitee_account.json.template)为同目录下文件gitee_account.json, 并按照模板中字段提示填充字段值
+
+##### 1.2 生成请求模板
 ```bash -x /fridaAnlzAp/github-gitee-GITEA/gitee_api_fetch_ts/script/gen_gitee_import_repo_req_template.sh```
 
 
