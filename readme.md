@@ -20,7 +20,7 @@ cd /fridaAnlzAp/github-gitee-GITEA/gitee_api_fetch_ts/ && npm install
 
 ####  1. 生成gitee导入仓库请求模板(会启动chrome) 
 
-参考[gen-req-template](http://giteaz:3000/misc/node-typescript-boilerplate/src/branch/main/README.md#gen-req-template)的1到4, 第5步不需要
+参考[gen-gitee_importRepo-ReqTemplate](http://giteaz:3000/misc/node-typescript-boilerplate/src/branch/main/README.md#gen-gitee_importrepo-reqtemplate)的1到4, 第5步不需要
 
 
 ####  2. 搭建本地gitea服务
